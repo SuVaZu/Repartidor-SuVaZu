@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.36</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.37</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -51,7 +51,7 @@
 #overlay.parrillon-view .par-history-round>summary{font-size:19px;line-height:1.35;padding:12px 4px}
 #overlay.parrillon-view .par-history-round>h3{display:none}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.36</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.37</span></header><div id="toast"></div><main>
 <section class="panel"><div class="row"><h2>Mapa</h2><span class="pill" id="journeyBadge">Sin jornada</span></div><div class="mapbox"><div id="map"></div><div id="mapFallback" class="map-fallback">🗺️<br>El mapa requiere internet</div></div><div class="wrap" style="margin-top:9px"><button class="secondary" onclick="toggleGPS()" id="gpsBtn">◎ GPS</button><button class="secondary" onclick="centerGPS()">⌖ Mi ubicación</button><button class="secondary" onclick="fitRouteMap()">📍 Ver ruta</button><button onclick="openView('orders')">☰ Pedidos activos</button></div><div id="mapRouteLegend" class="muted" style="margin-top:9px">🏪 Recolección · 📦 Entrega. Agrega enlaces de Google Maps con coordenadas para ver los puntos.</div><p class="muted" id="gpsStatus">GPS disponible únicamente desde una página segura (HTTPS).</p></section>
 <section class="panel"><div class="row"><h2>Pedidos de Apps</h2><button onclick="openApps()">📱 Abrir Apps</button></div><p class="muted">DiDi · Uber · Rappi · inDrive. Pantalla completa sin mapa; registra pagos, cobros y propinas por cada recolección.</p></section>
 <section class="panel"><div class="row"><h2>🍗 El Parrillón</h2><button onclick="openView('parrillon')">Abrir apartado</button></div><p class="muted">Pedidos, cobros, cambio, Maps, propinas y fotografía de cierre.</p></section>
@@ -309,7 +309,7 @@ function parCaptureTime(t){
 }
 function parIsCard(t){return /tarjeta|d[eé]bito|cr[eé]dito|card/i.test(String(t.payment||''))}
 function parRoundSummary(x,r){
- if(!r||!r.start)return '';
+ if(!r||!(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id))))return '';
  let tickets=x.tickets.filter(t=>String(t.roundId)===String(r.id));
  let drinks=tickets.filter(t=>String(t.drink||'').trim()&&!/^(?:no|ninguna?|sin|—|-)$/i.test(String(t.drink).trim()));
  let cards=tickets.filter(parIsCard);
@@ -321,7 +321,7 @@ function parRoundSummary(x,r){
  <div class="par-summary-section"><strong>💵 Cambios</strong>${changes.length?changes.map(o=>`<p>Pedido #${esc(o.t.number)}: <b>${money(o.value)}</b></p>`).join('')+`<p><b>Total de cambio: ${money(sum)}</b></p>`:'<p>No se requiere cambio.</p>'}</div>
  </section>`
 }
-function parRouteCard(t){
+function parRouteCard(t,canDeliver=true){
  return `<article class="par-route-card">
  <div class="par-route-label" style="text-align:center">NÚMERO DE PEDIDO</div>
  <div class="par-route-number">#${esc(t.number)}</div>
@@ -329,15 +329,15 @@ function parRouteCard(t){
  <div class="par-route-label">CLIENTE</div><div class="par-route-value">${esc(t.client||'—')}</div>
  <div class="par-route-label">TELÉFONO</div><div class="par-route-value">${esc(t.phone||'—')}</div>
  <div class="par-route-label">DIRECCIÓN / REFERENCIA</div><div class="par-route-address">${esc(t.address||'—')}</div>
- <button data-par-delivery="${esc(t.id)}">📦 Entregar pedido</button>
+ <button ${canDeliver?`data-par-delivery="${esc(t.id)}"`:"disabled"}>${canDeliver?"📦 Entregar pedido":"🕒 Disponible al iniciar vuelta"}</button>
  </article>`
 }
 function parRoundOrders(x,q){
  let tickets=x.tickets.filter(t=>String(t.roundId)===String(q.id)),pending=tickets.filter(t=>!t.delivered),delivered=tickets.filter(t=>!!t.delivered);
  let h=`<h3>🛵 Vuelta #${q.number} · ${q.end?parDuration(q):q.start?'En recorrido':q.imported?'Lista para salir':'Esperando JSON'}</h3>`;
- if(q.start&&!q.end){
- h+=pending.length?`<p class="par-track-help">↔ Desliza a la izquierda o derecha para cambiar de pedido · ${pending.length} pendientes</p><div class="par-pending-track">${pending.map(parRouteCard).join('')}</div>`:'<p class="hint">✓ Todos los pedidos de esta vuelta fueron entregados. Finaliza la vuelta al regresar al local.</p>';
- }else if(!q.start){h+=pending.length?`<p class="muted">Inicia la vuelta para consultar las tarjetas de recorrido.</p>`:'<p class="muted">Sin pedidos importados.</p>'}
+ if(!q.end){
+ h+=pending.length?`<p class="par-track-help">↔ Desliza a la izquierda o derecha para cambiar de pedido · ${pending.length} pendientes</p><div class="par-pending-track">${pending.map(t=>parRouteCard(t,!!q.start)).join('')}</div>`:'<p class="hint">✓ No hay pedidos pendientes en esta vuelta.</p>';
+ }
  else h+=`<p>✓ ${delivered.length} pedidos entregados.</p>`;
  if(delivered.length)h+=`<details class="par-delivered-fold"><summary>✓ Pedidos entregados (${delivered.length}) · Toca para consultar</summary>${delivered.map(t=>parTicketCard(t,true)).join('')}</details>`;
  return h;
@@ -410,15 +410,17 @@ async function parScan(file){
 function parPhoto(file){if(!file)return; if(!file.type.startsWith('image/'))return alert('Selecciona una fotografía.');if(file.size>20*1024*1024)return alert('La foto es demasiado grande (máximo 20 MB).');let reader=new FileReader();reader.onerror=()=>alert('No se pudo leer la foto.');reader.onload=()=>{let img=new Image();img.onerror=()=>alert('No se pudo procesar la foto.');img.onload=()=>{let max=1100,ratio=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*ratio));c.height=Math.max(1,Math.round(img.height*ratio));c.getContext('2d').drawImage(img,0,0,c.width,c.height);let out=c.toDataURL('image/jpeg',.65);if(out.length>650000)return alert('La foto comprimida es demasiado grande. Intenta otra toma.');let x=parActive();if(!x)return;x.closingPhoto=out;try{save();openView('parrillon');toast('Fotografía de cierre guardada')}catch(e){x.closingPhoto=null;alert('No hay espacio para guardar la fotografía. Exporta un respaldo y libera espacio antes de continuar.')}};img.src=reader.result};reader.readAsDataURL(file)}
 function parClose(){let x=parActive();if(!x)return;if(!parRounds(x).some(r=>r.end))return alert('Primero completa al menos una vuelta.');let pending=x.tickets.filter(t=>!t.delivered);if(pending.length)return alert('Hay '+pending.length+' pedidos pendientes. Entrégalos o elimínalos antes de cerrar.');let val=$('parGain').value;if(val===''||!Number.isFinite(Number(val))||Number(val)<0)return alert('Introduce la ganancia total de repartos.');if(parCurrentRound(x))return alert('Finaliza la vuelta actual al regresar a El Parrillón.');if(!x.closingPhoto)return alert('Primero adjunta la fotografía del comprobante de cierre que dejas en El Parrillón.');if(!confirm('Cerrar El Parrillón con '+x.tickets.length+' entregas, '+money(Number(val))+' de repartos y '+money(parTips(x))+' de propinas?'))return;x.gain=Number(val);x.end=now();parDraftGain="";save();openView('parrillon');toast('El Parrillón integrado al resumen diario')}
 function renderParrillon(){
- let x=parActive(),h='<p class="hint">Los tickets se preparan con Kanrmy. Aquí importas un solo JSON por vuelta, consultas pedidos y Maps, registras entregas y propinas, y cierras el servicio.</p>';
+ let x=parActive(),h='<p class="hint">Los tickets se preparan con Kanrmy. Aquí importas un solo JSON por vuelta, consultas pedidos, registras entregas y propinas, y cierras el servicio.</p>';
  if(!x)h+=`<div class="panel"><h2>🍗 El Parrillón</h2><p>${running()?'Inicia el servicio para importar tu primera vuelta.':'🔒 Primero inicia la jornada general desde la pantalla principal.'}</p><button class="full" ${running()?'':'disabled'} onclick="parNew()">▶ Iniciar servicio</button></div>`;
  else{
  let r=parPreparing(x);
- h+=`<div class="panel"><h2>Servicio iniciado · ${esc(x.date)}</h2><p>Vueltas completadas: <b>${parRounds(x).filter(r=>r.end).length}</b> · Pedidos: <b>${x.tickets.length}</b> · Propinas: <b>${money(parTips(x))}</b></p></div>${parRoundsUI(x)}`;
+ h+=`<div class="panel"><h2>Servicio iniciado · ${esc(x.date)}</h2><p>Vueltas completadas: <b>${parRounds(x).filter(r=>r.end).length}</b> · Pedidos: <b>${x.tickets.length}</b> · Propinas: <b>${money(parTips(x))}</b></p></div>`;
+ h+=`<div class="panel par-active-orders"><h3>📦 Pedidos de la vuelta actual</h3>${parCurrentRound(x)?parRoundOrders(x,parCurrentRound(x)):'<p class="muted">No hay una vuelta activa. Prepara la siguiente cuando estés listo.</p>'}</div>`;
+ h+=parRoundsUI(x);
  if(r&&!r.imported&&!x.tickets.some(t=>String(t.roundId)===String(r.id)))h+=`<div class="panel"><h3>📥 Importar JSON de la vuelta #${r.number}</h3><p>Importa el archivo único de la vuelta completa que preparaste con Kanrmy. Podrás añadir tickets conmigo antes de importar, pero después no podrás reemplazarlo.</p><label>Seleccionar archivo JSON<input type="file" accept=".json,application/json" onchange="parImport(this.files[0]);this.value=''"></label><button class="secondary" onclick="parExampleImport()">⬇ Ejemplo de formato JSON</button></div>`;
 
  h+=parRoundSummary(x,parCurrentRound(x));
- h+=`<div class="panel par-active-orders"><h3>Pedidos de la vuelta actual</h3>${parCurrentRound(x)?parRoundOrders(x,parCurrentRound(x)):'<p class="muted">No hay una vuelta activa. Prepara la siguiente cuando estés listo.</p>'}${parHistoryRounds(x)}${x.tickets.filter(t=>!t.roundId).length?`<details class="par-history-fold"><summary>📚 Pedidos antiguos sin vuelta (${x.tickets.filter(t=>!t.roundId).length})</summary>${x.tickets.filter(t=>!t.roundId).map(t=>parTicketCard(t,true)).join('')}</details>`:''}</div>`;
+ h+=`<div class="panel">${parHistoryRounds(x)}${x.tickets.filter(t=>!t.roundId).length?`<details class="par-history-fold"><summary>📚 Pedidos antiguos sin vuelta (${x.tickets.filter(t=>!t.roundId).length})</summary>${x.tickets.filter(t=>!t.roundId).map(t=>parTicketCard(t,true)).join('')}</details>`:''}</div>`;
  let tips=parTips(x);
  h+=`<div class="panel"><h3>■ Finalizar servicio de El Parrillón</h3>
  <p><b>Concepto 1 · Pago por repartos:</b> dinero que te entrega El Parrillón.</p>
