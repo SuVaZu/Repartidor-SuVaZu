@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.59</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.60</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -120,8 +120,11 @@
 @media(max-width:370px){.module-link{gap:9px;padding:12px 10px}.module-logo{width:84px;flex-basis:84px;height:73px}.module-arrow{width:37px;height:37px;flex-basis:37px;font-size:32px}}
 #resultsDetails[hidden]{display:none!important}\n.sv-swipe{touch-action:pan-y}.sv-slide{min-height:320px}.sv-delivery{max-width:700px;margin:auto}.sv-delivery button.full{margin-top:12px}
 .sv-route-summary{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}.sv-route-summary h2{margin:0}.sv-route-summary p{margin:10px 0 0}.sv-count{white-space:nowrap;border-radius:16px;background:#f9ebc5;padding:10px 12px;font-weight:700;color:#173a30}.sv-order-card{background:white;border-radius:22px;padding:22px 20px;box-shadow:0 8px 26px rgba(17,50,41,.08);margin-bottom:18px}.sv-order-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.sv-order-top h2{font-size:clamp(22px,6vw,29px);margin:8px 0 12px;overflow-wrap:anywhere}.sv-order-top .pill{font-size:12px;white-space:normal;text-align:center;max-width:46%;line-height:1.35}.sv-eyebrow{font-size:12px;color:#6b7772;letter-spacing:.06em;font-weight:700}.sv-step-track{display:flex;gap:6px;margin:8px 0 18px}.sv-step-track i{display:block;height:5px;flex:1;border-radius:99px;background:#e3e9e5}.sv-step-track i.on{background:#278264}.sv-stage-title{font-weight:800;font-size:19px;margin-bottom:14px;color:#153d32}.sv-details{border-radius:17px;background:#f1f5f2;padding:3px 17px;margin-bottom:18px}.sv-info{padding:14px 0;border-bottom:1px solid #dbe5de;display:flex;flex-direction:column;gap:5px}.sv-info:last-child{border:0}.sv-info span{color:#63766b;font-size:12px;font-weight:700;letter-spacing:.035em}.sv-info strong{font-size:clamp(17px,4.6vw,21px);line-height:1.35;overflow-wrap:anywhere}.sv-info .sv-money{font-size:30px}.sv-order-card .sv-primary{padding:17px 12px;font-size:18px;border-radius:14px;background:#edb94d;color:#17382e}.sv-swipe-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:17px 0;font-size:12px;color:#74847a}.sv-swipe-foot>span:last-child{display:flex;gap:6px}.sv-dot{display:block;width:8px;height:8px;border:1.5px solid #57766a;border-radius:50%}.sv-dot.on{background:#173d31}.sv-order-card .sv-edit{border-radius:13px;padding:14px;font-size:16px}.sv-swipe{touch-action:pan-y}
-.associates-logo{display:flex;align-items:center;justify-content:center;font-size:53px;background:#e9f2e9;border-radius:18px;flex-shrink:0}.associate-business{display:flex;gap:15px;align-items:center;width:100%;text-align:left;padding:18px;border-radius:18px;background:#fff;border:1px solid #dfe8df;color:#18392f}.associate-business img{width:82px;height:82px;object-fit:contain;flex-shrink:0}.associate-business .associate-name{font-size:22px;font-weight:800;display:block}.associate-business .associate-desc{font-size:14px;color:#617269;display:block;margin-top:5px}.associate-business .associate-arrow{margin-left:auto;font-size:28px;color:#ac8333}.sv-import-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}.sv-import-switch button{padding:14px 6px;font-size:16px}.sv-import-switch .sv-selected{background:#eab94f;color:#14382e}.sv-preview-card{border:1px solid #d5e1da;border-radius:15px;padding:13px;margin:10px 0;background:#f8faf8}.sv-preview-card label{display:block;margin-top:8px}.sv-import-warning{color:#9d3627;font-weight:600}.app-brand{display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;padding:8px 10px;border-radius:12px;background:white;color:#111}.app-brand-didi{color:#ed5d25}.app-brand-rappi{color:#f25c49}.app-brand-indrive{color:#75a928}#particularCapture[hidden]{display:none!important}.sv-route-item{padding:15px 0;border-bottom:1px solid #e1e9e3}.sv-route-item:last-child{border:0}.sv-route-item .wrap{margin-top:9px}.sv-route-actions{display:grid;gap:10px;margin:16px 0}.sv-route-actions button{font-size:16px;padding:16px}</style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.59</span></header><div id="toast"></div><main>
+.associates-logo{display:flex;align-items:center;justify-content:center;font-size:53px;background:#e9f2e9;border-radius:18px;flex-shrink:0}.associate-business{display:flex;gap:15px;align-items:center;width:100%;text-align:left;padding:18px;border-radius:18px;background:#fff;border:1px solid #dfe8df;color:#18392f}.associate-business img{width:82px;height:82px;object-fit:contain;flex-shrink:0}.associate-business .associate-name{font-size:22px;font-weight:800;display:block}.associate-business .associate-desc{font-size:14px;color:#617269;display:block;margin-top:5px}.associate-business .associate-arrow{margin-left:auto;font-size:28px;color:#ac8333}.sv-import-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}.sv-import-switch button{padding:14px 6px;font-size:16px}.sv-import-switch .sv-selected{background:#eab94f;color:#14382e}.sv-preview-card{border:1px solid #d5e1da;border-radius:15px;padding:13px;margin:10px 0;background:#f8faf8}.sv-preview-card label{display:block;margin-top:8px}.sv-import-warning{color:#9d3627;font-weight:600}.app-brand{display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;padding:8px 10px;border-radius:12px;background:white;color:#111}.app-brand-didi{color:#ed5d25}.app-brand-rappi{color:#f25c49}.app-brand-indrive{color:#75a928}#particularCapture[hidden]{display:none!important}.sv-route-item{padding:15px 0;border-bottom:1px solid #e1e9e3}.sv-route-item:last-child{border:0}.sv-route-item .wrap{margin-top:9px}.sv-route-actions{display:grid;gap:10px;margin:16px 0}.sv-route-actions button{font-size:16px;padding:16px}
+/* Importación Kanrmy · fichas legibles y navegación horizontal */
+.sv-quick-panel{padding:18px 16px;border-radius:22px}.sv-quick-panel h2{margin:0;font-size:21px}.sv-quick-panel>.row{margin-bottom:12px;align-items:center}.sv-quick-pager{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:center;margin:14px 0}.sv-quick-pager button{font-size:30px;min-width:50px;min-height:48px;padding:0 12px}.sv-quick-pager strong{font-size:17px}.sv-quick-dots{display:flex;justify-content:center;gap:5px;margin-top:8px}.sv-quick-dots i{width:9px;height:9px;border-radius:50%;background:#d7e2da}.sv-quick-dots i.on{background:#176d50}.sv-quick-card{touch-action:pan-y;user-select:none}.sv-quick-client,.sv-quick-section{background:#f2f6f3;border-radius:17px;padding:16px;margin:11px 0;overflow-wrap:anywhere}.sv-quick-client strong{display:block;font-size:24px;margin-top:7px}.sv-quick-section{background:white;border:1px solid #dce6df}.sv-quick-section h3{font-size:21px;line-height:1.3;margin:8px 0 5px}.sv-quick-details{border-top:1px solid #dce6df;margin-top:14px;padding-top:14px}.sv-quick-details p{font-size:17px;line-height:1.5;margin:8px 0 0;white-space:pre-wrap}.sv-quick-money{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}.sv-quick-money>div{background:#edf4ee;padding:13px 11px;border-radius:16px;min-width:0}.sv-quick-money span{display:block;font-size:11px;font-weight:800;color:#5d7468;min-height:29px}.sv-quick-money strong{display:block;font-size:clamp(19px,5.2vw,28px);margin-top:6px;overflow-wrap:anywhere}.sv-quick-money>div:last-child strong{color:#18714f}.sv-quick-help{text-align:center;color:#66796d;font-size:12px;margin:9px 0 21px}.sv-quick-confirm{font-size:18px;min-height:55px;margin:10px 0}.sv-quick-panel>button.secondary{min-height:48px}
+</style></head><body>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.60</span></header><div id="toast"></div><main>
 <section class="panel" id="serviceCurrent"><div class="row"><h2>🦁 Ruta actual</h2><span class="pill" id="serviceStatus">Sin servicio</span></div><div id="currentServiceBody"><p class="muted">Sin servicio en curso.</p></div></section>
 <section class="panel"><div class="row"><h2>🛣️ Gestión de rutas</h2><span class="pill" id="homeRoutesCount">0/10</span></div><div id="homeOpenRoutes"></div></section>
 <section class="module-panel"><button type="button" class="module-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="module-logo" src="./suvazu_logo.png" alt=""><span class="module-copy"><strong>SuVaZu Repartidor</strong><small>Gestiona tus servicios directos, pedidos y entregas.</small></span><span class="module-arrow" aria-hidden="true">›</span></button></section>
@@ -447,36 +450,77 @@ function svRenderCaptureRoute(){
 }
 function svCreateAndOpenDirect(){const r=svCreateRoute();if(r)svAddToRoute(r.id)}
 
-let svQuickDraft=null;
+let svQuickDraft=null,svQuickIndex=0,svQuickTouchX=0,svQuickFromLink=false;
+function svQuickParse(x){
+ const items=Array.isArray(x)?x:Array.isArray(x?.pedidos)?x.pedidos:[x];
+ if(!items.length||items.length>30)throw Error('El enlace debe contener entre 1 y 30 pedidos.');
+ return items.map((raw,i)=>{try{return svConvert(raw)}catch(e){throw Error('Pedido '+(i+1)+': '+e.message)}});
+}
 function svDecodeLink(){
  const h=location.hash;if(!h.startsWith('#pedido='))return;
  history.replaceState(null,'',location.pathname+location.search);
- try{const raw=h.slice(8);if(raw.length>12000)throw Error('Enlace demasiado largo');const bytes=Uint8Array.from(atob(raw.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));const parsed=JSON.parse(new TextDecoder().decode(bytes));svQuickDraft=svConvert(parsed);requestAnimationFrame(()=>openView('importQuick'))}
- catch(e){alert('No se pudo interpretar el enlace: '+e.message)}
+ try{
+  const raw=h.slice(8);if(raw.length>12000)throw Error('Enlace demasiado largo');
+  const bytes=Uint8Array.from(atob(raw.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));
+  const parsed=JSON.parse(new TextDecoder().decode(bytes));
+  svQuickDraft=svQuickParse(parsed);svQuickIndex=0;svQuickFromLink=true;
+  requestAnimationFrame(()=>openView('importQuick'));
+ }catch(e){alert('No se pudo interpretar el enlace: '+e.message)}
 }
-function svQuickReadFile(input){const f=input.files?.[0];if(!f)return;if(f.size>2097152)return alert('Archivo demasiado grande');f.text().then(t=>{const x=JSON.parse(t);if(Array.isArray(x)||Array.isArray(x.pedidos))throw Error('Importa un pedido a la vez en este acceso');svQuickDraft=svConvert(x);svRenderQuickImport()}).catch(e=>alert('JSON inválido: '+e.message))}
+function svQuickReadFile(input){
+ const f=input.files?.[0];if(!f)return;if(f.size>2097152)return alert('Archivo demasiado grande');
+ f.text().then(t=>{svQuickDraft=svQuickParse(JSON.parse(t));svQuickIndex=0;svQuickFromLink=false;svRenderQuickImport()}).catch(e=>alert('JSON inválido: '+e.message));
+}
+function svQuickMove(direction){
+ if(!svQuickDraft)return;
+ const next=svQuickIndex+direction;
+ if(next<0||next>=svQuickDraft.length)return;
+ svQuickIndex=next;svQuickRenderCard();
+}
+function svQuickTouchStart(e){svQuickTouchX=e.changedTouches?.[0]?.screenX??0}
+function svQuickTouchEnd(e){const x=e.changedTouches?.[0]?.screenX??svQuickTouchX;if(Math.abs(x-svQuickTouchX)>45)svQuickMove(x<svQuickTouchX?1:-1)}
+function svQuickRenderCard(){
+ const target=$('svQuickCard');if(!target||!svQuickDraft?.length)return;
+ const o=svQuickDraft[svQuickIndex],total=svQuickDraft.length;
+ target.innerHTML=`<div class="sv-quick-pager"><button class="secondary" onclick="svQuickMove(-1)" ${svQuickIndex===0?'disabled':''} aria-label="Pedido anterior">‹</button><div><strong>Pedido ${svQuickIndex+1} de ${total}</strong><div class="sv-quick-dots">${svQuickDraft.map((_,i)=>`<i class="${i===svQuickIndex?'on':''}"></i>`).join('')}</div></div><button class="secondary" onclick="svQuickMove(1)" ${svQuickIndex===total-1?'disabled':''} aria-label="Pedido siguiente">›</button></div>
+ <article class="sv-quick-card" ontouchstart="svQuickTouchStart(event)" ontouchend="svQuickTouchEnd(event)">
+ <div class="sv-quick-client"><span class="sv-eyebrow">📞 CLIENTE</span><strong>${esc(o.client||'Sin teléfono')}</strong></div>
+ <div class="sv-quick-section"><span class="sv-eyebrow">🏪 RECOLECTA</span><h3>${esc(o.pickupAddress||o.service)}</h3><div class="muted">${esc(o.service)}</div><div class="sv-quick-details"><span class="sv-eyebrow">DETALLES DEL PEDIDO</span><p>${esc(o.details||'Sin detalles')}</p></div></div>
+ <div class="sv-quick-section"><span class="sv-eyebrow">📍 ENTREGA</span><h3>${esc(o.delivery||'Sin dirección')}</h3></div>
+ <div class="sv-quick-money"><div><span>COBRAR AL CLIENTE</span><strong>${esc(showCharge(o.charge))}</strong></div><div><span>MI GANANCIA</span><strong>${o.amount===null?'Pendiente':money(o.amount)}</strong></div></div>
+ </article><p class="sv-quick-help">${total>1?'‹ Desliza o utiliza las flechas para revisar los pedidos ›':'Revisa los datos antes de confirmar'}</p>`;
+}
 function svRenderQuickImport(){
- const el=$('overlayBody');const open=activeRoutes();
- el.innerHTML=`<div class="panel"><h2>📥 Importar pedido</h2><p class="muted">Recibe el enlace de Kanrmy o selecciona un JSON. Revisa y confirma antes de guardar.</p><label>Archivo JSON<input type="file" accept=".json,application/json" onchange="svQuickReadFile(this)"></label></div>`;
- if(!svQuickDraft){el.innerHTML+='<div class="panel"><p class="muted">Esperando un pedido. Puedes abrir aquí el enlace generado por Kanrmy.</p></div>';return}
- const o=svQuickDraft;
- el.innerHTML+=`<div class="panel"><h3>Pedido recibido</h3><p><b>Cliente:</b> ${esc(o.client||'—')}<br><b>Servicio:</b> ${esc(o.service)}<br><b>Recolecta:</b> ${esc(o.pickupAddress||'—')}<br><b>Detalles:</b> ${esc(o.details||'—')}<br><b>Entrega:</b> ${esc(o.delivery||'—')}<br><b>Cobrar:</b> ${esc(o.charge||'—')}<br><b>Ganancia:</b> ${money(o.amount)}</p><label>Destino<select id="svQuickTarget">${open.filter(r=>r.origin!=='asociados').map(r=>`<option value="${r.id}">${esc(svRouteLabel(r))}</option>`).join('')}<option value="new" ${open.length>=10?'disabled':''}>＋ Crear nueva ruta de SuVaZu Repartidor</option></select></label><button class="full" onclick="svQuickConfirm()">✓ Confirmar pedido</button><button class="secondary full" onclick="svQuickDraft=null;svRenderQuickImport()">Descartar importación</button></div>`;
- if(!open.some(r=>r.origin!=='asociados')&&open.length<10)$('svQuickTarget').value='new';
+ const el=$('overlayBody'),open=activeRoutes(),direct=open.filter(r=>r.origin!=='asociados');
+ if(!svQuickDraft?.length){el.innerHTML=`<div class="panel"><h2>📥 Importar pedido</h2><p class="muted">Abre un enlace de Kanrmy o selecciona un archivo JSON.</p><label>Archivo JSON<input type="file" accept=".json,application/json" onchange="svQuickReadFile(this)"></label></div>`;return}
+ el.innerHTML=`${svQuickFromLink?'':`<div class="panel sv-quick-file"><label>Cambiar archivo JSON<input type="file" accept=".json,application/json" onchange="svQuickReadFile(this)"></label></div>`}
+ <div class="panel sv-quick-panel"><div class="row"><h2>📦 ${svQuickDraft.length===1?'Pedido recibido':'Pedidos recibidos'}</h2><span class="pill">Kanrmy · ${svQuickDraft.length}</span></div><div id="svQuickCard"></div>
+ <label>Destino de ${svQuickDraft.length===1?'este pedido':'los '+svQuickDraft.length+' pedidos'}<select id="svQuickTarget">${direct.map(r=>`<option value="${r.id}">${esc(svRouteLabel(r))}</option>`).join('')}<option value="new" ${open.length>=10?'disabled':''}>＋ Crear nueva ruta de SuVaZu Repartidor</option></select></label>
+ <button class="full sv-quick-confirm" onclick="svQuickConfirm()">✓ Confirmar ${svQuickDraft.length===1?'pedido':'los '+svQuickDraft.length+' pedidos'}</button>
+ <button class="secondary full" onclick="svQuickDiscard()">Descartar importación</button></div>`;
+ if(!direct.length&&open.length<10)$('svQuickTarget').value='new';
+ svQuickRenderCard();
 }
+function svQuickDiscard(){if(!confirm('¿Descartar los pedidos recibidos?'))return;svQuickDraft=null;svQuickIndex=0;svQuickRenderEmpty()}
+function svQuickRenderEmpty(){svRenderQuickImport()}
 function svQuickConfirm(){
- if(!svQuickDraft)return;const o=svQuickDraft;
- if(svIsDuplicate(o))return alert('Posible pedido duplicado. Revisa el historial.');
- const target=$('svQuickTarget').value;
+ if(!svQuickDraft?.length)return;
+ const batch=svQuickDraft;
+ const prior=data.routes.flatMap(r=>r.orders);
+ for(let i=0;i<batch.length;i++){
+  if(svIsDuplicate(batch[i],prior)||svIsDuplicate(batch[i],batch.slice(0,i)))return alert('El pedido '+(i+1)+' parece duplicado. Revisa antes de importar.');
+ }
+ const target=$('svQuickTarget')?.value;
+ if(!target)return alert('Selecciona una ruta.');
  if(target==='new'&&activeRoutes().length>=10)return alert('Ya hay 10 rutas abiertas.');
  let r=target==='new'?null:data.routes.find(x=>String(x.id)===target);
  if(r&&(r.status==='finalizada'||r.origin==='asociados'))return alert('Esta ruta no admite pedidos de Repartidor.');
  if(!running())return alert('Inicia la jornada antes de importar.');
- if(!confirm('¿Registrar el pedido en '+(r?r.name:'una ruta nueva')+'?'))return;
+ if(!confirm('¿Registrar '+batch.length+' pedido(s) en '+(r?svRouteLabel(r):'una nueva ruta de SuVaZu Repartidor')+'?'))return;
  if(!r)r=svCreateRoute();if(!r)return;
- r.orders.push({...o,id:uid(),shop:o.service,pickupMap:'',address:'',serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]});
- svQuickDraft=null;save();toast('Pedido agregado a '+r.name);openView('routes');
+ for(const o of batch)r.orders.push({...o,id:uid(),shop:o.service,pickupMap:'',address:'',serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]});
+ svQuickDraft=null;svQuickIndex=0;save();toast(batch.length+' pedido(s) agregado(s) a '+r.name);openView('routes');
 }
-
 // Libreta opcional: se guarda exclusivamente con autorización tras una entrega.
 let svClientSelected=null,svClientMode='json',svClientJson=null;
 function svClientKey(value){return svVal(value).replace(/[\s()-]/g,'')}
