@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.56</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.58</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -121,8 +121,9 @@
 #resultsDetails[hidden]{display:none!important}\n.sv-swipe{touch-action:pan-y}.sv-slide{min-height:320px}.sv-delivery{max-width:700px;margin:auto}.sv-delivery button.full{margin-top:12px}
 .sv-route-summary{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:18px}.sv-route-summary h2{margin:0}.sv-route-summary p{margin:10px 0 0}.sv-count{white-space:nowrap;border-radius:16px;background:#f9ebc5;padding:10px 12px;font-weight:700;color:#173a30}.sv-order-card{background:white;border-radius:22px;padding:22px 20px;box-shadow:0 8px 26px rgba(17,50,41,.08);margin-bottom:18px}.sv-order-top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}.sv-order-top h2{font-size:clamp(22px,6vw,29px);margin:8px 0 12px;overflow-wrap:anywhere}.sv-order-top .pill{font-size:12px;white-space:normal;text-align:center;max-width:46%;line-height:1.35}.sv-eyebrow{font-size:12px;color:#6b7772;letter-spacing:.06em;font-weight:700}.sv-step-track{display:flex;gap:6px;margin:8px 0 18px}.sv-step-track i{display:block;height:5px;flex:1;border-radius:99px;background:#e3e9e5}.sv-step-track i.on{background:#278264}.sv-stage-title{font-weight:800;font-size:19px;margin-bottom:14px;color:#153d32}.sv-details{border-radius:17px;background:#f1f5f2;padding:3px 17px;margin-bottom:18px}.sv-info{padding:14px 0;border-bottom:1px solid #dbe5de;display:flex;flex-direction:column;gap:5px}.sv-info:last-child{border:0}.sv-info span{color:#63766b;font-size:12px;font-weight:700;letter-spacing:.035em}.sv-info strong{font-size:clamp(17px,4.6vw,21px);line-height:1.35;overflow-wrap:anywhere}.sv-info .sv-money{font-size:30px}.sv-order-card .sv-primary{padding:17px 12px;font-size:18px;border-radius:14px;background:#edb94d;color:#17382e}.sv-swipe-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:17px 0;font-size:12px;color:#74847a}.sv-swipe-foot>span:last-child{display:flex;gap:6px}.sv-dot{display:block;width:8px;height:8px;border:1.5px solid #57766a;border-radius:50%}.sv-dot.on{background:#173d31}.sv-order-card .sv-edit{border-radius:13px;padding:14px;font-size:16px}.sv-swipe{touch-action:pan-y}
 .associates-logo{display:flex;align-items:center;justify-content:center;font-size:53px;background:#e9f2e9;border-radius:18px;flex-shrink:0}.associate-business{display:flex;gap:15px;align-items:center;width:100%;text-align:left;padding:18px;border-radius:18px;background:#fff;border:1px solid #dfe8df;color:#18392f}.associate-business img{width:82px;height:82px;object-fit:contain;flex-shrink:0}.associate-business .associate-name{font-size:22px;font-weight:800;display:block}.associate-business .associate-desc{font-size:14px;color:#617269;display:block;margin-top:5px}.associate-business .associate-arrow{margin-left:auto;font-size:28px;color:#ac8333}.sv-import-switch{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:15px 0}.sv-import-switch button{padding:14px 6px;font-size:16px}.sv-import-switch .sv-selected{background:#eab94f;color:#14382e}.sv-preview-card{border:1px solid #d5e1da;border-radius:15px;padding:13px;margin:10px 0;background:#f8faf8}.sv-preview-card label{display:block;margin-top:8px}.sv-import-warning{color:#9d3627;font-weight:600}.app-brand{display:inline-flex;align-items:center;justify-content:center;font-weight:900;font-size:19px;padding:8px 10px;border-radius:12px;background:white;color:#111}.app-brand-didi{color:#ed5d25}.app-brand-rappi{color:#f25c49}.app-brand-indrive{color:#75a928}#particularCapture[hidden]{display:none!important}.sv-route-item{padding:15px 0;border-bottom:1px solid #e1e9e3}.sv-route-item:last-child{border:0}.sv-route-item .wrap{margin-top:9px}.sv-route-actions{display:grid;gap:10px;margin:16px 0}.sv-route-actions button{font-size:16px;padding:16px}</style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.56</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.58</span></header><div id="toast"></div><main>
 <section class="panel" id="serviceCurrent"><div class="row"><h2>🦁 Servicio actual</h2><span class="pill" id="serviceStatus">Sin servicio</span></div><div id="currentServiceBody"><p class="muted">Sin servicio en curso.</p></div></section>
+<section class="panel"><h2>⚡ Gestión de pedidos</h2><div class="wrap"><button onclick="openView('routes')">🛣️ Rutas</button><button onclick="openView('importQuick')">📥 Importar pedido</button><button onclick="openView('clients')">👥 Clientes</button></div><p class="muted">Las rutas de Repartidor y Asociados comparten un límite de diez.</p></section>
 <section class="module-panel"><button type="button" class="module-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="module-logo" src="./suvazu_logo.png" alt=""><span class="module-copy"><strong>SuVaZu Repartidor</strong><small>Gestiona tus servicios directos, pedidos y entregas.</small></span><span class="module-arrow" aria-hidden="true">›</span></button></section>
 <section class="module-panel"><button type="button" class="module-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="module-logo" src="./asociados_logo.png" alt=""><span class="module-copy"><strong>SuVaZu Asociados</strong><small>Repartos para negocios que atienden sus propios pedidos.</small></span><span class="module-arrow" aria-hidden="true">›</span></button></section>
 <section class="module-panel"><button type="button" class="module-link" onclick="openApps()" aria-label="Abrir Apps"><img class="module-logo" src="./apps_icon.png" alt=""><span class="module-copy"><strong>Apps</strong><small>DiDi · Uber · Rappi · inDrive</small></span><span class="module-arrow" aria-hidden="true">›</span></button></section>
@@ -142,10 +143,23 @@
 'use strict';
 const KEY='suvazu-v01';const $=id=>document.getElementById(id);const now=()=>new Date().toISOString();const money=n=>'$'+Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2});const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const dt=s=>s?new Date(s).toLocaleString('es-MX',{dateStyle:'short',timeStyle:'short'}):'—';const tm=s=>s?new Date(s).toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'}):'—';const dayKey=s=>{let d=new Date(s);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};const duration=ms=>{ms=Math.max(0,ms);let min=Math.floor(ms/60000);return Math.floor(min/60)+' h '+(min%60)+' min'};const uid=()=>Date.now()*1000+Math.floor(Math.random()*999);const showCharge=v=>{let t=String(v??'').trim();if(!t)return 'Pendiente';let n=t.replace(/[$,\s]/g,'');return /^\d+(?:\.\d+)?$/.test(n)?money(Number(n)):t};
 let data;try{data=JSON.parse(localStorage.getItem(KEY))||{routes:[],selected:null}}catch{data={routes:[],selected:null}};
-function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
+function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];if(!Array.isArray(data.clients))data.clients=[];data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
 normalize();const current=()=>data.routes.find(r=>String(r.id)===String(data.selected));const activeRoutes=()=>data.routes.filter(r=>r.status!=='finalizada');const running=()=>data.journeys.find(j=>!j.end);const activeOrder=o=>!o.delivered&&!o.cancelled;const extraSum=(o,type)=>o.extras.reduce((s,e)=>s+(type&&e.type!==type?0:Number(e.amount)||0),0);const gain=o=>o.cancelled?0:o.delivered?Number(o.amount||0)+extraSum(o):0;const routeGain=r=>r.orders.reduce((s,o)=>s+gain(o),0);const routeDate=r=>r.journeyDate||(r.start?dayKey(r.start):null);const orderDate=(r,o)=>r.journeyDate||dayKey(r.start||o.delivered||now());const fmtMonth=s=>new Date(s+'-02T12:00:00').toLocaleDateString('es-MX',{month:'long',year:'numeric'});
 function toast(t){$('toast').textContent=t;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2400)}function save(){localStorage.setItem(KEY,JSON.stringify(data));backupStatus();render();if($('overlay').classList.contains('show'))renderView()}
-function newRoute(){if(!running())return alert('Primero inicia tu jornada.');if(activeRoutes().length>=2)return alert('Máximo 2 rutas abiertas. Finaliza una para crear otra.');let n=1;while(data.routes.some(r=>r.name==='Ruta '+n))n++;let r={id:uid(),name:'Ruta '+n,status:data.routes.some(x=>x.status==='activa')?'pendiente':'activa',start:now(),end:null,journeyDate:running().date,orders:[]};data.routes.push(r);data.selected=r.id;svCaptureMode('json');save();toast('Ruta creada · Tiempo iniciado');requestAnimationFrame(()=>{const panel=$('particularCapture');if(view==='suvazu'&&panel&&!panel.hidden)panel.scrollIntoView({behavior:'smooth',block:'start'})})}
+function svCreateRoute(origin='repartidor',business=''){
+ if(!running()){alert('Primero inicia tu jornada.');return null}
+ if(activeRoutes().length>=10){alert('Máximo 10 rutas abiertas. Finaliza una para crear otra.');return null}
+ let n=1;while(data.routes.some(r=>r.name==='Ruta '+n))n++;
+ let r={id:uid(),name:'Ruta '+n,origin,business:origin==='asociados'?business:'',status:data.routes.some(x=>x.status==='activa')?'pendiente':'activa',start:now(),end:null,journeyDate:running().date,orders:[]};
+ data.routes.push(r);data.selected=r.id;save();return r;
+}
+function newRoute(){const r=svCreateRoute();if(!r)return;svCaptureMode('json');toast('Ruta creada · Tiempo iniciado');requestAnimationFrame(()=>{const panel=$('particularCapture');if((view==='suvazu'||view==='captureRoute')&&panel&&!panel.hidden)panel.scrollIntoView({behavior:'smooth',block:'start'})})}
+function svNewAssociatedRoute(){
+ const business=svVal(prompt('Nombre del local asociado (ej. Mundo Verde):'));if(!business)return;
+ const r=svCreateRoute('asociados',business);if(!r)return;
+ svAddToRoute(r.id);
+}
+function svRouteLabel(r){return r.name+' · '+(r.origin==='asociados'?'SuVaZu Asociados - '+r.business:'SuVaZu Repartidor')+' - '+r.orders.filter(activeOrder).length+' pedido(s)'}
 function discardEmptyRoute(id){let r=data.routes.find(x=>String(x.id)===String(id));if(!r||r.orders.length)return alert('Solo se puede descartar una ruta sin pedidos.');if(!confirm('¿Descartar esta ruta vacía?'))return;data.routes=data.routes.filter(x=>x!==r);if(String(data.selected)===String(id))data.selected=activeRoutes()[0]?.id??null;save();toast('Ruta vacía descartada')}
 function selectRoute(id){data.selected=id;save()}
 function startRoute(){let r=current();if(!r)return alert('Selecciona una ruta');if(!running())return alert('Primero inicia tu jornada');if(r.status==='finalizada')return alert('Ruta finalizada');if(data.routes.some(x=>x.id!==r.id&&x.status==='activa'))return alert('Solo puede haber una ruta activa.');r.start??=now();r.status='activa';r.journeyDate??=running().date;save()}
@@ -210,7 +224,7 @@ async function svPreviewOrders(){
  }catch(e){out.textContent='No se pudo importar: '+e.message}
 }
 function svConfirmOrders(){
- const r=current();
+ const r=current();if(r?.origin==='asociados')return alert('Los asociados se capturan manualmente.');
  if(!r||r.status==='finalizada')return alert('Selecciona una ruta pendiente o activa.');
  if(!running())return alert('Primero inicia tu jornada.');
  let ready=[],errors=[];
@@ -231,13 +245,7 @@ function svConfirmOrders(){
  svDraft=[];$('svOrdersFile').value='';$('svOrdersPreview').textContent='Importación completada: '+ready.length+' pedido(s).';$('svImportConfirm').hidden=true;
  save();toast('Pedidos importados en '+r.name);
 }
-function svDownloadExample(){
- const example={formato:'SuVaZu Repartidor',pedidos:[{folio:'EJEMPLO-001',cliente:'Cliente ejemplo',servicio:'Mary Pollo',direccionRecolecta:'Sucursal Centro',detalles:'Pedido de ejemplo',direccionEntrega:'Calle Ejemplo 123',cobrar:'355',ganancia:50}]};
- const url=URL.createObjectURL(new Blob([JSON.stringify(example,null,2)],{type:'application/json'}));
- const a=document.createElement('a');a.href=url;a.download='suvazu_pedidos_ejemplo.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-}
-
-function addOrder(){let r=current();if(!r||r.status==='finalizada')return alert('Selecciona una ruta pendiente o activa');if(!running())return alert('Primero inicia tu jornada');let service=$('service').value.trim(),amount=$('amount').value;if(!service)return alert('Indica el Servicio.');if(amount!==''&&(!Number.isFinite(Number(amount))||Number(amount)<0))return alert('La ganancia no es válida.');let o={id:uid(),client:$('client').value.trim(),service,shop:service,pickupAddress:$('pickupAddress').value.trim(),pickupMap:''.trim(),details:$('details').value.trim(),delivery:$('delivery').value.trim(),address:''.trim(),charge:$('charge').value.trim(),amount:amount===''?null:Number(amount),serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]};r.orders.push(o);['client','service','pickupAddress','details','delivery','charge','amount'].forEach(id=>$(id).value='');save();toast('Pedido capturado en '+r.name);if(returnApps)openApps()}
+function addOrder(){let r=current();if(r?.origin==='asociados'&&svVal($('service').value).toLowerCase()!==svVal(r.business).toLowerCase())return alert('Esta ruta es exclusiva de '+r.business+'.');if(!r||r.status==='finalizada')return alert('Selecciona una ruta pendiente o activa');if(!running())return alert('Primero inicia tu jornada');let service=$('service').value.trim(),amount=$('amount').value;if(!service)return alert('Indica el Servicio.');if(amount!==''&&(!Number.isFinite(Number(amount))||Number(amount)<0))return alert('La ganancia no es válida.');let o={id:uid(),client:$('client').value.trim(),service,shop:service,pickupAddress:$('pickupAddress').value.trim(),pickupMap:''.trim(),details:$('details').value.trim(),delivery:$('delivery').value.trim(),address:''.trim(),charge:$('charge').value.trim(),amount:amount===''?null:Number(amount),serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]};r.orders.push(o);['client','service','pickupAddress','details','delivery','charge','amount'].forEach(id=>$(id).value='');save();toast('Pedido capturado en '+r.name);if(returnApps)openApps()}
 function startDirectService(id){
  let x=locate(id);if(!x||!activeOrder(x.o))return;
  let j=running();if(!j)return alert('Primero inicia tu jornada.');
@@ -301,7 +309,7 @@ function renderApps(){let h='';if(appScreen==='home'){let active=data.appService
 else{let a=appFind(appId);if(!a){appScreen='home';return renderApps()}let t=appTotals(a);h=`<div class="wrap">${a.end?`<button class="secondary" onclick="openView('history')">← Historial</button>`:''}<button class="secondary" onclick="appScreen='home';renderView()">← Aplicaciones</button></div><div class="app-shortcuts"><button class="secondary" onclick="document.getElementById('appPickups')?.scrollIntoView({behavior:'smooth'})">📦 Recolecciones</button><button class="secondary" onclick="document.getElementById('appEarnings')?.scrollIntoView({behavior:'smooth'})">💵 Ganancias</button></div><div class="panel"><div class="row"><h2>${esc(a.app)} · ${a.end?'Finalizado':'En curso'}</h2><span class="pill">${a.items.filter(o=>o.delivered).length}/${a.items.length} entregados</span></div><p class="muted">Servicio de la jornada ${appDate(a)}</p><div class="metrics"><div class="metric">Propina en efectivo<strong>${money(t.tip)}</strong></div><div class="metric">Ganancia total<strong>${money(appGrand(a))}</strong></div></div></div><div class="panel" id="appPickups"><div class="row"><h2>Recolecciones</h2>${!a.end?'<button onclick="appToggleQuick()">＋ Agregar</button>':''}</div>${!a.end&&appQuickOpen?`<div class="order-card"><h3>Nueva recolección</h3><label>Restaurante / recolección<input id="quickShop" placeholder="Ej. Mary Pollo" autocomplete="off"></label><label>Número de pedido o nombre del cliente<input id="quickRef" placeholder="Ej. #4821 o Juan" autocomplete="off"></label><div class="wrap"><button onclick="appAddItem()">Guardar recolección</button><button class="secondary" onclick="appToggleQuick()">Cancelar</button></div></div>`:''}${a.items.map((o,i)=>`<details class="order-card" ${o.delivered?'':'open'}><summary><strong>${i+1}. ${esc(o.name)}${o.reference?' · '+esc(o.reference):''}</strong> · ${o.delivered?'Entregado':'Pendiente'} · ${money(appTip(o))}</summary><label>Restaurante / recolección<input value="${esc(o.name)}" onchange="appSet(${o.id},'name',this.value)"></label><label>Número de pedido o nombre del cliente<input value="${esc(o.reference||'')}" onchange="appSet(${o.id},'reference',this.value)" placeholder="Ej. #4821 o Juan"></label><div class="metrics"><div><label>Pago indicado por app ($)<input type="number" step="0.01" value="${esc(o.paidApp)}" onchange="appSet(${o.id},'paidApp',this.value)"></label></div><div><label>Pago real ($)<input type="number" step="0.01" value="${esc(o.paidReal)}" onchange="appSet(${o.id},'paidReal',this.value)"></label></div><div><label>Cobro indicado por app ($)<input type="number" step="0.01" value="${esc(o.collectedApp)}" onchange="appSet(${o.id},'collectedApp',this.value)"></label></div><div><label>Cobro real ($)<input type="number" step="0.01" value="${esc(o.collectedReal)}" onchange="appSet(${o.id},'collectedReal',this.value)"></label></div></div><div class="wrap"><button class="secondary" onclick="appSameAmount(${o.id},'paidApp','paidReal')">Pago igual a app</button><button class="secondary" onclick="appSameAmount(${o.id},'collectedApp','collectedReal')">Cobro igual a app</button></div><p><b>Propina física neta: ${money(appTip(o))}</b></p><div class="wrap"><button class="secondary" onclick="appSaveItem()">Guardar importes</button>${!o.delivered?`<button onclick="appSaveItem();appDeliver(${o.id})">✓ Entregado</button>`:''}</div></details>`).join('')||'<p class="muted">Agrega tu primera recolección. Si la app te asigna varias, agrégalas al mismo servicio.</p>'}</div><div class="panel" id="appEarnings"><h2>Ganancias del servicio</h2><div class="metrics"><div><label>Hora de inicio<input id="asStart" type="time" value="${esc(a.startTime||'')}"></label></div><div><label>Hora de fin<input id="asEnd" type="time" value="${esc(a.endTime||'')}"></label></div></div><label>Ganancia de la aplicación ($)<input id="asGain" type="number" step="0.01" value="${esc(a.gain)}"></label><label>Propinas en la app ($)<input id="asTips" type="number" step="0.01" value="${esc(a.appTips)}"></label><label>Extras ($)<input id="asExtras" type="number" step="0.01" value="${esc(a.extras)}"></label><p>Propinas físicas por diferencias: <b>${money(t.tip)}</b></p><p class="kpi">Total: ${money(appGrand(a))}</p><button class="full" onclick="appSaveSummary()">Guardar / modificar ganancias</button><p class="muted">Las diferencias de pagos y cobros se suman como propinas físicas, incluso negativas. El servicio se cierra al entregar su última recolección; puedes editar valores después.</p></div>`}return h}
 
 let view='orders',detailId=null,previousView='suvazu',routeBrowseId=null,slideIndex=0,deliveryId=null;function openView(v,id){if(view!==v)previousView=view;view=v;detailId=id??null;$('overlay').classList.add('show');document.body.style.overflow='hidden';renderView();$('overlay').scrollTop=0}function closeView(){svRestore();parCloseDelivery();$('overlay').classList.remove('show');document.body.style.overflow=''}
-function goBack(){if(deliveryId!==null){deliveryId=null;view='orders';renderView();return}if(view==='suvazu'){closeView();return}if(view==='detail'){openView('orders');return}if(view==='orders'){openView('suvazu');return}if(view==='routes'){openView('suvazu');return}if(view==='parrillon'){parCloseDelivery();openView('asociados');return}if(view==='asociados'){closeView();return}closeView()}
+function goBack(){if(deliveryId!==null){deliveryId=null;view='orders';renderView();return}if(view==='clients'){closeView();return}if(view==='clientOrder'){openView('clients');return}if(view==='captureRoute'){openView('routes');return}if(view==='importQuick'){closeView();return}if(view==='suvazu'){closeView();return}if(view==='detail'){openView('orders');return}if(view==='orders'){openView('routes');return}if(view==='routes'){closeView();return}if(view==='parrillon'){parCloseDelivery();openView('asociados');return}if(view==='asociados'){closeView();return}closeView()}
 
 function browseRoute(id){routeBrowseId=id;slideIndex=0;openView('orders')}
 function renameRoute(id){let r=data.routes.find(x=>String(x.id)===String(id));if(!r)return;let n=prompt('Nombre de la ruta',r.name);if(n===null||!n.trim())return;r.name=n.trim();save()}
@@ -319,15 +327,16 @@ if(!o.collected||!o.deliveryArrived)return alert('Primero registra la llegada a 
 if(!confirm('¿Confirmar la entrega de este pedido?'))return;
 if(tip>0)o.extras.push({id:uid(),type:'Propina',amount:tip,date:now()});
 if(extra>0)o.extras.push({id:uid(),type:'Extra',amount:extra,date:now()});
-deliveryId=null;mark(o.id,'delivered');view='orders';renderView();
+deliveryId=null;mark(o.id,'delivered');view='orders';renderView();svOfferSaveClient(o);
 }
 
-function renderView(){svRestore();$('overlay').classList.toggle('parrillon-view',view==='parrillon');let title={routes:'Pedidos de rutas',orders:'Pedidos de la ruta',delivery:'Confirmar entrega',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',suvazu:'🛵 SuVaZu Repartidor'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='asociados'){
-$('overlayBody').innerHTML=`<div class="panel"><h2>🏪 SuVaZu Asociados</h2><p class="muted">Cada negocio tiene su propia forma de trabajo. Selecciona el local para administrar sus repartos.</p><button type="button" class="associate-business" onclick="openView('parrillon')" aria-label="Abrir El Parrillón"><img src="./parrillon_logo.png" alt=""><span><span class="associate-name">El Parrillón</span><span class="associate-desc">Vueltas, pedidos, cobros y propinas</span></span><span class="associate-arrow" aria-hidden="true">›</span></button></div>`;return
+function renderView(){svRestore();$('overlay').classList.toggle('parrillon-view',view==='parrillon');let title={routes:'Pedidos de rutas',orders:'Pedidos de la ruta',delivery:'Confirmar entrega',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',suvazu:'🛵 SuVaZu Repartidor',clients:'👥 Clientes',clientOrder:'Nuevo pedido · Cliente',importQuick:'📥 Importar pedido',captureRoute:'Capturar pedido'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='captureRoute'){svRenderCaptureRoute();return}if(view==='clients'){svRenderClients();return}if(view==='clientOrder'){svRenderClientOrder();return}if(view==='asociados'){
+$('overlayBody').innerHTML=`<div class="panel"><h2>🏪 SuVaZu Asociados</h2><p class="muted">Cada negocio tiene su propia forma de trabajo. Selecciona el local para administrar sus repartos.</p><button type="button" class="associate-business" onclick="openView('parrillon')" aria-label="Abrir El Parrillón"><img src="./parrillon_logo.png" alt=""><span><span class="associate-name">El Parrillón</span><span class="associate-desc">Vueltas, pedidos, cobros y propinas</span></span><span class="associate-arrow" aria-hidden="true">›</span></button><div class="panel"><h3>Pedidos de locales asociados</h3><p class="muted">Captura manual. Cada ruta corresponde a un solo local, pero puedes tener varias rutas del mismo local.</p><button class="full" onclick="svNewAssociatedRoute()">＋ Crear ruta de asociado</button>${activeRoutes().filter(r=>r.origin==='asociados').map(r=>`<button class="secondary full" onclick="svAddToRoute(${r.id})">${esc(svRouteLabel(r))} · Agregar pedido</button>`).join('')}</div></div>`;return
 }if(view==='apps'){ $('overlayBody').innerHTML=renderApps();return }if(view==='parrillon'){$('overlayBody').innerHTML=renderParrillon();return}if(view==='routes'){
-h=`<h2>🏍️ Pedidos de rutas</h2><p class="muted">Consulta una ruta, desliza entre sus pedidos y modifica los datos que necesites.</p>`+
-data.routes.slice().reverse().map(r=>`<div class="order-card"><div class="row"><strong>${esc(r.name)}</strong><span class="pill">${esc(r.status)}</span></div><p>⏱ Inicio: ${dt(r.start)} · ${r.orders.filter(activeOrder).length} pendientes · ${r.orders.filter(o=>o.delivered).length} entregados</p><div class="wrap"><button class="full" onclick="browseRoute(${r.id})">Ver pedidos</button>${!r.orders.length?`<button class="danger" onclick="discardEmptyRoute(${r.id})">Descartar vacía</button>`:''}</div></div>`).join('')+'<button class="secondary full" onclick="openView(\'suvazu\')">← SuVaZu Repartidor</button>';
-}
+h=`<div class="panel"><div class="row"><h2>🛣️ Rutas abiertas</h2><span class="pill">${activeRoutes().length}/10</span></div><div class="wrap"><button onclick="svCreateAndOpenDirect()" ${activeRoutes().length>=10?'disabled':''}>＋ Repartidor</button><button onclick="svNewAssociatedRoute()" ${activeRoutes().length>=10?'disabled':''}>＋ Asociado</button></div></div>`+
+data.routes.slice().reverse().map(r=>`<div class="order-card"><div class="row"><strong>${esc(r.name)}</strong><span class="pill">${esc(r.status)}</span></div><p>${esc(r.origin==='asociados'?'SuVaZu Asociados - '+r.business:'SuVaZu Repartidor')} · ${r.orders.filter(activeOrder).length} pendientes · ${r.orders.filter(o=>o.delivered).length} entregados</p><p class="muted">⏱ Inicio: ${dt(r.start)}</p><div class="wrap"><button onclick="browseRoute(${r.id})">Ver pedidos</button>${r.status!=='finalizada'?`<button class="secondary" onclick="svAddToRoute(${r.id})">＋ Agregar</button>`:''}${!r.orders.length&&r.status!=='finalizada'?`<button class="danger" onclick="discardEmptyRoute(${r.id})">Descartar vacía</button>`:''}</div></div>`).join('');
+}if(view==='importQuick'){svRenderQuickImport();return}
+
 if(view==='orders'){
 let r=data.routes.find(r=>String(r.id)===String(routeBrowseId))||current(),os=r?r.orders.filter(activeOrder):[];
 slideIndex=Math.max(0,Math.min(slideIndex,Math.max(0,os.length-1)));
@@ -425,9 +434,159 @@ function svRenderFinished(){let d=running()?.date||dayKey(now());let items=[];
  el.innerHTML=`<div class="sv-stats"><div class="sv-stat"><small>Servicios / entregas</small><strong>${items.length}</strong></div><div class="sv-stat"><small>Ingresos registrados</small><strong>${money(total)}</strong></div></div><details class="sv-finished"><summary>Ver servicios terminados (${items.length})</summary>${items.length?items.slice().reverse().map(x=>`<div style="padding:9px 0;border-bottom:1px solid #e5ebe7"><b>${esc(x.type)}</b><p style="margin:5px 0">${esc(x.name)}</p><p class="muted" style="margin:5px 0">Duración: ${x.start&&x.end?duration(new Date(x.end)-new Date(x.start)):'No disponible'} · Ingreso: <b>${money(x.amount)}</b></p></div>`).join(''):'<p class="muted">Aún no hay servicios finalizados hoy.</p>'}</details>`;
 }
 function svRestore(){let store=$('suvazuStore');for(let id of ['particularRoutes','particularCapture']){let el=$(id);if(el&&el.parentElement!==store)store.appendChild(el)}}
-function svOpenModule(){let area=$('overlayBody');area.innerHTML='<div class="panel"><h2>🛵 SuVaZu Repartidor</h2><p class="muted">Administra tus rutas y consulta sus pedidos. Puedes modificar la información cuando lo necesites.</p></div>';
- for(let id of ['particularRoutes','particularCapture']){let el=$(id);area.appendChild(el)}svUpdateCaptureVisibility()
+function svOpenModule(){let area=$('overlayBody');area.innerHTML='<div class="panel"><h2>🛵 SuVaZu Repartidor</h2><p class="muted">Pedidos directos de WhatsApp o llamadas. Importa desde el menú principal.</p><button class="full" onclick="openView(&quot;importQuick&quot;)">📥 Importar pedido</button></div>';}
+
+function svRenderCaptureRoute(){
+ const r=current();let area=$('overlayBody');area.innerHTML='<div class="panel"><h2>'+esc(r?svRouteLabel(r):'Selecciona una ruta')+'</h2><p class="muted">'+(r?.origin==='asociados'?'Captura manual para este local.':'Captura manual o JSON.')+'</p></div>';
+ const el=$('particularCapture');area.appendChild(el);el.hidden=false;
+ if(r?.origin==='asociados'){
+  svCaptureMode('manual');$('service').value=r.business;
+ }else svCaptureMode('json');
 }
+function svCreateAndOpenDirect(){const r=svCreateRoute();if(r)svAddToRoute(r.id)}
+
+let svQuickDraft=null;
+function svDecodeLink(){
+ const h=location.hash;if(!h.startsWith('#pedido='))return;
+ history.replaceState(null,'',location.pathname+location.search);
+ try{const raw=h.slice(8);if(raw.length>12000)throw Error('Enlace demasiado largo');const bytes=Uint8Array.from(atob(raw.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));const parsed=JSON.parse(new TextDecoder().decode(bytes));svQuickDraft=svConvert(parsed);requestAnimationFrame(()=>openView('importQuick'))}
+ catch(e){alert('No se pudo interpretar el enlace: '+e.message)}
+}
+function svQuickReadFile(input){const f=input.files?.[0];if(!f)return;if(f.size>2097152)return alert('Archivo demasiado grande');f.text().then(t=>{const x=JSON.parse(t);if(Array.isArray(x)||Array.isArray(x.pedidos))throw Error('Importa un pedido a la vez en este acceso');svQuickDraft=svConvert(x);svRenderQuickImport()}).catch(e=>alert('JSON inválido: '+e.message))}
+function svRenderQuickImport(){
+ const el=$('overlayBody');const open=activeRoutes();
+ el.innerHTML=`<div class="panel"><h2>📥 Importar pedido</h2><p class="muted">Recibe el enlace de Kanrmy o selecciona un JSON. Revisa y confirma antes de guardar.</p><label>Archivo JSON<input type="file" accept=".json,application/json" onchange="svQuickReadFile(this)"></label></div>`;
+ if(!svQuickDraft){el.innerHTML+='<div class="panel"><p class="muted">Esperando un pedido. Puedes abrir aquí el enlace generado por Kanrmy.</p></div>';return}
+ const o=svQuickDraft;
+ el.innerHTML+=`<div class="panel"><h3>Pedido recibido</h3><p><b>Cliente:</b> ${esc(o.client||'—')}<br><b>Servicio:</b> ${esc(o.service)}<br><b>Recolecta:</b> ${esc(o.pickupAddress||'—')}<br><b>Detalles:</b> ${esc(o.details||'—')}<br><b>Entrega:</b> ${esc(o.delivery||'—')}<br><b>Cobrar:</b> ${esc(o.charge||'—')}<br><b>Ganancia:</b> ${money(o.amount)}</p><label>Destino<select id="svQuickTarget">${open.filter(r=>r.origin!=='asociados').map(r=>`<option value="${r.id}">${esc(svRouteLabel(r))}</option>`).join('')}<option value="new" ${open.length>=10?'disabled':''}>＋ Crear nueva ruta de SuVaZu Repartidor</option></select></label><button class="full" onclick="svQuickConfirm()">✓ Confirmar pedido</button><button class="secondary full" onclick="svQuickDraft=null;svRenderQuickImport()">Descartar importación</button></div>`;
+ if(!open.some(r=>r.origin!=='asociados')&&open.length<10)$('svQuickTarget').value='new';
+}
+function svQuickConfirm(){
+ if(!svQuickDraft)return;const o=svQuickDraft;
+ if(svIsDuplicate(o))return alert('Posible pedido duplicado. Revisa el historial.');
+ const target=$('svQuickTarget').value;
+ if(target==='new'&&activeRoutes().length>=10)return alert('Ya hay 10 rutas abiertas.');
+ let r=target==='new'?null:data.routes.find(x=>String(x.id)===target);
+ if(r&&(r.status==='finalizada'||r.origin==='asociados'))return alert('Esta ruta no admite pedidos de Repartidor.');
+ if(!running())return alert('Inicia la jornada antes de importar.');
+ if(!confirm('¿Registrar el pedido en '+(r?r.name:'una ruta nueva')+'?'))return;
+ if(!r)r=svCreateRoute();if(!r)return;
+ r.orders.push({...o,id:uid(),shop:o.service,pickupMap:'',address:'',serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]});
+ svQuickDraft=null;save();toast('Pedido agregado a '+r.name);openView('routes');
+}
+
+// Libreta opcional: se guarda exclusivamente con autorización tras una entrega.
+let svClientSelected=null,svClientMode='json',svClientJson=null;
+function svClientKey(value){return svVal(value).replace(/[\s()-]/g,'')}
+function svFindClient(phone){return data.clients.find(c=>svClientKey(c.phone)===svClientKey(phone))}
+function svOfferSaveClient(o){
+ const phone=svVal(o.client),address=svVal(o.delivery);
+ if(!phone||!address)return;
+ const found=svFindClient(phone);
+ if(!found){
+  if(confirm('¿Guardar el cliente '+phone+' y su dirección en la libreta?\n'+address)){
+   data.clients.push({id:uid(),phone,addresses:[address]});save();toast('Cliente guardado en libreta');
+  }
+ }else if(!found.addresses.some(a=>a.toLowerCase()===address.toLowerCase())){
+  if(confirm('¿Guardar esta nueva dirección para '+phone+'?\n'+address+'\n\nSe conservarán las anteriores.')){
+   found.addresses.push(address);save();toast('Dirección agregada a la libreta');
+  }
+ }
+}
+function svOpenClients(){openView('clients')}
+function svClientOrders(c){
+ return data.routes.flatMap(r=>r.orders.filter(o=>svClientKey(o.client)===svClientKey(c.phone)&&o.delivered&&!o.cancelled).map(o=>({r,o}))).sort((a,b)=>new Date(b.o.delivered)-new Date(a.o.delivered));
+}
+function svRenderClients(){
+ const el=$('overlayBody');
+ el.innerHTML=`<div class="panel"><h2>👥 Clientes</h2><p class="muted">Solo aparecen clientes que autorizaste guardar. Las ganancias y propinas se calculan a partir de pedidos entregados.</p><label>Buscar por teléfono<input id="svClientSearch" placeholder="Número de cliente" oninput="svFilterClients()"></label><button class="secondary full" onclick="svCreateClient()">＋ Registrar cliente manualmente</button></div><div id="svClientCards"></div>`;
+ svFilterClients();
+}
+function svFilterClients(){
+ const target=$('svClientCards');if(!target)return;
+ const q=svVal($('svClientSearch')?.value).toLowerCase();
+ const list=data.clients.filter(c=>c.phone.toLowerCase().includes(q));
+ target.innerHTML=list.map(c=>{
+  const history=svClientOrders(c),last=history[0]?.o;
+  const earnings=history.reduce((sum,x)=>sum+gain(x.o),0);
+  const tips=history.reduce((sum,x)=>sum+extraSum(x.o,'Propina'),0);
+  return `<div class="panel sv-client-card"><div class="row"><h3>👤 ${esc(c.phone)}</h3><span class="pill">${history.length} entregas</span></div><p><b>Direcciones:</b><br>${c.addresses.map(a=>'📍 '+esc(a)).join('<br>')||'Sin direcciones'}</p><p><b>Último pedido:</b> ${last?dt(last.delivered):'Sin pedidos entregados'}<br><b>Último servicio:</b> ${esc(last?.service||'—')}</p><div class="metrics"><div class="metric"><small>Ganancia acumulada</small><strong>${money(earnings)}</strong></div><div class="metric"><small>Propinas acumuladas</small><strong>${money(tips)}</strong></div></div><div class="wrap"><button class="secondary" onclick="svAddClientAddress(${c.id})">＋ Dirección</button></div></div>`;
+ }).join('')||'<div class="panel"><p class="muted">No hay clientes registrados con ese número.</p></div>';
+}
+function svCreateClient(){
+ const phone=svVal(prompt('Número de teléfono del cliente:'));if(!phone)return;
+ if(svFindClient(phone))return alert('Ese cliente ya está registrado.');
+ const address=svVal(prompt('Dirección de entrega (puedes dejarla vacía):')??'');
+ if(!confirm('¿Guardar a '+phone+' en la libreta?'))return;
+ data.clients.push({id:uid(),phone,addresses:address?[address]:[]});save();svRenderClients();
+}
+function svAddClientAddress(id){
+ const c=data.clients.find(c=>String(c.id)===String(id));if(!c)return;
+ const address=svVal(prompt('Nueva dirección para '+c.phone+':'));if(!address)return;
+ if(c.addresses.some(a=>a.toLowerCase()===address.toLowerCase()))return alert('La dirección ya está guardada.');
+ if(!confirm('¿Guardar esta dirección adicional?'))return;
+ c.addresses.push(address);save();svRenderClients();
+}
+function svNewClientOrder(id){
+ const c=data.clients.find(c=>String(c.id)===String(id));if(!c)return;
+ if(!running())return alert('Inicia tu jornada antes de capturar pedidos.');
+ if(!activeRoutes().length)return alert('Primero crea una ruta.');
+ svClientSelected=id;svClientMode='json';svClientJson=null;openView('clientOrder');
+}
+function svClientModeSwitch(mode){svClientMode=mode;svRenderClientOrder()}
+function svRenderClientOrder(){
+ const c=data.clients.find(c=>String(c.id)===String(svClientSelected));
+ if(!c){openView('clients');return}
+ const routes=activeRoutes(),el=$('overlayBody');
+ if(!routes.length){el.innerHTML='<div class="panel">Primero crea una ruta abierta.</div>';return}
+ el.innerHTML=`<div class="panel"><h2>Nuevo pedido · ${esc(c.phone)}</h2><p class="muted">Los datos del cliente se recuperan de la libreta. Elige ruta y dirección antes de completar el pedido.</p>
+ <label>Ruta de destino<select id="svClientRoute">${routes.map(r=>`<option value="${r.id}" ${String(data.selected)===String(r.id)?'selected':''}>${esc(r.name)} · ${esc(r.status)}</option>`).join('')}</select></label>
+ <label>Dirección de entrega<select id="svClientAddress">${c.addresses.map((a,i)=>`<option value="${i}">${esc(a)}</option>`).join('')}<option value="new">＋ Otra dirección</option></select></label>
+ <div class="sv-import-switch"><button type="button" class="${svClientMode==='json'?'sv-selected':'secondary'}" onclick="svClientModeSwitch('json')">📄 1. JSON</button><button type="button" class="${svClientMode==='manual'?'sv-selected':'secondary'}" onclick="svClientModeSwitch('manual')">✍️ 2. Manual</button></div>
+ ${svClientMode==='json'?`<p class="muted">Archivo JSON con cinco campos: servicio, direccionRecolecta, detalles, cobrar y ganancia.</p><label>Archivo JSON<input type="file" id="svClientFile" accept=".json,application/json" onchange="svReadClientJson()"></label><div id="svClientJsonStatus" class="muted">${svClientJson?'JSON listo para importar.':'Selecciona el archivo JSON del cliente.'}</div>`:''}
+ <div id="svClientFields" ${svClientMode==='json'&&!svClientJson?'hidden':''}>
+ <label>Servicio<input id="svCService" value="${esc(svClientJson?.service||'')}"></label>
+ <label>Dirección de recolecta<input id="svCPickup" value="${esc(svClientJson?.pickupAddress||'')}"></label>
+ <label>Detalles<textarea id="svCDetails" rows="3">${esc(svClientJson?.details||'')}</textarea></label>
+ <label>Cobrar ($)<input id="svCCharge" value="${esc(svClientJson?.charge||'')}"></label>
+ <label>Mi ganancia ($)<input id="svCGain" type="number" min="0" step="0.01" value="${esc(svClientJson?.amount??'')}"></label>
+ <button class="full" onclick="svSaveClientOrder()">＋ Agregar pedido a la ruta</button></div>
+ </div>`;
+}
+async function svReadClientJson(){
+ const file=$('svClientFile')?.files?.[0];if(!file)return;
+ if(file.size>2097152)return alert('El archivo supera 2 MB.');
+ try{
+  const x=JSON.parse(await file.text());
+  if(!x||Array.isArray(x)||typeof x!=='object'||Array.isArray(x.pedidos))throw Error('Utiliza un JSON de un solo pedido con cinco campos.');
+  if('cliente' in x||'entrega' in x||'client' in x||'delivery' in x)throw Error('Este formulario es para JSON reducidos de clientes registrados. No incluyas cliente ni entrega.');
+  const o=svConvert(x);
+  if(!o.service||!o.details)throw Error('Faltan servicio o detalles.');
+  svClientJson=o;
+  // Preserve selected route/address when showing the fields
+  const route=$('svClientRoute').value,address=$('svClientAddress').value;
+  svRenderClientOrder();$('svClientRoute').value=route;$('svClientAddress').value=address;
+  $('svClientJsonStatus').textContent='JSON cargado. Revisa los datos y confirma.';
+ }catch(e){svClientJson=null;$('svClientJsonStatus').textContent='Error: '+e.message}
+}
+function svSaveClientOrder(){
+ const c=data.clients.find(c=>String(c.id)===String(svClientSelected));
+ const r=data.routes.find(r=>String(r.id)===String($('svClientRoute').value));
+ if(!c||!r||r.status==='finalizada')return alert('Selecciona una ruta abierta.');
+ const chosen=$('svClientAddress').value;
+ let address=chosen==='new'?svVal(prompt('Dirección de entrega para este pedido:')):c.addresses[Number(chosen)];
+ if(!address)return alert('Indica una dirección de entrega.');
+ let o;
+ try{
+  o=svConvert({cliente:c.phone,servicio:$('svCService').value,direccionRecolecta:$('svCPickup').value,detalles:$('svCDetails').value,entrega:address,cobrar:$('svCCharge').value,ganancia:$('svCGain').value});
+ }catch(e){return alert(e.message)}
+ if(svIsDuplicate(o))return alert('Este pedido parece estar duplicado. Revisa los datos.');
+ if(!confirm('¿Agregar este pedido a '+r.name+'?'))return;
+ r.orders.push({...o,id:uid(),shop:o.service,pickupMap:'',address:'',serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]});
+ if(chosen==='new'&&!c.addresses.some(a=>a.toLowerCase()===address.toLowerCase())&&confirm('¿Guardar esta nueva dirección para '+c.phone+'?'))c.addresses.push(address);
+ save();svClientJson=null;svClientSelected=null;openView('clients');toast('Pedido agregado a '+r.name);
+}
+
 function svStartCurrentRoute(id){
  const r=data.routes.find(x=>String(x.id)===String(id));
  if(!r||r.status==='finalizada')return alert('Esta ruta ya está finalizada.');
@@ -444,7 +603,7 @@ function svAddToRoute(id){
  if(!r||r.status==='finalizada')return alert('Esta ruta está finalizada.');
  data.selected=r.id;
  svCaptureMode('json');
- openView('suvazu');
+ openView('captureRoute');
  requestAnimationFrame(()=>{const el=$('particularCapture');if(el&&!el.hidden)el.scrollIntoView({behavior:'smooth',block:'start'})});
 }
 function svUpdateCaptureVisibility(){
@@ -458,9 +617,9 @@ function render(){let j=running();svRenderCurrent();svRenderFinished();let jc=$(
 $('routeList').innerHTML=data.routes.slice().reverse().map(r=>{
  const isCurrent=r.status==='activa';
  const pending=r.orders.filter(activeOrder).length;
- return `<div class="sv-route-item"><div class="row"><strong>${esc(r.name)}</strong><span class="pill">${isCurrent?'Actual · ':''}${esc(r.status)}</span></div><p class="muted">${pending} pendiente${pending===1?'':'s'} · ${r.orders.length} capturado${r.orders.length===1?'':'s'}</p><div class="wrap">${isCurrent?`<button class="full" onclick="svStartCurrentRoute(${r.id})">▶ Iniciar</button>`:`<button class="secondary full" onclick="browseRoute(${r.id})">👁 Visualizar</button>`}${r.status==='pendiente'?`<button class="secondary full" onclick="svAddToRoute(${r.id})">＋ Agregar pedidos</button>`:''}${!r.orders.length&&r.status!=='finalizada'?`<button class="secondary" onclick="discardEmptyRoute(${r.id})">Descartar vacía</button>`:''}</div></div>`;
+ return `<div class="sv-route-item"><div class="row"><strong>${esc(r.name)} · ${esc(r.origin==='asociados'?'SuVaZu Asociados - '+r.business:'SuVaZu Repartidor')}</strong><span class="pill">${isCurrent?'Actual · ':''}${esc(r.status)}</span></div><p class="muted">${pending} pendiente${pending===1?'':'s'} · ${r.orders.length} capturado${r.orders.length===1?'':'s'}</p><div class="wrap">${isCurrent?`<button class="full" onclick="svStartCurrentRoute(${r.id})">▶ Iniciar</button>`:`<button class="secondary full" onclick="browseRoute(${r.id})">👁 Visualizar</button>`}${r.status==='pendiente'?`<button class="secondary full" onclick="svAddToRoute(${r.id})">＋ Agregar pedidos</button>`:''}${!r.orders.length&&r.status!=='finalizada'?`<button class="secondary" onclick="discardEmptyRoute(${r.id})">Descartar vacía</button>`:''}</div></div>`;
  }).join('')||'<p class="muted">Sin rutas registradas. Inicia jornada y crea una ruta.</p>';
-let r=current();svUpdateCaptureVisibility();$('svNewRouteButton').disabled=activeRoutes().length>=2;$('svNewRouteButton').title=activeRoutes().length>=2?'Máximo dos rutas abiertas':'';$('routeInfo').textContent=r?'Seleccionada: '+r.name+' · Inicio: '+dt(r.start)+' · Fin: '+dt(r.end):'Sin ruta seleccionada';
+let r=current();svUpdateCaptureVisibility();$('svNewRouteButton').disabled=activeRoutes().length>=10;$('svNewRouteButton').title=activeRoutes().length>=10?'Máximo diez rutas abiertas':'';$('routeInfo').textContent=r?'Seleccionada: '+r.name+' · Inicio: '+dt(r.start)+' · Fin: '+dt(r.end):'Sin ruta seleccionada';
 let d=j?.date||data.journeys.at(-1)?.date||dayKey(now());
 let orders=data.routes.flatMap(r=>r.orders.filter(o=>o.delivered&&orderDate(r,o)===d));
 let directBase=orders.reduce((v,o)=>v+num(o.amount),0);
@@ -762,11 +921,11 @@ function backupValid(obj){
 }
 function backupStatus(){
  let el=$('backupStatus');if(!el)return;
- let n=backupCounts(data);el.textContent=`En este navegador: ${n.routes} rutas · ${n.particular} pedidos particulares · ${n.apps} servicios de Apps (${n.appOrders} pedidos) · ${n.journeys} jornadas · ${n.parrillon} servicios de El Parrillón.`;
+ let n=backupCounts(data);el.textContent=`En este navegador: ${n.routes} rutas · ${n.particular} pedidos particulares · ${n.apps} servicios de Apps (${n.appOrders} pedidos) · ${n.journeys} jornadas · ${n.parrillon} servicios de El Parrillón · ${data.clients.length} clientes guardados.`;
 }
 function exportData(){
  try{
- let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'0.23',createdAt:now()};
+ let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'0.58',createdAt:now()};
  let blob=new Blob([JSON.stringify(snapshot,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='respaldo-suvazu-'+dayKey(now())+'-'+new Date().toTimeString().slice(0,5).replace(':','-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);toast('Respaldo preparado. Comprueba que se descargó.');
  }catch(e){alert('No se pudo preparar el respaldo: '+e.message)}
@@ -799,4 +958,6 @@ function importData(){
  }
 }
 render();backupStatus();setInterval(svTick,1000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});
+
+svDecodeLink();
 </script></body></html>
