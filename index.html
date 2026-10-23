@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.45</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.46</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -119,7 +119,7 @@
 .module-arrow{width:43px;height:43px;border-radius:50%;background:#e9b74f;display:grid;place-items:center;flex:0 0 43px;font-size:37px;font-weight:800;line-height:1;color:#17382e;padding-bottom:5px}
 @media(max-width:370px){.module-link{gap:9px;padding:12px 10px}.module-logo{width:84px;flex-basis:84px;height:73px}.module-arrow{width:37px;height:37px;flex-basis:37px;font-size:32px}}
 #resultsDetails[hidden]{display:none!important}\n</style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.45</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.46</span></header><div id="toast"></div><main>
 <section class="panel" id="serviceCurrent"><div class="row"><h2>🦁 Servicio actual</h2><span class="pill" id="serviceStatus">Sin servicio</span></div><div id="currentServiceBody"><p class="muted">Sin servicio en curso.</p></div></section>
 <section class="module-panel"><button type="button" class="module-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="module-logo" src="./suvazu_logo.png" alt=""><span class="module-copy"><strong>SuVaZu Repartidor</strong><small>Gestiona tus servicios directos, pedidos y entregas.</small></span><span class="module-arrow" aria-hidden="true">›</span></button></section>
 <section class="module-panel"><button type="button" class="module-link" onclick="openApps()" aria-label="Abrir Pedidos de Apps"><img class="module-logo" src="./apps_icon.png" alt=""><span class="module-copy"><strong>Pedidos de Apps</strong><small>DiDi · Uber · Rappi · inDrive</small></span><span class="module-arrow" aria-hidden="true">›</span></button></section>
@@ -293,22 +293,63 @@ function svOpenModule(){let area=$('overlayBody');area.innerHTML='<div class="pa
 function toggleDailyResults(){let details=$('resultsDetails'),btn=$('resultsToggle'),hint=$('resultsHint');let show=details.hidden;details.hidden=!show;btn.textContent=show?'Ocultar ▴':'Consultar ▾';btn.setAttribute('aria-expanded',String(show));hint.hidden=show;}
 function render(){let j=running();svRenderCurrent();svRenderFinished();let jc=$('journeyControls');if(!j)jc.innerHTML=`<button class="full" onclick="startJourney()">▶ Iniciar jornada</button><p class="muted">Una jornada finalizada no puede reabrirse. La fecha es la del inicio, aunque termine de madrugada.</p>`;else{let paused=j.pauses.length&&!j.pauses.at(-1).end;jc.innerHTML=`<p><b>Jornada del ${j.date}</b> · ${paused?'En pausa':'Trabajando'}</p><p class="muted">Inicio: ${dt(j.start)} · Tiempo efectivo: ${duration(workMs(j))}</p><div class="wrap"><button class="secondary" onclick="${paused?'resumeJourney':'pauseJourney'}()">${paused?'▶ Reanudar':'Ⅱ Pausar'}</button><button class="danger" onclick="finishJourney()">■ Finalizar jornada</button></div>`}
 $('routeList').innerHTML=data.routes.filter(r=>r.status!=='finalizada').map(r=>`<div class="row" style="padding:8px 0;border-bottom:1px solid #e4ebe5"><label style="flex:1"><input type="radio" name="route" style="display:inline;width:auto;margin:0" ${String(data.selected)===String(r.id)?'checked':''} onchange="selectRoute(${r.id})"> ${esc(r.name)} <span class="pill">${esc(r.status)}</span></label><span>${r.orders.filter(activeOrder).length} activos</span></div>`).join('')||'<p class="muted">Sin rutas abiertas. Inicia jornada y crea una ruta.</p>';
-let r=current();$('routeInfo').textContent=r?'Seleccionada: '+r.name+' · Inicio: '+dt(r.start)+' · Fin: '+dt(r.end):'Sin ruta seleccionada';let d=j?.date||data.journeys.at(-1)?.date||dayKey(now());let orders=data.routes.flatMap(r=>r.orders.filter(o=>o.delivered&&orderDate(r,o)===d));let directDay=orders.reduce((s,o)=>s+gain(o),0);let finishedApps=data.appServices.filter(a=>a.end&&appDate(a)===d);let appsDay=finishedApps.reduce((s,a)=>s+appGrand(a),0);let parrDay=data.parrillon.filter(x=>x.end&&x.date===d).reduce((v,x)=>v+parTotal(x),0);let day=directDay+appsDay+parrDay;let appMinutes=finishedApps.reduce((sum,a)=>{let start=/^(\d{1,2}):(\d{2})$/.exec(a.startTime||'');let end=/^(\d{1,2}):(\d{2})$/.exec(a.endTime||'');if(!start||!end)return sum;let from=Number(start[1])*60+Number(start[2]),to=Number(end[1])*60+Number(end[2]);return sum+((to-from+1440)%1440)},0);let appOrders=finishedApps.reduce((n,a)=>n+a.items.length,0);$('dashboard').innerHTML=`
+let r=current();$('routeInfo').textContent=r?'Seleccionada: '+r.name+' · Inicio: '+dt(r.start)+' · Fin: '+dt(r.end):'Sin ruta seleccionada';
+let d=j?.date||data.journeys.at(-1)?.date||dayKey(now());
+let orders=data.routes.flatMap(r=>r.orders.filter(o=>o.delivered&&orderDate(r,o)===d));
+let directBase=orders.reduce((v,o)=>v+num(o.amount),0);
+let directTips=orders.reduce((v,o)=>v+extraSum(o,'Propina'),0);
+let directExtras=orders.reduce((v,o)=>v+extraSum(o)-extraSum(o,'Propina'),0);
+let directDay=directBase+directTips+directExtras;
+let finishedApps=data.appServices.filter(a=>a.end&&appDate(a)===d);
+let appsBase=finishedApps.reduce((v,a)=>v+num(a.gain)+num(a.appTips)+num(a.extras),0);
+let appsTips=finishedApps.reduce((v,a)=>v+a.items.reduce((n,o)=>n+appTip(o),0),0);
+let appsDay=appsBase+appsTips;
+let pars=data.parrillon.filter(x=>x.end&&x.date===d);
+let parrBase=pars.reduce((v,x)=>v+num(x.gain),0);
+let parrTips=pars.reduce((v,x)=>v+parTips(x),0);
+let day=directDay+appsDay+parrBase+parrTips;
+const validMs=x=>{let t=new Date(x).getTime();return Number.isFinite(t)?t:null};
+const serviceIntervals=[];
+let directMs=0,appMs=0,parMs=0;
+for(let o of orders){let a=validMs(o.captured),b=validMs(o.delivered);if(a!==null&&b!==null&&b>a){directMs+=b-a;serviceIntervals.push([a,b])}}
+function appBounds(a){let base=a.created?new Date(a.created):new Date(d+'T12:00:00');let dayStr=appDate(a);let parse=t=>{let m=/^(\d{1,2}):(\d{2})$/.exec(t||'');if(!m)return null;let z=new Date(dayStr+'T00:00:00');z.setHours(+m[1],+m[2],0,0);return z.getTime()};let x=parse(a.startTime),y=parse(a.endTime);if(x===null)x=validMs(a.created);if(y===null)y=validMs(a.end);if(x!==null&&y!==null&&y<x)y+=86400000;return [x,y]}
+for(let a of finishedApps){let [x,y]=appBounds(a);if(x!==null&&y!==null&&y>x){appMs+=y-x;serviceIntervals.push([x,y])}}
+for(let p of pars){let x=validMs(p.start),y=validMs(p.end);if(x!==null&&y!==null&&y>x){parMs+=y-x;serviceIntervals.push([x,y])}}
+const workIntervals=[];
+for(let q of data.journeys.filter(q=>q.date===d)){let a=validMs(q.start),b=validMs(q.end||now());if(a===null||b===null||b<=a)continue;let pieces=[[a,b]];for(let pause of q.pauses||[]){let x=validMs(pause.start),y=validMs(pause.end||now());if(x===null||y===null)continue;pieces=pieces.flatMap(([u,v])=>x>=v||y<=u?[[u,v]]:[[u,Math.min(v,x)],[Math.max(u,y),v]].filter(([m,n])=>n>m))}workIntervals.push(...pieces)}
+let workTotal=workIntervals.reduce((v,[a,b])=>v+b-a,0);
+let covered=[];
+for(let [a,b] of serviceIntervals)for(let [u,v] of workIntervals){let x=Math.max(a,u),y=Math.min(b,v);if(y>x)covered.push([x,y])}
+covered.sort((a,b)=>a[0]-b[0]);let serviceMs=0,lastA=null,lastB=null;
+for(let [a,b] of covered){if(lastA===null){lastA=a;lastB=b}else if(a<=lastB){lastB=Math.max(lastB,b)}else{serviceMs+=lastB-lastA;lastA=a;lastB=b}}
+if(lastA!==null)serviceMs+=lastB-lastA;
+let idleMs=Math.max(0,workTotal-serviceMs);
+let appOrders=finishedApps.reduce((n,a)=>n+a.items.length,0);
+const metric=(label,value)=>`<div class="metric"><span class="muted">${label}</span><strong>${value}</strong></div>`;
+const heading=label=>`<div style="grid-column:1/-1;border-top:2px solid #d6e3d9;margin-top:8px;padding-top:14px"><h3 style="margin:0 0 8px">${label}</h3></div>`;
+$('dashboard').innerHTML=`
 <div style="grid-column:1/-1;padding:4px 0 0"><h3 style="margin:0 0 8px">Resumen general</h3></div>
-<div class="metric"><span class="muted">Ganancia total · ${d}</span><strong>${money(day)}</strong></div>
-<div class="metric"><span class="muted">Horas efectivas de jornada</span><strong>${j?duration(workMs(j)):'—'}</strong></div>
-<div class="metric" style="grid-column:1/-1"><span class="muted">Ganancia total por hora de jornada</span><strong>${j&&workMs(j)>0?money(day/(workMs(j)/3600000)):'—'}</strong></div>
-<div style="grid-column:1/-1;border-top:2px solid #d6e3d9;margin-top:8px;padding-top:14px"><h3 style="margin:0 0 8px">🦁 SuVaZu Repartidor</h3></div>
-<div class="metric"><span class="muted">Ganancias particulares</span><strong>${money(directDay)}</strong></div>
-<div class="metric"><span class="muted">Pedidos entregados</span><strong>${orders.length}</strong></div>
-<div style="grid-column:1/-1;border-top:2px solid #d6e3d9;margin-top:8px;padding-top:14px"><h3 style="margin:0 0 8px">🍗 El Parrillón</h3></div>
-<div class="metric"><span class="muted">Repartos + propinas</span><strong>${money(parrDay)}</strong></div>
-<div class="metric"><span class="muted">Pedidos entregados</span><strong>${data.parrillon.filter(x=>x.end&&x.date===d).reduce((v,x)=>v+x.tickets.filter(t=>t.delivered).length,0)}</strong></div>
-<div style="grid-column:1/-1;border-top:2px solid #d6e3d9;margin-top:8px;padding-top:14px"><h3 style="margin:0 0 8px">📱 Apps</h3></div>
-<div class="metric"><span class="muted">Ganancias de Apps</span><strong>${money(appsDay)}</strong></div>
-<div class="metric"><span class="muted">Pedidos de Apps</span><strong>${appOrders}</strong></div>
-<div class="metric"><span class="muted">Horas de Apps</span><strong>${duration(appMinutes*60000)}</strong></div>
-`;}
+${metric('Ganancia total · '+d,money(day))}
+${metric('Tiempo en servicio',duration(serviceMs))}
+${metric('Tiempo sin servicio',duration(idleMs))}
+${metric('Tiempo de jornada',workIntervals.length?duration(workTotal):'—')}
+${heading('🦁 SuVaZu Repartidor')}
+${metric('Ganancias',money(directBase))}
+${metric('Propinas',money(directTips))}
+${metric('Extras',money(directExtras))}
+${metric('Pedidos entregados',orders.length)}
+${metric('Tiempo de servicio',duration(directMs))}
+${heading('📱 Pedidos de Apps')}
+${metric('Ganancias',money(appsBase))}
+${metric('Propinas en efectivo',money(appsTips))}
+${metric('Pedidos de Apps',appOrders)}
+${metric('Tiempo de servicio',duration(appMs))}
+${heading('🍗 El Parrillón')}
+${metric('Ganancias',money(parrBase))}
+${metric('Propinas',money(parrTips))}
+${metric('Pedidos entregados',pars.reduce((v,x)=>v+x.tickets.filter(t=>t.delivered).length,0))}
+${metric('Tiempo de servicio',duration(parMs))}
+`; }
 
 
 // El Parrillón: jornada independiente, no modifica el cierre de la jornada general.
