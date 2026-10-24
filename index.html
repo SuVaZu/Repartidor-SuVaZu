@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.67</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.68</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -140,7 +140,7 @@ button.sv-wa-button{background:#e3f5e9;color:#11633d;border:1px solid #b9e5ca;bo
 .sv-app-active{position:absolute;top:6px;right:6px;padding:4px 8px;background:#f7fff3;color:#14523b;border-radius:20px;font-size:12px;font-weight:800;box-shadow:0 1px 4px #0004}
 @media(max-width:390px){.sv-app-grid{gap:9px}.sv-app-grid .sv-app-tile{border-radius:14px}}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.67</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.68</span></header><div id="toast"></div><main>
 <section class="panel" id="serviceCurrent"><div class="row"><h2>🦁 Ruta actual</h2><span class="pill" id="serviceStatus">Sin servicio</span></div><div id="currentServiceBody"><p class="muted">Sin servicio en curso.</p></div></section>
 <section class="panel"><div class="row"><h2>🛣️ Gestión de rutas</h2><span class="pill" id="homeRoutesCount">0/10</span></div><div id="homeOpenRoutes"></div></section>
 <section class="module-panel"><button type="button" class="module-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="module-logo" src="./suvazu_logo.png" alt=""><span class="module-copy"><strong>SuVaZu Repartidor</strong><small>Gestiona tus servicios directos, pedidos y entregas.</small></span><span class="module-arrow" aria-hidden="true">›</span></button></section>
@@ -305,11 +305,11 @@ function status(o){return o.cancelled?'Cancelado':o.delivered?'Entregado':o.coll
 
 // Rutas de Apps: registro de pagos durante el recorrido y cobros al cierre.
 let appScreen='home',appId=null,returnApps=false;
-let appCloseStep=1;
+let appCloseStep=1,appCloseIndex=0,appCloseDraft=null,appCloseDraftId=null;
 const appNames=['DiDi','Uber','Rappi','inDrive'];
 const num=v=>Number(v)||0;
 const appTip=o=>(num(o.collectedReal)-num(o.collectedApp))+(num(o.paidApp)-num(o.paidReal));
-const appTotals=a=>({tip:a.items.reduce((s,o)=>s+appTip(o),0)+(num(a.collectedReal)-num(a.collectedApp)),gain:num(a.gain),inApp:num(a.appTips),extras:num(a.extras)});
+const appTotals=a=>({tip:a.items.reduce((s,o)=>s+(num(o.paidApp)-num(o.paidReal)),0)+(Array.isArray(a.closingOrders)?a.closingOrders.reduce((s,o)=>s+num(o.collectedReal)-num(o.collectedApp),0):a.items.reduce((s,o)=>s+num(o.collectedReal)-num(o.collectedApp),0)+num(a.collectedReal)-num(a.collectedApp)),gain:num(a.gain),inApp:num(a.appTips),extras:num(a.extras)});
 const appGrand=a=>{let t=appTotals(a);return t.tip+t.gain+t.inApp+t.extras};
 const appDate=a=>a.journeyDate||dayKey(a.created);
 const appFind=id=>data.appServices.find(a=>String(a.id)===String(id));
@@ -323,7 +323,7 @@ function chooseApp(name){
  if(!a){if(activeRoutes().length+data.appServices.filter(x=>!x.end).length>=10)return alert('Ya tienes 10 rutas abiertas. Finaliza una antes de crear otra.');let next=data.appServices.filter(x=>x.app===name).reduce((m,x)=>Math.max(m,appRouteNumber(x)),0)+1;if(!confirm('¿Iniciar '+name+' · Ruta '+next+'?'))return;a={id:uid(),app:name,routeNumber:next,created:now(),journeyDate:running().date,startTime:appTime(),endTime:'',gain:null,appTips:null,extras:0,items:[],end:null,closeComplete:false,collectedApp:null,collectedReal:null};data.appServices.push(a);save()}
  appId=a.id;appScreen='service';openView('apps');
 }
-function appEditClosed(id){let a=appFind(id);if(!a)return;appId=a.id;appCloseStep=1;appScreen='service';openView('apps')}
+function appEditClosed(id){let a=appFind(id);if(!a)return;appId=a.id;appCloseStep=1;appCloseIndex=0;appCloseDraft=null;appCloseDraftId=null;appScreen='service';openView('apps')}
 function appAddItem(){let a=appFind(appId);if(!a||a.end)return;let ref=$('appOrderNumber').value.trim(),pa=$('appPaidApp').value.trim(),pr=$('appPaidReal').value.trim();
  if(!ref)return alert('Indica el número de pedido.');if(a.items.some(x=>String(x.reference).toLowerCase()===ref.toLowerCase()))return alert('Pedido duplicado en esta ruta.');
  if(![pa,pr].every(v=>v!==''&&Number.isFinite(Number(v))&&Number(v)>=0))return alert('Revisa los importes de Pagué en la app y Pagué real.');
@@ -331,14 +331,49 @@ function appAddItem(){let a=appFind(appId);if(!a||a.end)return;let ref=$('appOrd
  a.items.push({id:uid(),name:'Pedido #'+ref,reference:ref,paidApp:Number(pa),paidReal:Number(pr),collectedApp:'',collectedReal:'',delivered:now()});save();toast('Pedido registrado');renderView();
 }
 function appFinishRoute(){let a=appFind(appId);if(!a||a.end)return;if(!confirm('¿Finalizar ruta de '+a.app+'? Los resultados podrás completarlos después.'))return;a.end=now();a.endTime=appTime();a.closeComplete=false;save();appScreen='home';renderView();toast('Ruta finalizada')}
-function appCloseNext(){let a=appFind(appId);if(!a||!a.end)return;let raw=$('appCloseOrders')?.value?.trim();if(!/^\d+$/.test(raw||''))return alert('Indica una cantidad válida de pedidos.');a.reportedOrders=Number(raw);appCloseStep=2;renderView()}
-function appSaveClosing(){let a=appFind(appId);if(!a||!a.end)return;let specs=[['Ganancia general','appCloseGain'],['Propinas en la app','appCloseTips'],['Cobré en la app','appCloseCollectedApp'],['Cobré real','appCloseCollectedReal']];let v={};
- for(let [label,id] of specs){let raw=$(id)?.value?.trim();if(raw==='')raw='0';if(!Number.isFinite(Number(raw))||Number(raw)<0)return alert('Revisa '+label+'.');v[id]=Number(raw)}
- let count=Number(a.reportedOrders);if(!Number.isInteger(count)||count<0)return alert('Indica primero los pedidos realizados.');
- let tip=a.items.reduce((sum,o)=>sum+appTip(o),0)+v.appCloseCollectedReal-v.appCloseCollectedApp;
- let message=appRouteLabel(a)+'\n\nPedidos realizados: '+count+'\nGanancia general: '+money(v.appCloseGain)+'\nPropinas en la app: '+money(v.appCloseTips)+'\nCobré en la app: '+money(v.appCloseCollectedApp)+'\nCobré real: '+money(v.appCloseCollectedReal)+'\nPropinas en efectivo (diferencias): '+money(tip)+'\n\n¿Confirmar todos los resultados?';
+function appCloseNext(){
+ let a=appFind(appId);if(!a||!a.end)return;
+ let raw=$('appCloseOrders')?.value?.trim();if(!/^\d+$/.test(raw||''))return alert('Indica una cantidad válida de pedidos.');
+ let count=Number(raw);if(count>200)return alert('Máximo 200 pedidos por ruta.');
+ if(appCloseDraftId!==a.id||!appCloseDraft){appCloseDraft=(a.closingOrders||[]).map(x=>({...x}));appCloseDraftId=a.id}
+ appCloseDraft=Array.from({length:count},(_,i)=>appCloseDraft[i]||{collectedApp:'',collectedReal:''});
+ a.reportedOrders=count;appCloseIndex=0;appCloseStep=2;renderView();
+}
+function appCloseRemember(){
+ if(appCloseStep!==2||!appCloseDraft||!appCloseDraft.length)return;
+ let o=appCloseDraft[appCloseIndex];if(!o)return;
+ o.collectedApp=$('appCloseCollectedApp')?.value??o.collectedApp;
+ o.collectedReal=$('appCloseCollectedReal')?.value??o.collectedReal;
+}
+function appCloseMove(delta){appCloseRemember();appCloseIndex=Math.max(0,Math.min(appCloseDraft.length-1,appCloseIndex+delta));renderView()}
+function appCloseSwipeStart(e){window.svAppTouchX=e.touches[0]?.clientX??0}
+function appCloseSwipeEnd(e){let delta=(e.changedTouches[0]?.clientX??0)-(window.svAppTouchX??0);if(Math.abs(delta)>65)appCloseMove(delta<0?1:-1)}
+function appCloseToGeneral(){
+ appCloseRemember();let orders=appCloseDraft||[];
+ for(let i=0;i<orders.length;i++)for(let [key,label] of [['collectedApp','En la app'],['collectedReal','Real']]){
+  let v=String(orders[i][key]??'').trim();if(v!==''&&(!Number.isFinite(Number(v))||Number(v)<0))return alert('Revisa Cobré '+label+' del pedido '+(i+1));
+ }
+ appCloseStep=3;renderView();
+}
+function appSaveClosing(){
+ let a=appFind(appId);if(!a||!a.end||appCloseStep!==3)return;
+ let gain=$('appCloseGain')?.value?.trim(),tips=$('appCloseTips')?.value?.trim();
+ if(!gain||!Number.isFinite(Number(gain))||Number(gain)<0)return alert('Revisa la ganancia general.');
+ if(!tips||!Number.isFinite(Number(tips))||Number(tips)<0)return alert('Revisa las propinas en la app. Puedes poner 0.');
+ let orders=(appCloseDraft||[]).map(o=>({collectedApp:Number(o.collectedApp||0),collectedReal:Number(o.collectedReal||0)}));
+ let tip=a.items.reduce((sum,o)=>sum+num(o.paidApp)-num(o.paidReal),0)+orders.reduce((sum,o)=>sum+o.collectedReal-o.collectedApp,0);
+ let message=appRouteLabel(a)+'\n\nPedidos realizados: '+orders.length+'\nGanancia general: '+money(Number(gain))+'\nPropinas en la app: '+money(Number(tips))+'\nCobré en la app: '+money(orders.reduce((s,o)=>s+o.collectedApp,0))+'\nCobré real: '+money(orders.reduce((s,o)=>s+o.collectedReal,0))+'\nPropinas en efectivo (diferencias): '+money(tip)+'\n\n¿Confirmar ruta completa?';
  if(!confirm(message))return;
- a.gain=v.appCloseGain;a.appTips=v.appCloseTips;a.collectedApp=v.appCloseCollectedApp;a.collectedReal=v.appCloseCollectedReal;a.closeComplete=true;save();appScreen='home';appCloseStep=1;renderView();toast('Resultados guardados');
+ a.closingOrders=orders;a.reportedOrders=orders.length;a.gain=Number(gain);a.appTips=Number(tips);a.collectedApp=0;a.collectedReal=0;a.closeComplete=true;
+ save();appScreen='home';appCloseStep=1;appCloseDraft=null;appCloseDraftId=null;renderView();toast('Ruta confirmada');
+}
+function appCloseBody(a){
+ if(appCloseStep===1)return `<p class="muted">Primero indica cuántos pedidos realizaste en esta ruta.</p><label>¿Cuántos pedidos realizaste?<input id="appCloseOrders" type="number" min="0" max="200" step="1" inputmode="numeric" value="${esc(a.reportedOrders??a.items.length)}"></label><button class="full" onclick="appCloseNext()">Continuar →</button>`;
+ if(appCloseStep===2){let n=appCloseDraft.length;if(!n)return `<p>Esta ruta no tiene pedidos para registrar cobros.</p><button class="full" onclick="appCloseToGeneral()">Continuar a datos generales →</button>`;
+ let o=appCloseDraft[appCloseIndex]||{};
+ return `<p class="muted">Pedidos realizados: <b>${n}</b></p><button class="secondary" onclick="appCloseStep=1;renderView()">← Cambiar cantidad</button><div style="display:flex;gap:5px;margin:16px 0">${appCloseDraft.map((x,i)=>`<span style="height:5px;flex:1;border-radius:6px;background:${i===appCloseIndex?'#e7b54d':((x.collectedApp!==''||x.collectedReal!=='')?'#7eaa8c':'#e4e9e5')}"></span>`).join('')}</div><div ontouchstart="appCloseSwipeStart(event)" ontouchend="appCloseSwipeEnd(event)" style="touch-action:pan-y"><h3>Pedido ${appCloseIndex+1} de ${n}</h3><p class="muted">Desliza horizontalmente para cambiar de pedido.</p><label>Cobré · En la app ($)<input id="appCloseCollectedApp" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.collectedApp??'')}" placeholder="0.00"></label><label>Cobré · Real ($)<input id="appCloseCollectedReal" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.collectedReal??'')}" placeholder="0.00"></label></div><div class="row" style="gap:8px;margin:12px 0"><button class="secondary" ${appCloseIndex===0?'disabled':''} onclick="appCloseMove(-1)">← Anterior</button><button class="secondary" ${appCloseIndex===n-1?'disabled':''} onclick="appCloseMove(1)">Siguiente →</button></div><p class="muted">Deja vacío un cobro que no corresponda; contará como $0.00.</p><button class="full" onclick="appCloseToGeneral()">Continuar a datos generales →</button>`;
+ }
+ return `<p class="muted">Pedidos realizados: <b>${a.reportedOrders}</b> · Cobros por pedido capturados.</p><button class="secondary" onclick="appCloseStep=2;renderView()">← Revisar pedidos</button><label>Ganancia general ($)<input id="appCloseGain" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.gain??'')}"></label><label>Propinas en la app ($)<input id="appCloseTips" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.appTips??'')}"></label><button class="full" onclick="appSaveClosing()">✓ Confirmar ruta</button>`;
 }
 function appRouteTime(a){let n=(a.end?new Date(a.end).getTime():Date.now())-new Date(a.created).getTime();return svDuration(Number.isFinite(n)?n:0)}
 function renderApps(){
@@ -347,7 +382,8 @@ function renderApps(){
  return `<button class="secondary" onclick="appScreen='home';renderView()">← Aplicaciones</button><div class="panel"><h2>${esc(appRouteLabel(a))} · ${closed?'Finalizada':'Activa'}</h2><p>Inicio: <b>${esc(a.startTime||dt(a.created))}</b></p><p>Tiempo: <strong id="appRouteClock">${appRouteTime(a)}</strong></p><p>Pedidos: <b>${a.items.length}</b></p></div>
  ${!closed?`<div class="panel"><h3>Registrar pedido</h3><label>Número de orden<input id="appOrderNumber" placeholder="Ej. #4821"></label><div class="metrics"><label>Pagué · En la app ($)<input id="appPaidApp" type="number" min="0" step="0.01" inputmode="decimal"></label><label>Pagué · Real ($)<input id="appPaidReal" type="number" min="0" step="0.01" inputmode="decimal"></label></div><button class="full" onclick="appAddItem()">＋ Registrar pedido</button></div>`:''}
  ${a.items.length?`<div class="panel"><h3>Pedidos registrados</h3>${a.items.map(o=>`<p><b>#${esc(o.reference||'—')}</b> · App: ${money(num(o.paidApp))} · Real: ${money(num(o.paidReal))}</p>`).join('')}</div>`:''}
- ${!closed?`<div class="panel"><button class="danger full" onclick="appFinishRoute()">■ Finalizar ruta</button></div>`:!finished?`<div class="panel"><h3>Completar resultados</h3>${appCloseStep===1?`<p class="muted">Primero indica cuántos pedidos realizaste en esta ruta.</p><label>¿Cuántos pedidos realizaste?<input id="appCloseOrders" type="number" min="0" step="1" inputmode="numeric" value="${esc(a.reportedOrders??a.items.length)}"></label><button class="full" onclick="appCloseNext()">Continuar →</button>`:`<p class="muted">Pedidos realizados: <b>${esc(a.reportedOrders)}</b></p><button class="secondary" onclick="appCloseStep=1;renderView()">← Cambiar cantidad de pedidos</button><p class="muted">Si no hubo cobros, deja los campos de cobro vacíos; se registrarán como $0.00.</p><label>Ganancia general ($)<input id="appCloseGain" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.gain??'')}"></label><label>Propinas en la app ($)<input id="appCloseTips" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.appTips??'')}"></label><label>Cobré · En la app ($)<input id="appCloseCollectedApp" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.collectedApp??'')}"></label><label>Cobré · Real ($)<input id="appCloseCollectedReal" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.collectedReal??'')}"></label><button class="full" onclick="appSaveClosing()">✓ Confirmar resultados</button>`}</div>`:`<div class="panel"><h3>Resultados completos</h3><p>Pedidos: ${esc(a.reportedOrders??a.items.length)}</p><p>Ganancia general: ${money(num(a.gain))}</p><p>Propinas app: ${money(num(a.appTips))}</p><p>Propinas efectivo: ${money(appTotals(a).tip)}</p><p><b>Total: ${money(appGrand(a))}</b></p></div>`}`;
+ ${!closed?`<div class="panel"><button class="danger full" onclick="appFinishRoute()">■ Finalizar ruta</button></div>`:!finished?`<div class="panel"><h3>Completar resultados</h3>${appCloseBody(a)}</div>`:`<div class="panel"><h3>Resultados completos</h3><p>Pedidos: ${esc(a.reportedOrders??a.items.length)}</p><p>Ganancia general: ${money(num(a.gain))}</p><p>Propinas app: ${money(num(a.appTips))}</p><p>Propinas efectivo: ${money(appTotals(a).tip)}</p><p><b>Total: ${money(appGrand(a))}</b></p></div>`}`;
+
 }
 
 let view='orders',detailId=null,previousView='suvazu',routeBrowseId=null,slideIndex=0,deliveryId=null;function openView(v,id){if(view!==v)previousView=view;view=v;detailId=id??null;$('overlay').classList.add('show');document.body.style.overflow='hidden';renderView();$('overlay').scrollTop=0}function closeView(){svRestore();parCloseDelivery();$('overlay').classList.remove('show');document.body.style.overflow=''}
