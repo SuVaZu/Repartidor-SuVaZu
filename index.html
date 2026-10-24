@@ -336,7 +336,7 @@ function appCloseNext(){
  let raw=$('appCloseOrders')?.value?.trim();if(!/^\d+$/.test(raw||''))return alert('Indica una cantidad válida de pedidos.');
  let count=Number(raw);if(count>200)return alert('Máximo 200 pedidos por ruta.');
  if(appCloseDraftId!==a.id||!appCloseDraft){appCloseDraft=(a.closingOrders||[]).map(x=>({...x}));appCloseDraftId=a.id}
- appCloseDraft=Array.from({length:count},(_,i)=>appCloseDraft[i]||{collectedApp:'',collectedReal:''});
+ appCloseDraft=Array.from({length:count},(_,i)=>appCloseDraft[i]||{collectedApp:'',collectedReal:'',totalEarnings:'',hasAppTip:false,appTipAmount:''});
  a.reportedOrders=count;appCloseIndex=0;appCloseStep=2;renderView();
 }
 function appCloseRemember(){
@@ -344,36 +344,43 @@ function appCloseRemember(){
  let o=appCloseDraft[appCloseIndex];if(!o)return;
  o.collectedApp=$('appCloseCollectedApp')?.value??o.collectedApp;
  o.collectedReal=$('appCloseCollectedReal')?.value??o.collectedReal;
+ o.totalEarnings=$('appCloseTotalEarnings')?.value??o.totalEarnings;
+ o.hasAppTip=$('appCloseHasTip')?.checked??o.hasAppTip;
+ o.appTipAmount=o.hasAppTip?($('appCloseTipAmount')?.value??o.appTipAmount):'';
 }
+function appCloseToggleTip(){let x=$('appCloseTipWrap');if(x)x.style.display=$('appCloseHasTip')?.checked?'block':'none'}
 function appCloseMove(delta){appCloseRemember();appCloseIndex=Math.max(0,Math.min(appCloseDraft.length-1,appCloseIndex+delta));renderView()}
 function appCloseSwipeStart(e){window.svAppTouchX=e.touches[0]?.clientX??0}
 function appCloseSwipeEnd(e){let delta=(e.changedTouches[0]?.clientX??0)-(window.svAppTouchX??0);if(Math.abs(delta)>65)appCloseMove(delta<0?1:-1)}
 function appCloseToGeneral(){
  appCloseRemember();let orders=appCloseDraft||[];
- for(let i=0;i<orders.length;i++)for(let [key,label] of [['collectedApp','En la app'],['collectedReal','Real']]){
-  let v=String(orders[i][key]??'').trim();if(v!==''&&(!Number.isFinite(Number(v))||Number(v)<0))return alert('Revisa Cobré '+label+' del pedido '+(i+1));
+ for(let i=0;i<orders.length;i++){
+  let o=orders[i];
+  for(let [key,label] of [['collectedApp','Cobré en la app'],['collectedReal','Cobré real'],['totalEarnings','Ganancia total']]){
+   let v=String(o[key]??'').trim();if((key==='totalEarnings'&&v==='')||(v!==''&&(!Number.isFinite(Number(v))||Number(v)<0)))return alert('Revisa '+label+' del pedido '+(i+1));
+  }
+  if(o.hasAppTip){let v=String(o.appTipAmount??'').trim();if(v===''||!Number.isFinite(Number(v))||Number(v)<0)return alert('Indica la propina en la app del pedido '+(i+1));if(Number(v)>Number(o.totalEarnings))return alert('La propina no puede superar la ganancia total del pedido '+(i+1));}
  }
  appCloseStep=3;renderView();
 }
 function appSaveClosing(){
  let a=appFind(appId);if(!a||!a.end||appCloseStep!==3)return;
- let gain=$('appCloseGain')?.value?.trim(),tips=$('appCloseTips')?.value?.trim();
- if(!gain||!Number.isFinite(Number(gain))||Number(gain)<0)return alert('Revisa la ganancia general.');
- if(!tips||!Number.isFinite(Number(tips))||Number(tips)<0)return alert('Revisa las propinas en la app. Puedes poner 0.');
- let orders=(appCloseDraft||[]).map(o=>({collectedApp:Number(o.collectedApp||0),collectedReal:Number(o.collectedReal||0)}));
+ let orders=(appCloseDraft||[]).map(o=>({collectedApp:Number(o.collectedApp||0),collectedReal:Number(o.collectedReal||0),totalEarnings:Number(o.totalEarnings||0),hasAppTip:!!o.hasAppTip,appTipAmount:o.hasAppTip?Number(o.appTipAmount||0):0}));
+ let gross=orders.reduce((s,o)=>s+o.totalEarnings,0),tips=orders.reduce((s,o)=>s+o.appTipAmount,0),gain=gross-tips;
  let tip=a.items.reduce((sum,o)=>sum+num(o.paidApp)-num(o.paidReal),0)+orders.reduce((sum,o)=>sum+o.collectedReal-o.collectedApp,0);
- let message=appRouteLabel(a)+'\n\nPedidos realizados: '+orders.length+'\nGanancia general: '+money(Number(gain))+'\nPropinas en la app: '+money(Number(tips))+'\nCobré en la app: '+money(orders.reduce((s,o)=>s+o.collectedApp,0))+'\nCobré real: '+money(orders.reduce((s,o)=>s+o.collectedReal,0))+'\nPropinas en efectivo (diferencias): '+money(tip)+'\n\n¿Confirmar ruta completa?';
+ let message=appRouteLabel(a)+'\n\nPedidos realizados: '+orders.length+'\nGanancia total: '+money(gross)+'\nGanancia general (sin propinas): '+money(gain)+'\nPropinas en la app: '+money(tips)+'\nCobré en la app: '+money(orders.reduce((s,o)=>s+o.collectedApp,0))+'\nCobré real: '+money(orders.reduce((s,o)=>s+o.collectedReal,0))+'\nPropinas en efectivo (diferencias): '+money(tip)+'\n\n¿Confirmar ruta completa?';
  if(!confirm(message))return;
- a.closingOrders=orders;a.reportedOrders=orders.length;a.gain=Number(gain);a.appTips=Number(tips);a.collectedApp=0;a.collectedReal=0;a.closeComplete=true;
+ a.closingOrders=orders;a.reportedOrders=orders.length;a.gain=gain;a.appTips=tips;a.collectedApp=0;a.collectedReal=0;a.closeComplete=true;
  save();appScreen='home';appCloseStep=1;appCloseDraft=null;appCloseDraftId=null;renderView();toast('Ruta confirmada');
 }
 function appCloseBody(a){
  if(appCloseStep===1)return `<p class="muted">Primero indica cuántos pedidos realizaste en esta ruta.</p><label>¿Cuántos pedidos realizaste?<input id="appCloseOrders" type="number" min="0" max="200" step="1" inputmode="numeric" value="${esc(a.reportedOrders??a.items.length)}"></label><button class="full" onclick="appCloseNext()">Continuar →</button>`;
- if(appCloseStep===2){let n=appCloseDraft.length;if(!n)return `<p>Esta ruta no tiene pedidos para registrar cobros.</p><button class="full" onclick="appCloseToGeneral()">Continuar a datos generales →</button>`;
+ if(appCloseStep===2){let n=appCloseDraft.length;if(!n)return `<p>No hay pedidos para capturar.</p><button class="full" onclick="appCloseToGeneral()">Continuar a totales →</button>`;
  let o=appCloseDraft[appCloseIndex]||{};
- return `<p class="muted">Pedidos realizados: <b>${n}</b></p><button class="secondary" onclick="appCloseStep=1;renderView()">← Cambiar cantidad</button><div style="display:flex;gap:5px;margin:16px 0">${appCloseDraft.map((x,i)=>`<span style="height:5px;flex:1;border-radius:6px;background:${i===appCloseIndex?'#e7b54d':((x.collectedApp!==''||x.collectedReal!=='')?'#7eaa8c':'#e4e9e5')}"></span>`).join('')}</div><div ontouchstart="appCloseSwipeStart(event)" ontouchend="appCloseSwipeEnd(event)" style="touch-action:pan-y"><h3>Pedido ${appCloseIndex+1} de ${n}</h3><p class="muted">Desliza horizontalmente para cambiar de pedido.</p><label>Cobré · En la app ($)<input id="appCloseCollectedApp" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.collectedApp??'')}" placeholder="0.00"></label><label>Cobré · Real ($)<input id="appCloseCollectedReal" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.collectedReal??'')}" placeholder="0.00"></label></div><div class="row" style="gap:8px;margin:12px 0"><button class="secondary" ${appCloseIndex===0?'disabled':''} onclick="appCloseMove(-1)">← Anterior</button><button class="secondary" ${appCloseIndex===n-1?'disabled':''} onclick="appCloseMove(1)">Siguiente →</button></div><p class="muted">Deja vacío un cobro que no corresponda; contará como $0.00.</p><button class="full" onclick="appCloseToGeneral()">Continuar a datos generales →</button>`;
+ return `<p class="muted">Pedidos realizados: <b>${n}</b></p><button class="secondary" onclick="appCloseRemember();appCloseStep=1;renderView()">← Cambiar cantidad</button><div style="display:flex;gap:5px;margin:16px 0">${appCloseDraft.map((x,i)=>`<span style="height:5px;flex:1;border-radius:6px;background:${i===appCloseIndex?'#e7b54d':(x.totalEarnings!==''&&x.totalEarnings!=null?'#7eaa8c':'#e4e9e5')}"></span>`).join('')}</div><div ontouchstart="appCloseSwipeStart(event)" ontouchend="appCloseSwipeEnd(event)" style="touch-action:pan-y"><h3>Pedido ${appCloseIndex+1} de ${n}</h3><p class="muted">Desliza horizontalmente para cambiar de pedido.</p><label>Ganancia total del pedido ($)<input id="appCloseTotalEarnings" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.totalEarnings??'')}" placeholder="0.00"></label><label style="display:flex;align-items:center;gap:10px;margin:12px 0"><input id="appCloseHasTip" type="checkbox" ${o.hasAppTip?'checked':''} onchange="appCloseToggleTip()" style="width:24px;height:24px;flex:none">¿Recibiste propina dentro de la app?</label><div id="appCloseTipWrap" style="display:${o.hasAppTip?'block':'none'}"><label>Propina dentro de la app ($)<input id="appCloseTipAmount" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.appTipAmount??'')}" placeholder="0.00"></label></div><label>Cobré · En la app ($)<input id="appCloseCollectedApp" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.collectedApp??'')}" placeholder="0.00"></label><label>Cobré · Real ($)<input id="appCloseCollectedReal" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(o.collectedReal??'')}" placeholder="0.00"></label></div><div class="row" style="gap:8px;margin:12px 0"><button class="secondary" ${appCloseIndex===0?'disabled':''} onclick="appCloseMove(-1)">← Anterior</button><button class="secondary" ${appCloseIndex===n-1?'disabled':''} onclick="appCloseMove(1)">Siguiente →</button></div><p class="muted">Los cobros vacíos cuentan como $0.00.</p><button class="full" onclick="appCloseToGeneral()">Continuar a totales →</button>`;
  }
- return `<p class="muted">Pedidos realizados: <b>${a.reportedOrders}</b> · Cobros por pedido capturados.</p><button class="secondary" onclick="appCloseStep=2;renderView()">← Revisar pedidos</button><label>Ganancia general ($)<input id="appCloseGain" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.gain??'')}"></label><label>Propinas en la app ($)<input id="appCloseTips" type="number" min="0" step="0.01" inputmode="decimal" value="${esc(a.appTips??'')}"></label><button class="full" onclick="appSaveClosing()">✓ Confirmar ruta</button>`;
+ let orders=appCloseDraft||[],gross=orders.reduce((s,o)=>s+num(o.totalEarnings),0),tips=orders.reduce((s,o)=>s+(o.hasAppTip?num(o.appTipAmount):0),0);
+ return `<p class="muted">Pedidos realizados: <b>${orders.length}</b></p><button class="secondary" onclick="appCloseStep=2;renderView()">← Revisar pedidos</button><h3>Totales calculados automáticamente</h3><p>Ganancias totales de pedidos: <b>${money(gross)}</b></p><p>Ganancia general sin propinas: <b>${money(gross-tips)}</b></p><p>Propinas dentro de la app: <b>${money(tips)}</b></p><p class="muted">Los cobros y pagos se usan por separado para calcular las propinas en efectivo.</p><button class="full" onclick="appSaveClosing()">✓ Confirmar ruta</button>`;
 }
 function appRouteTime(a){let n=(a.end?new Date(a.end).getTime():Date.now())-new Date(a.created).getTime();return svDuration(Number.isFinite(n)?n:0)}
 function renderApps(){
