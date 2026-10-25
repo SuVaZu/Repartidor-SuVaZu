@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.94</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.96</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -199,7 +199,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-app-section #svAppSection_summary .sv-summary-title{margin-top:0}
 @media(max-width:370px){.sv-app-section .sv-app-section-toggle{padding:18px 13px 23px;font-size:19px}.sv-app-section .sv-app-section-state{font-size:12px}}
 
-/* Prueba 0.94: encabezados Apps claros con ondas integradas, sin competir con las imágenes */
+/* Prueba 0.96: encabezados Apps claros con ondas integradas, sin competir con las imágenes */
 .sv-app-section .sv-app-section-toggle{background:linear-gradient(112deg,#fff 0%,#fff 48%,#fffaf7 77%,#f8fff2 100%);color:#17382e;min-height:86px;padding:18px 20px 30px;isolation:isolate;overflow:hidden}
 .sv-app-section .sv-app-section-toggle::after{height:30px;bottom:-9px;left:-2%;right:-2%;border-radius:52% 48% 0 0 / 42% 38% 0 0;background:linear-gradient(100deg,#ffb343 0%,#ff8c3c 20%,#39383a 42%,#ff7c79 66%,#e4fa8c 90%,#b6ec4d 100%);opacity:.9;transform:rotate(-1deg)}
 .sv-app-section .sv-app-section-toggle::before{content:"";position:absolute;left:25%;right:-8%;bottom:-11px;height:30px;z-index:1;border-radius:55% 45% 0 0 / 65% 45% 0 0;background:linear-gradient(95deg,rgba(255,255,255,.0),rgba(255,255,255,.75) 25%,rgba(255,255,255,.05) 58%,rgba(255,255,255,.42));pointer-events:none;transform:rotate(2deg)}
@@ -288,7 +288,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-result-metrics .metric{min-width:0}
 @media(max-width:370px){.sv-result-section>summary{padding:12px 9px}.sv-result-metrics{gap:7px;padding:0 7px 10px}}
 
-/* Prueba 0.94: diseño suave aprobado, tipografía protagonista, sin iconos en los encabezados */
+/* Prueba 0.96: diseño suave aprobado, tipografía protagonista, sin iconos en los encabezados */
 .sv-home-routes{background:linear-gradient(153deg,#fff 0%,#fff 56%,#fafffc 100%);border-radius:23px;box-shadow:0 8px 26px rgba(22,58,44,.075)}
 .sv-home-routes-header{position:relative;isolation:isolate;overflow:hidden;border-radius:18px;padding:13px 12px 17px;margin:-3px -2px 0;min-height:70px;background:linear-gradient(118deg,#fff 0%,#fff 49%,#effaf3 100%)}
 .sv-home-routes-header::after{content:"";position:absolute;z-index:-1;right:-9%;bottom:-17px;width:65%;height:58px;border-radius:60% 45% 0 0;background:linear-gradient(90deg,rgba(217,245,225,0),rgba(199,233,212,.54));transform:rotate(-9deg);pointer-events:none}
@@ -323,7 +323,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .module-panel .sv-illustrated-link{border-radius:22px}
 @media(max-width:365px){.sv-home-routes-header #serviceStatus{padding:7px 8px;gap:5px}.sv-home-results>.row #resultsToggle{padding:7px 8px;gap:4px}.sv-home-results>.row h2{font-size:18px}}
 
-/* Prueba 0.94: regreso por gesto sin bloquear el refresco del navegador. */
+/* Prueba 0.96: regreso por gesto sin bloquear el refresco del navegador. */
 #overlay{overscroll-behavior-y:auto;-webkit-overflow-scrolling:touch}
 #svOverlayBack[hidden],#svPullHint[hidden]{display:none!important}
 .sv-pull-hint{font-size:12px;color:#d8efe1;font-weight:650;text-align:right}
@@ -331,13 +331,41 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay.sv-pulling .overlay-head{background:#1e5845}
 #overlay.sv-pull-ready .overlay-head{background:#267250}
 #overlay.sv-pull-ready .sv-pull-hint{color:#fff;font-weight:800}
-</style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.94</span></header><div id="toast"></div><main>
-<section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div><div class="sv-journey-results sv-home-results"><div class="row"><h2>Resultados del día</h2><button type="button" class="secondary" id="resultsToggle" aria-expanded="false" aria-controls="resultsDetails" onclick="toggleDailyResults()"><span id="svResultsLabel">Mostrar</span><span class="sv-toggle-chevron" aria-hidden="true">⌄</span></button></div><div id="resultsDetails" hidden><div id="dashboard" class="sv-dashboard"></div></div></div></section>
-<section class="module-panel"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button></section>
-<section class="module-panel"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button></section>
-<section class="module-panel"><button type="button" class="module-link sv-illustrated-link" onclick="openApps()" aria-label="Abrir Apps"><img class="sv-illustrated-banner" src="./home_apps.webp" alt="Apps"></button></section>
 
+/* Prueba 0.96: resultados como tarjeta independiente después de Apps. */
+.sv-home-results-panel{margin-top:0}
+.sv-home-results-panel .sv-home-results{border-top:0;margin-top:0;padding-top:0}
+
+/* Prueba 0.96: indicadores reales por módulo, colores aprobados (verde, cobre y azul). */
+.sv-banner-card{padding:8px 8px 9px;border-radius:23px;box-shadow:0 6px 22px rgba(16,54,41,.11)}
+.sv-banner-card .sv-illustrated-link{border-radius:17px 17px 14px 14px}
+.sv-banner-stats{--stat-light:#7cf53f;--stat-dark:#005a35;--stat-edge:#2eaa5c;
+ display:grid;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);align-items:center;gap:8px;
+ padding:10px 11px;margin-top:7px;min-height:79px;border-radius:17px;
+ color:white;background:linear-gradient(118deg,#00633f 0%,#034c35 51%,#005c37 100%);
+ border:1px solid var(--stat-edge);box-shadow:inset 0 0 0 1px rgba(255,255,255,.15),0 3px 10px rgba(8,48,34,.14)}
+.sv-banner-associate .sv-banner-stats{--stat-light:#ffd23b;--stat-dark:#66300a;--stat-edge:#ef9c30;
+ background:linear-gradient(115deg,#ab480c 0%,#8d3409 52%,#a4480b 100%)}
+.sv-banner-app .sv-banner-stats{--stat-light:#26c6ff;--stat-dark:#004f85;--stat-edge:#2599df;
+ background:linear-gradient(115deg,#045a9c 0%,#073e7b 52%,#075ba6 100%)}
+.sv-banner-stat{min-width:0;display:flex;align-items:center;gap:9px}
+.sv-banner-stat-copy{min-width:0;display:flex;flex-direction:column;gap:1px}
+.sv-banner-stat-label{font-size:clamp(10px,2.7vw,14px);line-height:1.2;color:rgba(255,255,255,.94);white-space:nowrap;letter-spacing:-.02em}
+.sv-banner-stat-value{display:block;font-weight:900;font-size:clamp(20px,5.7vw,33px);line-height:1.14;color:white;font-variant-numeric:tabular-nums;letter-spacing:-.045em;overflow-wrap:anywhere}
+.sv-banner-icon{width:clamp(31px,9.2vw,48px);height:clamp(31px,9.2vw,48px);flex:0 0 auto;display:grid;place-items:center;
+ border-radius:50%;background:var(--stat-light);color:var(--stat-dark);font-size:clamp(21px,6vw,30px);font-weight:950;
+ box-shadow:0 0 0 4px rgba(255,255,255,.08),inset 0 2px 4px rgba(255,255,255,.4)}
+.sv-banner-icon svg{width:55%;height:55%}
+.sv-banner-divider{width:1px;height:42px;background:rgba(255,255,255,.36)}
+@media(max-width:365px){.sv-banner-stats{gap:6px;padding:9px 8px}.sv-banner-stat{gap:6px}.sv-banner-stat-label{font-size:10px}.sv-banner-stat-value{font-size:clamp(19px,5.5vw,24px)}}
+</style></head><body>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.96</span></header><div id="toast"></div><main>
+<section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
+<section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
+<section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
+<section class="module-panel sv-banner-card sv-banner-app"><button type="button" class="module-link sv-illustrated-link" onclick="openApps()" aria-label="Abrir Apps"><img class="sv-illustrated-banner" src="./home_apps.webp" alt="Apps"></button><div class="sv-banner-stats" aria-label="Resultados del día de Apps"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_app" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_app" class="sv-banner-stat-value">0</strong></div></div></div></section>
+
+<section class="panel sv-home-results-panel"><div class="sv-journey-results sv-home-results"><div class="row"><h2>Resultados del día</h2><button type="button" class="secondary" id="resultsToggle" aria-expanded="false" aria-controls="resultsDetails" onclick="toggleDailyResults()"><span id="svResultsLabel">Mostrar</span><span class="sv-toggle-chevron" aria-hidden="true">⌄</span></button></div><div id="resultsDetails" hidden><div id="dashboard" class="sv-dashboard"></div></div></div></section>
 <section class="panel sv-journey-panel"><h2>Jornada</h2><div id="journeyControls"></div>
 </section>
 <section class="panel"><button class="secondary full" onclick="openView('clients')">👥 Clientes SuVaZu</button></section>
@@ -814,6 +842,15 @@ function svModuleStats(kind){
  if(begin!==null)time+=finish-begin;
  return {d,routes,orders,time,total,entries};
 }
+// Mantener las tarjetas del inicio sincronizadas con los resúmenes reales de cada modalidad.
+function svRenderBannerStats(){
+ for(const kind of ['direct','associate','app']){
+  const summary=svModuleStats(kind);
+  const earnings=$('svBannerEarn_'+kind),orders=$('svBannerOrders_'+kind);
+  if(earnings)earnings.textContent=money(summary.total);
+  if(orders)orders.textContent=String(summary.orders);
+ }
+}
 function svModuleSummaryHtml(kind){let x=svModuleStats(kind);return `<div class="sv-summary-title">Jornada ${esc(x.d)}</div><div class="sv-module-grid">${[['Rutas Totales',String(x.routes)],['Pedidos Totales',String(x.orders)],['Tiempo de Servicio',svDuration(x.time)],['Ganancia Total',money(x.total)]].map(([label,value])=>`<div class="sv-module-kpi"><small>${label}</small><strong>${value}</strong></div>`).join('')}</div>`}
 function svModuleHistoryHtml(kind){let x=svModuleStats(kind);return `<details class="sv-module-detail"><summary>Servicios y rutas de la jornada (${x.entries.length})</summary>${x.entries.length?x.entries.slice().reverse().map(e=>`<div class="sv-module-detail-item"><b>${esc(e.name)}</b> · ${e.orders} pedido(s)<div class="muted">${e.finished?'Finalizado':'En curso'}${e.complete===false?' · Resultados pendientes':''} · ${money(e.amount)}</div></div>`).join(''):'<p class="muted">Sin rutas registradas en esta jornada.</p>'}</details>`}
 function svToggleModuleSummary(kind){data.ui??={};data.ui.homeSummary??={};data.ui.homeSummary[kind]=!data.ui.homeSummary[kind];save()}
@@ -1054,7 +1091,7 @@ function svUpdateCaptureVisibility(){
 function svToggleBackup(){data.ui??={};data.ui.backupExpanded=!data.ui.backupExpanded;save()}
 function svRenderBackupToggle(){let open=!!(data.ui&&data.ui.backupExpanded),body=$('svBackupContent'),btn=$('svBackupToggle');if(body)body.hidden=!open;if(btn){btn.setAttribute('aria-expanded',String(open));let state=btn.querySelector('.sv-backup-state');if(state)state.innerHTML=(open?'Ocultar':'Mostrar')+' <span class="sv-backup-arrow">'+(open?'⌃':'⌄')+'</span>'}}
 function toggleDailyResults(){let details=$('resultsDetails'),btn=$('resultsToggle'),hint=$('resultsHint');let show=details.hidden;details.hidden=!show;$('svResultsLabel').textContent=show?'Ocultar':'Mostrar';btn.classList.toggle('is-open',show);btn.setAttribute('aria-expanded',String(show));if(hint)hint.hidden=show;}
-function render(){let j=running();svRenderBackupToggle();svRenderCurrent();let jc=$('journeyControls');if(!j)jc.innerHTML=`<button class="full" onclick="startJourney()">▶ Iniciar jornada</button><p class="muted">Una jornada finalizada no puede reabrirse. La fecha es la del inicio, aunque termine de madrugada.</p>`;else{let paused=j.pauses.length&&!j.pauses.at(-1).end;jc.innerHTML=`<p><b>Jornada del ${j.date}</b> · ${paused?'En pausa':'Trabajando'}</p><p class="muted">Inicio: ${dt(j.start)} · Tiempo efectivo: ${duration(workMs(j))}</p><div class="wrap"><button class="secondary" onclick="${paused?'resumeJourney':'pauseJourney'}()">${paused?'▶ Reanudar':'Ⅱ Pausar'}</button><button class="danger" onclick="finishJourney()">■ Finalizar jornada</button></div>`}
+function render(){let j=running();svRenderBackupToggle();svRenderCurrent();svRenderBannerStats();let jc=$('journeyControls');if(!j)jc.innerHTML=`<button class="full" onclick="startJourney()">▶ Iniciar jornada</button><p class="muted">Una jornada finalizada no puede reabrirse. La fecha es la del inicio, aunque termine de madrugada.</p>`;else{let paused=j.pauses.length&&!j.pauses.at(-1).end;jc.innerHTML=`<p><b>Jornada del ${j.date}</b> · ${paused?'En pausa':'Trabajando'}</p><p class="muted">Inicio: ${dt(j.start)} · Tiempo efectivo: ${duration(workMs(j))}</p><div class="wrap"><button class="secondary" onclick="${paused?'resumeJourney':'pauseJourney'}()">${paused?'▶ Reanudar':'Ⅱ Pausar'}</button><button class="danger" onclick="finishJourney()">■ Finalizar jornada</button></div>`}
 $('routeList').innerHTML=data.routes.slice().reverse().map(r=>{
  const isCurrent=r.status==='activa';
  const pending=r.orders.filter(activeOrder).length;
@@ -1265,7 +1302,7 @@ function importData(){
  alert('No se pudo restaurar; los datos anteriores permanecen sin cambios. '+e.message)
  }
 }
-// Prueba 0.94: gesto de regreso en las tres pantallas principales.
+// Prueba 0.96: gesto de regreso en las tres pantallas principales.
 // Se escucha en el documento para capturar movimientos desde el encabezado y el contenido.
 function svIsPrimaryModule(){
  return $('overlay').classList.contains('show') &&
