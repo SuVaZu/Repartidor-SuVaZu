@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.85</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 0.86</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -199,7 +199,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-app-section #svAppSection_summary .sv-summary-title{margin-top:0}
 @media(max-width:370px){.sv-app-section .sv-app-section-toggle{padding:18px 13px 23px;font-size:19px}.sv-app-section .sv-app-section-state{font-size:12px}}
 
-/* Prueba 0.85: encabezados Apps claros con ondas integradas, sin competir con las imágenes */
+/* Prueba 0.86: encabezados Apps claros con ondas integradas, sin competir con las imágenes */
 .sv-app-section .sv-app-section-toggle{background:linear-gradient(112deg,#fff 0%,#fff 48%,#fffaf7 77%,#f8fff2 100%);color:#17382e;min-height:86px;padding:18px 20px 30px;isolation:isolate;overflow:hidden}
 .sv-app-section .sv-app-section-toggle::after{height:30px;bottom:-9px;left:-2%;right:-2%;border-radius:52% 48% 0 0 / 42% 38% 0 0;background:linear-gradient(100deg,#ffb343 0%,#ff8c3c 20%,#39383a 42%,#ff7c79 66%,#e4fa8c 90%,#b6ec4d 100%);opacity:.9;transform:rotate(-1deg)}
 .sv-app-section .sv-app-section-toggle::before{content:"";position:absolute;left:25%;right:-8%;bottom:-11px;height:30px;z-index:1;border-radius:55% 45% 0 0 / 65% 45% 0 0;background:linear-gradient(95deg,rgba(255,255,255,.0),rgba(255,255,255,.75) 25%,rgba(255,255,255,.05) 58%,rgba(255,255,255,.42));pointer-events:none;transform:rotate(2deg)}
@@ -268,15 +268,34 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-app-result-label{font-size:clamp(12px,3.3vw,15px);font-weight:700}
 .sv-app-result-value{font-size:clamp(19px,5.1vw,27px);font-weight:850;font-variant-numeric:tabular-nums;letter-spacing:-.04em;white-space:nowrap}
 @media(max-width:355px){.sv-app-result-highlights{gap:7px}.sv-app-result-highlight{padding:14px 5px}.sv-app-result-value{font-size:18px}}
+
+/* v0.86: resultados dentro de rutas activas y paneles independientes */
+.sv-home-results{border-top:1px solid #e0e9e2;margin-top:18px;padding-top:18px}
+.sv-home-results>.row{align-items:center;gap:10px;flex-wrap:wrap}
+.sv-home-results>.row h2{font-size:clamp(18px,5vw,24px);margin:0}
+.sv-home-results>.row button{margin-left:auto}
+.sv-dashboard{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.sv-result-section{border:1px solid #e1eae3;border-radius:15px;background:#fff;overflow:hidden}
+.sv-result-section>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;cursor:pointer;padding:14px 12px;font-size:clamp(16px,4.3vw,21px);font-weight:800;color:#17382e}
+.sv-result-section>summary::-webkit-details-marker{display:none}
+.sv-result-action{display:flex;align-items:center;gap:8px;color:#536c5d;font-size:13px;font-weight:700;white-space:nowrap}
+.sv-result-action-label::before{content:'Mostrar'}
+.sv-result-section[open] .sv-result-action-label::before{content:'Ocultar'}
+.sv-result-chevron{display:grid;place-items:center;border-radius:50%;width:30px;height:30px;background:#e7eee9;color:#17382e}
+.sv-result-chevron::before{content:'⌄';font-size:23px;line-height:1}
+.sv-result-section[open] .sv-result-chevron::before{content:'⌃'}
+.sv-result-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 10px 12px}
+.sv-result-metrics .metric{min-width:0}
+@media(max-width:370px){.sv-result-section>summary{padding:12px 9px}.sv-result-metrics{gap:7px;padding:0 7px 10px}}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.85</span></header><div id="toast"></div><main>
-<section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>🦁 Rutas Activas</h2><span class="pill" id="serviceStatus">Sin rutas</span></div><div id="currentServiceBody"><p class="muted">Sin rutas abiertas.</p></div></section>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 0.86</span></header><div id="toast"></div><main>
+<section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>🦁 Rutas Activas</h2><span class="pill" id="serviceStatus">Sin rutas</span></div><div id="currentServiceBody"></div><div class="sv-journey-results sv-home-results"><div class="row"><h2>📊 Resultados del día</h2><button type="button" class="secondary" id="resultsToggle" aria-expanded="false" aria-controls="resultsDetails" onclick="toggleDailyResults()">Consultar ▾</button></div><div id="resultsDetails" hidden><div id="dashboard" class="sv-dashboard"></div></div></div></section>
 <section class="module-panel"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><button type="button" id="svToggle_direct" class="module-summary-toggle secondary" onclick="svToggleModuleSummary('direct')"><span>Jornada actual</span><b>Mostrar</b></button><div id="svSummary_direct" class="sv-module-summary" hidden></div></section>
 <section class="module-panel"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><button type="button" id="svToggle_associate" class="module-summary-toggle secondary" onclick="svToggleModuleSummary('associate')"><span>Jornada actual</span><b>Mostrar</b></button><div id="svSummary_associate" class="sv-module-summary" hidden></div></section>
 <section class="module-panel"><button type="button" class="module-link sv-illustrated-link" onclick="openApps()" aria-label="Abrir Apps"><img class="sv-illustrated-banner" src="./home_apps.webp" alt="Apps"></button><button type="button" id="svToggle_app" class="module-summary-toggle secondary" onclick="svToggleModuleSummary('app')"><span>Jornada actual</span><b>Mostrar</b></button><div id="svSummary_app" class="sv-module-summary" hidden></div></section>
 
 <section class="panel sv-journey-panel"><h2>Jornada</h2><div id="journeyControls"></div>
-<div class="sv-journey-results"><div class="row"><h2>📊 Resultados del día</h2><button type="button" class="secondary" id="resultsToggle" aria-expanded="false" aria-controls="resultsDetails" onclick="toggleDailyResults()">Consultar ▾</button></div><div id="resultsDetails" hidden><div id="dashboard" class="metrics"></div><div class="wrap" style="margin-top:9px"><button class="secondary" onclick="openView('history')">Historial</button><button class="secondary" onclick="openView('monthly')">Resumen mensual</button><button class="secondary" onclick="openView('hours')">Horas pico</button></div></div></div></section>
+</section>
 <section class="panel"><button class="secondary full" onclick="openView('clients')">👥 Clientes SuVaZu</button></section>
 <section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section>
 <div id="suvazuStore" hidden>
@@ -709,8 +728,7 @@ function svRenderCurrent(){
  finished.sort((a,b)=>String(b.when).localeCompare(String(a.when)));
  badge.textContent=active.length+' activa'+(active.length===1?'':'s');
  const section=(title,items)=>items.length?`<div class="sv-home-route-group"><h3>${title} <span class="sv-home-route-num">${items.length}</span></h3>${items.map(svHomeRouteCard).join('')}</div>`:'';
- const history=`<details class="sv-home-route-history"><summary>Historial de rutas finalizadas <span class="pill">${finished.length}</span></summary>${finished.length?finished.map(r=>`<div class="sv-home-finished"><div class="sv-home-finished-copy"><strong>${esc(r.name)}</strong><small>${esc(r.module)} · ${esc(r.date||'Sin fecha')}${r.extra?' · '+esc(r.extra):''}</small></div>${svHomeLink(r.kind,r.id,'Abrir gestión de '+r.name)}</div>`).join(''):'<p class="muted">Todavía no hay rutas finalizadas.</p>'}</details>`;
- target.innerHTML=(active.length||queued.length?section('En curso',active)+section('Siguientes rutas',queued):'<p class="muted sv-home-no-routes">Sin rutas abiertas por el momento.</p>')+history;
+ target.innerHTML=(active.length||queued.length?section('En curso',active)+section('Siguientes rutas',queued):'');
 }
 function svTick(){
  let appClock=$('appRouteClock');if(appClock){let a=appFind(appId);if(a)appClock.textContent=appRouteTime(a)}
@@ -1026,168 +1044,32 @@ let directIntervals=data.routes.filter(r=>routeDate(r)===d).map(r=>[validMs(r.st
 let idleMs=Math.max(0,workTotal-serviceMs);
 let appOrders=finishedApps.reduce((n,a)=>n+a.items.length,0);
 const metric=(label,value)=>`<div class="metric"><span class="muted">${label}</span><strong>${value}</strong></div>`;
-const heading=label=>`<div style="grid-column:1/-1;border-top:2px solid #d6e3d9;margin-top:8px;padding-top:14px"><h3 style="margin:0 0 8px">${label}</h3></div>`;
-$('dashboard').innerHTML=`
-<div style="grid-column:1/-1;padding:4px 0 0"><h3 style="margin:0 0 8px">Resumen general</h3></div>
+
+const oldOpen={};document.querySelectorAll('#dashboard details[data-sv-result]').forEach(el=>oldOpen[el.dataset.svResult]=el.open);
+const group=(key,title,body,defaultOpen=false)=>`<details class="sv-result-section" data-sv-result="${key}" ${oldOpen[key]??defaultOpen?'open':''}><summary><span>${title}</span><span class="sv-result-action"><span class="sv-result-action-label"></span><span class="sv-result-chevron"></span></span></summary><div class="sv-result-metrics">${body}</div></details>`;
+$('dashboard').innerHTML=
+ group('general','📊 General',`
 ${metric('Ganancia total · '+d,money(day))}
 ${metric('Tiempo en servicio',duration(serviceMs))}
 ${metric('Tiempo sin servicio',duration(idleMs))}
 ${metric('Tiempo de jornada',workIntervals.length?duration(workTotal):'—')}
-${workTotal>0?`<div class="metric" style="grid-column:1/-1"><span class="muted">Aprovechamiento de jornada</span><strong>${Math.round(100*serviceMs/workTotal)}%</strong><div style="height:12px;border-radius:999px;background:#e1e8e3;overflow:hidden;margin-top:9px"><div style="height:100%;background:#2c8463;width:${Math.min(100,Math.round(100*serviceMs/workTotal))}%"></div></div><small class="muted">Porcentaje de jornada activa con servicios registrados. Las pausas no cuentan.</small></div>`:''}
-${heading('🦁 SuVaZu Repartidor')}
+${workTotal>0?`<div class="metric" style="grid-column:1/-1"><span class="muted">Aprovechamiento de jornada</span><strong>${Math.round(100*serviceMs/workTotal)}%</strong><div style="height:12px;border-radius:999px;background:#e1e8e3;overflow:hidden;margin-top:9px"><div style="height:100%;background:#2c8463;width:${Math.min(100,Math.round(100*serviceMs/workTotal))}%"></div></div><small class="muted">Porcentaje de jornada activa con servicios registrados. Las pausas no cuentan.</small></div>`:''}`,true)
++group('direct','🦁 SuVaZu Repartidor',`
 ${metric('Ganancias',money(directBase))}
 ${metric('Propinas',money(directTips))}
 ${metric('Extras',money(directExtras))}
 ${metric('Pedidos entregados',orders.length)}
-${metric('Tiempo de servicio',orders.length&&!orders.some(o=>o.serviceStart)?'No registrado':duration(directMs))}
-${heading('📱 Pedidos de Apps')}
-${metric('Ganancias',money(appsBase))}
-${metric('Propinas en efectivo',money(appsTips))}
-${metric('Pedidos de Apps',appOrders)}
-${metric('Tiempo de servicio',duration(appMs))}
-${heading('🏪 SuVaZu Asociados · El Parrillón')}
+${metric('Tiempo de servicio',orders.length&&!orders.some(o=>o.serviceStart)?'No registrado':duration(directMs))}`)
++group('associate','🏪 SuVaZu Asociados',`
 ${metric('Ganancias',money(parrBase))}
 ${metric('Propinas',money(parrTips))}
 ${metric('Pedidos entregados',pars.reduce((v,x)=>v+x.tickets.filter(t=>t.delivered).length,0))}
-${metric('Tiempo de servicio',duration(parMs))}
-`; }
-
-
-// El Parrillón: jornada independiente, no modifica el cierre de la jornada general.
-let parFormOpen=false,parEditing=null,parMap=null,parDraftGain="",parOcrBusy=false,parOcrText='',parOcrMessage='';
-function parActive(){return data.parrillon.find(x=>!x.end)}
-
-function parRounds(x){if(!Array.isArray(x.rounds))x.rounds=[];return x.rounds}
-function parCurrentRound(x){return parRounds(x).find(r=>!r.end)}
-function parPreparing(x){let r=x&&parCurrentRound(x);return r&&!r.start?r:null}
-function parDuration(r){if(!r||!r.start)return 'Sin iniciar';let seconds=Math.max(0,Math.floor((new Date(r.end||now())-new Date(r.start))/1000));return Math.floor(seconds/3600)+'h '+String(Math.floor(seconds%3600/60)).padStart(2,'0')+'m '+String(seconds%60).padStart(2,'0')+'s'}
-setInterval(()=>{let x=parActive(),r=x&&parCurrentRound(x),e=document.getElementById('parRoundClock');if(e&&r&&r.start&&!r.end)e.textContent=parDuration(r)},1000);
-function parPrepareRound(){let x=parActive();if(!running()||!x)return alert('Primero inicia la jornada y el servicio.');if(parCurrentRound(x))return alert('Finaliza primero la vuelta actual.');let rounds=parRounds(x);rounds.push({id:uid(),number:rounds.length+1,start:null,end:null});save();openView('parrillon')}
-function parStartRound(){let x=parActive(),r=parPreparing(x);if(!running()||!r)return alert('Primero prepara una vuelta.');if(!(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))||!x.tickets.some(t=>String(t.roundId)===String(r.id)))return alert('Primero importa el JSON completo de esta vuelta.');if(!confirm('¿Ya saliste de El Parrillón? Iniciar el cronómetro de vuelta #'+r.number+'?'))return;r.start=now();save();openView('parrillon');requestAnimationFrame(()=>document.querySelector('.par-active-orders')?.scrollIntoView({block:'start'}))}
-function parFinishRound(){let x=parActive(),r=x&&parCurrentRound(x);if(!running()||!r||!r.start)return alert('No hay vuelta en recorrido.');let pending=x.tickets.filter(t=>String(t.roundId)===String(r.id)&&!t.delivered);if(pending.length)return alert('Hay '+pending.length+' pedidos pendientes de esta vuelta.');if(!confirm('¿Ya regresaste a El Parrillón? Finalizar vuelta #'+r.number+'?'))return;r.end=now();save();openView('parrillon');toast('Vuelta finalizada: '+parDuration(r))}
-function parRoundsUI(x){
- let rounds=parRounds(x),r=parCurrentRound(x),h='<div class="panel"><h3>🛵 Vueltas de El Parrillón</h3>';
- if(!r)h+='<p class="muted">Cada vuelta recibe un único archivo JSON completo. Prepara una vuelta nueva para importar sus pedidos.</p><button class="full" onclick="parPrepareRound()">＋ Preparar vuelta #'+(rounds.length+1)+'</button>';
- else{
-  h+='<h3>Vuelta #'+r.number+' · '+(r.end?'Finalizada':r.start?'En recorrido':r.imported?'Lista para salir':'Esperando JSON')+'</h3>';
-  h+='<p>Pedidos: <b>'+x.tickets.filter(t=>String(t.roundId)===String(r.id)).length+'</b> · Tiempo: <b id="parRoundClock">'+parDuration(r)+'</b></p>';
-  if(r.start)h+='<button class="full" onclick="parFinishRound()">■ Finalizar vuelta al regresar</button>';
-  else if(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))h+='<p>✓ Archivo de la vuelta registrado. No se puede importar de nuevo.</p><button class="full" onclick="parStartRound()">▶ Iniciar vuelta al salir</button>';
-  else h+='<p class="hint">Importa el JSON completo de esta vuelta antes de salir.</p>';
- }
- 
- return h+'</div>'
-}
-function parExampleImport(){let obj={format:'suvazu-parrillon-pedidos',version:1,vuelta:1,pedidos:[{numero:'55',hora_captura:'12:35',cliente:'Ejemplo',telefono:'',pedido:'',bebida:'',cobrar:0,metodo:'Efectivo',monto:0,direccion:'',maps:''}]};let u=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='ejemplo_parrillon.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
-function parImport(file){if(!file)return;let x=parActive(),r=parPreparing(x);if(!running()||!r)return alert('Primero prepara una vuelta.');if(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))return alert('Esta vuelta ya tiene un archivo registrado. No se puede importar ni reemplazar.');if(file.size>1024*1024)return alert('Máximo 1 MB por archivo.');
- let reader=new FileReader();reader.onerror=()=>alert('No se pudo abrir el archivo.');reader.onload=()=>{try{let obj=JSON.parse(reader.result);if(obj.format!=='suvazu-parrillon-pedidos'||obj.version!==1||!Array.isArray(obj.pedidos))throw Error('Formato incorrecto.');if(obj.vuelta===undefined||Number(obj.vuelta)!==r.number)throw Error('El JSON debe indicar la vuelta #'+r.number+'.');if(obj.pedidos.length<1||obj.pedidos.length>100)throw Error('Se requieren entre 1 y 100 pedidos.');
- let seen=new Set(x.tickets.map(t=>String(t.number).trim())),add=[];
- for(let [i,t] of obj.pedidos.entries()){if(!t||typeof t!=='object'||Array.isArray(t))throw Error('Pedido inválido '+(i+1));let number=String(t.numero??'').trim();if(!number||number.length>35||seen.has(number))throw Error('Número vacío o repetido: '+number);seen.add(number);
- let charge=t.cobrar??'',received=t.monto??'',maps=String(t.maps??'').trim(),payment=String(t.metodo??'').trim();
- if([charge,received].some(v=>v!==''&&v!==null&&(!Number.isFinite(Number(v))||Number(v)<0)))throw Error('Importe inválido: #'+number);
- if(maps&&!/^https:\/\//i.test(maps))throw Error('Maps inválido: #'+number);
- if(payment&&!['Efectivo','Tarjeta','Transferencia','Pagado'].includes(payment))throw Error('Método inválido: #'+number);
- let capturedAt=t.hora_captura??t.horaCaptura??t.captura??t.capturedAt??t.captureTime??t.hora??null;
- if(capturedAt!==null&&typeof capturedAt!=='string'&&typeof capturedAt!=='number')throw Error('Hora de captura inválida en pedido #'+number);
- add.push({id:uid(),roundId:r.id,number,capturedAt:capturedAt===null?'':String(capturedAt).slice(0,60),client:String(t.cliente??'').slice(0,150),phone:String(t.telefono??'').slice(0,30),order:String(t.pedido??'').slice(0,600),drink:String(t.bebida??'').slice(0,150),charge:charge===''||charge===null?'':String(charge),payment,received:received===''||received===null?'':String(received),address:String(t.direccion??'').slice(0,400),maps,tip:0,delivered:null,created:now()})}
- if(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))throw Error('Esta vuelta ya está registrada.');if(!confirm('La vuelta #'+r.number+' contiene '+add.length+' pedidos. ¿Confirmas la importación DEFINITIVA? No podrás volver a importar ni reemplazar el JSON de esta vuelta.'))return;x.tickets.push(...add);r.imported=true;r.importedAt=now();save();openView('parrillon');toast('Vuelta #'+r.number+' registrada: '+add.length+' pedidos')}catch(e){alert('No se importó ningún pedido: '+e.message)}};reader.readAsText(file)}
-
-function parTips(x){return x.tickets.reduce((v,t)=>v+(t.delivered?Number(t.tip||0):0),0)}
-function parTotal(x){return Number(x.gain||0)+parTips(x)}
-function parNew(){if(!running())return alert('Primero inicia la jornada general de SuVaZu.');if(parActive())return alert('Ya hay un servicio de El Parrillón iniciado.');let d=dayKey(now());data.parrillon.push({id:uid(),date:d,start:now(),end:null,gain:null,closingPhoto:null,tickets:[],rounds:[]});parFormOpen=false;parEditing=null;save();openView('parrillon')}
-const parFields=[['number','# de Pedido','text'],['client','Cliente','text'],['phone','Teléfono','tel'],['order','Pedido','textarea'],['drink','Bebida','text'],['charge','A cobrar ($)','number'],['payment','Método de pago','select'],['received','Monto entregado por el cliente ($)','number'],['address','Dirección','textarea'],['maps','Maps (enlace proporcionado por ti)','url']];
-function parFind(id){for(let x of data.parrillon){let t=x.tickets.find(t=>String(t.id)===String(id));if(t)return {x,t}}return null}
-function parToggle(){return alert('La captura se realiza con Kanrmy; importa el JSON completo de la vuelta.');if(!running())return alert('Primero inicia la jornada general de SuVaZu.');if(!parActive())return alert('Primero inicia el servicio de El Parrillón.');if(!parPreparing(parActive()))return alert('Primero prepara una vuelta.');parFormOpen=!parFormOpen;parEditing=null;renderView()}
-function parEdit(id){return alert('Los tickets se revisan con Kanrmy antes de importar el JSON.');let z=parFind(id);if(!z)return;if(z.x.end)return alert("Este servicio ya está cerrado.");parEditing=id;parFormOpen=true;openView('parrillon');setTimeout(()=>$('parForm')?.scrollIntoView({behavior:'smooth',block:'start'}),60)}
-function parChange(){let cobrar=Number($('parCharge')?.value||0),recibido=Number($('parReceived')?.value||0),pago=$('parPayment')?.value;let e=$('parChange');if(e)e.textContent=pago==='Efectivo'&&$('parReceived').value!==''&&$('parCharge').value!==''?'Cambio: '+money(recibido-cobrar):'Cambio: pendiente'}
-function parSave(){return alert('La captura se realiza con Kanrmy.');if(!running())return alert('Primero inicia la jornada general de SuVaZu.');let x=parActive(),z=parEditing!==null?parFind(parEditing):null;if(!x||z&&z.x.id!==x.id)return alert('Primero inicia el servicio de El Parrillón.');let v={};for(let [key] of parFields){let id='par'+key[0].toUpperCase()+key.slice(1);v[key]=$(id)?.value.trim()||''}let round=parCurrentRound(x);if(!round)return alert('Primero prepara una vuelta.');if(!v.number)return alert('Introduce el número de pedido.');if(v.maps&&!/^https:\/\//i.test(v.maps))return alert('El enlace de Maps debe comenzar con https://');if(['charge','received'].some(k=>v[k]!==''&&(!Number.isFinite(Number(v[k]))||Number(v[k])<0)))return alert('Revisa los importes.');if(v.payment==='Efectivo'&&v.charge!==''&&v.received!==''&&Number(v.received)<Number(v.charge))return alert('El monto entregado es menor que el importe a cobrar. Revisa los datos.');let target=z?.x||x;if(target.tickets.some(t=>t.number===v.number&&t.id!==z?.t.id))return alert('Ese número de pedido ya está registrado en esta jornada.');if(z){Object.assign(z.t,v)}else{target.tickets.push({...v,id:uid(),roundId:round.id,tip:0,delivered:null,created:now()})}parEditing=null;parFormOpen=false;save();openView('parrillon');toast('Pedido guardado')}
-document.addEventListener('click',e=>{let b=e.target.closest('[data-par-delivery]');if(b)parOpenDelivery(b.getAttribute('data-par-delivery'))});
-let parDeliveryId=null,parDeliveryStep='review';
-function parOpenDelivery(id){
- let z=parFind(id),r=z&&parRounds(z.x).find(q=>String(q.id)===String(z.t.roundId));
- if(!z||z.x.end||z.t.delivered||!r||!r.start||r.end)return alert('El pedido no está disponible para entrega.');
- parDeliveryId=id;parDeliveryStep='review';parDrawDelivery();
-}
-function parCloseDelivery(){parDeliveryId=null;parDeliveryStep='review';document.getElementById('parDeliveryModal')?.remove()}
-function parDrawDelivery(){
- document.getElementById('parDeliveryModal')?.remove();
- let z=parFind(parDeliveryId);if(!z||z.t.delivered)return parCloseDelivery();
- let t=z.t,change=t.payment==='Efectivo'&&t.charge!==''&&t.received!==''?Number(t.received)-Number(t.charge):null;
- let div=document.createElement('div');div.id='parDeliveryModal';div.className='par-delivery-modal';div.setAttribute('role','dialog');div.setAttribute('aria-modal','true');div.setAttribute('aria-label','Confirmación de entrega del pedido '+t.number);
- let review=parDeliveryStep==='review';
- div.innerHTML=`<div class="par-delivery-top"><strong>${review?'📦 Revisar entrega':'💛 Registrar propina'}</strong><button onclick="parCloseDelivery()">✕ Cerrar</button></div>
- <div class="par-delivery-scroll"><div class="par-delivery-box">
- <div class="par-delivery-number"><div class="par-delivery-label">NÚMERO DE PEDIDO</div><div class="par-delivery-number-value">#${esc(t.number)}</div></div>
- ${review?`
- <div class="par-delivery-divider"></div><div class="par-delivery-label">PEDIDO</div><div class="par-delivery-big">${esc(t.order||'—')}</div>
- <div class="par-delivery-label">BEBIDA</div><div class="par-delivery-big">${esc(t.drink||'—')}</div>
- <div class="par-delivery-divider"></div><div class="par-delivery-total"><div class="par-delivery-label">TOTAL A COBRAR</div><div class="par-delivery-amount">${t.charge!==''?money(t.charge):'—'}</div></div>
- <div class="par-delivery-label">MÉTODO DE PAGO</div><div class="par-delivery-payment ${parIsCard(t)?'card':t.payment==='Efectivo'?'cash':'other'}">${parIsCard(t)?'💳':t.payment==='Efectivo'?'💵':'🧾'} ${esc(t.payment||'—')}</div>
- ${t.payment==='Efectivo'?`<div class="par-delivery-label">RECIBE</div><div class="par-delivery-big">${t.received!==''?money(t.received):'—'}</div>`:''}
- ${change!==null&&Number.isFinite(change)&&change>0?`<div class="par-delivery-change"><div class="par-delivery-label">CAMBIO PARA EL CLIENTE</div><div class="par-delivery-amount">${money(change)}</div></div>`:`<div class="par-delivery-label">CAMBIO</div><div class="par-delivery-big">${change===0?'$0.00':'No aplica'}</div>`}
- `:`<div class="par-delivery-divider"></div><p style="font-size:23px;font-weight:800">¿El cliente dejó propina?</p><label for="parTipInput">Importe de propina ($). Escribe 0 si no dejó.</label><input id="parTipInput" type="number" inputmode="decimal" min="0" step="0.01" value="0"><p class="muted">La entrega se registrará al guardar la propina.</p>`}
- </div></div>
- <div class="par-delivery-footer"><button>${review?'✓ Entregado':'✓ Guardar entrega y propina'}</button></div>`;
- div.querySelector('.par-delivery-footer button').onclick=review?()=>{parDeliveryStep='tip';parDrawDelivery()}:parConfirmDelivery;
- document.body.appendChild(div);
-}
-function parConfirmDelivery(){
- let z=parFind(parDeliveryId),input=document.getElementById('parTipInput');if(!z||!input||z.t.delivered)return;
- let raw=input.value.trim(),tip=Number(raw);
- if(raw===''||!Number.isFinite(tip)||tip<0)return alert('Introduce una propina válida, o 0 si no dejó.');
- let r=parRounds(z.x).find(q=>String(q.id)===String(z.t.roundId));if(!r||!r.start||r.end)return alert('Esta vuelta no está activa.');
- z.t.tip=tip;z.t.delivered=now();save();parCloseDelivery();openView('parrillon');toast('Pedido #'+z.t.number+' entregado · Propina '+money(tip))
-}
-function parDeliver(id){parOpenDelivery(id)}
-function parTip(id){let z=parFind(id);if(!z)return;let v=prompt('Propina recibida en el pedido #'+z.t.number+' ($)',String(z.t.tip||0));if(v===null)return;if(v.trim()===''||!Number.isFinite(Number(v))||Number(v)<0)return alert('Monto inválido.');z.t.tip=Number(v);save();openView('parrillon')}
-function parDelete(id){return alert('Los pedidos importados no se eliminan desde la app.');let z=parFind(id);if(!z||z.x.end||!confirm('¿Eliminar pedido #'+z.t.number+'?'))return;z.x.tickets=z.x.tickets.filter(t=>t.id!==id);save();openView('parrillon')}
-function parNav(url){if(!/^https:\/\//i.test(url||''))return '';try{let u=new URL(url);if(!/(^|\.)google\.[a-z.]+$|(^|\.)goo\.gl$/i.test(u.hostname))return '';return `<a class="par-maps-link" href="${esc(u.href)}" target="_blank" rel="noopener noreferrer">📍 Abrir en Google Maps ↗</a>`}catch{return ''}}
-
-function parCaptureTime(t){
- let raw=String(t.capturedAt??t.hora_captura??t.horaCaptura??t.captureTime??'').trim();
- if(!raw)return 'No indicada en JSON';
- if(/^\d{1,2}:\d{2}(?::\d{2})?(?:\s*(?:a\.?\s*m\.?|p\.?\s*m\.?))?$/i.test(raw))return raw;
- let date=new Date(raw);return Number.isNaN(date.getTime())?raw:date.toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});
-}
-function parIsCard(t){return /tarjeta|d[eé]bito|cr[eé]dito|card/i.test(String(t.payment||''))}
-function parRoundSummary(x,r){
- if(!r||!(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id))))return '';
- let tickets=x.tickets.filter(t=>String(t.roundId)===String(r.id));
- let drinks=tickets.filter(t=>String(t.drink||'').trim()&&!/^(?:no|ninguna?|sin|—|-)$/i.test(String(t.drink).trim()));
- let cards=tickets.filter(parIsCard);
- let changes=tickets.map(t=>({t,value:t.payment==='Efectivo'&&t.charge!==''&&t.received!==''?Number(t.received)-Number(t.charge):null})).filter(o=>o.value!==null&&Number.isFinite(o.value)&&o.value>0);
- let sum=changes.reduce((v,o)=>v+o.value,0);
- return `<section class="par-summary"><h3>📋 Resumen · Vuelta #${r.number}</h3>
- <div class="par-summary-section"><strong>🥤 Refrescos</strong>${drinks.length?drinks.map(t=>`<p>Pedido #${esc(t.number)}: ${esc(t.drink)}</p>`).join(''):'<p>Sin refrescos registrados.</p>'}</div>
- <div class="par-summary-section"><strong>💳 Pagos con Tarjeta</strong>${cards.length?cards.map(t=>`<p>Pedido #${esc(t.number)} · ${t.charge!==''?money(t.charge):'Monto no indicado'}</p>`).join(''):'<p>Sin pagos con tarjeta.</p>'}</div>
- <div class="par-summary-section"><strong>💵 Cambios</strong>${changes.length?changes.map(o=>`<p>Pedido #${esc(o.t.number)}: <b>${money(o.value)}</b></p>`).join('')+`<p><b>Total de cambio: ${money(sum)}</b></p>`:'<p>No se requiere cambio.</p>'}</div>
- </section>`
-}
-function parRouteCard(t,canDeliver=true){
- return `<article class="par-route-card">
- <div class="par-route-label" style="text-align:center">NÚMERO DE PEDIDO</div>
- <div class="par-route-number">#${esc(t.number)}</div>
- <div class="par-route-label">HORA DE CAPTURA</div><div class="par-route-value">${esc(parCaptureTime(t))}</div>
- <div class="par-route-label">CLIENTE</div><div class="par-route-value">${esc(t.client||'—')}</div>
- <div class="par-route-label">TELÉFONO</div><div class="par-route-value">${esc(t.phone||'—')}</div>
- <div class="par-route-label">DIRECCIÓN / REFERENCIA</div><div class="par-route-address">${esc(t.address||'—')}</div>
- <button ${canDeliver?`data-par-delivery="${esc(t.id)}"`:"disabled"}>${canDeliver?"📦 Entregar pedido":"🕒 Disponible al iniciar vuelta"}</button>
- </article>`
-}
-function parRoundOrders(x,q){
- let tickets=x.tickets.filter(t=>String(t.roundId)===String(q.id)),pending=tickets.filter(t=>!t.delivered),delivered=tickets.filter(t=>!!t.delivered);
- let h=`<h3>🛵 Vuelta #${q.number} · ${q.end?parDuration(q):q.start?'En recorrido':q.imported?'Lista para salir':'Esperando JSON'}</h3>`;
- if(!q.end){
- h+=pending.length?`<p class="par-track-help">↔ Desliza a la izquierda o derecha para cambiar de pedido · ${pending.length} pendientes</p><div class="par-pending-track">${pending.map(t=>parRouteCard(t,!!q.start)).join('')}</div>`:'<p class="hint">✓ No hay pedidos pendientes en esta vuelta.</p>';
- }
- else h+=`<p>✓ ${delivered.length} pedidos entregados.</p>`;
- if(delivered.length)h+=`<details class="par-delivered-fold"><summary>✓ Pedidos entregados (${delivered.length}) · Toca para consultar</summary>${delivered.map(t=>parTicketCard(t,true)).join('')}</details>`;
- return h;
-}
-function parHistoryRounds(x){
- let past=parRounds(x).filter(q=>q.end);
- if(!past.length)return '';
- return `<details class="par-history-fold"><summary>📚 Historial de vueltas (${past.length})</summary><div class="par-history-content">${past.slice().reverse().map(q=>`<details class="par-history-round"><summary>🛵 Vuelta #${q.number} · ${parDuration(q)}</summary>${parRoundOrders(x,q)}</details>`).join('')}</div></details>`;
+${metric('Tiempo de servicio',duration(parMs))}`)
++group('apps','📱 Apps',`
+${metric('Ganancias',money(appsBase))}
+${metric('Propinas en efectivo',money(appsTips))}
+${metric('Pedidos de Apps',appOrders)}
+${metric('Tiempo de servicio',duration(appMs))}`);
 }
 function parTicketCard(t,closed=false){
  let change=t.payment==='Efectivo'&&t.charge!==''&&t.received!==''?Number(t.received)-Number(t.charge):null;
