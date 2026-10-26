@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.06</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.07</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -652,8 +652,33 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-caramelo-entry .pill{background:#fce8f2;color:#82315b}
 #overlay .sv-caramelo-entry button:not(.secondary){background:#ef91be;color:#50263d}
 #overlay .sv-caramelo-entry button.secondary{background:#e7f6f3;color:#166e68}
+
+/* Prueba 1.07 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
+#overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-toggle{
+ background:linear-gradient(112deg,#fff 0%,#fff 45%,#fff3f9 77%,#ffe5f2 100%);
+}
+#overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-toggle::after{
+ background:linear-gradient(100deg,#ffc1dc 0%,#f078b0 31%,#d53b89 66%,#7ad9dc 100%);
+}
+#overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-state{color:#913763}
+#overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-chevron{background:#ffe5f1;color:#97336a}
+#overlay .sv-associate-home[data-front-partner="caramelo"] .sv-module-kpi{background:#fff0f7;border-color:#f5c7de}
+#overlay .sv-associate-home[data-front-partner="caramelo"] .sv-module-kpi strong{color:#963767}
+#overlay .sv-associate-home[data-front-partner="parrillon"] .sv-associate-section .sv-app-section-toggle{
+ background:linear-gradient(112deg,#fff 0%,#fff 43%,#fff2e0 76%,#ffe3c4 100%);
+}
+#overlay .sv-associate-home[data-front-partner="parrillon"] .sv-associate-section .sv-app-section-toggle::after{
+ background:linear-gradient(100deg,#ffcd66 0%,#f78b27 30%,#c44715 66%,#ffd36d 100%);
+}
+#overlay .sv-associate-home[data-front-partner="parrillon"] .sv-associate-section .sv-app-section-state{color:#82451e}
+#overlay .sv-associate-home[data-front-partner="parrillon"] .sv-associate-section .sv-app-section-chevron{background:#ffecd5;color:#873c12}
+@media(prefers-reduced-motion:no-preference){
+ #overlay .sv-associate-section .sv-app-section-toggle,
+ #overlay .sv-associate-section .sv-app-section-state,
+ #overlay .sv-associate-section .sv-app-section-chevron{transition:background .18s ease,color .18s ease}
+}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.06</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.07</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -964,7 +989,7 @@ function renderView(){
  $('overlay').classList.toggle('sv-primary',primaryModule);
  $('svPullHint').hidden=!primaryModule;
  $('overlay').classList.toggle('parrillon-view',view==='parrillon');let title={routes:'Gestión de rutas',orders:'Pedidos de la ruta',delivery:'Confirmar entrega',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',caramelo:'🍬 Mundo de Caramelo',suvazu:'🛵 SuVaZu Repartidor',clients:'👥 Clientes',clientOrder:'Nuevo pedido · Cliente',importQuick:'📥 Importar pedido',captureRoute:'Capturar pedido'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='captureRoute'){svRenderCaptureRoute();return}if(view==='clients'){svRenderClients();return}if(view==='clientOrder'){svRenderClientOrder();return}if(view==='asociados'){
- $('overlayBody').innerHTML=svRenderAssociateHome();return
+ $('overlayBody').innerHTML=svRenderAssociateHome();svAssociateRestoreCarousel();return
 }if(view==='apps'){ $('overlayBody').innerHTML=renderApps();return }if(view==='parrillon'){$('overlayBody').innerHTML=renderParrillon();return}if(view==='caramelo'){$('overlayBody').innerHTML=svCarameloRender();return}if(view==='routes'){
 h=`<div class="panel"><div class="row"><h2>🛣️ Gestión de rutas</h2><span class="pill">${activeRoutes().length+data.appServices.filter(a=>!a.end).length} abiertas</span></div><p class="muted">Selecciona una ruta para abrir directamente sus pedidos pendientes.</p></div>`+
 activeRoutes().slice().reverse().map(r=>`<div class="order-card"><div class="row"><strong>${esc(r.name)}</strong><span class="pill">${esc(r.status)}</span></div><p>${esc(r.origin==='asociados'?'SuVaZu Asociados - '+r.business:'SuVaZu Repartidor')} - ${r.orders.filter(activeOrder).length} pedido(s)</p><button class="full" onclick="browseRoute(${r.id})">Abrir ruta →</button></div>`).join('')+data.appServices.filter(a=>!a.end).slice().reverse().map(a=>`<div class="order-card"><b>📱 ${esc(a.app)} · Ruta activa</b><p>${a.items.length} pedidos</p><button class="full" onclick="appEditClosed(${a.id})">Abrir ruta →</button></div>`).join('')||'<div class="panel"><p class="muted">Sin rutas abiertas.</p></div>';
@@ -1401,8 +1426,8 @@ function svAssociateSection(section,title,body){
   <div class="sv-associate-content" id="svAssociate_${section}" ${open?'':'hidden'}>${body}</div>
  </section>`;
 }
-function svAssociateRouteCards(items){
- if(!items.length)return '<p class="muted">Sin rutas registradas en esta sección.</p>';
+function svAssociateRouteCards(items,showEmpty=true){
+ if(!items.length)return showEmpty?'<p class="muted">Sin rutas registradas en esta sección.</p>':'';
  return items.slice().reverse().map(r=>{
   const pending=r.orders.filter(activeOrder).length;
   const done=r.orders.filter(o=>o.delivered&&!o.cancelled).length;
@@ -1419,6 +1444,35 @@ function svAssociateRouteCards(items){
   </div>`;
  }).join('');
 }
+// El socio al frente define el acento de las cabeceras, sin modificar las rutas.
+let svAssociateFrontPartner='parrillon',svAssociateRestoring=false;
+function svAssociateCarouselScroll(el){
+ if(!el||svAssociateRestoring)return;
+ const first=el.querySelector('.sv-associate-tile');
+ if(!first)return;
+ const gap=parseFloat(getComputedStyle(el).gap)||0;
+ const step=first.getBoundingClientRect().width+gap;
+ const index=step>0?Math.max(0,Math.min(1,Math.round(el.scrollLeft/step))):0;
+ const front=index===1?'caramelo':'parrillon';
+ svAssociateFrontPartner=front;
+ const home=el.closest('.sv-associate-home');
+ if(home)home.dataset.frontPartner=front;
+}
+function svAssociateRestoreCarousel(){
+ const target=svAssociateFrontPartner;
+ svAssociateRestoring=true;
+ requestAnimationFrame(()=>{
+  const home=document.querySelector('#overlay .sv-associate-home');
+  if(!home){svAssociateRestoring=false;return;}
+  const el=home.querySelector('.sv-associate-carousel');
+  const first=el&&el.querySelector('.sv-associate-tile');
+  if(!first){svAssociateRestoring=false;return;}
+  const gap=parseFloat(getComputedStyle(el).gap)||0;
+  el.scrollLeft=target==='caramelo'?(first.getBoundingClientRect().width+gap):0;
+  home.dataset.frontPartner=target;
+  requestAnimationFrame(()=>{svAssociateRestoring=false;svAssociateCarouselScroll(el);});
+ });
+}
 function svRenderAssociateHome(){
  const all=data.routes.filter(r=>r.origin==='asociados');
  const ongoing=all.filter(r=>r.status!=='finalizada');
@@ -1426,7 +1480,7 @@ function svRenderAssociateHome(){
  const summary=svAssociateSection('summary','Resumen de Asociados',svModuleSummaryHtml('associate'));
  const partners=`<section class="panel sv-associate-partners">
   <h2>Selecciona un Socio</h2>
-  <div class="sv-app-carousel sv-associate-carousel" aria-label="Desliza para elegir un socio">
+  <div class="sv-app-carousel sv-associate-carousel" aria-label="Desliza para elegir un socio" onscroll="svAssociateCarouselScroll(this)">
    <button type="button" class="sv-app-tile sv-associate-tile" onclick="openView('parrillon')" aria-label="Abrir módulo El Parrillón">
     <img class="sv-associate-partner-banner" src="./socio_parrillon.webp" alt="El Parrillón · SuVaZu" loading="eager">
    </button>
@@ -1438,11 +1492,11 @@ function svRenderAssociateHome(){
  const partnerOngoing=data.partnerRoutes.filter(r=>!r.end),partnerClosed=data.partnerRoutes.filter(r=>r.end);
  const partnerRow=r=>{const orders=svPartnerOrders(r);return `<div class="sv-associate-route"${svPartnerThemeAttr(r.partner)}><div class="sv-associate-route-top"><strong>${esc(r.partner)} · Ruta</strong><span class="pill">${r.end?'Finalizada':'En curso'}</span></div><p class="muted">${orders.filter(q=>!q.delivered).length} pendientes · ${orders.filter(q=>q.delivered).length} entregados</p><button type="button" class="secondary" onclick="openView('caramelo')">Ver ruta ›</button></div>`};
  const history=svAssociateSection('history','Historial de Rutas',`
-  ${ongoing.length||partnerOngoing.length?`<h3 class="sv-associate-history-title">Rutas en curso (${ongoing.length+partnerOngoing.length})</h3>${svAssociateRouteCards(ongoing)}${partnerOngoing.map(partnerRow).join('')}`:''}
+  ${ongoing.length||partnerOngoing.length?`<h3 class="sv-associate-history-title">Rutas en curso (${ongoing.length+partnerOngoing.length})</h3>${svAssociateRouteCards(ongoing,!partnerOngoing.length)}${partnerOngoing.map(partnerRow).join('')}`:''}
   ${svModuleHistoryHtml('associate')}
   <h3 class="sv-associate-history-title">Rutas finalizadas (${closed.length+partnerClosed.length})</h3>
-  ${svAssociateRouteCards(closed)}${partnerClosed.map(partnerRow).join('')}`);
- return `<div class="sv-associate-home">${summary}${partners}${history}</div>`;
+  ${svAssociateRouteCards(closed,!partnerClosed.length)}${partnerClosed.map(partnerRow).join('')}`);
+ return `<div class="sv-associate-home" data-front-partner="${svAssociateFrontPartner}">${summary}${partners}${history}</div>`;
 }
 function svModuleRouteManageHtml(kind){
  const associated=kind==='associate',items=data.routes.filter(r=>associated?r.origin==='asociados':r.origin!=='asociados').slice().reverse();
@@ -1992,7 +2046,7 @@ function backupStatus(){
 }
 function exportData(){
  try{
- let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'1.06',createdAt:now()};
+ let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'1.07',createdAt:now()};
  let blob=new Blob([JSON.stringify(snapshot,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='respaldo-suvazu-'+dayKey(now())+'-'+new Date().toTimeString().slice(0,5).replace(':','-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);toast('Respaldo preparado. Comprueba que se descargó.');
  }catch(e){alert('No se pudo preparar el respaldo: '+e.message)}
