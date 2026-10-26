@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.09</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.10</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -653,7 +653,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-caramelo-entry button:not(.secondary){background:#ef91be;color:#50263d}
 #overlay .sv-caramelo-entry button.secondary{background:#e7f6f3;color:#166e68}
 
-/* Prueba 1.09 · Historial: sólo rutas terminadas y fichas por pedido. */
+/* Prueba 1.10 · Historial: sólo rutas terminadas y fichas por pedido. */
 #overlay .sv-associate-history-card{display:block;overflow:hidden;padding:0!important}
 #overlay .sv-associate-history-summary{display:flex;align-items:center;gap:9px;padding:15px 12px;cursor:pointer;list-style:none}
 #overlay .sv-associate-history-summary::-webkit-details-marker,#overlay .sv-associate-history-order>summary::-webkit-details-marker{display:none}
@@ -678,7 +678,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-associate-history-link small{display:block;margin-top:5px;color:#526b61}
 #overlay .sv-client-target{outline:3px solid #ef91be;outline-offset:3px}
 
-/* Prueba 1.09 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
+/* Prueba 1.10 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
 #overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-toggle{
  background:linear-gradient(112deg,#fff 0%,#fff 45%,#fff3f9 77%,#ffe5f2 100%);
 }
@@ -703,7 +703,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  #overlay .sv-associate-section .sv-app-section-chevron{transition:background .18s ease,color .18s ease}
 }
 
-/* Prueba 1.09 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
+/* Prueba 1.10 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
 .sv-home-results-panel{background:#fff;border-radius:24px}
 .sv-home-results>.row{background:linear-gradient(115deg,#f7fbff 0%,#e9f4ff 68%,#dceeff 100%);border:1px solid #e1effc;min-height:76px}
 .sv-home-results>.row::before{background:rgba(163,207,250,.22)}
@@ -727,7 +727,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-balance-number{font-size:clamp(20px,5.15vw,31px);font-weight:900;line-height:1.1;white-space:nowrap;letter-spacing:-.045em;color:var(--dark);font-variant-numeric:tabular-nums;position:relative;z-index:1}
 @media(max-width:360px){.sv-balance-grid{gap:7px}.sv-balance-metric{padding:12px 8px;min-height:138px}.sv-balance-number{font-size:clamp(17px,5vw,24px)}.sv-balance-label{font-size:12px}}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.09</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.10</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -1855,12 +1855,12 @@ let directIntervals=data.routes.filter(r=>routeDate(r)===d).map(r=>[validMs(r.st
 let idleMs=Math.max(0,workTotal-serviceMs);
 let appOrders=finishedApps.reduce((n,a)=>n+(a.closeComplete?Number(a.reportedOrders??a.items.length):a.items.length),0);
 let allAppStats=svModuleStats('app');
-let servicesTotal=data.routes.filter(r=>routeDate(r)===d&&r.status==='finalizada').length+data.parrillon.filter(p=>p.end&&p.date===d).length+finishedApps.length+carameloDone.length;
-// Prueba 1.09: balance único, cuatro indicadores sin desgloses ni porcentajes.
+let servicesTotal=['direct','associate','app'].reduce((sum,kind)=>sum+svModuleStats(kind).orders,0);
+// Prueba 1.10: balance único, cuatro indicadores sin desgloses ni porcentajes.
 const balanceMetric=(kind,label,value,icon)=>`<div class="sv-balance-metric sv-balance-${kind}"><div class="sv-balance-icon" aria-hidden="true">${icon}</div><div class="sv-balance-label">${label}</div><strong class="sv-balance-number">${value}</strong></div>`;
 $('dashboard').innerHTML=`<div class="sv-balance-grid" aria-label="Balance general del día">
 ${balanceMetric('money','Ganancias',money(day),'$')}
-${balanceMetric('services','Servicios',servicesTotal,'▤')}
+${balanceMetric('services','Servicios del Día',servicesTotal,'▤')}
 ${balanceMetric('idle','Tiempo en Espera',duration(idleMs),'◷')}
 ${balanceMetric('active','Tiempo en Servicio',duration(serviceMs),'▶')}
 </div>`;
@@ -2112,7 +2112,7 @@ function backupStatus(){
 }
 function exportData(){
  try{
- let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'1.09',createdAt:now()};
+ let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'1.10',createdAt:now()};
  let blob=new Blob([JSON.stringify(snapshot,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='respaldo-suvazu-'+dayKey(now())+'-'+new Date().toTimeString().slice(0,5).replace(':','-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);toast('Respaldo preparado. Comprueba que se descargó.');
  }catch(e){alert('No se pudo preparar el respaldo: '+e.message)}
