@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.10</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.11</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -614,6 +614,12 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  --sv-p-accent:#ea7626;--sv-p-deep:#823610;--sv-p-soft:#fff3e4;
  --sv-p-btn:#f3b64e;--sv-p-btn-text:#502f12;--sv-p-edge:#f4c38d;
 }
+.sv-home-route-card[data-sv-partner="nutribionicos"],
+#overlay .sv-associate-route[data-sv-partner="nutribionicos"]{
+ --sv-p-accent:#41b53f;--sv-p-deep:#236b1f;--sv-p-soft:#f4fff0;
+ --sv-p-btn:#f0b342;--sv-p-btn-text:#4f3408;--sv-p-edge:#b9e2aa;
+}
+
 .sv-home-route-card[data-sv-partner]{
  border:1px solid var(--sv-p-edge);border-left:5px solid var(--sv-p-accent);
  background:linear-gradient(112deg,#fff 0%,var(--sv-p-soft) 100%);
@@ -653,7 +659,21 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-caramelo-entry button:not(.secondary){background:#ef91be;color:#50263d}
 #overlay .sv-caramelo-entry button.secondary{background:#e7f6f3;color:#166e68}
 
-/* Prueba 1.10 · Historial: sólo rutas terminadas y fichas por pedido. */
+/* Nutribiónicos: mismo formato de captura directa con identidad verde/naranja. */
+#overlay.nutribionicos-view .sv-caramelo-panel{border-top-color:#52be41}
+#overlay.nutribionicos-view .sv-caramelo-panel h2,#overlay.nutribionicos-view .sv-caramelo-fold>summary{color:#2d6f1f}
+#overlay.nutribionicos-view .sv-caramelo-panel label{color:#436036}
+#overlay.nutribionicos-view .sv-caramelo-entry{background:#fbfff8;border-color:#d7ebc8;border-left-color:#46b44a}
+#overlay.nutribionicos-view .sv-caramelo-route{border-bottom-color:#cfe7bc}
+#overlay.nutribionicos-view .sv-caramelo-route>.row>strong{color:#2d731b}
+#overlay.nutribionicos-view .sv-caramelo-route .pill,#overlay.nutribionicos-view .sv-caramelo-entry .pill{background:#eef9df;color:#2f761e}
+#overlay.nutribionicos-view .sv-caramelo-entry button:not(.secondary){background:#f0b342;color:#4f3408}
+#overlay.nutribionicos-view .sv-caramelo-entry button.secondary{background:#eaf8df;color:#2a6d24}
+#overlay.nutribionicos-view .sv-caramelo-file-only{background:#f9fff5;border-color:#8ed26e;color:#2e6f21}
+#overlay.nutribionicos-view .sv-caramelo-count{background:#edf9e5;color:#2f761e}
+#overlay.nutribionicos-view .sv-client-target{outline-color:#45b145}
+
+/* Prueba 1.11 · Historial: sólo rutas terminadas y fichas por pedido. */
 #overlay .sv-associate-history-card{display:block;overflow:hidden;padding:0!important}
 #overlay .sv-associate-history-summary{display:flex;align-items:center;gap:9px;padding:15px 12px;cursor:pointer;list-style:none}
 #overlay .sv-associate-history-summary::-webkit-details-marker,#overlay .sv-associate-history-order>summary::-webkit-details-marker{display:none}
@@ -678,7 +698,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-associate-history-link small{display:block;margin-top:5px;color:#526b61}
 #overlay .sv-client-target{outline:3px solid #ef91be;outline-offset:3px}
 
-/* Prueba 1.10 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
+/* Prueba 1.11 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
 #overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-toggle{
  background:linear-gradient(112deg,#fff 0%,#fff 45%,#fff3f9 77%,#ffe5f2 100%);
 }
@@ -697,13 +717,23 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 }
 #overlay .sv-associate-home[data-front-partner="parrillon"] .sv-associate-section .sv-app-section-state{color:#82451e}
 #overlay .sv-associate-home[data-front-partner="parrillon"] .sv-associate-section .sv-app-section-chevron{background:#ffecd5;color:#873c12}
+#overlay .sv-associate-home[data-front-partner="nutribionicos"] .sv-associate-section .sv-app-section-toggle{
+ background:linear-gradient(112deg,#fff 0%,#fff 42%,#f4fff0 74%,#e8f8df 100%);
+}
+#overlay .sv-associate-home[data-front-partner="nutribionicos"] .sv-associate-section .sv-app-section-toggle::after{
+ background:linear-gradient(100deg,#ffd261 0%,#ff9c19 29%,#26b24f 66%,#d5ef71 100%);
+}
+#overlay .sv-associate-home[data-front-partner="nutribionicos"] .sv-associate-section .sv-app-section-state{color:#387228}
+#overlay .sv-associate-home[data-front-partner="nutribionicos"] .sv-associate-section .sv-app-section-chevron{background:#eef9df;color:#397a20}
+#overlay .sv-associate-home[data-front-partner="nutribionicos"] .sv-module-kpi{background:#f4fff1;border-color:#cdecb8}
+#overlay .sv-associate-home[data-front-partner="nutribionicos"] .sv-module-kpi strong{color:#2b7320}
 @media(prefers-reduced-motion:no-preference){
  #overlay .sv-associate-section .sv-app-section-toggle,
  #overlay .sv-associate-section .sv-app-section-state,
  #overlay .sv-associate-section .sv-app-section-chevron{transition:background .18s ease,color .18s ease}
 }
 
-/* Prueba 1.10 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
+/* Prueba 1.11 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
 .sv-home-results-panel{background:#fff;border-radius:24px}
 .sv-home-results>.row{background:linear-gradient(115deg,#f7fbff 0%,#e9f4ff 68%,#dceeff 100%);border:1px solid #e1effc;min-height:76px}
 .sv-home-results>.row::before{background:rgba(163,207,250,.22)}
@@ -727,7 +757,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-balance-number{font-size:clamp(20px,5.15vw,31px);font-weight:900;line-height:1.1;white-space:nowrap;letter-spacing:-.045em;color:var(--dark);font-variant-numeric:tabular-nums;position:relative;z-index:1}
 @media(max-width:360px){.sv-balance-grid{gap:7px}.sv-balance-metric{padding:12px 8px;min-height:138px}.sv-balance-number{font-size:clamp(17px,5vw,24px)}.sv-balance-label{font-size:12px}}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.10</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.11</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -750,7 +780,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 'use strict';
 const KEY='suvazu-v01';const $=id=>document.getElementById(id);const now=()=>new Date().toISOString();const money=n=>'$'+Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2});const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const dt=s=>s?new Date(s).toLocaleString('es-MX',{dateStyle:'short',timeStyle:'short'}):'—';const tm=s=>s?new Date(s).toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'}):'—';const dayKey=s=>{let d=new Date(s);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};const duration=ms=>{ms=Math.max(0,ms);let min=Math.floor(ms/60000);return Math.floor(min/60)+' h '+(min%60)+' min'};const uid=()=>Date.now()*1000+Math.floor(Math.random()*999);const showCharge=v=>{let t=String(v??'').trim();if(!t)return 'Pendiente';let n=t.replace(/[$,\s]/g,'');return /^\d+(?:\.\d+)?$/.test(n)?money(Number(n)):t};
 let data;try{data=JSON.parse(localStorage.getItem(KEY))||{routes:[],selected:null}}catch{data={routes:[],selected:null}};
-function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];if(!Array.isArray(data.carameloServices))data.carameloServices=[];if(!Array.isArray(data.partnerRoutes))data.partnerRoutes=[];if(!data.carameloClientExtras||typeof data.carameloClientExtras!=='object'||Array.isArray(data.carameloClientExtras))data.carameloClientExtras={};if(!Array.isArray(data.clients))data.clients=[];if(!data.ui||typeof data.ui!=='object')data.ui={};if(!data.ui.homeSummary||typeof data.ui.homeSummary!=='object')data.ui.homeSummary={};if(!data.ui.appSections||typeof data.ui.appSections!=='object')data.ui.appSections={};if(typeof data.ui.backupExpanded!=='boolean')data.ui.backupExpanded=false;for(let k of ['summary','history'])if(typeof data.ui.appSections[k]!=='boolean')data.ui.appSections[k]=false;for(let k of ['direct','associate','app'])if(typeof data.ui.homeSummary[k]!=='boolean')data.ui.homeSummary[k]=false;data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
+function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];if(!Array.isArray(data.carameloServices))data.carameloServices=[];if(!Array.isArray(data.nutribionicosServices))data.nutribionicosServices=[];if(!Array.isArray(data.partnerRoutes))data.partnerRoutes=[];if(!data.carameloClientExtras||typeof data.carameloClientExtras!=='object'||Array.isArray(data.carameloClientExtras))data.carameloClientExtras={};if(!data.nutribionicosClientExtras||typeof data.nutribionicosClientExtras!=='object'||Array.isArray(data.nutribionicosClientExtras))data.nutribionicosClientExtras={};if(!Array.isArray(data.clients))data.clients=[];if(!data.ui||typeof data.ui!=='object')data.ui={};if(!data.ui.homeSummary||typeof data.ui.homeSummary!=='object')data.ui.homeSummary={};if(!data.ui.appSections||typeof data.ui.appSections!=='object')data.ui.appSections={};if(typeof data.ui.backupExpanded!=='boolean')data.ui.backupExpanded=false;for(let k of ['summary','history'])if(typeof data.ui.appSections[k]!=='boolean')data.ui.appSections[k]=false;for(let k of ['direct','associate','app'])if(typeof data.ui.homeSummary[k]!=='boolean')data.ui.homeSummary[k]=false;data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
 normalize();
 // Regularización no destructiva: las rutas de socios estándar con todas sus entregas
 // confirmadas en 1.05 pasan a finalizadas, conservando pedidos y fechas originales.
@@ -758,7 +788,7 @@ try{
  let updated=false;
  for(const r of data.partnerRoutes){
   if(r.end)continue;
-  const orders=data.carameloServices.filter(q=>String(q.partnerRouteId)===String(r.id));
+  const orders=(r&&svPartnerServicesByName?r&&svPartnerServicesByName(r.partner):data.carameloServices).filter(q=>String(q.partnerRouteId)===String(r.id));
   if(orders.length&&orders.every(q=>!!q.delivered)){
    r.end=orders.map(q=>q.delivered).sort().at(-1);updated=true;
   }
@@ -1009,7 +1039,7 @@ function renderApps(){
 
 }
 
-let view='orders',detailId=null,previousView='suvazu',routeBrowseId=null,slideIndex=0,deliveryId=null;function openView(v,id){if(v==='caramelo'&&view!==v)svCarameloOpenSections={completed:false,clients:false};if(view!==v)previousView=view;view=v;detailId=id??null;$('overlay').classList.add('show');document.body.style.overflow='hidden';renderView();$('overlay').scrollTop=0;svArmAndroidBack()}function closeView(){svRestore();$('overlay').classList.remove('show');document.body.style.overflow=''}
+let view='orders',detailId=null,previousView='suvazu',routeBrowseId=null,slideIndex=0,deliveryId=null;function openView(v,id){if(v==='caramelo'&&view!==v)svCarameloOpenSections={completed:false,clients:false};if(v==='nutribionicos'&&view!==v)svNutribionicosOpenSections={completed:false,clients:false};if(view!==v)previousView=view;view=v;detailId=id??null;$('overlay').classList.add('show');document.body.style.overflow='hidden';renderView();$('overlay').scrollTop=0;svArmAndroidBack()}function closeView(){svRestore();$('overlay').classList.remove('show');document.body.style.overflow=''}
 function goBack(){if(view==='apps'&&$('overlay').classList.contains('show')&&appScreen==='service'){appScreen='home';renderView();return}if(deliveryId!==null){deliveryId=null;view='orders';renderView();return}if(view==='apps'){closeView();return}if(view==='clients'){closeView();return}if(view==='clientOrder'){openView('clients');return}if(view==='captureRoute'){openView(current()?.origin==='asociados'?'asociados':'suvazu');return}if(view==='importQuick'){closeView();return}if(view==='suvazu'){closeView();return}if(view==='detail'){openView('orders');return}if(view==='orders'){let route=data.routes.find(x=>String(x.id)===String(routeBrowseId));openView(route?.origin==='asociados'?'asociados':'suvazu');return}if(view==='routes'){closeView();return}if(view==='parrillon'){openView('asociados');return}if(view==='caramelo'){openView('asociados');return}if(view==='asociados'){closeView();return}closeView()}
 
 function browseRoute(id){routeBrowseId=id;slideIndex=0;openView('orders')}
@@ -1037,9 +1067,9 @@ function renderView(){
  $('svOverlayBack').hidden=primaryModule;
  $('overlay').classList.toggle('sv-primary',primaryModule);
  $('svPullHint').hidden=!primaryModule;
- $('overlay').classList.toggle('parrillon-view',view==='parrillon');let title={routes:'Gestión de rutas',orders:'Pedidos de la ruta',delivery:'Confirmar entrega',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',caramelo:'🍬 Mundo de Caramelo',suvazu:'🛵 SuVaZu Repartidor',clients:'👥 Clientes',clientOrder:'Nuevo pedido · Cliente',importQuick:'📥 Importar pedido',captureRoute:'Capturar pedido'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='captureRoute'){svRenderCaptureRoute();return}if(view==='clients'){svRenderClients();return}if(view==='clientOrder'){svRenderClientOrder();return}if(view==='asociados'){
+ $('overlay').classList.toggle('parrillon-view',view==='parrillon');$('overlay').classList.toggle('nutribionicos-view',view==='nutribionicos');let title={routes:'Gestión de rutas',orders:'Pedidos de la ruta',delivery:'Confirmar entrega',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',caramelo:'🍬 Mundo de Caramelo',nutribionicos:'🥗 Nutribiónicos',suvazu:'🛵 SuVaZu Repartidor',clients:'👥 Clientes',clientOrder:'Nuevo pedido · Cliente',importQuick:'📥 Importar pedido',captureRoute:'Capturar pedido'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='captureRoute'){svRenderCaptureRoute();return}if(view==='clients'){svRenderClients();return}if(view==='clientOrder'){svRenderClientOrder();return}if(view==='asociados'){
  $('overlayBody').innerHTML=svRenderAssociateHome();svAssociateRestoreCarousel();return
-}if(view==='apps'){ $('overlayBody').innerHTML=renderApps();return }if(view==='parrillon'){$('overlayBody').innerHTML=renderParrillon();return}if(view==='caramelo'){$('overlayBody').innerHTML=svCarameloRender();return}if(view==='routes'){
+}if(view==='apps'){ $('overlayBody').innerHTML=renderApps();return }if(view==='parrillon'){$('overlayBody').innerHTML=renderParrillon();return}if(view==='caramelo'){$('overlayBody').innerHTML=svCarameloRender();return}if(view==='nutribionicos'){$('overlayBody').innerHTML=svNutribionicosRender();return}if(view==='routes'){
 h=`<div class="panel"><div class="row"><h2>🛣️ Gestión de rutas</h2><span class="pill">${activeRoutes().length+data.appServices.filter(a=>!a.end).length} abiertas</span></div><p class="muted">Selecciona una ruta para abrir directamente sus pedidos pendientes.</p></div>`+
 activeRoutes().slice().reverse().map(r=>`<div class="order-card"><div class="row"><strong>${esc(r.name)}</strong><span class="pill">${esc(r.status)}</span></div><p>${esc(r.origin==='asociados'?'SuVaZu Asociados - '+r.business:'SuVaZu Repartidor')} - ${r.orders.filter(activeOrder).length} pedido(s)</p><button class="full" onclick="browseRoute(${r.id})">Abrir ruta →</button></div>`).join('')+data.appServices.filter(a=>!a.end).slice().reverse().map(a=>`<div class="order-card"><b>📱 ${esc(a.app)} · Ruta activa</b><p>${a.items.length} pedidos</p><button class="full" onclick="appEditClosed(${a.id})">Abrir ruta →</button></div>`).join('')||'<div class="panel"><p class="muted">Sin rutas abiertas.</p></div>';
 
@@ -1142,6 +1172,7 @@ function svPartnerThemeKey(name){
  const v=String(name||'').toLocaleLowerCase('es-MX');
  if(v.includes('caramelo'))return 'caramelo';
  if(v.includes('parrillón')||v.includes('parrillon'))return 'parrillon';
+ if(v.includes('nutri'))return 'nutribionicos';
  return '';
 }
 function svPartnerThemeAttr(name){const key=svPartnerThemeKey(name);return key?' data-sv-partner="'+key+'"':''}
@@ -1149,7 +1180,9 @@ function svHomeId(id){return esc(JSON.stringify(String(id)))}
 function svHomeOpenRoute(kind,id){
  if(kind==='app')return appEditClosed(id);
  if(kind==='par')return openView('parrillon');
- if(kind==='caramelo'||kind==='partnerRoute')return openView('caramelo');
+ if(kind==='caramelo')return openView('caramelo');
+ if(kind==='nutribionicos')return openView('nutribionicos');
+ if(kind==='partnerRoute'){ const pr=data.partnerRoutes.find(x=>String(x.id)===String(id)); return openView(svPartnerThemeKey(pr?.partner)==='nutribionicos'?'nutribionicos':'caramelo'); }
  let r=data.routes.find(x=>String(x.id)===String(id));if(!r)return;
  data.selected=r.id;save();openView(r.origin==='asociados'?'asociados':'suvazu');
 }
@@ -1189,6 +1222,10 @@ function svRenderCurrent(){
  for(let q of data.carameloServices.filter(q=>!q.partnerRouteId)){
   if(q.delivered){finished.push({kind:'caramelo',id:q.id,module:'SuVaZu Asociados',name:'Mundo de Caramelo · '+q.address,date:q.date||'',when:q.delivered,extra:''});continue}
   active.push({phase:'active',kind:'caramelo',id:q.id,module:'SuVaZu Asociados',name:'Mundo de Caramelo',partner:'Mundo de Caramelo',meta:'Entrega pendiente · '+esc(q.address),more:`<div class="sv-home-order-preview"><b>Cliente:</b> ${esc(q.clientNumber||'Sin número')} · <b>Ganancia:</b> ${money(q.gain)}</div>`,when:q.started||''});
+ }
+ for(let q of data.nutribionicosServices.filter(q=>!q.partnerRouteId)){
+  if(q.delivered){finished.push({kind:'nutribionicos',id:q.id,module:'SuVaZu Asociados',name:'Nutribiónicos · '+q.address,date:q.date||'',when:q.delivered,extra:''});continue}
+  active.push({phase:'active',kind:'nutribionicos',id:q.id,module:'SuVaZu Asociados',name:'Nutribiónicos',partner:'Nutribiónicos',meta:'Entrega pendiente · '+esc(q.address),more:`<div class="sv-home-order-preview"><b>Cliente:</b> ${esc(q.clientNumber||'Sin número')} · <b>Ganancia:</b> ${money(q.gain)}</div>`,when:q.started||''});
  }
  for(const r of data.partnerRoutes){
   const orders=svPartnerOrders(r),pending=orders.filter(q=>!q.delivered),completed=orders.filter(q=>q.delivered);
@@ -1231,6 +1268,11 @@ function svModuleStats(kind){
    if(x.delivered){orders+=1;total+=Number(x.gain)||0}
    if(!x.partnerRouteId)entries.push({name:'Mundo de Caramelo · '+x.address,orders:x.delivered?1:0,amount:x.delivered?Number(x.gain)||0:0,finished:!!x.delivered});
   }
+  if(kind==='associate')for(let x of data.nutribionicosServices.filter(q=>q.date===d)){
+   if(!x.partnerRouteId){routes+=1;addInterval(x.started,x.delivered||now());}
+   if(x.delivered){orders+=1;total+=Number(x.gain)||0}
+   if(!x.partnerRouteId)entries.push({name:'Nutribiónicos · '+x.address,orders:x.delivered?1:0,amount:x.delivered?Number(x.gain)||0:0,finished:!!x.delivered});
+  }
   if(kind==='associate')for(const r of data.partnerRoutes.filter(r=>r.date===d)){
    routes+=1;addInterval(r.start,r.end||now());
    const completed=svPartnerOrders(r).filter(q=>q.delivered);
@@ -1270,6 +1312,7 @@ function svRenderFinished(){let d=running()?.date||dayKey(now());let items=[];
  data.appServices.filter(a=>a.end&&appDate(a)===d).forEach(a=>items.push({type:'📱 '+a.app,name:a.items.length+' recolecciones',start:a.created,end:a.end,amount:appGrand(a)}));
  data.parrillon.filter(p=>p.end&&p.date===d).forEach(p=>items.push({type:'🍗 El Parrillón',name:p.tickets.filter(t=>t.delivered).length+' entregas',start:p.start,end:p.end,amount:parTotal(p)}));
  data.carameloServices.filter(q=>q.delivered&&q.date===d).forEach(q=>items.push({type:'🍬 Mundo de Caramelo',name:q.address,start:q.started,end:q.delivered,amount:Number(q.gain)||0}));
+ data.nutribionicosServices.filter(q=>q.delivered&&q.date===d).forEach(q=>items.push({type:'🥗 Nutribiónicos',name:q.address,start:q.started,end:q.delivered,amount:Number(q.gain)||0}));
  let total=items.reduce((v,x)=>v+x.amount,0),el=$('completedServices');if(!el)return;
  el.innerHTML=`<div class="sv-stats"><div class="sv-stat"><small>Servicios / entregas</small><strong>${items.length}</strong></div><div class="sv-stat"><small>Ingresos registrados</small><strong>${money(total)}</strong></div></div><details class="sv-finished"><summary>Ver servicios terminados (${items.length})</summary>${items.length?items.slice().reverse().map(x=>`<div style="padding:9px 0;border-bottom:1px solid #e5ebe7"><b>${esc(x.type)}</b><p style="margin:5px 0">${esc(x.name)}</p><p class="muted" style="margin:5px 0">Duración: ${x.start&&x.end?duration(new Date(x.end)-new Date(x.start)):'No disponible'} · Ingreso: <b>${money(x.amount)}</b></p></div>`).join(''):'<p class="muted">Aún no hay servicios finalizados hoy.</p>'}</details>`;
 }
@@ -1284,8 +1327,11 @@ function svCarameloField(id){return String($(id)?.value||'').trim()}
 // Reparto directo de socios: un archivo JSON crea un pedido en la ruta abierta del socio.
 // Los servicios históricos de 1.04 permanecen en carameloServices sin migración destructiva.
 const svPartnerName='Mundo de Caramelo';
+function svPartnerNameKey(name){return svPartnerThemeKey(name)}
+function svPartnerServicesByName(name){return svPartnerNameKey(name)==='nutribionicos'?data.nutribionicosServices:data.carameloServices}
+function svPartnerExtrasStoreByName(name){return svPartnerNameKey(name)==='nutribionicos'?data.nutribionicosClientExtras:data.carameloClientExtras}
 function svPartnerRoutes(name=svPartnerName){return data.partnerRoutes.filter(r=>r.partner===name)}
-function svPartnerOrders(route){return data.carameloServices.filter(q=>String(q.partnerRouteId)===String(route.id))}
+function svPartnerOrders(route){return svPartnerServicesByName(route?.partner).filter(q=>String(q.partnerRouteId)===String(route.id))}
 function svPartnerActiveRoute(name=svPartnerName){return data.partnerRoutes.find(r=>r.partner===name&&!r.end)||null}
 function svCarameloJSON(text){
  const raw=String(text||'').trim().replace(/^\uFEFF/,'');
@@ -1413,12 +1459,14 @@ function svCarameloPhoto(file,key){
  }catch(e){alert(e.message)}};img.src=reader.result};reader.readAsDataURL(file);
 }
 // Historial de Asociados: abrir la ficha del cliente guardado en su propio socio.
-function svAssociateOpenClient(orderId){
- const order=data.carameloServices.find(q=>String(q.id)===String(orderId));
+function svAssociateOpenClient(orderId,partnerName='Mundo de Caramelo'){
+ const keyName=svPartnerThemeKey(partnerName);
+ const source=keyName==='nutribionicos'?data.nutribionicosServices:data.carameloServices;
+ const order=source.find(q=>String(q.id)===String(orderId));
  if(!order)return;
  const key=svCarameloClientKey(order);
- openView('caramelo');
- svCarameloOpenSections.clients=true;
+ openView(keyName==='nutribionicos'?'nutribionicos':'caramelo');
+ if(keyName==='nutribionicos')svNutribionicosOpenSections.clients=true; else svCarameloOpenSections.clients=true;
  renderView();
  requestAnimationFrame(()=>{
   const cards=Array.from(document.querySelectorAll('#overlay .sv-caramelo-client'));
@@ -1469,6 +1517,140 @@ function svCarameloRender(){
  </div>`;
 }
 
+let svNutribionicosOpenSections={completed:false,clients:false};
+function svNutribionicosToggle(section){svNutribionicosOpenSections[section]=!svNutribionicosOpenSections[section]}
+function svNutribionicosServices(){return data.nutribionicosServices}
+const svNutribionicosName='Nutribiónicos';
+function svNutribionicosRoutes(){return svPartnerRoutes(svNutribionicosName)}
+function svNutribionicosActiveRoute(){return svPartnerActiveRoute(svNutribionicosName)}
+function svNutribionicosJSON(text){return svCarameloJSON(text)}
+function svNutribionicosImportFile(file){
+ if(!file)return;
+ if(file.size>262144)return alert('El archivo JSON supera 256 KB.');
+ const reader=new FileReader();reader.onerror=()=>alert('No se pudo leer el archivo.');
+ reader.onload=()=>{try{
+  const item=svNutribionicosJSON(reader.result);
+  const stamp=now(),route=svNutribionicosActiveRoute(),target=route||{id:uid(),partner:svNutribionicosName,date:dayKey(stamp),start:stamp,end:null};
+  const order={id:uid(),partnerRouteId:target.id,date:target.date,started:stamp,address:item.direccion,streets:item.entreCalles,colony:item.colonia||'',reference:item.referencia,gain:Number(item.ganancia||0),clientNumber:'',charge:null,delivered:null};
+  if(!route)data.partnerRoutes.push(target);
+  data.nutribionicosServices.push(order);
+  try{save();toast('Servicio agregado a Nutribiónicos')}catch(e){
+   data.nutribionicosServices=data.nutribionicosServices.filter(q=>q!==order);
+   if(!route)data.partnerRoutes=data.partnerRoutes.filter(r=>r!==target);
+   alert('No se pudo guardar el servicio.');
+  }
+  renderView();
+ }catch(e){alert(e.message)}};
+ reader.readAsText(file);
+}
+function svNutribionicosUpdate(id){
+ const x=svNutribionicosServices().find(q=>String(q.id)===String(id));if(!x)return;
+ const card=document.querySelector(`[data-car-order="${CSS.escape(String(id))}"]`);if(!card)return;
+ const phone=String(card.querySelector('[data-car-phone]')?.value||'').trim();
+ const chargeRaw=String(card.querySelector('[data-car-charge]')?.value||'').trim();
+ const charge=chargeRaw===''?null:Number(chargeRaw);
+ if(chargeRaw!==''&&(!Number.isFinite(charge)||charge<0))return alert('Monto a cobrar inválido.');
+ x.clientNumber=phone;x.charge=charge;save();toast('Datos guardados');renderView();
+}
+function svNutribionicosComplete(id){
+ const x=svNutribionicosServices().find(q=>String(q.id)===String(id));if(!x||x.delivered)return;
+ const card=document.querySelector(`[data-car-order="${CSS.escape(String(id))}"]`);if(!card)return;
+ const phone=String(card.querySelector('[data-car-phone]')?.value||'').trim();
+ const chargeRaw=String(card.querySelector('[data-car-charge]')?.value||'').trim();
+ const charge=chargeRaw===''?null:Number(chargeRaw);
+ if(chargeRaw!==''&&(!Number.isFinite(charge)||charge<0))return alert('Monto a cobrar inválido.');
+ const route=data.partnerRoutes.find(r=>String(r.id)===String(x.partnerRouteId)&&!r.end);
+ const siblings=route?svPartnerOrders(route).filter(q=>!q.delivered):[];
+ const isLast=siblings.length<=1;
+ const message='¿Marcar como entregado este pedido?'+(isLast?'\n\nEs el último pedido pendiente. La ruta de Nutribiónicos finalizará automáticamente.':'');
+ if(!confirm(message))return;
+ const previous={clientNumber:x.clientNumber,charge:x.charge,delivered:x.delivered,routeEnd:route?.end};
+ const stamp=now();x.clientNumber=phone;x.charge=charge;x.delivered=stamp;
+ if(isLast&&route)route.end=stamp;
+ try{save();toast(isLast?'Pedido entregado · Ruta finalizada':'Pedido entregado · '+money(x.gain));renderView();}
+ catch(e){x.clientNumber=previous.clientNumber;x.charge=previous.charge;x.delivered=previous.delivered;if(route)route.end=previous.routeEnd;alert('No se pudo guardar la entrega. Inténtalo nuevamente.');}
+}
+function svNutribionicosRouteCard(r){
+ const orders=svPartnerOrders(r),pending=orders.filter(x=>!x.delivered),done=orders.filter(x=>x.delivered);
+ return `<section class="sv-caramelo-route"><div class="row"><strong>Ruta · ${esc(r.partner)}</strong><span class="pill">${r.end?'Finalizada':'En curso'}</span></div>
+ <p class="muted">${pending.length} pendientes · ${done.length} entregados · Ganancia: ${money(done.reduce((n,x)=>n+Number(x.gain||0),0))}</p>
+ ${pending.map(x=>`<article class="sv-caramelo-entry" data-car-order="${esc(String(x.id))}"><div class="row"><strong>${esc(x.address)}</strong><span class="pill">Pendiente</span></div>
+ ${x.streets?`<p><b>Entre Calles:</b> ${esc(x.streets)}</p>`:''}
+ ${x.colony?`<p><b>Colonia:</b> ${esc(x.colony)}</p>`:''}
+ ${x.reference?`<p><b>Referencia:</b> ${esc(x.reference)}</p>`:''}
+ <p><b>Ganancia:</b> ${money(x.gain)}</p>
+ <label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
+ <div class="wrap"><button type="button" class="secondary" onclick="svNutribionicosUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svNutribionicosComplete(${Number(x.id)})">✓ Entregado</button></div></article>`).join('')||'<p class="muted">Sin pedidos pendientes.</p>'}
+ ${done.length?`<details><summary>Entregados (${done.length})</summary>${done.map(x=>svCarameloEntry(x,false)).join('')}</details>`:''}
+ </section>`;
+}
+function svNutribionicosExtras(key){return data.nutribionicosClientExtras[key]||{}}
+function svNutribionicosSaveMap(btn){
+ const card=btn.closest('[data-car-key]');if(!card)return;
+ const key=card.dataset.carKey,raw=card.querySelector('[data-car-map]')?.value||'';
+ let url;try{url=svCarameloValidMap(raw)}catch(e){return alert(e.message)}
+ const previous=data.nutribionicosClientExtras[key];data.nutribionicosClientExtras[key]={...svNutribionicosExtras(key),map:url};
+ try{save();toast('Ubicación de cliente guardada')}catch(e){if(previous)data.nutribionicosClientExtras[key]=previous;else delete data.nutribionicosClientExtras[key];alert('No se pudo guardar el enlace.')} 
+}
+function svNutribionicosPhoto(file,key){
+ if(!file)return;
+ if(!file.type.startsWith('image/'))return alert('Selecciona una fotografía.');
+ if(file.size>15*1024*1024)return alert('La imagen es demasiado grande (máximo 15 MB).');
+ const reader=new FileReader();reader.onerror=()=>alert('No se pudo leer la fotografía.');
+ reader.onload=()=>{const img=new Image();img.onerror=()=>alert('No se pudo procesar la fotografía.');
+ img.onload=()=>{try{
+  const ratio=Math.min(1,960/Math.max(img.width,img.height)),canvas=document.createElement('canvas');
+  canvas.width=Math.max(1,Math.round(img.width*ratio));canvas.height=Math.max(1,Math.round(img.height*ratio));
+  canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
+  const photo=canvas.toDataURL('image/jpeg',.63);if(photo.length>420000)throw Error('La imagen comprimida es demasiado grande. Prueba otra fotografía.');
+  const previous=data.nutribionicosClientExtras[key];data.nutribionicosClientExtras[key]={...svNutribionicosExtras(key),photo};
+  try{save();toast('Imagen de dirección guardada')}catch(e){if(previous)data.nutribionicosClientExtras[key]=previous;else delete data.nutribionicosClientExtras[key];alert('No hay espacio para guardar la fotografía. Descarga un respaldo y libera espacio.');}
+ }catch(e){alert(e.message)}};img.src=reader.result};reader.readAsDataURL(file);
+}
+function svNutribionicosClientCards(){
+ const customers=[];const seen=new Map();
+ for(const x of svNutribionicosServices()){
+  const key=svCarameloClientKey(x);
+  if(!seen.has(key)){let customer={...x,key,count:0};customers.push(customer);seen.set(key,customer)}
+  const customer=seen.get(key);customer.count++;
+  if(new Date(x.started)>=new Date(customer.started)){Object.assign(customer,{address:x.address,streets:x.streets,colony:x.colony||'',reference:x.reference,clientNumber:x.clientNumber,gain:x.gain,started:x.started})}
+ }
+ return customers.slice().reverse().map(c=>{
+ const extra=svNutribionicosExtras(c.key),photo=typeof extra.photo==='string'&&extra.photo.startsWith('data:image/jpeg;base64,')?extra.photo:'',map=typeof extra.map==='string'?extra.map:'';
+ return `<article class="sv-caramelo-entry sv-caramelo-client" data-car-key="${esc(c.key)}">
+  <strong>${esc(c.address)}</strong>
+  ${c.streets?`<p><b>Entre Calles:</b> ${esc(c.streets)}</p>`:''}
+  ${c.colony?`<p><b>Colonia:</b> ${esc(c.colony)}</p>`:''}
+  ${c.reference?`<p><b>Referencia:</b> ${esc(c.reference)}</p>`:''}
+  ${c.clientNumber?`<p><b># de Cliente:</b> ${esc(c.clientNumber)}</p>`:''}
+  <p><b>Costo del Servicio:</b> ${money(c.gain)}</p>
+  ${c.count>1?`<small class="muted">${c.count} servicios registrados</small>`:''}
+  <div class="sv-caramelo-media"><label>Enlace de Google Maps<input data-car-map type="url" placeholder="https://maps.app.goo.gl/..." value="${esc(map)}"></label>
+  <button type="button" class="secondary full" onclick="svNutribionicosSaveMap(this)">Guardar Maps</button>
+  ${map?`<a class="sv-caramelo-map-link" href="${esc(map)}" target="_blank" rel="noopener noreferrer">📍 Abrir ubicación en Maps</a>`:''}
+  <label>Imagen de dirección<input type="file" accept="image/*" onchange="svNutribionicosPhoto(this.files[0],this.closest('[data-car-key]').dataset.carKey);this.value=''"></label>
+  ${photo?`<img class="sv-caramelo-photo" src="${photo}" alt="Imagen del domicilio del cliente">`:''}</div>
+ </article>`}).join('')||'<p class="muted">Los clientes aparecerán automáticamente al activar un servicio.</p>';
+}
+function svNutribionicosRender(){
+ const all=svNutribionicosServices(),legacy=all.filter(q=>!q.partnerRouteId),activeLegacy=legacy.filter(q=>!q.delivered),done=all.filter(q=>q.delivered);
+ const routes=svNutribionicosRoutes().slice().reverse(),active=routes.filter(r=>!r.end),closed=routes.filter(r=>r.end);
+ return `<div class="sv-caramelo-home">
+  <section class="panel sv-caramelo-panel"><h2>Nuevo Servicio</h2>
+   <label class="sv-caramelo-file-only">Seleccionar archivo<input type="file" accept=".json,application/json" onchange="svNutribionicosImportFile(this.files[0]);this.value=''"></label>
+  </section>
+  ${active.length?`<section class="panel sv-caramelo-panel"><h2>Ruta activa</h2>${active.map(svNutribionicosRouteCard).join('')}</section>`:''}
+  ${activeLegacy.length?`<section class="panel sv-caramelo-panel"><h2>Servicios anteriores pendientes</h2>${activeLegacy.map(x=>svCarameloEntry(x,true)).join('')}</section>`:''}
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svNutribionicosOpenSections.completed?'open':''}><summary onclick="svNutribionicosToggle('completed')">Servicios Completados <span class="sv-caramelo-count">${done.length}</span></summary>
+   ${closed.map(svNutribionicosRouteCard).join('')}${legacy.filter(q=>q.delivered).map(x=>svCarameloEntry(x,false)).join('')||(!closed.length?'<p class="muted">Aún no hay servicios completados.</p>':'')}
+  </details>
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svNutribionicosOpenSections.clients?'open':''}><summary onclick="svNutribionicosToggle('clients')">Clientes <span class="sv-caramelo-count">${new Set(all.map(svCarameloClientKey)).size}</span></summary>
+   ${svNutribionicosClientCards()}
+  </details>
+ </div>`;
+}
+
 // Prueba 1.06: pantalla de Asociados con el mismo patrón visual de Apps.
 // La preferencia de apertura se guarda en data.ui, sin alterar rutas ni pedidos.
 function svAssociateOpen(section){
@@ -1509,14 +1691,16 @@ function svAssociateRouteCards(items,showEmpty=true){
 }
 // El socio al frente define el acento de las cabeceras, sin modificar las rutas.
 let svAssociateFrontPartner='parrillon',svAssociateRestoring=false;
+function svAssociateCarouselPartners(){return ['parrillon','caramelo','nutribionicos']}
 function svAssociateCarouselScroll(el){
  if(!el||svAssociateRestoring)return;
  const first=el.querySelector('.sv-associate-tile');
  if(!first)return;
  const gap=parseFloat(getComputedStyle(el).gap)||0;
  const step=first.getBoundingClientRect().width+gap;
- const index=step>0?Math.max(0,Math.min(1,Math.round(el.scrollLeft/step))):0;
- const front=index===1?'caramelo':'parrillon';
+ const list=svAssociateCarouselPartners();
+ const index=step>0?Math.max(0,Math.min(list.length-1,Math.round(el.scrollLeft/step))):0;
+ const front=list[index]||'parrillon';
  svAssociateFrontPartner=front;
  const home=el.closest('.sv-associate-home');
  if(home)home.dataset.frontPartner=front;
@@ -1531,7 +1715,10 @@ function svAssociateRestoreCarousel(){
   const first=el&&el.querySelector('.sv-associate-tile');
   if(!first){svAssociateRestoring=false;return;}
   const gap=parseFloat(getComputedStyle(el).gap)||0;
-  el.scrollLeft=target==='caramelo'?(first.getBoundingClientRect().width+gap):0;
+  const step=first.getBoundingClientRect().width+gap;
+  const list=svAssociateCarouselPartners();
+  const index=Math.max(0,list.indexOf(target));
+  el.scrollLeft=step*index;
   home.dataset.frontPartner=target;
   requestAnimationFrame(()=>{svAssociateRestoring=false;svAssociateCarouselScroll(el);});
  });
@@ -1549,6 +1736,9 @@ function svRenderAssociateHome(){
    </button>
    <button type="button" class="sv-app-tile sv-associate-tile" onclick="openView('caramelo')" aria-label="Abrir Mundo de Caramelo">
     <img class="sv-associate-partner-banner" src="./socio_caramelo.webp" alt="Mundo de Caramelo Repostería · SuVaZu" loading="lazy">
+   </button>
+   <button type="button" class="sv-app-tile sv-associate-tile" onclick="openView('nutribionicos')" aria-label="Abrir Nutribiónicos">
+    <img class="sv-associate-partner-banner" src="./socio_nutribionicos.png" alt="Nutribiónicos · SuVaZu" loading="lazy">
    </button>
   </div>
  </section>`;
@@ -1569,7 +1759,7 @@ function svRenderAssociateHome(){
      <p><b>Monto a Cobrar:</b> ${q.charge==null?'No indicado':money(q.charge)}</p>
      <p><b>Ganancia:</b> ${money(q.gain)}</p>
      <p><b>Entregado:</b> ${q.delivered?esc(dt(q.delivered)):'Pendiente'}</p>
-     <button type="button" class="secondary" onclick="svAssociateOpenClient(${svHomeId(q.id)})">Ver ficha de cliente ›</button>
+     <button type="button" class="secondary" onclick="svAssociateOpenClient(${svHomeId(q.id)},${svHomeId(r.partner)})">Ver ficha de cliente ›</button>
     </div>
    </details>`).join(''):'<p class="muted">Sin pedidos en esta ruta.</p>'}</div>
   </details>`;
@@ -1856,7 +2046,7 @@ let idleMs=Math.max(0,workTotal-serviceMs);
 let appOrders=finishedApps.reduce((n,a)=>n+(a.closeComplete?Number(a.reportedOrders??a.items.length):a.items.length),0);
 let allAppStats=svModuleStats('app');
 let servicesTotal=['direct','associate','app'].reduce((sum,kind)=>sum+svModuleStats(kind).orders,0);
-// Prueba 1.10: balance único, cuatro indicadores sin desgloses ni porcentajes.
+// Prueba 1.11: balance único, cuatro indicadores sin desgloses ni porcentajes.
 const balanceMetric=(kind,label,value,icon)=>`<div class="sv-balance-metric sv-balance-${kind}"><div class="sv-balance-icon" aria-hidden="true">${icon}</div><div class="sv-balance-label">${label}</div><strong class="sv-balance-number">${value}</strong></div>`;
 $('dashboard').innerHTML=`<div class="sv-balance-grid" aria-label="Balance general del día">
 ${balanceMetric('money','Ganancias',money(day),'$')}
@@ -2095,20 +2285,21 @@ function renderParrillon(){
 }
 function initParMap(){}
 
-function backupCounts(obj){return {routes:obj.routes.length,particular:obj.routes.reduce((n,r)=>n+r.orders.length,0),apps:(obj.appServices||[]).length,appOrders:(obj.appServices||[]).reduce((n,a)=>n+a.items.length,0),journeys:(obj.journeys||[]).length,parrillon:(obj.parrillon||[]).length,caramelo:(obj.carameloServices||[]).length,partnerRoutes:(obj.partnerRoutes||[]).length}}
+function backupCounts(obj){return {routes:obj.routes.length,particular:obj.routes.reduce((n,r)=>n+r.orders.length,0),apps:(obj.appServices||[]).length,appOrders:(obj.appServices||[]).reduce((n,a)=>n+a.items.length,0),journeys:(obj.journeys||[]).length,parrillon:(obj.parrillon||[]).length,caramelo:(obj.carameloServices||[]).length,nutribionicos:(obj.nutribionicosServices||[]).length,partnerRoutes:(obj.partnerRoutes||[]).length}}
 function backupValid(obj){
  if(!obj||typeof obj!=='object'||!Array.isArray(obj.routes)||!obj.routes.every(r=>r&&Array.isArray(r.orders)))throw Error('No es un respaldo SuVaZu válido (rutas).');
  if(obj.journeys!==undefined&&!Array.isArray(obj.journeys))throw Error('El registro de jornadas no es válido.');
  if(obj.parrillon!==undefined&&(!Array.isArray(obj.parrillon)||!obj.parrillon.every(x=>x&&Array.isArray(x.tickets))))throw Error('El registro de El Parrillón no es válido.');
  if(obj.partnerRoutes!==undefined&&(!Array.isArray(obj.partnerRoutes)||!obj.partnerRoutes.every(r=>r&&typeof r==='object'&&r.partner)))throw Error('Las rutas de socios no son válidas.');
  if(obj.carameloServices!==undefined&&(!Array.isArray(obj.carameloServices)||!obj.carameloServices.every(q=>q&&typeof q==='object')))throw Error('El registro de Mundo de Caramelo no es válido.');
+ if(obj.nutribionicosServices!==undefined&&(!Array.isArray(obj.nutribionicosServices)||!obj.nutribionicosServices.every(q=>q&&typeof q==='object')))throw Error('El registro de Nutribiónicos no es válido.');
  if(obj.carameloClientExtras!==undefined&&(!obj.carameloClientExtras||typeof obj.carameloClientExtras!=='object'||Array.isArray(obj.carameloClientExtras)))throw Error('Las fichas de clientes de Mundo de Caramelo no son válidas.');
  if(obj.appServices!==undefined&&(!Array.isArray(obj.appServices)||!obj.appServices.every(a=>a&&Array.isArray(a.items))))throw Error('El registro de Apps no es válido.');
  return obj
 }
 function backupStatus(){
  let el=$('backupStatus');if(!el)return;
- let n=backupCounts(data);el.textContent=`En este navegador: ${n.routes} rutas · ${n.particular} pedidos particulares · ${n.apps} servicios de Apps (${n.appOrders} pedidos) · ${n.journeys} jornadas · ${n.parrillon} servicios de El Parrillón · ${n.caramelo} servicios de Mundo de Caramelo · ${n.partnerRoutes} rutas de socios · ${data.clients.length} clientes guardados.`;
+ let n=backupCounts(data);el.textContent=`En este navegador: ${n.routes} rutas · ${n.particular} pedidos particulares · ${n.apps} servicios de Apps (${n.appOrders} pedidos) · ${n.journeys} jornadas · ${n.parrillon} servicios de El Parrillón · ${n.caramelo} servicios de Mundo de Caramelo · ${n.nutribionicos} servicios de Nutribiónicos · ${n.partnerRoutes} rutas de socios · ${data.clients.length} clientes guardados.`;
 }
 function exportData(){
  try{
