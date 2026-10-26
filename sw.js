@@ -1,9 +1,9 @@
-// Repartidor SuVaZu 1.17: actualización coherente y uso sin conexión.
-const CACHE = 'suvazu-shell-v117';
+// Repartidor SuVaZu 1.18: actualización coherente y uso sin conexión.
+const CACHE = 'suvazu-shell-v118';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg',
   './suvazu_logo.png', './parrillon_logo.png', './socio_parrillon.webp', './socio_caramelo.webp', './socio_nutribionicos.png', './apps_icon.png',
   './app_didi.webp', './app_uber.webp', './app_rappi.webp', './app_indrive.webp',
-  './asociados_logo.png', './home_repartidor.webp', './home_asociados.webp', './home_apps.webp'];
+  './asociados_logo.png', './home_repartidor.webp', './home_asociados.webp', './home_apps.webp', './seleccionar_ruta.webp'];
 self.addEventListener('install', event => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
