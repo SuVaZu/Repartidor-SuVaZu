@@ -1,5 +1,5 @@
-// Repartidor SuVaZu 1.18: actualización coherente y uso sin conexión.
-const CACHE = 'suvazu-shell-v118';
+// Repartidor SuVaZu 1.19: actualización coherente y uso sin conexión.
+const CACHE = 'suvazu-shell-v119';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg',
   './suvazu_logo.png', './parrillon_logo.png', './socio_parrillon.webp', './socio_caramelo.webp', './socio_nutribionicos.png', './apps_icon.png',
   './app_didi.webp', './app_uber.webp', './app_rappi.webp', './app_indrive.webp',
