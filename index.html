@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.20</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.21</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -673,7 +673,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay.nutribionicos-view .sv-caramelo-count{background:#edf9e5;color:#2f761e}
 #overlay.nutribionicos-view .sv-client-target{outline-color:#45b145}
 
-/* Prueba 1.20 · Historial: sólo rutas terminadas y fichas por pedido. */
+/* Prueba 1.21 · Historial: sólo rutas terminadas y fichas por pedido. */
 #overlay .sv-associate-history-card{display:block;overflow:hidden;padding:0!important}
 #overlay .sv-associate-history-summary{display:flex;align-items:center;gap:9px;padding:15px 12px;cursor:pointer;list-style:none}
 #overlay .sv-associate-history-summary::-webkit-details-marker,#overlay .sv-associate-history-order>summary::-webkit-details-marker{display:none}
@@ -698,7 +698,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-associate-history-link small{display:block;margin-top:5px;color:#526b61}
 #overlay .sv-client-target{outline:3px solid #ef91be;outline-offset:3px}
 
-/* Prueba 1.20 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
+/* Prueba 1.21 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
 #overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-toggle{
  background:linear-gradient(112deg,#fff 0%,#fff 45%,#fff3f9 77%,#ffe5f2 100%);
 }
@@ -733,7 +733,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  #overlay .sv-associate-section .sv-app-section-chevron{transition:background .18s ease,color .18s ease}
 }
 
-/* Prueba 1.20 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
+/* Prueba 1.21 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
 .sv-home-results-panel{background:#fff;border-radius:24px}
 .sv-home-results>.row{background:linear-gradient(115deg,#f7fbff 0%,#e9f4ff 68%,#dceeff 100%);border:1px solid #e1effc;min-height:76px}
 .sv-home-results>.row::before{background:rgba(163,207,250,.22)}
@@ -757,7 +757,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-balance-number{font-size:clamp(20px,5.15vw,31px);font-weight:900;line-height:1.1;white-space:nowrap;letter-spacing:-.045em;color:var(--dark);font-variant-numeric:tabular-nums;position:relative;z-index:1}
 @media(max-width:360px){.sv-balance-grid{gap:7px}.sv-balance-metric{padding:12px 8px;min-height:138px}.sv-balance-number{font-size:clamp(17px,5vw,24px)}.sv-balance-label{font-size:12px}}
 
-/* Prueba 1.20 · SuVaZu Repartidor: lenguaje visual de Asociados, sin alterar el flujo de rutas. */
+/* Prueba 1.21 · SuVaZu Repartidor: lenguaje visual de Asociados, sin alterar el flujo de rutas. */
 #overlay .sv-direct-home .sv-direct-section .sv-app-section-toggle{
  background:linear-gradient(112deg,#fff 0%,#fff 45%,#f1fbf3 76%,#e3f6e8 100%);
 }
@@ -775,7 +775,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-direct-manage .sv-module-route-controls button.secondary{background:#e6f3eb;color:#175a43}
 #overlay .sv-direct-home .sv-module-detail{margin-top:4px}
 
-/* Prueba 1.20 · Tarjetas compactas y elegantes para las rutas directas */
+/* Prueba 1.21 · Tarjetas compactas y elegantes para las rutas directas */
 .sv-home-route-card.sv114-direct{background:linear-gradient(135deg,#fff 0%,#f1f9f3 100%);border:1px solid #cfe5d4;border-left:5px solid #42b96b;padding:16px;border-radius:22px;box-shadow:0 5px 17px #153e3010}
 .sv114-direct .sv-home-route-main{align-items:flex-start}
 .sv114-direct .sv-home-route-type{font-size:12px;letter-spacing:.02em;color:#4c8066;margin-bottom:6px}
@@ -805,7 +805,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv114-open span{font-size:24px;line-height:1}
 .sv114-empty{margin-top:10px;color:#60776a;font-size:13px}
 @media(max-width:390px){.sv-home-route-card.sv114-direct{padding:13px}.sv114-chip{font-size:11px;padding:6px 8px}}
-/* Prueba 1.20: cancelar únicamente rutas en espera y cierre de servicio sin diálogos dobles. */
+/* Prueba 1.21: cancelar únicamente rutas en espera y cierre de servicio sin diálogos dobles. */
 #overlay .sv-direct-manage .sv-cancel-pending{background:#fae7e8!important;border:1px solid #f0c3c7!important;color:#a13d4b!important}
 #overlay .sv-direct-manage .sv-cancel-pending:hover{background:#f8d8dc!important}
 #overlay .sv-finish-service{border-top:4px solid #47b774;padding-top:22px}
@@ -816,7 +816,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-finish-amount{padding:16px 18px;border-radius:17px;background:#edf6f0;margin:19px 0 22px}
 #overlay .sv-finish-amount small{display:block;color:#5b7567;margin-bottom:5px}
 #overlay .sv-finish-amount strong{font-size:30px;color:#194534}
-/* Prueba 1.20: servicios como atajos de la ruta + próximas rutas plegables */
+/* Prueba 1.21: servicios como atajos de la ruta + próximas rutas plegables */
 .sv115-services{margin-top:12px;padding:14px 13px 5px;background:#fff;border:1px solid #e2eee6;border-radius:17px}
 .sv115-list-title{font-size:15px;font-weight:850;color:#20583b;margin:1px 0 10px}
 .sv115-item{display:flex;align-items:center;gap:11px;min-height:72px;padding:9px 0;border-top:1px solid #e8eee9}
@@ -830,7 +830,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv115-next[open] .sv115-next-toggle{background:#e6f3e9}
 .sv115-next>.sv-home-route-card{margin-top:12px}
 
-/* Prueba 1.20 · Balance siempre visible, compacto y sin separación. */
+/* Prueba 1.21 · Balance siempre visible, compacto y sin separación. */
 .sv-home-results-panel{padding:12px!important}
 .sv-home-results>.row{margin:0!important;min-height:65px;padding:11px 12px 10px;border-radius:17px 17px 0 0;border-bottom:0}
 .sv-home-results>.row h2{font-size:clamp(19px,5.1vw,25px)}
@@ -845,7 +845,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-balance-metric::after{width:70px;height:58px;right:-16px;bottom:-25px}
 @media(max-width:360px){.sv-balance-metric{min-height:0;padding:9px 7px;gap:3px}.sv-balance-number{font-size:clamp(16px,4.8vw,23px)}.sv-balance-label{font-size:11px}}
 
-/* Prueba 1.20: selector visual y horizontal de rutas sin cambiar la lógica del repartidor. */
+/* Prueba 1.21: selector visual y horizontal de rutas sin cambiar la lógica del repartidor. */
 #overlay .sv-direct-selector{padding:18px 16px 20px;background:#fff}
 #overlay .sv-direct-selector>h2{margin:3px 4px 14px;color:#173d2d;font-size:clamp(23px,5.2vw,30px)}
 #overlay .sv-direct-route-carousel{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 2px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding:2px 2px 12px;scrollbar-width:none}
@@ -870,14 +870,30 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-direct-create{width:100%;font-size:16px}
 #overlay .sv-direct-route-hint{color:#667e70;font-size:12px;margin:8px 4px 0}
 
-/* Prueba 1.20: selección por imagen, idéntica a la experiencia de socios. */
+/* Prueba 1.21: selección por imagen, idéntica a la experiencia de socios. */
 #overlay .sv-direct-selector{padding:18px 16px 24px;background:#fff}
 #overlay .sv-direct-route-carousel{gap:10px;padding:0}
 #overlay .sv-direct-image-tile{display:block;flex:0 0 100%;min-width:0;scroll-snap-align:start;appearance:none;border:0;background:transparent;padding:0;margin:0;cursor:pointer;border-radius:19px;overflow:hidden;line-height:0;box-shadow:none}
 #overlay .sv-direct-image-tile img{display:block;width:100%;height:auto;aspect-ratio:2.45/1;object-fit:cover;border-radius:19px}
 #overlay .sv-direct-image-tile:focus-visible{outline:3px solid #2c995e;outline-offset:2px}
+/* Historial de Rutas de SuVaZu Repartidor 1.21 */
+#overlay .sv-direct-history-list{display:flex;flex-direction:column;gap:12px}
+#overlay .sv-direct-history-route{border:1px solid #cbe7d4;border-left:4px solid #47b778;border-radius:16px;background:#f5fbf6;overflow:hidden}
+#overlay .sv-direct-history-route>summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:15px;cursor:pointer;color:#174a36}
+#overlay .sv-direct-history-route>summary::-webkit-details-marker{display:none}
+#overlay .sv-direct-history-heading{min-width:0;display:flex;flex-direction:column;gap:4px}
+#overlay .sv-direct-history-heading strong{font-size:17px}
+#overlay .sv-direct-history-heading small{color:#577567;font-size:13px;line-height:1.35}
+#overlay .sv-direct-history-caret{font-size:22px;line-height:1;color:#2d7951;transition:transform .15s}
+#overlay .sv-direct-history-route[open] .sv-direct-history-caret{transform:rotate(180deg)}
+#overlay .sv-direct-history-contents{padding:0 12px 12px;display:flex;flex-direction:column;gap:10px}
+#overlay .sv-direct-history-order{background:#fff;border:1px solid #e1ede5;border-radius:13px;padding:14px;display:flex;flex-direction:column;gap:10px}
+#overlay .sv-direct-history-index{font-size:13px;font-weight:800;color:#32865a;border-bottom:1px solid #e6eee8;padding-bottom:8px}
+#overlay .sv-direct-history-order b{font-size:12px;color:#698477;display:block;margin-bottom:3px}
+#overlay .sv-direct-history-order p{margin:0;font-size:15px;font-weight:650;color:#193f30;white-space:pre-wrap;overflow-wrap:anywhere}
+#overlay .sv-direct-history-empty{font-size:14px;color:#6b8174;margin:10px}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.20</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.21</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -1462,6 +1478,27 @@ function svRenderBannerStats(){
 }
 function svModuleSummaryHtml(kind){let x=svModuleStats(kind);return `<div class="sv-summary-title">Jornada ${esc(x.d)}</div><div class="sv-module-grid">${[['Rutas Totales',String(x.routes)],['Pedidos Totales',String(x.orders)],['Tiempo de Servicio',svDuration(x.time)],['Ganancia Total',money(x.total)]].map(([label,value])=>`<div class="sv-module-kpi"><small>${label}</small><strong>${value}</strong></div>`).join('')}</div>`}
 function svModuleHistoryHtml(kind){let x=svModuleStats(kind);return `<details class="sv-module-detail"><summary>Servicios y rutas de la jornada (${x.entries.length})</summary>${x.entries.length?x.entries.slice().reverse().map(e=>`<div class="sv-module-detail-item"><b>${esc(e.name)}</b> · ${e.orders} pedido(s)<div class="muted">${e.finished?'Finalizado':'En curso'}${e.complete===false?' · Resultados pendientes':''} · ${money(e.amount)}</div></div>`).join(''):'<p class="muted">Sin rutas registradas en esta jornada.</p>'}</details>`}
+// Historial directo: ruta plegable con servicios y sus datos esenciales.
+function svDirectHistoryHtml(){
+ const day=svModuleDay();
+ const routes=data.routes.filter(r=>r.origin!=='asociados'&&routeDate(r)===day).slice().reverse();
+ return `<div class="sv-direct-history-list">${routes.length?routes.map(r=>{
+   const services=(r.orders||[]).filter(o=>!o.cancelled);
+   const completed=services.filter(o=>o.delivered);
+   const total=completed.reduce((sum,o)=>sum+gain(o),0);
+   const status=r.status==='finalizada'?'Finalizada':r.status==='pendiente'?'Pendiente':'En curso';
+   return `<details class="sv-direct-history-route">
+     <summary><span class="sv-direct-history-heading"><strong>${esc(svRouteLabel(r))}</strong><small>${services.length} servicio${services.length===1?'':'s'} · ${money(total)} · ${status}</small></span><span class="sv-direct-history-caret">⌄</span></summary>
+     <div class="sv-direct-history-contents">${services.length?services.map((o,i)=>`
+       <article class="sv-direct-history-order">
+         <div class="sv-direct-history-index">Servicio ${i+1}</div>
+         <div><b>Servicio</b><p>${esc(o.service||o.shop||'Sin servicio registrado')}</p></div>
+         <div><b>Dirección de Entrega</b><p>${esc(o.delivery||'Sin dirección registrada')}</p></div>
+         <div><b>Pedido · Detalles de la Recolecta</b><p>${esc(o.details||'Sin detalles registrados')}</p></div>
+       </article>`).join(''):'<p class="sv-direct-history-empty">Sin servicios registrados en esta ruta.</p>'}</div>
+   </details>`;
+ }).join(''):'<p class="sv-direct-history-empty">Sin rutas registradas en esta jornada.</p>'}</div>`;
+}
 function svToggleModuleSummary(kind){data.ui??={};data.ui.homeSummary??={};data.ui.homeSummary[kind]=!data.ui.homeSummary[kind];save()}
 function svRenderModuleSummaries(){for(let kind of ['direct','associate','app']){let el=$('svSummary_'+kind),toggle=$('svToggle_'+kind),open=!!(data.ui&&data.ui.homeSummary&&data.ui.homeSummary[kind]);if(el){el.innerHTML=svModuleSummaryHtml(kind);el.hidden=!open}if(toggle){toggle.classList.toggle('open',open);let small=toggle.querySelector('b');if(small)small.textContent=open?'Ocultar':'Mostrar'}}}
 function svRenderFinished(){let d=running()?.date||dayKey(now());let items=[];
@@ -1932,7 +1969,7 @@ function svRenderAssociateHome(){
  return `<div class="sv-associate-home" data-front-partner="${svAssociateFrontPartner}">${summary}${partners}${history}</div>`;
 }
 
-// Prueba 1.20: un único acceso a Crear ruta. El JSON valida y crea la ruta en estado pendiente.
+// Prueba 1.21: un único acceso a Crear ruta. El JSON valida y crea la ruta en estado pendiente.
 let svDirectJsonTarget=null;
 function svChooseDirectJson(routeId){
  if(!running())return alert('Primero inicia tu jornada.');
@@ -1993,7 +2030,7 @@ function svModuleRouteManageHtml(kind){
  const items=data.routes.filter(r=>r.origin==='asociados').slice().reverse();
  return `<div class="panel"><div class="row"><h2>Gestión de rutas</h2><span class="pill">${items.length} rutas</span></div>${items.map(r=>`<div class="sv-module-route-row"><strong>${esc(r.name)} · ${esc(r.business||'Asociados')}</strong><button class="secondary" onclick="browseRoute(${svHomeId(r.id)})">Ver ›</button></div>`).join('')||'<p class="muted">Sin rutas registradas.</p>'}</div>`;
 }
-// Prueba 1.20: misma presentación de Asociados, misma lógica propia de Repartidor.
+// Prueba 1.21: misma presentación de Asociados, misma lógica propia de Repartidor.
 function svDirectOpen(section){return !!(data.ui&&data.ui.directSections&&data.ui.directSections[section])}
 function svDirectToggle(section){
  if(!['summary','history'].includes(section))return;
@@ -2014,7 +2051,7 @@ function svOpenModule(){
  const area=$('overlayBody');
  const summary=svDirectSection('summary','Resumen de Repartidor',svModuleSummaryHtml('direct'));
  const manage=svModuleRouteManageHtml('direct');
- const history=svDirectSection('history','Historial de Rutas',svModuleHistoryHtml('direct'));
+ const history=svDirectSection('history','Historial de Rutas',svDirectHistoryHtml());
  area.innerHTML=`<div class="sv-associate-home sv-direct-home">${summary}${manage}${history}</div>`;
 }
 
@@ -2285,7 +2322,7 @@ let idleMs=Math.max(0,workTotal-serviceMs);
 let appOrders=finishedApps.reduce((n,a)=>n+(a.closeComplete?Number(a.reportedOrders??a.items.length):a.items.length),0);
 let allAppStats=svModuleStats('app');
 let servicesTotal=['direct','associate','app'].reduce((sum,kind)=>sum+svModuleStats(kind).orders,0);
-// Prueba 1.20: balance único, cuatro indicadores sin desgloses ni porcentajes.
+// Prueba 1.21: balance único, cuatro indicadores sin desgloses ni porcentajes.
 const balanceMetric=(kind,label,value,icon)=>`<div class="sv-balance-metric sv-balance-${kind}"><div class="sv-balance-icon" aria-hidden="true">${icon}</div><div class="sv-balance-label">${label}</div><strong class="sv-balance-number">${value}</strong></div>`;
 $('dashboard').innerHTML=`<div class="sv-balance-grid" aria-label="Balance general del día">
 ${balanceMetric('money','Ganancias',money(day),'$')}
