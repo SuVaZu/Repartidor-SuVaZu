@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.03</title><style>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.04</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#17382e;background:#eef2ef}*{box-sizing:border-box}body{margin:0}header{background:#14382e;color:white;padding:12px 16px;display:flex;align-items:center;justify-content:space-between}button,input,textarea,select{font:inherit}button{border:0;background:#e9b74f;color:#172e27;font-weight:700;border-radius:11px;padding:12px;cursor:pointer}button.secondary{background:#e7eee9}button.danger{background:#f7dfdd;color:#922d24}button:disabled{opacity:.45}input,textarea,select{display:block;width:100%;border:1px solid #cad5ce;border-radius:10px;padding:11px;background:white;margin:5px 0 12px}label{font-weight:600;font-size:14px}h2{font-size:19px;margin:0 0 12px}h3{font-size:16px;margin:10px 0}.small,.muted{font-size:13px;color:#64756c}.panel{background:white;border-radius:16px;padding:15px;margin:12px 0;box-shadow:0 2px 8px #0001}.row{display:flex;justify-content:space-between;align-items:center;gap:8px}.wrap{display:flex;gap:7px;flex-wrap:wrap}.wrap>*{flex:1 1 auto}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{padding:12px;background:#edf4ee;border-radius:12px}.metric strong{display:block;font-size:20px}.pill{display:inline-block;background:#e8eee9;border-radius:20px;padding:5px 9px;font-size:12px}.mapbox{height:calc(100dvh - 165px);min-height:330px;position:relative;background:#dbe9dd;border-radius:12px;overflow:hidden}#map{height:100%;width:100%}.map-fallback{position:absolute;inset:0;display:grid;place-content:center;text-align:center;pointer-events:none}main{padding:0 12px 25px;max-width:720px;margin:auto}#overlay{display:none;position:fixed;inset:0;background:#f5f7f5;z-index:10000;overflow:auto}#overlay.show{display:block}.overlay-head{position:sticky;top:0;z-index:2;background:#14382e;color:white;padding:12px 15px;display:flex;align-items:center;justify-content:space-between}.overlay-body{max-width:720px;margin:auto;padding:12px 12px 50px}.order-card{background:white;border:1px solid #d8e0da;border-radius:13px;padding:12px;margin:9px 0}.order-card p{margin:6px 0}.leaflet-control-attribution{z-index:1}.order-card button{font-size:13px;padding:9px}.link{color:#136a9e;font-weight:650;text-decoration:underline}.status{font-size:12px;border-radius:9px;padding:4px 7px;background:#e7eee9}.navbuttons{position:sticky;bottom:0;background:#f5f7f5;padding:10px 0;display:flex;gap:7px}table{width:100%;border-collapse:collapse;font-size:12px}th,td{border-bottom:1px solid #dce5dd;padding:7px 3px;text-align:right}th:first-child,td:first-child{text-align:left;overflow-wrap:anywhere}#toast{position:fixed;top:60px;left:8%;right:8%;z-index:2000;background:#153c30;color:white;padding:12px;border-radius:10px;text-align:center;display:none}details{margin:9px 0}summary{cursor:pointer;font-weight:650;padding:8px 0} .extra-row{display:flex;gap:6px;align-items:center}.extra-row>*{margin:0}.extra-row select{flex:2;min-width:0}.extra-row input{flex:1;min-width:0}.extra-row button{flex:0;padding:10px} .gap{height:9px} .full{width:100%} .hint{background:#fff6de;padding:10px;border-radius:10px;font-size:13px} .kpi{font-size:26px;font-weight:800;color:#207248} @media(min-width:800px){.mapbox{height:65vh}} .app-shortcuts{position:sticky;top:0;z-index:8;display:flex;gap:8px;background:#eef2ef;padding:8px 0}.app-shortcuts button{flex:1;font-size:14px;padding:11px 6px}details.order-card>summary{cursor:pointer;list-style:none;padding:5px 0 10px;line-height:1.45}details.order-card>summary::-webkit-details-marker{display:none}details.order-card>summary:before{content:'▸ ';color:#17644d}details.order-card[open]>summary:before{content:'▾ '}#appPickups,#appEarnings{scroll-margin-top:65px}
 /* El Parrillón: lectura cómoda en móvil */
 #overlay.parrillon-view .overlay-body{padding:16px 14px 65px;max-width:760px}
@@ -199,7 +199,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-app-section #svAppSection_summary .sv-summary-title{margin-top:0}
 @media(max-width:370px){.sv-app-section .sv-app-section-toggle{padding:18px 13px 23px;font-size:19px}.sv-app-section .sv-app-section-state{font-size:12px}}
 
-/* Prueba 1.03: encabezados Apps claros con ondas integradas, sin competir con las imágenes */
+/* Prueba 1.04: encabezados Apps claros con ondas integradas, sin competir con las imágenes */
 .sv-app-section .sv-app-section-toggle{background:linear-gradient(112deg,#fff 0%,#fff 48%,#fffaf7 77%,#f8fff2 100%);color:#17382e;min-height:86px;padding:18px 20px 30px;isolation:isolate;overflow:hidden}
 .sv-app-section .sv-app-section-toggle::after{height:30px;bottom:-9px;left:-2%;right:-2%;border-radius:52% 48% 0 0 / 42% 38% 0 0;background:linear-gradient(100deg,#ffb343 0%,#ff8c3c 20%,#39383a 42%,#ff7c79 66%,#e4fa8c 90%,#b6ec4d 100%);opacity:.9;transform:rotate(-1deg)}
 .sv-app-section .sv-app-section-toggle::before{content:"";position:absolute;left:25%;right:-8%;bottom:-11px;height:30px;z-index:1;border-radius:55% 45% 0 0 / 65% 45% 0 0;background:linear-gradient(95deg,rgba(255,255,255,.0),rgba(255,255,255,.75) 25%,rgba(255,255,255,.05) 58%,rgba(255,255,255,.42));pointer-events:none;transform:rotate(2deg)}
@@ -288,7 +288,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-result-metrics .metric{min-width:0}
 @media(max-width:370px){.sv-result-section>summary{padding:12px 9px}.sv-result-metrics{gap:7px;padding:0 7px 10px}}
 
-/* Prueba 1.03: diseño suave aprobado, tipografía protagonista, sin iconos en los encabezados */
+/* Prueba 1.04: diseño suave aprobado, tipografía protagonista, sin iconos en los encabezados */
 .sv-home-routes{background:linear-gradient(153deg,#fff 0%,#fff 56%,#fafffc 100%);border-radius:23px;box-shadow:0 8px 26px rgba(22,58,44,.075)}
 .sv-home-routes-header{position:relative;isolation:isolate;overflow:hidden;border-radius:18px;padding:13px 12px 17px;margin:-3px -2px 0;min-height:70px;background:linear-gradient(118deg,#fff 0%,#fff 49%,#effaf3 100%)}
 .sv-home-routes-header::after{content:"";position:absolute;z-index:-1;right:-9%;bottom:-17px;width:65%;height:58px;border-radius:60% 45% 0 0;background:linear-gradient(90deg,rgba(217,245,225,0),rgba(199,233,212,.54));transform:rotate(-9deg);pointer-events:none}
@@ -323,7 +323,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .module-panel .sv-illustrated-link{border-radius:22px}
 @media(max-width:365px){.sv-home-routes-header #serviceStatus{padding:7px 8px;gap:5px}.sv-home-results>.row #resultsToggle{padding:7px 8px;gap:4px}.sv-home-results>.row h2{font-size:18px}}
 
-/* Prueba 1.03: regreso por gesto sin bloquear el refresco del navegador. */
+/* Prueba 1.04: regreso por gesto sin bloquear el refresco del navegador. */
 #overlay{overscroll-behavior-y:auto;-webkit-overflow-scrolling:touch}
 #svOverlayBack[hidden],#svPullHint[hidden]{display:none!important}
 .sv-pull-hint{font-size:12px;color:#d8efe1;font-weight:650;text-align:right}
@@ -332,11 +332,11 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay.sv-pull-ready .overlay-head{background:#267250}
 #overlay.sv-pull-ready .sv-pull-hint{color:#fff;font-weight:800}
 
-/* Prueba 1.03: resultados como tarjeta independiente después de Apps. */
+/* Prueba 1.04: resultados como tarjeta independiente después de Apps. */
 .sv-home-results-panel{margin-top:0}
 .sv-home-results-panel .sv-home-results{border-top:0;margin-top:0;padding-top:0}
 
-/* Prueba 1.03: indicadores reales por módulo, colores aprobados (verde, cobre y azul). */
+/* Prueba 1.04: indicadores reales por módulo, colores aprobados (verde, cobre y azul). */
 .sv-banner-card{padding:8px 8px 9px;border-radius:23px;box-shadow:0 6px 22px rgba(16,54,41,.11)}
 .sv-banner-card .sv-illustrated-link{border-radius:17px 17px 14px 14px}
 .sv-banner-stats{--stat-light:#7cf53f;--stat-dark:#005a35;--stat-edge:#2eaa5c;
@@ -359,7 +359,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-banner-divider{width:1px;height:42px;background:rgba(255,255,255,.36)}
 @media(max-width:365px){.sv-banner-stats{gap:6px;padding:9px 8px}.sv-banner-stat{gap:6px}.sv-banner-stat-label{font-size:10px}.sv-banner-stat-value{font-size:clamp(19px,5.5vw,24px)}}
 
-/* Prueba 1.03 · Asociados sigue el lenguaje visual de Apps con acento cobrizo. */
+/* Prueba 1.04 · Asociados sigue el lenguaje visual de Apps con acento cobrizo. */
 #overlay .sv-associate-home{display:grid;gap:16px;padding-bottom:22px}
 #overlay .sv-associate-home>.panel{margin:0;min-width:0}
 #overlay .sv-associate-section{padding:0;overflow:hidden}
@@ -414,7 +414,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  #overlay .sv-associate-locals .associate-arrow{flex-basis:28px;width:28px;height:28px}
 }
 
-/* Prueba 1.03: tres bloques desplegables y acceso recuperado a El Parrillón. */
+/* Prueba 1.04: tres bloques desplegables y acceso recuperado a El Parrillón. */
 #overlay .sv-associate-home{gap:16px}
 #overlay .sv-associate-home>.sv-associate-section{margin:0;padding:0;overflow:hidden}
 #overlay .sv-associate-home .sv-associate-content{background:#fff}
@@ -432,7 +432,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  #overlay .sv-associate-content .associate-business .associate-arrow{flex-basis:28px;width:28px;height:28px}
 }
 
-/* Prueba 1.03: selección de socios siempre visible, igual que Apps. */
+/* Prueba 1.04: selección de socios siempre visible, igual que Apps. */
 #overlay .sv-associate-home>.sv-associate-partners{
  padding:20px 18px 22px;
  margin:0;
@@ -472,7 +472,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  #overlay .sv-associate-partners .associate-arrow{flex-basis:28px;width:28px;height:28px}
 }
 
-/* Prueba 1.03: Selecciona un Socio usa la misma tarjeta panorámica que Apps. */
+/* Prueba 1.04: Selecciona un Socio usa la misma tarjeta panorámica que Apps. */
 #overlay .sv-associate-home>.sv-associate-partners{padding:20px 18px 22px}
 #overlay .sv-associate-partners h2{margin:0 0 14px}
 #overlay .sv-associate-partners .sv-associate-carousel{margin:14px 0 8px;padding:2px 1px 8px}
@@ -524,7 +524,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  #overlay .sv-associate-tile .sv-associate-tile-copy strong{font-size:clamp(17px,5.2vw,22px)}
 }
 
-/* Prueba 1.03: banner aprobado de El Parrillón sin subtítulo ni captura manual. */
+/* Prueba 1.04: banner aprobado de El Parrillón sin subtítulo ni captura manual. */
 #overlay .sv-associate-carousel .sv-associate-tile{
   display:block;padding:0;overflow:hidden;border:0;border-radius:19px;
   background:#0b3024;line-height:0;aspect-ratio:2/1;
@@ -534,7 +534,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
   border:0;border-radius:19px;margin:0;padding:0;
 }
 
-/* Prueba 1.03: franjas de ganancias y pedidos a la mitad de alto.
+/* Prueba 1.04: franjas de ganancias y pedidos a la mitad de alto.
    Mantiene los tres colores, indicadores, cifras y funcionalidad. */
 .sv-banner-stats{
  min-height:42px;
@@ -567,7 +567,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  .sv-banner-stat-value{font-size:clamp(16px,5vw,20px)}
 }
 
-/* Prueba 1.03 · Mundo de Caramelo: registro directo exclusivo de este socio. */
+/* Prueba 1.04 · Mundo de Caramelo: registro directo exclusivo de este socio. */
 #overlay .sv-caramelo-home{display:flex;flex-direction:column;gap:13px;padding-bottom:22px}
 #overlay .sv-caramelo-panel{border-top:4px solid #df78a7}
 #overlay .sv-caramelo-panel h2{color:#633047;margin:0 0 14px;font-size:21px}
@@ -581,8 +581,24 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-caramelo-numbers span{background:#fceaf1;border-radius:9px;padding:8px 10px}
 #overlay .sv-caramelo-active{border-top:1px solid #edd3df;margin-top:22px;padding-top:10px}
 #overlay .sv-caramelo-active h3{color:#633047}
+
+/* Prueba 1.04: importar JSON y fichas de clientes con ubicación y fotografía. */
+#overlay .sv-caramelo-json{border:1px solid #edd3df;border-radius:13px;padding:12px;margin-bottom:16px;background:#fff9fb}
+#overlay .sv-caramelo-json summary{font-weight:800;color:#633047;cursor:pointer;font-size:16px}
+#overlay .sv-caramelo-json textarea{width:100%;box-sizing:border-box;margin:10px 0}
+#overlay .sv-caramelo-json button{margin-top:4px}
+#overlay .sv-caramelo-fold>summary{list-style:none;cursor:pointer;color:#633047;font-size:21px;font-weight:800;display:flex;justify-content:space-between;align-items:center;gap:10px}
+#overlay .sv-caramelo-fold>summary::-webkit-details-marker{display:none}
+#overlay .sv-caramelo-fold>summary:after{content:'⌄';font-size:26px;color:#a64e75;line-height:1}
+#overlay .sv-caramelo-fold[open]>summary:after{content:'⌃'}
+#overlay .sv-caramelo-fold[open]>summary{margin-bottom:16px}
+#overlay .sv-caramelo-count{margin-left:auto;background:#fceaf1;border-radius:999px;padding:4px 11px;font-size:15px}
+#overlay .sv-caramelo-media{margin-top:12px;border-top:1px solid #efd5df;padding-top:8px}
+#overlay .sv-caramelo-media label{margin:10px 0}
+#overlay .sv-caramelo-map-link{display:block;text-align:center;margin:12px 0;font-weight:700;overflow-wrap:anywhere}
+#overlay .sv-caramelo-photo{display:block;max-width:100%;max-height:280px;border-radius:12px;object-fit:contain;margin:10px auto}
 </style></head><body>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.03</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.04</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -605,7 +621,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 'use strict';
 const KEY='suvazu-v01';const $=id=>document.getElementById(id);const now=()=>new Date().toISOString();const money=n=>'$'+Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2});const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const dt=s=>s?new Date(s).toLocaleString('es-MX',{dateStyle:'short',timeStyle:'short'}):'—';const tm=s=>s?new Date(s).toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'}):'—';const dayKey=s=>{let d=new Date(s);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};const duration=ms=>{ms=Math.max(0,ms);let min=Math.floor(ms/60000);return Math.floor(min/60)+' h '+(min%60)+' min'};const uid=()=>Date.now()*1000+Math.floor(Math.random()*999);const showCharge=v=>{let t=String(v??'').trim();if(!t)return 'Pendiente';let n=t.replace(/[$,\s]/g,'');return /^\d+(?:\.\d+)?$/.test(n)?money(Number(n)):t};
 let data;try{data=JSON.parse(localStorage.getItem(KEY))||{routes:[],selected:null}}catch{data={routes:[],selected:null}};
-function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];if(!Array.isArray(data.carameloServices))data.carameloServices=[];if(!Array.isArray(data.clients))data.clients=[];if(!data.ui||typeof data.ui!=='object')data.ui={};if(!data.ui.homeSummary||typeof data.ui.homeSummary!=='object')data.ui.homeSummary={};if(!data.ui.appSections||typeof data.ui.appSections!=='object')data.ui.appSections={};if(typeof data.ui.backupExpanded!=='boolean')data.ui.backupExpanded=false;for(let k of ['summary','history'])if(typeof data.ui.appSections[k]!=='boolean')data.ui.appSections[k]=false;for(let k of ['direct','associate','app'])if(typeof data.ui.homeSummary[k]!=='boolean')data.ui.homeSummary[k]=false;data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
+function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];if(!Array.isArray(data.carameloServices))data.carameloServices=[];if(!data.carameloClientExtras||typeof data.carameloClientExtras!=='object'||Array.isArray(data.carameloClientExtras))data.carameloClientExtras={};if(!Array.isArray(data.clients))data.clients=[];if(!data.ui||typeof data.ui!=='object')data.ui={};if(!data.ui.homeSummary||typeof data.ui.homeSummary!=='object')data.ui.homeSummary={};if(!data.ui.appSections||typeof data.ui.appSections!=='object')data.ui.appSections={};if(typeof data.ui.backupExpanded!=='boolean')data.ui.backupExpanded=false;for(let k of ['summary','history'])if(typeof data.ui.appSections[k]!=='boolean')data.ui.appSections[k]=false;for(let k of ['direct','associate','app'])if(typeof data.ui.homeSummary[k]!=='boolean')data.ui.homeSummary[k]=false;data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
 normalize();const current=()=>data.routes.find(r=>String(r.id)===String(data.selected));const activeRoutes=()=>data.routes.filter(r=>r.status!=='finalizada');const running=()=>data.journeys.find(j=>!j.end);const activeOrder=o=>!o.delivered&&!o.cancelled;const extraSum=(o,type)=>o.extras.reduce((s,e)=>s+(type&&e.type!==type?0:Number(e.amount)||0),0);const gain=o=>o.cancelled?0:o.delivered?Number(o.amount||0)+extraSum(o):0;const routeGain=r=>r.orders.reduce((s,o)=>s+gain(o),0);const routeDate=r=>r.journeyDate||(r.start?dayKey(r.start):null);const orderDate=(r,o)=>r.journeyDate||dayKey(r.start||o.delivered||now());const fmtMonth=s=>new Date(s+'-02T12:00:00').toLocaleDateString('es-MX',{month:'long',year:'numeric'});
 function toast(t){$('toast').textContent=t;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2400)}function save(){localStorage.setItem(KEY,JSON.stringify(data));backupStatus();render();if($('overlay').classList.contains('show'))renderView()}
 function svCreateRoute(origin='repartidor',business=''){
@@ -850,7 +866,7 @@ function renderApps(){
 
 }
 
-let view='orders',detailId=null,previousView='suvazu',routeBrowseId=null,slideIndex=0,deliveryId=null;function openView(v,id){if(view!==v)previousView=view;view=v;detailId=id??null;$('overlay').classList.add('show');document.body.style.overflow='hidden';renderView();$('overlay').scrollTop=0;svArmAndroidBack()}function closeView(){svRestore();$('overlay').classList.remove('show');document.body.style.overflow=''}
+let view='orders',detailId=null,previousView='suvazu',routeBrowseId=null,slideIndex=0,deliveryId=null;function openView(v,id){if(v==='caramelo'&&view!==v)svCarameloOpenSections={completed:false,clients:false};if(view!==v)previousView=view;view=v;detailId=id??null;$('overlay').classList.add('show');document.body.style.overflow='hidden';renderView();$('overlay').scrollTop=0;svArmAndroidBack()}function closeView(){svRestore();$('overlay').classList.remove('show');document.body.style.overflow=''}
 function goBack(){if(view==='apps'&&$('overlay').classList.contains('show')&&appScreen==='service'){appScreen='home';renderView();return}if(deliveryId!==null){deliveryId=null;view='orders';renderView();return}if(view==='apps'){closeView();return}if(view==='clients'){closeView();return}if(view==='clientOrder'){openView('clients');return}if(view==='captureRoute'){openView(current()?.origin==='asociados'?'asociados':'suvazu');return}if(view==='importQuick'){closeView();return}if(view==='suvazu'){closeView();return}if(view==='detail'){openView('orders');return}if(view==='orders'){let route=data.routes.find(x=>String(x.id)===String(routeBrowseId));openView(route?.origin==='asociados'?'asociados':'suvazu');return}if(view==='routes'){closeView();return}if(view==='parrillon'){openView('asociados');return}if(view==='caramelo'){openView('asociados');return}if(view==='asociados'){closeView();return}closeView()}
 
 function browseRoute(id){routeBrowseId=id;slideIndex=0;openView('orders')}
@@ -1098,21 +1114,45 @@ function svRenderFinished(){let d=running()?.date||dayKey(now());let items=[];
 }
 function svRestore(){let store=$('suvazuStore');for(let id of ['particularRoutes','particularCapture']){let el=$(id);if(el&&el.parentElement!==store)store.appendChild(el)}}
 
-// Prueba 1.03 · Mundo de Caramelo: módulo independiente de repartos directos.
-// Los clientes se derivan de los servicios activados; no se duplican en la libreta general.
+// Prueba 1.04 · Socios de reparto directo: JSON, clientes y domicilios por socio.
+let svCarameloOpenSections={completed:false,clients:false};
+function svCarameloToggle(section){svCarameloOpenSections[section]=!svCarameloOpenSections[section]}
+// El Parrillón conserva su flujo independiente de vueltas y tickets.
 function svCarameloServices(){return data.carameloServices}
 function svCarameloField(id){return String($(id)?.value||'').trim()}
+function svCarameloJSON(text){
+ let raw=String(text||'').trim().replace(/^\uFEFF/,'');
+ if(raw.startsWith('```'))raw=raw.replace(/^```(?:json)?\s*/i,'').replace(/\s*```$/,'').trim();
+ if(raw.length>30000)throw Error('El JSON es demasiado grande.');
+ let obj;try{obj=JSON.parse(raw)}catch(_){throw Error('El texto no es un JSON válido.')}
+ if(Array.isArray(obj)){if(obj.length!==1)throw Error('Importa un servicio por vez.');obj=obj[0]}
+ if(obj&&Array.isArray(obj.servicios)){if(obj.servicios.length!==1)throw Error('Importa un servicio por vez.');obj=obj.servicios[0]}
+ if(!obj||typeof obj!=='object'||Array.isArray(obj))throw Error('El JSON debe contener los datos de un servicio.');
+ const pick=(...names)=>{for(const n of names)if(Object.prototype.hasOwnProperty.call(obj,n)&&obj[n]!==null&&obj[n]!==undefined)return obj[n];return ''};
+ const fields={carAddress:pick('direccion','dirección','address'),carStreets:pick('entreCalles','entre_calles','entre calles','calles'),carColony:pick('colonia','colony'),carReference:pick('referencia','reference'),carGain:pick('ganancia','gain')};
+ if(!String(fields.carAddress).trim())throw Error('Falta la dirección en el JSON.');
+ if(fields.carGain!==''&&(!Number.isFinite(Number(fields.carGain))||Number(fields.carGain)<0))throw Error('La ganancia del JSON no es válida.');
+ for(const [id,val] of Object.entries(fields)){if(typeof val==='object')throw Error('El campo '+id+' no es válido.');const el=$(id);if(el)el.value=String(val).trim().slice(0,Number(el.maxLength)>0?el.maxLength:300)}
+ // # de Cliente y Monto a Cobrar se introducen únicamente de forma manual.
+ toast('Datos del JSON cargados. Completa # de Cliente y Monto a Cobrar si corresponde.');
+}
+function svCarameloImportJSON(){try{svCarameloJSON(svCarameloField('carJSON'))}catch(e){alert(e.message)}}
+function svCarameloImportFile(file){
+ if(!file)return;if(file.size>40000)return alert('El archivo JSON es demasiado grande.');
+ const reader=new FileReader();reader.onerror=()=>alert('No se pudo leer el archivo JSON.');
+ reader.onload=()=>{try{svCarameloJSON(reader.result)}catch(e){alert(e.message)}};reader.readAsText(file);
+}
 function svCarameloActivate(){
  if(!running())return alert('Primero inicia la jornada general de SuVaZu.');
- const address=svCarameloField('carAddress'),streets=svCarameloField('carStreets'),reference=svCarameloField('carReference'),clientNumber=svCarameloField('carClient'),chargeRaw=svCarameloField('carCharge'),gainRaw=svCarameloField('carGain');
+ const address=svCarameloField('carAddress'),streets=svCarameloField('carStreets'),colony=svCarameloField('carColony'),reference=svCarameloField('carReference'),clientNumber=svCarameloField('carClient'),chargeRaw=svCarameloField('carCharge'),gainRaw=svCarameloField('carGain');
  if(!address)return alert('Introduce la dirección.');
  if(!gainRaw)return alert('Introduce la ganancia.');
  const gain=Number(gainRaw),charge=chargeRaw===''?null:Number(chargeRaw);
  if(!Number.isFinite(gain)||gain<0||charge!==null&&(!Number.isFinite(charge)||charge<0))return alert('Revisa los montos.');
- if(clientNumber&&clientNumber.length>60)return alert('El # de Cliente es demasiado largo.');
+ if(clientNumber.length>60)return alert('El # de Cliente es demasiado largo.');
  if(!confirm('¿Activar servicio de Mundo de Caramelo para '+address+'?'))return;
  const stamp=now();
- svCarameloServices().push({id:uid(),address:address.slice(0,300),streets:streets.slice(0,250),reference:reference.slice(0,500),clientNumber:clientNumber.slice(0,60),charge,gain,started:stamp,date:running().date,delivered:null});
+ svCarameloServices().push({id:uid(),address:address.slice(0,300),streets:streets.slice(0,250),colony:colony.slice(0,150),reference:reference.slice(0,500),clientNumber:clientNumber.slice(0,60),charge,gain,started:stamp,date:running().date,delivered:null});
  save();toast('Servicio activado · Cliente guardado');
 }
 function svCarameloComplete(id){
@@ -1124,36 +1164,84 @@ function svCarameloComplete(id){
 function svCarameloEntry(x,active){
  return `<article class="sv-caramelo-entry"><div class="row"><strong>${esc(x.address)}</strong><span class="pill">${active?'En curso':'Entregado'}</span></div>
  ${x.streets?`<p><b>Entre Calles:</b> ${esc(x.streets)}</p>`:''}
+ ${x.colony?`<p><b>Colonia:</b> ${esc(x.colony)}</p>`:''}
  ${x.reference?`<p><b>Referencia:</b> ${esc(x.reference)}</p>`:''}
  ${x.clientNumber?`<p><b># de Cliente:</b> ${esc(x.clientNumber)}</p>`:''}
  <div class="sv-caramelo-numbers"><span>A cobrar: <b>${x.charge===null?'No indicado':money(x.charge)}</b></span><span>Ganancia: <b>${money(x.gain)}</b></span></div>
  <small class="muted">${active?'Activado':'Completado'}: ${esc(dt(active?x.started:x.delivered))}</small>
  ${active?`<button type="button" class="full" onclick="svCarameloComplete(${Number(x.id)})">✓ Marcar como entregado</button>`:''}</article>`;
 }
+function svCarameloClientKey(x){
+ const phone=String(x.clientNumber||'').replace(/\s+/g,'').toLowerCase();
+ return phone?'phone:'+phone:'address:'+String(x.address||'').trim().toLowerCase()+'|'+String(x.colony||'').trim().toLowerCase();
+}
+function svCarameloExtras(key){return data.carameloClientExtras[key]||{}}
+function svCarameloValidMap(raw){
+ const url=String(raw||'').trim();if(!url)return '';
+ let u;try{u=new URL(url)}catch(_){throw Error('Introduce un enlace válido de Google Maps.')}
+ if(u.protocol!=='https:'||!(['maps.app.goo.gl','goo.gl','www.google.com','google.com','maps.google.com'].includes(u.hostname)||u.hostname.endsWith('.google.com')&&u.pathname.startsWith('/maps')))throw Error('El enlace debe ser de Google Maps.');
+ return u.href;
+}
+function svCarameloSaveMap(btn){
+ const card=btn.closest('[data-car-key]');if(!card)return;
+ const key=card.dataset.carKey,raw=card.querySelector('[data-car-map]')?.value||'';
+ let url;try{url=svCarameloValidMap(raw)}catch(e){return alert(e.message)}
+ const previous=data.carameloClientExtras[key];data.carameloClientExtras[key]={...svCarameloExtras(key),map:url};
+ try{save();toast('Ubicación de cliente guardada')}catch(e){if(previous)data.carameloClientExtras[key]=previous;else delete data.carameloClientExtras[key];alert('No se pudo guardar el enlace.')} 
+}
+function svCarameloPhoto(file,key){
+ if(!file)return;
+ if(!file.type.startsWith('image/'))return alert('Selecciona una fotografía.');
+ if(file.size>15*1024*1024)return alert('La imagen es demasiado grande (máximo 15 MB).');
+ const reader=new FileReader();reader.onerror=()=>alert('No se pudo leer la fotografía.');
+ reader.onload=()=>{const img=new Image();img.onerror=()=>alert('No se pudo procesar la fotografía.');
+ img.onload=()=>{try{
+  const ratio=Math.min(1,960/Math.max(img.width,img.height)),canvas=document.createElement('canvas');
+  canvas.width=Math.max(1,Math.round(img.width*ratio));canvas.height=Math.max(1,Math.round(img.height*ratio));
+  canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
+  const photo=canvas.toDataURL('image/jpeg',.63);if(photo.length>420000)throw Error('La imagen comprimida es demasiado grande. Prueba otra fotografía.');
+  const previous=data.carameloClientExtras[key];data.carameloClientExtras[key]={...svCarameloExtras(key),photo};
+  try{save();toast('Imagen de dirección guardada')}catch(e){if(previous)data.carameloClientExtras[key]=previous;else delete data.carameloClientExtras[key];alert('No hay espacio para guardar la fotografía. Descarga un respaldo y libera espacio.');}
+ }catch(e){alert(e.message)}};img.src=reader.result};reader.readAsDataURL(file);
+}
 function svCarameloClientCards(){
  const customers=[];const seen=new Map();
  for(const x of svCarameloServices()){
-  const phone=String(x.clientNumber||'').replace(/\s+/g,'').toLowerCase();
-  const key=phone?'phone:'+phone:'address:'+String(x.address).trim().toLowerCase()+'|'+String(x.streets||'').trim().toLowerCase();
-  if(!seen.has(key)){let customer={...x,count:0};customers.push(customer);seen.set(key,customer)}
+  const key=svCarameloClientKey(x);
+  if(!seen.has(key)){let customer={...x,key,count:0};customers.push(customer);seen.set(key,customer)}
   const customer=seen.get(key);customer.count++;
-  if(new Date(x.started)>=new Date(customer.started)){Object.assign(customer,{address:x.address,streets:x.streets,reference:x.reference,clientNumber:x.clientNumber,gain:x.gain,started:x.started})}
+  if(new Date(x.started)>=new Date(customer.started)){Object.assign(customer,{address:x.address,streets:x.streets,colony:x.colony||'',reference:x.reference,clientNumber:x.clientNumber,gain:x.gain,started:x.started})}
  }
- return customers.slice().reverse().map(c=>`<article class="sv-caramelo-entry">
+ return customers.slice().reverse().map(c=>{
+ const extra=svCarameloExtras(c.key),photo=typeof extra.photo==='string'&&extra.photo.startsWith('data:image/jpeg;base64,')?extra.photo:'',map=typeof extra.map==='string'?extra.map:'';
+ return `<article class="sv-caramelo-entry sv-caramelo-client" data-car-key="${esc(c.key)}">
   <strong>${esc(c.address)}</strong>
   ${c.streets?`<p><b>Entre Calles:</b> ${esc(c.streets)}</p>`:''}
+  ${c.colony?`<p><b>Colonia:</b> ${esc(c.colony)}</p>`:''}
   ${c.reference?`<p><b>Referencia:</b> ${esc(c.reference)}</p>`:''}
   ${c.clientNumber?`<p><b># de Cliente:</b> ${esc(c.clientNumber)}</p>`:''}
   <p><b>Costo del Servicio:</b> ${money(c.gain)}</p>
   ${c.count>1?`<small class="muted">${c.count} servicios registrados</small>`:''}
- </article>`).join('')||'<p class="muted">Los clientes aparecerán automáticamente al activar un servicio.</p>';
+  <div class="sv-caramelo-media"><label>Enlace de Google Maps<input data-car-map type="url" placeholder="https://maps.app.goo.gl/..." value="${esc(map)}"></label>
+  <button type="button" class="secondary full" onclick="svCarameloSaveMap(this)">Guardar Maps</button>
+  ${map?`<a class="sv-caramelo-map-link" href="${esc(map)}" target="_blank" rel="noopener noreferrer">📍 Abrir ubicación en Maps</a>`:''}
+  <label>Imagen de dirección<input type="file" accept="image/*" onchange="svCarameloPhoto(this.files[0],this.closest('[data-car-key]').dataset.carKey);this.value=''"></label>
+  ${photo?`<img class="sv-caramelo-photo" src="${photo}" alt="Imagen del domicilio del cliente">`:''}</div>
+ </article>`}).join('')||'<p class="muted">Los clientes aparecerán automáticamente al activar un servicio.</p>';
 }
 function svCarameloRender(){
  const all=svCarameloServices(),active=all.filter(q=>!q.delivered).slice().reverse(),done=all.filter(q=>q.delivered).slice().reverse();
  return `<div class="sv-caramelo-home">
   <section class="panel sv-caramelo-panel"><h2>Nuevo Servicio</h2>
-   <label>Dirección<input id="carAddress" maxlength="300" placeholder="Calle, número y colonia"></label>
+   <details class="sv-caramelo-json"><summary>📥 Importar JSON del pedido</summary>
+    <p class="muted">Pega el JSON que preparó Kanrmy o selecciona un archivo. Se rellenan los datos del domicilio y la ganancia; el # de Cliente y el Monto a Cobrar se completan manualmente.</p>
+    <textarea id="carJSON" rows="5" placeholder='{"direccion":"...","entreCalles":"...","colonia":"...","referencia":"...","ganancia":45}'></textarea>
+    <button type="button" class="secondary full" onclick="svCarameloImportJSON()">Cargar JSON</button>
+    <label>O seleccionar archivo JSON<input type="file" accept=".json,application/json" onchange="svCarameloImportFile(this.files[0]);this.value=''"></label>
+   </details>
+   <label>Dirección<input id="carAddress" maxlength="300" placeholder="Calle y número"></label>
    <label>Entre Calles<input id="carStreets" maxlength="250" placeholder="Entre qué calles se encuentra"></label>
+   <label>Colonia<input id="carColony" maxlength="150" placeholder="Nombre de la colonia"></label>
    <label>Referencia<textarea id="carReference" maxlength="500" rows="2" placeholder="Indicaciones para la entrega"></textarea></label>
    <label># de Cliente<input id="carClient" maxlength="60" inputmode="tel" placeholder="Número del cliente"></label>
    <label>Monto a Cobrar (opcional)<input id="carCharge" type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00"></label>
@@ -1161,17 +1249,16 @@ function svCarameloRender(){
    <button type="button" class="full" onclick="svCarameloActivate()">▶ Activar Servicio</button>
    ${active.length?`<div class="sv-caramelo-active"><h3>Servicios activos (${active.length})</h3>${active.map(x=>svCarameloEntry(x,true)).join('')}</div>`:''}
   </section>
-  <section class="panel sv-caramelo-panel"><h2>Servicios Completados</h2>
-   <p class="muted">${done.length} servicio${done.length===1?'':'s'} completado${done.length===1?'':'s'}</p>
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svCarameloOpenSections.completed?'open':''}><summary onclick="svCarameloToggle('completed')">Servicios Completados <span class="sv-caramelo-count">${done.length}</span></summary>
    ${done.length?done.map(x=>svCarameloEntry(x,false)).join(''):'<p class="muted">Aún no hay servicios completados.</p>'}
-  </section>
-  <section class="panel sv-caramelo-panel"><h2>Clientes</h2>
+  </details>
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svCarameloOpenSections.clients?'open':''}><summary onclick="svCarameloToggle('clients')">Clientes <span class="sv-caramelo-count">${new Set(all.map(svCarameloClientKey)).size}</span></summary>
    ${svCarameloClientCards()}
-  </section>
+  </details>
  </div>`;
 }
 
-// Prueba 1.03: pantalla de Asociados con el mismo patrón visual de Apps.
+// Prueba 1.04: pantalla de Asociados con el mismo patrón visual de Apps.
 // La preferencia de apertura se guarda en data.ui, sin alterar rutas ni pedidos.
 function svAssociateOpen(section){
  return !!(data.ui&&data.ui.associateSections&&data.ui.associateSections[section]);
@@ -1769,6 +1856,7 @@ function backupValid(obj){
  if(obj.journeys!==undefined&&!Array.isArray(obj.journeys))throw Error('El registro de jornadas no es válido.');
  if(obj.parrillon!==undefined&&(!Array.isArray(obj.parrillon)||!obj.parrillon.every(x=>x&&Array.isArray(x.tickets))))throw Error('El registro de El Parrillón no es válido.');
  if(obj.carameloServices!==undefined&&(!Array.isArray(obj.carameloServices)||!obj.carameloServices.every(q=>q&&typeof q==='object')))throw Error('El registro de Mundo de Caramelo no es válido.');
+ if(obj.carameloClientExtras!==undefined&&(!obj.carameloClientExtras||typeof obj.carameloClientExtras!=='object'||Array.isArray(obj.carameloClientExtras)))throw Error('Las fichas de clientes de Mundo de Caramelo no son válidas.');
  if(obj.appServices!==undefined&&(!Array.isArray(obj.appServices)||!obj.appServices.every(a=>a&&Array.isArray(a.items))))throw Error('El registro de Apps no es válido.');
  return obj
 }
@@ -1778,7 +1866,7 @@ function backupStatus(){
 }
 function exportData(){
  try{
- let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'1.03',createdAt:now()};
+ let snapshot=JSON.parse(JSON.stringify(data));snapshot._backup={app:'Repartidor SuVaZu',version:'1.04',createdAt:now()};
  let blob=new Blob([JSON.stringify(snapshot,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='respaldo-suvazu-'+dayKey(now())+'-'+new Date().toTimeString().slice(0,5).replace(':','-')+'.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);toast('Respaldo preparado. Comprueba que se descargó.');
  }catch(e){alert('No se pudo preparar el respaldo: '+e.message)}
@@ -1810,7 +1898,7 @@ function importData(){
  alert('No se pudo restaurar; los datos anteriores permanecen sin cambios. '+e.message)
  }
 }
-// Prueba 1.03: gesto de regreso en las tres pantallas principales.
+// Prueba 1.04: gesto de regreso en las tres pantallas principales.
 // Se escucha en el documento para capturar movimientos desde el encabezado y el contenido.
 function svIsPrimaryModule(){
  return $('overlay').classList.contains('show') &&
