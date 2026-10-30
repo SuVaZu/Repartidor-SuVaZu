@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.27</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.28</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -676,7 +676,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay.nutribionicos-view .sv-caramelo-count{background:#edf9e5;color:#2f761e}
 #overlay.nutribionicos-view .sv-client-target{outline-color:#45b145}
 
-/* Prueba 1.27 · Historial: sólo rutas terminadas y fichas por pedido. */
+/* Prueba 1.28 · Historial: sólo rutas terminadas y fichas por pedido. */
 #overlay .sv-associate-history-card{display:block;overflow:hidden;padding:0!important}
 #overlay .sv-associate-history-summary{display:flex;align-items:center;gap:9px;padding:15px 12px;cursor:pointer;list-style:none}
 #overlay .sv-associate-history-summary::-webkit-details-marker,#overlay .sv-associate-history-order>summary::-webkit-details-marker{display:none}
@@ -701,7 +701,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-associate-history-link small{display:block;margin-top:5px;color:#526b61}
 #overlay .sv-client-target{outline:3px solid #ef91be;outline-offset:3px}
 
-/* Prueba 1.27 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
+/* Prueba 1.28 · Cabeceras Asociados vinculadas al socio visible en el carrusel. */
 #overlay .sv-associate-home[data-front-partner="caramelo"] .sv-associate-section .sv-app-section-toggle{
  background:linear-gradient(112deg,#fff 0%,#fff 45%,#fff3f9 77%,#ffe5f2 100%);
 }
@@ -736,7 +736,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
  #overlay .sv-associate-section .sv-app-section-chevron{transition:background .18s ease,color .18s ease}
 }
 
-/* Prueba 1.27 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
+/* Prueba 1.28 · Balance del Día. Azul pastel, tarjetas suaves y cifras protagonistas. */
 .sv-home-results-panel{background:#fff;border-radius:24px}
 .sv-home-results>.row{background:linear-gradient(115deg,#f7fbff 0%,#e9f4ff 68%,#dceeff 100%);border:1px solid #e1effc;min-height:76px}
 .sv-home-results>.row::before{background:rgba(163,207,250,.22)}
@@ -760,7 +760,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-balance-number{font-size:clamp(20px,5.15vw,31px);font-weight:900;line-height:1.1;white-space:nowrap;letter-spacing:-.045em;color:var(--dark);font-variant-numeric:tabular-nums;position:relative;z-index:1}
 @media(max-width:360px){.sv-balance-grid{gap:7px}.sv-balance-metric{padding:12px 8px;min-height:138px}.sv-balance-number{font-size:clamp(17px,5vw,24px)}.sv-balance-label{font-size:12px}}
 
-/* Prueba 1.27 · SuVaZu Repartidor: lenguaje visual de Asociados, sin alterar el flujo de rutas. */
+/* Prueba 1.28 · SuVaZu Repartidor: lenguaje visual de Asociados, sin alterar el flujo de rutas. */
 #overlay .sv-direct-home .sv-direct-section .sv-app-section-toggle{
  background:linear-gradient(112deg,#fff 0%,#fff 45%,#f1fbf3 76%,#e3f6e8 100%);
 }
@@ -778,7 +778,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-direct-manage .sv-module-route-controls button.secondary{background:#e6f3eb;color:#175a43}
 #overlay .sv-direct-home .sv-module-detail{margin-top:4px}
 
-/* Prueba 1.27 · Tarjetas compactas y elegantes para las rutas directas */
+/* Prueba 1.28 · Tarjetas compactas y elegantes para las rutas directas */
 .sv-home-route-card.sv114-direct{background:linear-gradient(135deg,#fff 0%,#f1f9f3 100%);border:1px solid #cfe5d4;border-left:5px solid #42b96b;padding:16px;border-radius:22px;box-shadow:0 5px 17px #153e3010}
 .sv114-direct .sv-home-route-main{align-items:flex-start}
 .sv114-direct .sv-home-route-type{font-size:12px;letter-spacing:.02em;color:#4c8066;margin-bottom:6px}
@@ -808,7 +808,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv114-open span{font-size:24px;line-height:1}
 .sv114-empty{margin-top:10px;color:#60776a;font-size:13px}
 @media(max-width:390px){.sv-home-route-card.sv114-direct{padding:13px}.sv114-chip{font-size:11px;padding:6px 8px}}
-/* Prueba 1.27: cancelar únicamente rutas en espera y cierre de servicio sin diálogos dobles. */
+/* Prueba 1.28: cancelar únicamente rutas en espera y cierre de servicio sin diálogos dobles. */
 #overlay .sv-direct-manage .sv-cancel-pending{background:#fae7e8!important;border:1px solid #f0c3c7!important;color:#a13d4b!important}
 #overlay .sv-direct-manage .sv-cancel-pending:hover{background:#f8d8dc!important}
 #overlay .sv-finish-service{border-top:4px solid #47b774;padding-top:22px}
@@ -819,7 +819,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-finish-amount{padding:16px 18px;border-radius:17px;background:#edf6f0;margin:19px 0 22px}
 #overlay .sv-finish-amount small{display:block;color:#5b7567;margin-bottom:5px}
 #overlay .sv-finish-amount strong{font-size:30px;color:#194534}
-/* Prueba 1.27: servicios como atajos de la ruta + próximas rutas plegables */
+/* Prueba 1.28: servicios como atajos de la ruta + próximas rutas plegables */
 .sv115-services{margin-top:12px;padding:14px 13px 5px;background:#fff;border:1px solid #e2eee6;border-radius:17px}
 .sv115-list-title{font-size:15px;font-weight:850;color:#20583b;margin:1px 0 10px}
 .sv115-item{display:flex;align-items:center;gap:11px;min-height:72px;padding:9px 0;border-top:1px solid #e8eee9}
@@ -833,7 +833,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv115-next[open] .sv115-next-toggle{background:#e6f3e9}
 .sv115-next>.sv-home-route-card{margin-top:12px}
 
-/* Prueba 1.27 · Balance siempre visible, compacto y sin separación. */
+/* Prueba 1.28 · Balance siempre visible, compacto y sin separación. */
 .sv-home-results-panel{padding:12px!important}
 .sv-home-results>.row{margin:0!important;min-height:65px;padding:11px 12px 10px;border-radius:17px 17px 0 0;border-bottom:0}
 .sv-home-results>.row h2{font-size:clamp(19px,5.1vw,25px)}
@@ -848,7 +848,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-balance-metric::after{width:70px;height:58px;right:-16px;bottom:-25px}
 @media(max-width:360px){.sv-balance-metric{min-height:0;padding:9px 7px;gap:3px}.sv-balance-number{font-size:clamp(16px,4.8vw,23px)}.sv-balance-label{font-size:11px}}
 
-/* Prueba 1.27: selector visual y horizontal de rutas sin cambiar la lógica del repartidor. */
+/* Prueba 1.28: selector visual y horizontal de rutas sin cambiar la lógica del repartidor. */
 #overlay .sv-direct-selector{padding:18px 16px 20px;background:#fff}
 #overlay .sv-direct-selector>h2{margin:3px 4px 14px;color:#173d2d;font-size:clamp(23px,5.2vw,30px)}
 #overlay .sv-direct-route-carousel{display:flex;gap:15px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 2px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding:2px 2px 12px;scrollbar-width:none}
@@ -873,7 +873,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-direct-create{width:100%;font-size:16px}
 #overlay .sv-direct-route-hint{color:#667e70;font-size:12px;margin:8px 4px 0}
 
-/* Prueba 1.27: selección por imagen, idéntica a la experiencia de socios. */
+/* Prueba 1.28: selección por imagen, idéntica a la experiencia de socios. */
 #overlay .sv-direct-selector{padding:18px 16px 24px;background:#fff}
 #overlay .sv-direct-route-carousel{gap:10px;padding:0}
 #overlay .sv-direct-image-tile{display:block;flex:0 0 100%;min-width:0;scroll-snap-align:start;appearance:none;border:0;background:transparent;padding:0;margin:0;cursor:pointer;border-radius:19px;overflow:hidden;line-height:0;box-shadow:none}
@@ -896,7 +896,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 #overlay .sv-direct-history-order p{margin:0;font-size:15px;font-weight:650;color:#193f30;white-space:pre-wrap;overflow-wrap:anywhere}
 #overlay .sv-direct-history-empty{font-size:14px;color:#6b8174;margin:10px}
 
-/* Prueba 1.27: control compacto horizontal sin encabezado */
+/* Prueba 1.28: control compacto horizontal sin encabezado */
 .sv-journey-panel{padding:12px!important}
 .sv-journey-carousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .sv-journey-carousel::-webkit-scrollbar{display:none}
@@ -919,7 +919,7 @@ body{background:linear-gradient(180deg,#edf9f2 0%,#eef4ef 46%,#eef2ef 100%);back
 .sv-history-kpis strong{font-size:clamp(17px,4.4vw,24px);color:#1a5036;overflow-wrap:anywhere}
 .sv-history-note{color:#668071;font-size:13px;margin-top:16px;line-height:1.45}
 
-/* Prueba 1.27 – puerta principal Suva y accesos discretos */
+/* Prueba 1.28 – puerta principal Suva y accesos discretos */
 body.sv-booting>header,body.sv-booting>main{visibility:hidden}
 #svGate[hidden],#svGateBackupSheet[hidden],#svInternalJourneyControls[hidden]{display:none!important}
 body.sv-gate-mode{background:#003a2e;min-height:100dvh}
@@ -971,7 +971,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.27</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.28</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -2046,7 +2046,7 @@ function svRenderAssociateHome(){
  return `<div class="sv-associate-home" data-front-partner="${svAssociateFrontPartner}">${summary}${partners}${history}</div>`;
 }
 
-// Prueba 1.27: un único acceso a Crear ruta. El JSON valida y crea la ruta en estado pendiente.
+// Prueba 1.28: un único acceso a Crear ruta. El JSON valida y crea la ruta en estado pendiente.
 let svDirectJsonTarget=null;
 function svChooseDirectJson(routeId){
  if(!running())return alert('Primero inicia tu jornada.');
@@ -2107,7 +2107,7 @@ function svModuleRouteManageHtml(kind){
  const items=data.routes.filter(r=>r.origin==='asociados').slice().reverse();
  return `<div class="panel"><div class="row"><h2>Gestión de rutas</h2><span class="pill">${items.length} rutas</span></div>${items.map(r=>`<div class="sv-module-route-row"><strong>${esc(r.name)} · ${esc(r.business||'Asociados')}</strong><button class="secondary" onclick="browseRoute(${svHomeId(r.id)})">Ver ›</button></div>`).join('')||'<p class="muted">Sin rutas registradas.</p>'}</div>`;
 }
-// Prueba 1.27: misma presentación de Asociados, misma lógica propia de Repartidor.
+// Prueba 1.28: misma presentación de Asociados, misma lógica propia de Repartidor.
 function svDirectOpen(section){return !!(data.ui&&data.ui.directSections&&data.ui.directSections[section])}
 function svDirectToggle(section){
  if(!['summary','history'].includes(section))return;
@@ -2425,7 +2425,7 @@ function svRenderJourneyHistory(){
  const entries=[['Ganancias',money(earned)],['Rutas totales',String(allRoutes)],['Servicios totales',String(allServices)],['Jornadas registradas',String(js.length)],['Tiempo de jornada',duration(worked)],['Promedio por jornada',money(js.length?earned/js.length:0)],['Jornadas finalizadas',String(finished)],['Ganancia por servicio',money(allServices?earned/allServices:0)]];
  return `<section class="sv-history-panel"><div class="sv-history-choice"><button type="button" class="${t==='week'?'is-selected':''}" onclick="svHistorySelect('week')">Semana</button><button type="button" class="${t==='month'?'is-selected':''}" onclick="svHistorySelect('month')">Mes</button></div><label>Periodo<select onchange="svHistoryChoose(this.value)">${periods.map(v=>`<option value="${esc(v)}" ${selected===v?'selected':''}>${esc(t==='month'?fmtMonth(v):'Semana del '+v)}</option>`).join('')}</select></label><div class="sv-history-kpis">${entries.map(([label,value])=>`<div><small>${label}</small><strong>${value}</strong></div>`).join('')}</div>${detailDays.length?dailyDetails:''}<p class="sv-history-note">Ingresos registrados, sin descontar gastos. Las jornadas se agrupan por la fecha de inicio; los servicios y rutas se cuentan una sola vez según su modalidad.</p></section>`;
 }
-// Prueba 1.27: la puerta solo se ve cuando no existe una jornada abierta.
+// Prueba 1.28: la puerta solo se ve cuando no existe una jornada abierta.
 function svUpdateGate(){
  const opened=!!running(),gate=$('svGate');
  if(!gate)return;
@@ -2489,7 +2489,7 @@ let idleMs=Math.max(0,workTotal-serviceMs);
 let appOrders=finishedApps.reduce((n,a)=>n+(a.closeComplete?Number(a.reportedOrders??a.items.length):a.items.length),0);
 let allAppStats=svModuleStats('app');
 let servicesTotal=['direct','associate','app'].reduce((sum,kind)=>sum+svModuleStats(kind).orders,0);
-// Prueba 1.27: balance único, cuatro indicadores sin desgloses ni porcentajes.
+// Prueba 1.28: balance único, cuatro indicadores sin desgloses ni porcentajes.
 const balanceMetric=(kind,label,value,icon)=>`<div class="sv-balance-metric sv-balance-${kind}"><div class="sv-balance-icon" aria-hidden="true">${icon}</div><div class="sv-balance-label">${label}</div><strong class="sv-balance-number">${value}</strong></div>`;
 $('dashboard').innerHTML=`<div class="sv-balance-grid" aria-label="Balance general del día">
 ${balanceMetric('money','Ganancias',money(day),'$')}
@@ -2507,34 +2507,32 @@ function parPreparing(x){let r=x&&parCurrentRound(x);return r&&!r.start?r:null}
 function parDuration(r){if(!r||!r.start)return 'Sin iniciar';let seconds=Math.max(0,Math.floor((new Date(r.end||now())-new Date(r.start))/1000));return Math.floor(seconds/3600)+'h '+String(Math.floor(seconds%3600/60)).padStart(2,'0')+'m '+String(seconds%60).padStart(2,'0')+'s'}
 setInterval(()=>{let x=parActive(),r=x&&parCurrentRound(x),e=document.getElementById('parRoundClock');if(e&&r&&r.start&&!r.end)e.textContent=parDuration(r)},1000);
 function parPrepareRound(){let x=parActive();if(!running()||!x)return alert('Primero inicia la jornada y el servicio.');if(parCurrentRound(x))return alert('Finaliza primero la vuelta actual.');let rounds=parRounds(x);rounds.push({id:uid(),number:rounds.length+1,start:null,end:null});save();openView('parrillon')}
-function parStartRound(){let x=parActive(),r=parPreparing(x);if(!running()||!r)return alert('Primero prepara una vuelta.');if(!(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))||!x.tickets.some(t=>String(t.roundId)===String(r.id)))return alert('Primero importa el JSON completo de esta vuelta.');if(!confirm('¿Ya saliste de El Parrillón? Iniciar el cronómetro de vuelta #'+r.number+'?'))return;r.start=now();save();openView('parrillon');requestAnimationFrame(()=>document.querySelector('.par-active-orders')?.scrollIntoView({block:'start'}))}
+function parStartRound(){let x=parActive(),r=parPreparing(x);if(!running()||!r)return alert('Primero prepara una vuelta.');if(!x.tickets.some(t=>String(t.roundId)===String(r.id)))return alert('Primero agrega un pedido a esta vuelta.');if(!confirm('¿Ya saliste de El Parrillón? Iniciar el cronómetro de vuelta #'+r.number+'?'))return;r.start=now();save();openView('parrillon');requestAnimationFrame(()=>document.querySelector('.par-active-orders')?.scrollIntoView({block:'start'}))}
 function parFinishRound(){let x=parActive(),r=x&&parCurrentRound(x);if(!running()||!r||!r.start)return alert('No hay vuelta en recorrido.');let pending=x.tickets.filter(t=>String(t.roundId)===String(r.id)&&!t.delivered);if(pending.length)return alert('Hay '+pending.length+' pedidos pendientes de esta vuelta.');if(!confirm('¿Ya regresaste a El Parrillón? Finalizar vuelta #'+r.number+'?'))return;r.end=now();save();openView('parrillon');toast('Vuelta finalizada: '+parDuration(r))}
 function parRoundsUI(x){
  let rounds=parRounds(x),r=parCurrentRound(x),h='<div class="panel"><h3>🛵 Vueltas de El Parrillón</h3>';
- if(!r)h+='<p class="muted">Cada vuelta recibe un único archivo JSON completo. Prepara una vuelta nueva para importar sus pedidos.</p><button class="full" onclick="parPrepareRound()">＋ Preparar vuelta #'+(rounds.length+1)+'</button>';
+ if(!r)h+='<button class="full" onclick="parPrepareRound()">＋ Preparar vuelta #'+(rounds.length+1)+'</button>';
  else{
-  h+='<h3>Vuelta #'+r.number+' · '+(r.end?'Finalizada':r.start?'En recorrido':r.imported?'Lista para salir':'Esperando JSON')+'</h3>';
+  h+='<h3>Vuelta #'+r.number+' · '+(r.end?'Finalizada':r.start?'En recorrido':r.imported?'Lista para salir':'En preparación')+'</h3>';
   h+='<p>Pedidos: <b>'+x.tickets.filter(t=>String(t.roundId)===String(r.id)).length+'</b> · Tiempo: <b id="parRoundClock">'+parDuration(r)+'</b></p>';
   if(r.start)h+='<button class="full" onclick="parFinishRound()">■ Finalizar vuelta al regresar</button>';
-  else if(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))h+='<p>✓ Archivo de la vuelta registrado. No se puede importar de nuevo.</p><button class="full" onclick="parStartRound()">▶ Iniciar vuelta al salir</button>';
-  else h+='<p class="hint">Importa el JSON completo de esta vuelta antes de salir.</p>';
+  else if(x.tickets.some(t=>String(t.roundId)===String(r.id)))h+='<button class="full" onclick="parStartRound()">▶ Iniciar vuelta</button>';
+  else h+='<p class="muted">Los pedidos aparecerán aquí al abrir sus enlaces.</p>';
  }
  
  return h+'</div>'
 }
 function parExampleImport(){let obj={format:'suvazu-parrillon-pedidos',version:1,vuelta:1,pedidos:[{numero:'55',hora_captura:'12:35',cliente:'Ejemplo',telefono:'',pedido:'',bebida:'',cobrar:0,metodo:'Efectivo',monto:0,direccion:'',maps:''}]};let u=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='ejemplo_parrillon.json';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}
-function parImport(file){if(!file)return;let x=parActive(),r=parPreparing(x);if(!running()||!r)return alert('Primero prepara una vuelta.');if(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))return alert('Esta vuelta ya tiene un archivo registrado. No se puede importar ni reemplazar.');if(file.size>1024*1024)return alert('Máximo 1 MB por archivo.');
- let reader=new FileReader();reader.onerror=()=>alert('No se pudo abrir el archivo.');reader.onload=()=>{try{let obj=JSON.parse(reader.result);if(obj.format!=='suvazu-parrillon-pedidos'||obj.version!==1||!Array.isArray(obj.pedidos))throw Error('Formato incorrecto.');if(obj.vuelta===undefined||Number(obj.vuelta)!==r.number)throw Error('El JSON debe indicar la vuelta #'+r.number+'.');if(obj.pedidos.length<1||obj.pedidos.length>100)throw Error('Se requieren entre 1 y 100 pedidos.');
- let seen=new Set(x.tickets.map(t=>String(t.number).trim())),add=[];
- for(let [i,t] of obj.pedidos.entries()){if(!t||typeof t!=='object'||Array.isArray(t))throw Error('Pedido inválido '+(i+1));let number=String(t.numero??'').trim();if(!number||number.length>35||seen.has(number))throw Error('Número vacío o repetido: '+number);seen.add(number);
- let charge=t.cobrar??'',received=t.monto??'',maps=String(t.maps??'').trim(),payment=String(t.metodo??'').trim();
- if([charge,received].some(v=>v!==''&&v!==null&&(!Number.isFinite(Number(v))||Number(v)<0)))throw Error('Importe inválido: #'+number);
- if(maps&&!/^https:\/\//i.test(maps))throw Error('Maps inválido: #'+number);
- if(payment&&!['Efectivo','Tarjeta','Transferencia','Pagado'].includes(payment))throw Error('Método inválido: #'+number);
- let capturedAt=t.hora_captura??t.horaCaptura??t.captura??t.capturedAt??t.captureTime??t.hora??null;
- if(capturedAt!==null&&typeof capturedAt!=='string'&&typeof capturedAt!=='number')throw Error('Hora de captura inválida en pedido #'+number);
- add.push({id:uid(),roundId:r.id,number,capturedAt:capturedAt===null?'':String(capturedAt).slice(0,60),client:String(t.cliente??'').slice(0,150),phone:String(t.telefono??'').slice(0,30),order:String(t.pedido??'').slice(0,600),drink:String(t.bebida??'').slice(0,150),charge:charge===''||charge===null?'':String(charge),payment,received:received===''||received===null?'':String(received),address:String(t.direccion??'').slice(0,400),maps,tip:0,delivered:null,created:now()})}
- if(r.imported||x.tickets.some(t=>String(t.roundId)===String(r.id)))throw Error('Esta vuelta ya está registrada.');if(!confirm('La vuelta #'+r.number+' contiene '+add.length+' pedidos. ¿Confirmas la importación DEFINITIVA? No podrás volver a importar ni reemplazar el JSON de esta vuelta.'))return;x.tickets.push(...add);r.imported=true;r.importedAt=now();save();openView('parrillon');toast('Vuelta #'+r.number+' registrada: '+add.length+' pedidos')}catch(e){alert('No se importó ningún pedido: '+e.message)}};reader.readAsText(file)}
+function parImport(file){
+ if(!file)return;if(file.size>1024*1024)return alert('Máximo 1 MB.');
+ file.text().then(raw=>{let obj=JSON.parse(raw);if(obj.format==='suvazu-parrillon-pedido')return parDirectTicket(obj);
+ if(obj.format!=='suvazu-parrillon-pedidos'||obj.version!==1||!Array.isArray(obj.pedidos))throw Error('Formato JSON incorrecto.');
+ let x=parActive(),r=x&&parPreparing(x);if(!r)throw Error('Prepara una vuelta antes de importar.');
+ if(obj.vuelta!==undefined&&Number(obj.vuelta)!==r.number)throw Error('El archivo corresponde a otra vuelta.');
+ let count=0;for(let t of obj.pedidos){if(!t||!t.numero)continue;let before=x.tickets.length;parDirectTicket({format:'suvazu-parrillon-pedido',version:1,pedido:t});if(x.tickets.length>before)count++}
+ toast(count+' pedidos nuevos agregados');
+ }).catch(e=>alert('No se pudo importar: '+e.message));
+}
 
 function parTips(x){return x.tickets.reduce((v,t)=>v+(t.delivered?Number(t.tip||0):0),0)}
 function parTotal(x){return Number(x.gain||0)+parTips(x)}
@@ -2607,6 +2605,64 @@ function parRoundSummary(x,r){
  <div class="par-summary-section"><strong>💵 Cambios</strong>${changes.length?changes.map(o=>`<p>Pedido #${esc(o.t.number)}: <b>${money(o.value)}</b></p>`).join('')+`<p><b>Total de cambio: ${money(sum)}</b></p>`:'<p>No se requiere cambio.</p>'}</div>
  </section>`
 }
+
+function parMoveOrder(id,direction){
+ let z=parFind(id);if(!z||z.x.end||z.t.delivered)return;
+ let r=parRounds(z.x).find(q=>String(q.id)===String(z.t.roundId));if(!r||r.end)return;
+ let arr=z.x.tickets,idx=arr.findIndex(t=>String(t.id)===String(id));
+ let members=arr.map((t,i)=>({t,i})).filter(v=>String(v.t.roundId)===String(r.id)&&!v.t.delivered);
+ let pos=members.findIndex(v=>v.i===idx),other=members[pos+direction];if(!other)return;
+ [arr[idx],arr[other.i]]=[arr[other.i],arr[idx]];save();openView('parrillon');
+}
+function parEditFields(t){
+ return [['number','Número de pedido'],['capturedAt','Hora de captura de El Parrillón'],['client','Cliente'],['phone','Teléfono'],['order','Pedido'],['drink','Bebida'],['charge','Total a cobrar'],['payment','Método de pago'],['received','Recibe'],['address','Dirección / Referencia'],['maps','Enlace Maps']].map(([key,label])=>{
+ let control;
+ if(key==='payment')control='<select data-par-field="payment">'+['','Efectivo','Tarjeta','Transferencia','Pagado'].map(v=>'<option value="'+v+'" '+(t[key]===v?'selected':'')+'>'+(v||'Selecciona...')+'</option>').join('')+'</select>';
+ else if(key==='order'||key==='address')control='<textarea rows="2" data-par-field="'+key+'">'+esc(t[key]??'')+'</textarea>';
+ else control='<input data-par-field="'+key+'" type="'+(['charge','received'].includes(key)?'number':'text')+'" value="'+esc(t[key]??'')+'">';
+ return '<label class="par-edit-label">'+label+control+'</label>';
+ }).join('');
+}
+function parOpenEdit(id){
+ let z=parFind(id),r=z&&parRounds(z.x).find(q=>String(q.id)===String(z.t.roundId));
+ if(!z||z.x.end||z.t.delivered||!r||r.start||r.end)return alert('Solo puedes editar antes de iniciar la vuelta.');
+ let t=z.t;document.getElementById('parDeliveryModal')?.remove();
+ let div=document.createElement('div');div.id='parDeliveryModal';div.className='par-delivery-modal';
+ div.innerHTML=`<div class="par-delivery-top"><strong>✏️ Revisar pedido</strong><button onclick="parCloseDelivery()">✕ Cerrar</button></div>
+ <div class="par-delivery-scroll"><div class="par-delivery-box"><div class="par-delivery-number"><div class="par-delivery-label">NÚMERO DE PEDIDO</div><div class="par-delivery-number-value">#${esc(t.number)}</div></div>
+ ${parEditFields(t)}
+ </div></div><div class="par-delivery-footer"><button onclick="parSaveEdit(${JSON.stringify(String(id))})">✓ Guardar cambios</button></div>`;
+ document.body.appendChild(div);
+}
+function parSaveEdit(id){
+ let z=parFind(id),r=z&&parRounds(z.x).find(q=>String(q.id)===String(z.t.roundId));if(!z||z.x.end||!r||r.start||r.end)return;
+ let v={};document.querySelectorAll('#parDeliveryModal [data-par-field]').forEach(el=>v[el.dataset.parField]=el.value.trim());
+ if(!v.number)return alert('Falta el número de pedido.');
+ if(z.x.tickets.some(t=>t!==z.t&&String(t.number)===v.number))return alert('Número de pedido repetido.');
+ if(['charge','received'].some(k=>v[k]!==''&&(!Number.isFinite(Number(v[k]))||Number(v[k])<0)))return alert('Revisa los importes.');
+ if(v.maps&&!/^https:\/\//i.test(v.maps))return alert('Enlace Maps inválido.');
+ Object.assign(z.t,v);save();parCloseDelivery();openView('parrillon');toast('Pedido actualizado');
+}
+function parDirectTicket(obj){
+ if(!obj||obj.format!=='suvazu-parrillon-pedido'||obj.version!==1||!obj.pedido||typeof obj.pedido!=='object')throw Error('Formato de enlace no válido.');
+ let x=parActive();if(!x)throw Error('Primero pulsa Iniciar Servicio y vuelve a abrir el enlace.');
+ let r=parCurrentRound(x);if(!r){parPrepareRound();r=parCurrentRound(x)}
+ if(r.start||r.end)throw Error('La vuelta está en recorrido. Termínala antes de agregar otro pedido.');
+ let t=obj.pedido,number=String(t.numero??'').trim(),fingerprint=String(obj.id??'').trim();
+ if(!number)throw Error('Falta número de pedido.');
+ if(x.tickets.some(q=>(fingerprint&&q.importKey===fingerprint)||String(q.number)===number)){openView('parrillon');toast('Este pedido ya está registrado');return}
+ let charge=t.cobrar??'',received=t.monto??'',maps=String(t.maps??'').trim();
+ if([charge,received].some(v=>v!==''&&v!==null&&(!Number.isFinite(Number(v))||Number(v)<0)))throw Error('Importe inválido.');
+ if(maps&&!/^https:\/\//i.test(maps))throw Error('Enlace Maps inválido.');
+ let payment=String(t.metodo??'').trim();if(payment&&!['Efectivo','Tarjeta','Transferencia','Pagado'].includes(payment))throw Error('Método de pago inválido.');
+ x.tickets.push({id:uid(),importKey:fingerprint,roundId:r.id,number,capturedAt:String(t.hora_captura??t.horaCaptura??t.captura??''),client:String(t.cliente??'').slice(0,150),phone:String(t.telefono??'').slice(0,30),order:String(t.pedido??'').slice(0,600),drink:String(t.bebida??'').slice(0,150),charge:charge===''?'':String(charge),payment,received:received===''?'':String(received),address:String(t.direccion??'').slice(0,400),maps,tip:0,delivered:null,created:now()});
+ save();openView('parrillon');toast('Pedido #'+number+' agregado a la vuelta #'+r.number);
+}
+function parReadDirectLink(){
+ let h=location.hash;if(!h.startsWith('#parrillon='))return;
+ try{let raw=h.slice(11);if(raw.length>16000)throw Error('Enlace demasiado largo');let bytes=Uint8Array.from(atob(raw.replace(/-/g,'+').replace(/_/g,'/')),c=>c.charCodeAt(0));let obj=JSON.parse(new TextDecoder().decode(bytes));parDirectTicket(obj);history.replaceState(null,'',location.pathname+location.search)}catch(e){openView('parrillon');alert('Pedido de El Parrillón: '+e.message)}
+}
+
 function parRouteCard(t,canDeliver=true){
  return `<article class="par-route-card">
  <div class="par-route-label" style="text-align:center">NÚMERO DE PEDIDO</div>
@@ -2615,12 +2671,12 @@ function parRouteCard(t,canDeliver=true){
  <div class="par-route-label">CLIENTE</div><div class="par-route-value">${esc(t.client||'—')}</div>
  <div class="par-route-label">TELÉFONO</div><div class="par-route-value">${esc(t.phone||'—')}</div>
  <div class="par-route-label">DIRECCIÓN / REFERENCIA</div><div class="par-route-address">${esc(t.address||'—')}</div>
- <button ${canDeliver?`data-par-delivery="${esc(t.id)}"`:"disabled"}>${canDeliver?"📦 Entregar pedido":"🕒 Disponible al iniciar vuelta"}</button>
+ <div class="par-card-actions">${!t.delivered?`<button onclick="parMoveOrder(${esc(t.id)},-1)">↑</button><button onclick="parMoveOrder(${esc(t.id)},1)">↓</button>`:""}</div><button ${canDeliver?`data-par-delivery="${esc(t.id)}"`:`onclick="parOpenEdit(${esc(t.id)})"`}>${canDeliver?"📦 Entregar pedido":"✏️ Editar pedido"}</button>
  </article>`
 }
 function parRoundOrders(x,q){
  let tickets=x.tickets.filter(t=>String(t.roundId)===String(q.id)),pending=tickets.filter(t=>!t.delivered),delivered=tickets.filter(t=>!!t.delivered);
- let h=`<h3>🛵 Vuelta #${q.number} · ${q.end?parDuration(q):q.start?'En recorrido':q.imported?'Lista para salir':'Esperando JSON'}</h3>`;
+ let h=`<h3>🛵 Vuelta #${q.number} · ${q.end?parDuration(q):q.start?'En recorrido':q.imported?'Lista para salir':'En preparación'}</h3>`;
  if(!q.end){
  h+=pending.length?`<p class="par-track-help">↔ Desliza a la izquierda o derecha para cambiar de pedido · ${pending.length} pendientes</p><div class="par-pending-track">${pending.map(t=>parRouteCard(t,!!q.start)).join('')}</div>`:'<p class="hint">✓ No hay pedidos pendientes en esta vuelta.</p>';
  }
@@ -2696,8 +2752,8 @@ async function parScan(file){
 function parPhoto(file){if(!file)return; if(!file.type.startsWith('image/'))return alert('Selecciona una fotografía.');if(file.size>20*1024*1024)return alert('La foto es demasiado grande (máximo 20 MB).');let reader=new FileReader();reader.onerror=()=>alert('No se pudo leer la foto.');reader.onload=()=>{let img=new Image();img.onerror=()=>alert('No se pudo procesar la foto.');img.onload=()=>{let max=1100,ratio=Math.min(1,max/Math.max(img.width,img.height)),c=document.createElement('canvas');c.width=Math.max(1,Math.round(img.width*ratio));c.height=Math.max(1,Math.round(img.height*ratio));c.getContext('2d').drawImage(img,0,0,c.width,c.height);let out=c.toDataURL('image/jpeg',.65);if(out.length>650000)return alert('La foto comprimida es demasiado grande. Intenta otra toma.');let x=parActive();if(!x)return;x.closingPhoto=out;try{save();openView('parrillon');toast('Fotografía de cierre guardada')}catch(e){x.closingPhoto=null;alert('No hay espacio para guardar la fotografía. Exporta un respaldo y libera espacio antes de continuar.')}};img.src=reader.result};reader.readAsDataURL(file)}
 function parClose(){let x=parActive();if(!x)return;if(!parRounds(x).some(r=>r.end))return alert('Primero completa al menos una vuelta.');let pending=x.tickets.filter(t=>!t.delivered);if(pending.length)return alert('Hay '+pending.length+' pedidos pendientes. Entrégalos o elimínalos antes de cerrar.');let val=$('parGain').value;if(val===''||!Number.isFinite(Number(val))||Number(val)<0)return alert('Introduce la ganancia total de repartos.');if(parCurrentRound(x))return alert('Finaliza la vuelta actual al regresar a El Parrillón.');if(!x.closingPhoto)return alert('Primero adjunta la fotografía del comprobante de cierre que dejas en El Parrillón.');if(!confirm('Cerrar El Parrillón con '+x.tickets.length+' entregas, '+money(Number(val))+' de repartos y '+money(parTips(x))+' de propinas?'))return;x.gain=Number(val);x.end=now();parDraftGain="";save();openView('parrillon');toast('El Parrillón integrado al resumen diario')}
 function renderParrillon(){
- let x=parActive(),h='<p class="hint">Los tickets se preparan con Kanrmy. Aquí importas un solo JSON por vuelta, consultas pedidos, registras entregas y propinas, y cierras el servicio.</p>';
- if(!x)h+=`<div class="panel"><h2>🍗 El Parrillón</h2><p>${running()?'Inicia el servicio para importar tu primera vuelta.':'🔒 Primero inicia la jornada general desde la pantalla principal.'}</p><button class="full" ${running()?'':'disabled'} onclick="parNew()">▶ Iniciar servicio</button></div>`;
+ let x=parActive(),h='';
+ if(!x)h+=`<div class="panel"><h2>🍗 El Parrillón</h2><button class="full" ${running()?'':'disabled'} onclick="parNew()">▶ Iniciar Servicio</button></div>`;
  else{
  let r=parPreparing(x);
  h+=`<div class="panel"><h2>Servicio iniciado · ${esc(x.date)}</h2><p>Vueltas completadas: <b>${parRounds(x).filter(r=>r.end).length}</b> · Pedidos: <b>${x.tickets.length}</b> · Propinas: <b>${money(parTips(x))}</b></p></div>`;
@@ -2708,10 +2764,11 @@ function renderParrillon(){
    h+=parRoundsUI(x);
    h+=parRoundSummary(x,currentRound);
  }else{
+   if(r)h+=`<div class="panel par-active-orders"><h3>📦 Pedidos en preparación</h3>${parRoundOrders(x,r)}</div>`;
    h+=parRoundSummary(x,currentRound);
    h+=parRoundsUI(x);
  }
- if(r&&!r.imported&&!x.tickets.some(t=>String(t.roundId)===String(r.id)))h+=`<div class="panel"><h3>📥 Importar JSON de la vuelta #${r.number}</h3><p>Importa el archivo único de la vuelta completa que preparaste con Kanrmy. Podrás añadir tickets conmigo antes de importar, pero después no podrás reemplazarlo.</p><label>Seleccionar archivo JSON<input type="file" accept=".json,application/json" onchange="parImport(this.files[0]);this.value=''"></label><button class="secondary" onclick="parExampleImport()">⬇ Ejemplo de formato JSON</button></div>`;
+ if(r)h+=`<div class="panel"><h3>📥 Añadir pedidos</h3><label>Seleccionar archivo JSON<input type="file" accept=".json,application/json" onchange="parImport(this.files[0]);this.value=''"></label></div>`;
  h+=`<div class="panel">${parHistoryRounds(x)}${x.tickets.filter(t=>!t.roundId).length?`<details class="par-history-fold"><summary>📚 Pedidos antiguos sin vuelta (${x.tickets.filter(t=>!t.roundId).length})</summary>${x.tickets.filter(t=>!t.roundId).map(t=>parTicketCard(t,true)).join('')}</details>`:''}</div>`;
  let tips=parTips(x);
  h+=`<div class="panel"><h3>■ Finalizar servicio de El Parrillón</h3>
@@ -2723,7 +2780,7 @@ function renderParrillon(){
  ${x.closingPhoto?`<p>✓ Evidencia guardada</p><img src="${x.closingPhoto}" alt="Evidencia de corte" style="max-width:100%;max-height:200px;object-fit:contain">`:'<p class="muted">Adjunta la fotografía del corte que dejas en el restaurante.</p>'}
  <button class="full" onclick="parClose()">■ Finalizar servicio y registrar ganancias</button></div>`;
  }
- h+=`<div class="panel"><h3>Servicios anteriores</h3>${data.parrillon.filter(y=>y.end).slice().reverse().map(y=>`<details><summary>${esc(y.date)} · ${y.tickets.filter(t=>t.delivered).length} entregas · ${money(parTotal(y))}</summary><p><b>Pago por repartos:</b> ${money(y.gain)} · <b>Propinas:</b> ${money(parTips(y))} · <b>Total:</b> ${money(parTotal(y))}</p>${y.closingPhoto?`<img src="${y.closingPhoto}" alt="Evidencia de corte" style="max-width:100%;max-height:230px;object-fit:contain">`:''}${parRounds(y).map(r=>`<h3>Vuelta #${r.number} · ${parDuration(r)}</h3>${y.tickets.filter(t=>String(t.roundId)===String(r.id)).map(t=>parTicketCard(t,true)).join('')}`).join('')}${y.tickets.filter(t=>!t.roundId).map(t=>parTicketCard(t,true)).join('')}</details>`).join('')||'<p class="muted">Aún no hay cierres.</p>'}</div>`;
+ h+=`<div class="panel"><details class="par-history-fold"><summary>Servicios Anteriores · Ocultar / Mostrar</summary>${data.parrillon.filter(y=>y.end).slice().reverse().map(y=>`<details><summary>${esc(y.date)} · ${y.tickets.filter(t=>t.delivered).length} entregas · ${money(parTotal(y))}</summary><p><b>Pago por repartos:</b> ${money(y.gain)} · <b>Propinas:</b> ${money(parTips(y))} · <b>Total:</b> ${money(parTotal(y))}</p>${y.closingPhoto?`<img src="${y.closingPhoto}" alt="Evidencia de corte" style="max-width:100%;max-height:230px;object-fit:contain">`:''}${parRounds(y).map(r=>`<h3>Vuelta #${r.number} · ${parDuration(r)}</h3>${y.tickets.filter(t=>String(t.roundId)===String(r.id)).map(t=>parTicketCard(t,true)).join('')}`).join('')}${y.tickets.filter(t=>!t.roundId).map(t=>parTicketCard(t,true)).join('')}</details>`).join('')||'<p class="muted">Aún no hay cierres.</p>'}</details></div>`;
  return h
 }
 function initParMap(){}
@@ -2859,6 +2916,8 @@ document.addEventListener('keydown',event=>{
 render();backupStatus();setInterval(svTick,1000);document.addEventListener('visibilitychange',()=>{if(!document.hidden)render()});
 
 svDecodeLink();
+parReadDirectLink();
+window.addEventListener('hashchange',parReadDirectLink);
 if($('overlay').classList.contains('show'))svArmAndroidBack();
 
 // Actualizaciones PWA: buscar una versión nueva al abrir o regresar a la aplicación.
