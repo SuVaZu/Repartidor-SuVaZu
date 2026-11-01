@@ -1,4 +1,4 @@
-// Repartidor SuVaZu 1.43: actualización coherente y uso sin conexión.
+// Repartidor SuVaZu 1.44: actualización coherente y uso sin conexión.
 const CACHE = 'suvazu-shell-v143';
 const SHELL = ['./', './index.html', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png',
   './suvazu_logo.png', './parrillon_logo.png', './socio_parrillon.webp', './socio_caramelo.webp', './socio_nutribionicos.png','./socio_cositas_dulces.png', './apps_icon.png',
