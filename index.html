@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.48</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.49</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -1053,11 +1053,75 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-commission-actions input{margin:0;min-width:0;flex:1;font-size:17px}
 .sv-commission-actions button{flex:0 0 auto;padding:12px;font-size:15px}
 
-/* Prueba 1.48 · Champlitte comparte el diseño funcional de Cositas Dulces. */
+/* Prueba 1.49 · Champlitte comparte el diseño funcional de Cositas Dulces. */
 #overlay.sv-champlitte-view .sv-caramelo-panel{border-top-color:#8a2435}
 #overlay.sv-champlitte-view .sv-caramelo-panel h2{color:#7b2634}
 #overlay.sv-champlitte-view .sv-caramelo-entry{background:#fff9f5;border-color:#eecfd0}
 .sv-associate-home[data-front-partner="champlitte"]{--sv-app-accent:#8a2435;--sv-app-accent-soft:#fff1ef}
+
+/* Prueba 1.49 · Historial de Asociados: una tarjeta de marca para cada socio. */
+#overlay .sv-associate-history-card,
+#overlay .sv-associate-history-link{
+ display:block; width:100%; box-sizing:border-box;
+ margin:12px 0; border-radius:22px; overflow:hidden;
+ border:1px solid var(--sv-p-edge,#dbe5dc);
+ border-left:6px solid var(--sv-p-accent,#66a988);
+ background:linear-gradient(115deg,#fff 0%,var(--sv-p-soft,#f6fbf7) 100%);
+ box-shadow:0 4px 15px rgba(25,55,39,.06);
+}
+#overlay .sv-associate-history-card{padding:0!important}
+#overlay .sv-associate-history-summary,
+#overlay .sv-associate-history-link{
+ align-items:center; gap:11px; min-height:95px;
+ padding:19px 17px; box-sizing:border-box;
+}
+#overlay .sv-associate-history-summary{display:flex}
+#overlay .sv-associate-history-link{display:flex}
+#overlay .sv-associate-history-summary strong,
+#overlay .sv-associate-history-link strong{
+ color:var(--sv-p-deep,#244c39);font-size:clamp(17px,4.8vw,22px);line-height:1.18;
+}
+#overlay .sv-associate-history-summary small,
+#overlay .sv-associate-history-link small{
+ color:var(--sv-p-deep,#4a665b);opacity:.8;font-weight:700;font-size:14px;
+}
+#overlay .sv-associate-history-summary .pill,
+#overlay .sv-associate-history-link .pill{
+ flex:0 0 auto; font-size:12px;font-weight:750;
+ border-radius:999px; padding:8px 10px;
+ background:var(--sv-p-soft,#eaf5ed);color:var(--sv-p-deep,#244c39);
+ border:1px solid var(--sv-p-edge,#dbe5dc);
+}
+#overlay .sv-associate-history-card .sv-history-arrow,
+#overlay .sv-associate-history-link .sv-history-arrow{
+ color:var(--sv-p-deep,#244c39); flex:0 0 auto;
+}
+#overlay .sv-associate-route[data-sv-partner="cositas"],
+.sv-home-route-card[data-sv-partner="cositas"]{
+ --sv-p-accent:#dd79a6;--sv-p-deep:#823951;--sv-p-soft:#fff1f7;
+ --sv-p-edge:#efc2d7;--sv-p-btn:#f4a6c5;--sv-p-btn-text:#61243d;
+}
+#overlay .sv-associate-route[data-sv-partner="champlitte"],
+.sv-home-route-card[data-sv-partner="champlitte"]{
+ --sv-p-accent:#d575a1;--sv-p-deep:#7e314e;--sv-p-soft:#fff0f4;
+ --sv-p-edge:#efd0d9;--sv-p-btn:#e9a5bc;--sv-p-btn-text:#6f2c48;
+}
+#overlay .sv-associate-home[data-front-partner="champlitte"] .sv-associate-section .sv-app-section-toggle{
+ background:linear-gradient(112deg,#fff 0%,#fff9f5 40%,#ffeff4 75%,#f9dfeb 100%);
+}
+#overlay .sv-associate-home[data-front-partner="champlitte"] .sv-associate-section .sv-app-section-toggle::after{
+ background:linear-gradient(90deg,#f6d8a8,#f4aac7,#d7759f,#8d3851);
+}
+#overlay .sv-associate-home[data-front-partner="champlitte"] .sv-associate-section .sv-app-section-state{color:#873751}
+#overlay .sv-associate-home[data-front-partner="champlitte"] .sv-associate-section .sv-app-section-chevron{background:#fce4ee;color:#873751}
+#overlay .sv-associate-home[data-front-partner="champlitte"] .sv-module-kpi{background:#fff0f4;border-color:#eed2dd}
+#overlay .sv-associate-home[data-front-partner="champlitte"] .sv-module-kpi strong{color:#8c3856}
+@media(max-width:400px){
+ #overlay .sv-associate-history-summary,
+ #overlay .sv-associate-history-link{padding:15px 12px;gap:7px}
+ #overlay .sv-associate-history-summary .pill,
+ #overlay .sv-associate-history-link .pill{font-size:11px;padding:6px 8px}
+}
 </style></head><body class="sv-booting">
 <section id="svGate" aria-label="Puerta principal Repartidor SuVaZu" hidden>
   <div class="sv-gate-poster">
@@ -1073,7 +1137,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.48</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.49</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
