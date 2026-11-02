@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.54</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.55</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -1071,13 +1071,13 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-commission-actions input{margin:0;min-width:0;flex:1;font-size:17px}
 .sv-commission-actions button{flex:0 0 auto;padding:12px;font-size:15px}
 
-/* Prueba 1.54 · Champlitte comparte el diseño funcional de Cositas Dulces. */
+/* Prueba 1.55 · Champlitte comparte el diseño funcional de Cositas Dulces. */
 #overlay.sv-champlitte-view .sv-caramelo-panel{border-top-color:#8a2435}
 #overlay.sv-champlitte-view .sv-caramelo-panel h2{color:#7b2634}
 #overlay.sv-champlitte-view .sv-caramelo-entry{background:#fff9f5;border-color:#eecfd0}
 .sv-associate-home[data-front-partner="champlitte"]{--sv-app-accent:#8a2435;--sv-app-accent-soft:#fff1ef}
 
-/* Prueba 1.54 · Historial de Asociados: una tarjeta de marca para cada socio. */
+/* Prueba 1.55 · Historial de Asociados: una tarjeta de marca para cada socio. */
 #overlay .sv-associate-history-card,
 #overlay .sv-associate-history-link{
  display:block; width:100%; box-sizing:border-box;
@@ -1152,6 +1152,24 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-cositas-tip-final{width:100%;min-height:66px;border-radius:18px;background:#d95c96;color:#fff;font-size:23px;font-weight:850;box-shadow:0 7px 16px rgba(190,63,119,.25)}
 .sv-cositas-tip-cancel{display:block;margin:9px auto 0;background:transparent;color:#78626d;padding:10px 18px;font-size:15px}
 @media(min-height:700px){.sv-cositas-tip-overlay{align-items:center}}
+
+/* 1.55 · Un solo formato para los asociados, distinto color de marca. */
+#overlay.sv-caramelo-view{--partner-accent:#db539a;--partner-soft:#fff0f8;--partner-edge:#f0c4df;--partner-ink:#793057}
+#overlay.sv-champlitte-view{--partner-accent:#a64c70;--partner-soft:#fff1f1;--partner-edge:#e7b8c4;--partner-ink:#722c43}
+#overlay.sv-nutribionicos-view{--partner-accent:#24a260;--partner-soft:#f0fff3;--partner-edge:#b9e3ba;--partner-ink:#25613c}
+#overlay.sv-caramelo-view .sv-cositas-route-hero,#overlay.sv-champlitte-view .sv-cositas-route-hero,#overlay.sv-nutribionicos-view .sv-cositas-route-hero{background:var(--partner-soft);border-color:var(--partner-edge)}
+#overlay.sv-caramelo-view .sv-cositas-order-card,#overlay.sv-champlitte-view .sv-cositas-order-card,#overlay.sv-nutribionicos-view .sv-cositas-order-card{border-left-color:var(--partner-accent);background:linear-gradient(180deg,#fff,var(--partner-soft))}
+#overlay.sv-caramelo-view .sv-cositas-route-chip,#overlay.sv-champlitte-view .sv-cositas-route-chip,#overlay.sv-nutribionicos-view .sv-cositas-route-chip{color:var(--partner-ink)}
+#overlay.sv-caramelo-view .sv-cositas-earnings-card,#overlay.sv-champlitte-view .sv-cositas-earnings-card,#overlay.sv-nutribionicos-view .sv-cositas-earnings-card{background:var(--partner-soft);border-color:var(--partner-edge)}
+#overlay.sv-caramelo-view .sv-cositas-client,#overlay.sv-champlitte-view .sv-cositas-client,#overlay.sv-nutribionicos-view .sv-cositas-client{border-left-color:var(--partner-accent)}
+.sv-partner-tip-theme{--tip-accent:#d95c96;--tip-light:#fff0f7;--tip-edge:#e7a3bf}
+.sv-partner-tip-theme.sv-caramelo-theme{--tip-accent:#d55394;--tip-light:#fff1f8;--tip-edge:#e8a4c8}
+.sv-partner-tip-theme.sv-champlitte-theme{--tip-accent:#a54c70;--tip-light:#fff0f2;--tip-edge:#e6b3c2}
+.sv-partner-tip-theme.sv-nutribionicos-theme{--tip-accent:#278f51;--tip-light:#f2fff4;--tip-edge:#a9dabb}
+.sv-partner-tip-theme .sv-cositas-tip-dialog{background:var(--tip-light);border-color:var(--tip-edge)}
+.sv-partner-tip-theme .sv-cositas-tip-dialog h2,.sv-partner-tip-theme .sv-cositas-tip-amount span{color:var(--tip-accent)}
+.sv-partner-tip-theme .sv-cositas-tip-amount{border-color:var(--tip-edge)}
+.sv-partner-tip-theme .sv-cositas-tip-final{background:var(--tip-accent)}
 </style></head><body class="sv-booting">
 <section id="svGate" aria-label="Puerta principal Repartidor SuVaZu" hidden>
   <div class="sv-gate-poster">
@@ -1167,7 +1185,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.54</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.55</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -1492,7 +1510,7 @@ function renderApps(){
 }
 
 let view='orders',detailId=null,previousView='suvazu',routeBrowseId=null,slideIndex=0,deliveryId=null;function openView(v,id){if(v==='caramelo'&&view!==v)svCarameloOpenSections={completed:false,clients:false};if(v==='nutribionicos'&&view!==v)svNutribionicosOpenSections={completed:false,clients:false};if(view!==v)previousView=view;view=v;detailId=id??null;$('overlay').classList.add('show');document.body.style.overflow='hidden';renderView();$('overlay').scrollTop=0;svArmAndroidBack()}function closeView(){svRestore();$('overlay').classList.remove('show');document.body.style.overflow=''}
-function goBack(){if(view==='apps'&&$('overlay').classList.contains('show')&&appScreen==='service'){appScreen='home';renderView();return}if(deliveryId!==null){deliveryId=null;view='orders';renderView();return}if(view==='apps'){closeView();return}if(view==='clients'){closeView();return}if(view==='clientOrder'){openView('clients');return}if(view==='captureRoute'){openView(current()?.origin==='asociados'?'asociados':'suvazu');return}if(view==='importQuick'){closeView();return}if(view==='suvazu'){closeView();return}if(view==='detail'){openView('orders');return}if(view==='orders'){let route=data.routes.find(x=>String(x.id)===String(routeBrowseId));openView(route?.origin==='asociados'?'asociados':'suvazu');return}if(view==='routes'){closeView();return}if(view==='parrillon'){openView('asociados');return}if(view==='caramelo'){openView('asociados');return}if(view==='asociados'){closeView();return}closeView()}
+function goBack(){if(view==='apps'&&$('overlay').classList.contains('show')&&appScreen==='service'){appScreen='home';renderView();return}if(deliveryId!==null){deliveryId=null;view='orders';renderView();return}if(view==='apps'){closeView();return}if(view==='clients'){closeView();return}if(view==='clientOrder'){openView('clients');return}if(view==='captureRoute'){openView(current()?.origin==='asociados'?'asociados':'suvazu');return}if(view==='importQuick'){closeView();return}if(view==='suvazu'){closeView();return}if(view==='detail'){openView('orders');return}if(view==='orders'){let route=data.routes.find(x=>String(x.id)===String(routeBrowseId));openView(route?.origin==='asociados'?'asociados':'suvazu');return}if(view==='routes'){closeView();return}if(view==='parrillon'){openView('asociados');return}if(['caramelo','cositas','champlitte','nutribionicos'].includes(view)){openView('asociados');return}if(view==='asociados'){closeView();return}closeView()}
 
 function browseRoute(id){routeBrowseId=id;slideIndex=0;openView('orders')}
 function renameRoute(id){let r=data.routes.find(x=>String(x.id)===String(id));if(!r)return;let n=prompt('Nombre de la ruta',r.name);if(n===null||!n.trim())return;r.name=n.trim();save()}
@@ -1543,11 +1561,11 @@ function svAddSalesCommission(id){
 function renderView(){
  svRestore();
  const primaryModule = view==='suvazu'||view==='asociados'||(view==='apps'&&appScreen==='home');
- const hideBackButton = primaryModule || view==='cositas';
+ const hideBackButton = primaryModule || ['cositas','caramelo','champlitte','nutribionicos'].includes(view);
  $('svOverlayBack').hidden=hideBackButton;
- $('overlay').classList.toggle('sv-primary',primaryModule||view==='cositas');
- $('svPullHint').hidden=!(primaryModule||view==='cositas');
- $('overlay').classList.toggle('parrillon-view',view==='parrillon');$('overlay').classList.toggle('nutribionicos-view',view==='nutribionicos');$('overlay').classList.toggle('sv-cositas-view',view==='cositas');$('overlay').classList.toggle('sv-champlitte-view',view==='champlitte');let title={routes:'Gestión de rutas',orders:'Servicios de la ruta',delivery:'Finalizar Servicio',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',caramelo:'🍬 Mundo de Caramelo',nutribionicos:'🥗 Nutribiónicos',cositas:'🍰 Cositas Dulces',champlitte:'🧁 Champlitte',suvazu:'🛵 SuVaZu Repartidor',clients:'👥 Clientes',clientOrder:'Nuevo pedido · Cliente',importQuick:'📥 Importar pedido',captureRoute:'Importar servicio JSON',journeyHistory:'Rendimiento'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='captureRoute'){svRenderCaptureRoute();return}if(view==='journeyHistory'){$('overlayBody').innerHTML=svRenderJourneyHistory();return}if(view==='clients'){svRenderClients();return}if(view==='clientOrder'){svRenderClientOrder();return}if(view==='asociados'){
+ $('overlay').classList.toggle('sv-primary',primaryModule||['cositas','caramelo','champlitte','nutribionicos'].includes(view));
+ $('svPullHint').hidden=!(primaryModule||['cositas','caramelo','champlitte','nutribionicos'].includes(view));
+ $('overlay').classList.toggle('parrillon-view',view==='parrillon');$('overlay').classList.toggle('nutribionicos-view',view==='nutribionicos');$('overlay').classList.toggle('sv-cositas-view',view==='cositas');$('overlay').classList.toggle('sv-caramelo-view',view==='caramelo');$('overlay').classList.toggle('sv-champlitte-view',view==='champlitte');let title={routes:'Gestión de rutas',orders:'Servicios de la ruta',delivery:'Finalizar Servicio',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',caramelo:'🍬 Mundo de Caramelo',nutribionicos:'🥗 Nutribiónicos',cositas:'🍰 Cositas Dulces',champlitte:'🧁 Champlitte',suvazu:'🛵 SuVaZu Repartidor',clients:'👥 Clientes',clientOrder:'Nuevo pedido · Cliente',importQuick:'📥 Importar pedido',captureRoute:'Importar servicio JSON',journeyHistory:'Rendimiento'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='captureRoute'){svRenderCaptureRoute();return}if(view==='journeyHistory'){$('overlayBody').innerHTML=svRenderJourneyHistory();return}if(view==='clients'){svRenderClients();return}if(view==='clientOrder'){svRenderClientOrder();return}if(view==='asociados'){
  $('overlayBody').innerHTML=svRenderAssociateHome();svAssociateRestoreCarousel();return
 }if(view==='apps'){ $('overlayBody').innerHTML=renderApps();return }if(view==='parrillon'){$('overlayBody').innerHTML=renderParrillon();return}if(view==='caramelo'){$('overlayBody').innerHTML=svCarameloRender();return}if(view==='nutribionicos'){$('overlayBody').innerHTML=svNutribionicosRender();return}if(view==='cositas'){$('overlayBody').innerHTML=svCositasRender();return}if(view==='champlitte'){$('overlayBody').innerHTML=svChamplitteRender();return}if(view==='routes'){
 h=`<div class="panel"><div class="row"><h2>🛣️ Gestión de rutas</h2><span class="pill">${activeRoutes().length+data.appServices.filter(a=>!a.end).length} abiertas</span></div><p class="muted">Selecciona una ruta para abrir directamente sus pedidos pendientes.</p></div>`+
@@ -2008,7 +2026,7 @@ function svAssociateOpenClient(orderId,partnerName='Mundo de Caramelo'){
  const order=source.find(q=>String(q.id)===String(orderId));
  if(!order)return;
  const key=svCarameloClientKey(order);
- openView(keyName==='nutribionicos'?'nutribionicos':keyName==='cositas'?'cositas':'caramelo');
+ openView(['nutribionicos','cositas','champlitte'].includes(keyName)?keyName:'caramelo');
  if(keyName==='nutribionicos')svNutribionicosOpenSections.clients=true; else if(keyName==='cositas')svCositasOpenSections.clients=true; else if(keyName==='champlitte')svChamplitteOpenSections.clients=true; else svCarameloOpenSections.clients=true;
  renderView();
  requestAnimationFrame(()=>{
@@ -2084,7 +2102,7 @@ function svCositasJSON(text){
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svCositasValidMap(vals.maps);return vals;
 }
-// Prueba 1.54: un enlace directo por pedido y socio (sin descargar JSON).
+// Prueba 1.55: un enlace directo por pedido y socio (sin descargar JSON).
 // El JSON codificado usa: {format, version, socio, id, pedido}.
 const svAssociateDirectNames={cositas:'Cositas Dulces',caramelo:'Mundo de Caramelo',champlitte:'Champlitte',nutribionicos:'Nutribiónicos'};
 function svAssociateDirectRead(){
@@ -2659,6 +2677,390 @@ function svNutribionicosRender(){
   </details>
  </div>`;
 }
+
+
+/* Prueba 1.55: presentación unificada de los asociados estándar. El Parrillón mantiene su flujo aislado. */
+let svCarameloTipPending=null;
+function svCarameloCloseTip(){
+ const modal=document.getElementById('svCarameloTipOverlay');if(modal)modal.remove();
+ svCarameloTipPending=null;
+}
+function svCarameloComplete(id){
+ const x=svCarameloServices().find(q=>String(q.id)===String(id));if(!x||x.delivered)return;
+ const card=document.querySelector('[data-car-order="'+String(id)+'"]');
+ let phone=x.clientNumber||'',charge=x.charge??null;
+ if(card){
+  phone=String(card.querySelector('[data-car-phone]')?.value||'').trim();
+  const chargeText=String(card.querySelector('[data-car-charge]')?.value||'').trim();
+  if(phone.length>60)return alert('El # de Cliente es demasiado largo.');
+  charge=chargeText===''?null:Number(chargeText);
+  if(charge!==null&&(!Number.isFinite(charge)||charge<0))return alert('El monto a cobrar no es válido.');
+ }
+ svCarameloCloseTip();
+ svCarameloTipPending={id,phone,charge};
+ const modal=document.createElement('div');modal.id='svCarameloTipOverlay';modal.className='sv-cositas-tip-overlay sv-partner-tip-theme sv-caramelo-theme';
+ modal.setAttribute('role','presentation');
+ modal.innerHTML=`<div class="sv-cositas-tip-dialog" role="dialog" aria-modal="true" aria-labelledby="svCarameloTipTitle">
+ <div class="sv-cositas-tip-icon">💗</div><h2 id="svCarameloTipTitle">Propina recibida ($)</h2>
+ <div class="sv-cositas-tip-amount"><span>$</span><input id="svCarameloTipAmount" aria-label="Propina recibida en pesos" type="number" inputmode="decimal" min="0" step="0.01" value="0"></div>
+ <button type="button" class="sv-cositas-tip-final" onclick="svCarameloFinishDelivery()">✓ Finalizar</button>
+ <button type="button" class="sv-cositas-tip-cancel" onclick="svCarameloCloseTip()">Cancelar</button></div>`;
+ document.body.appendChild(modal);
+ const input=modal.querySelector('#svCarameloTipAmount');
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();svCarameloFinishDelivery()}});
+ input.focus({preventScroll:true});
+}
+function svCarameloFinishDelivery(){
+ const pending=svCarameloTipPending;if(!pending)return;
+ const input=document.getElementById('svCarameloTipAmount');
+ const raw=String(input?.value??'').trim(),tip=Number(raw);
+ if(raw===''||!Number.isFinite(tip)||tip<0)return alert('Escribe una propina válida, o 0 si no dejó.');
+ const x=svCarameloServices().find(q=>String(q.id)===String(pending.id));
+ if(!x||x.delivered){svCarameloCloseTip();return;}
+ const route=data.partnerRoutes.find(r=>String(r.id)===String(x.partnerRouteId)&&!r.end);
+ const isLast=!!route&&svPartnerOrders(route).filter(q=>!q.delivered).length===1;
+ const previous={clientNumber:x.clientNumber,charge:x.charge,delivered:x.delivered,tip:x.tip,routeEnd:route?.end};
+ const stamp=now();x.clientNumber=pending.phone;x.charge=pending.charge;x.tip=tip;x.delivered=stamp;
+ if(isLast)route.end=stamp;
+ try{save();svCarameloCloseTip();toast(isLast?'Pedido entregado · Ruta finalizada':'Pedido entregado · '+money(Number(x.gain||0)+tip))}
+ catch(e){x.clientNumber=previous.clientNumber;x.charge=previous.charge;x.delivered=previous.delivered;x.tip=previous.tip;if(route)route.end=previous.routeEnd;alert('No se pudo guardar la entrega. Inténtalo nuevamente.');}
+}
+function svCarameloEntry(x,active){
+ const editable=active&&!x.delivered;
+ return `<article class="sv-caramelo-entry sv-cositas-order-card" data-car-order="${esc(String(x.id))}"><div class="sv-cositas-order-head"><div><span class="sv-cositas-order-kicker">${editable?'PEDIDO ACTIVO':'PEDIDO ENTREGADO'}</span><strong>${esc(x.address)}</strong></div><span class="pill">${editable?'Pendiente':'Entregado'}</span></div>
+ <div class="sv-cositas-order-meta">
+ ${x.streets?`<div class="sv-cositas-order-line"><b>Entre Calles:</b> ${esc(x.streets)}</div>`:''}
+ ${x.colony?`<div class="sv-cositas-order-line"><b>Colonia:</b> ${esc(x.colony)}</div>`:''}
+ ${x.reference?`<div class="sv-cositas-order-line"><b>Referencia:</b> ${esc(x.reference)}</div>`:''}
+ </div>
+ ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
+ <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
+ ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
+ <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svCarameloUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svCarameloComplete(${Number(x.id)})">✓ Entregado</button></div>`:
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ </article>`;
+}
+function svCarameloRouteCard(r){
+ const orders=svPartnerOrders(r),pending=orders.filter(x=>!x.delivered),done=orders.filter(x=>x.delivered);
+ return `<section class="sv-caramelo-route sv-cositas-route-shell"><div class="sv-cositas-route-hero"><div><strong>Servicio en Curso</strong></div><span class="sv-cositas-route-chip">🍬 Mundo de Caramelo</span></div>
+ ${pending.map(x=>svCarameloEntry(x,true)).join('')||'<div class="sv-cositas-empty">Sin pedidos pendientes.</div>'}
+ ${done.length?`<details><summary>Entregados (${done.length})</summary>${done.map(x=>svCarameloEntry(x,false)).join('')}</details>`:''}
+ </section>`;
+}
+function svCarameloClientCards(){
+ const customers=[];const seen=new Map();
+ for(const x of svCarameloServices()){
+  const key=svCarameloClientKey(x);
+  if(!seen.has(key)){let customer={...x,key,count:0};customers.push(customer);seen.set(key,customer)}
+  const customer=seen.get(key);customer.count++;
+  if(new Date(x.started)>=new Date(customer.started)){Object.assign(customer,{address:x.address,streets:x.streets,colony:x.colony||'',reference:x.reference,clientNumber:x.clientNumber,gain:x.gain,maps:x.maps||customer.maps||'',started:x.started})}
+ }
+ return customers.slice().reverse().map(c=>{
+ const extra=svCarameloExtras(c.key),photo=typeof extra.photo==='string'&&extra.photo.startsWith('data:image/jpeg;base64,')?extra.photo:'',map=c.maps||(typeof extra.map==='string'?extra.map:'');
+ return `<article class="sv-caramelo-entry sv-caramelo-client sv-cositas-client" data-car-key="${esc(c.key)}">
+  <div class="sv-cositas-client-head"><span class="sv-cositas-client-kicker">🍬 MUNDO DE CARAMELO · CLIENTE</span><strong>${esc(c.address)}</strong></div>
+  ${c.streets?`<p><b>Entre Calles:</b> ${esc(c.streets)}</p>`:''}
+  ${c.colony?`<p><b>Colonia:</b> ${esc(c.colony)}</p>`:''}
+  ${c.reference?`<p><b>Referencia:</b> ${esc(c.reference)}</p>`:''}
+  ${c.clientNumber?`<p><b># de Cliente:</b> ${esc(c.clientNumber)}</p>`:''}
+  <div class="sv-cositas-client-gain"><span>Costo del servicio</span><strong>${money(c.gain)}</strong></div>
+  ${c.count>1?`<small class="muted">${c.count} servicios registrados</small>`:''}
+  <div class="sv-caramelo-media">${map?`<a class="sv-cositas-map-btn" href="${esc(map)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
+  <label>Imagen de dirección<input type="file" accept="image/*" onchange="svCarameloPhoto(this.files[0],this.closest('[data-car-key]').dataset.carKey);this.value=''"></label>
+  ${photo?`<img class="sv-caramelo-photo" src="${photo}" alt="Imagen del domicilio del cliente">`:''}</div>
+ </article>`}).join('')||'<p class="muted">Los clientes aparecerán automáticamente al activar un servicio.</p>';
+}
+// Prueba 1.47: resumen económico de Mundo de Caramelo sin tarjetas de pedidos completados.
+function svCarameloEarningsSummary(completed){
+ const nowDate=new Date(),year=nowDate.getFullYear(),month=nowDate.getMonth();
+ let monthly=0,annual=0,monthlyOrders=0,annualOrders=0;
+ for(const order of completed){
+  const timestamp=order.delivered||order.started||order.date;
+  const d=new Date(timestamp);
+  if(!Number.isFinite(d.getTime()))continue;
+  const amount=(Number(order.gain)||0)+(Number(order.tip)||0);
+  if(d.getFullYear()===year){
+   annual+=amount;annualOrders++;
+   if(d.getMonth()===month){monthly+=amount;monthlyOrders++;}
+  }
+ }
+ const monthName=new Intl.DateTimeFormat('es-MX',{month:'long'}).format(nowDate);
+ return `<div class="sv-cositas-earnings">
+  <div class="sv-cositas-earnings-card"><span>Mes actual · ${esc(monthName)}</span><strong>${money(monthly)}</strong><em>Pedidos: ${monthlyOrders}</em></div>
+  <div class="sv-cositas-earnings-card annual"><span>Año · ${year}</span><strong>${money(annual)}</strong><em>Pedidos: ${annualOrders}</em></div>
+ </div>`;
+}
+function svCarameloRender(){
+ const all=svCarameloServices(),legacy=all.filter(q=>!q.partnerRouteId),activeLegacy=legacy.filter(q=>!q.delivered),done=all.filter(q=>q.delivered);
+ const routes=svPartnerRoutes('Mundo de Caramelo').slice().reverse(),active=routes.filter(r=>!r.end),closed=routes.filter(r=>r.end);
+ return `<div class="sv-caramelo-home">
+  ${active.length?`<section class="panel sv-caramelo-panel">${active.map(svCarameloRouteCard).join('')}</section>`:''}
+  ${activeLegacy.length?`<section class="panel sv-caramelo-panel"><h2>Servicios anteriores pendientes</h2>${activeLegacy.map(x=>svCarameloEntry(x,true)).join('')}</section>`:''}
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svCarameloOpenSections.completed?'open':''}><summary onclick="svCarameloToggle('completed')">Servicios (Ganancias)</summary>
+   ${svCarameloEarningsSummary(done)}
+  </details>
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svCarameloOpenSections.clients?'open':''}><summary onclick="svCarameloToggle('clients')">Clientes <span class="sv-caramelo-count">${new Set(all.map(svCarameloClientKey)).size}</span></summary>
+   ${svCarameloClientCards()}
+  </details>
+ </div>`;
+}
+
+
+let svChamplitteTipPending=null;
+function svChamplitteCloseTip(){
+ const modal=document.getElementById('svChamplitteTipOverlay');if(modal)modal.remove();
+ svChamplitteTipPending=null;
+}
+function svChamplitteComplete(id){
+ const x=svChamplitteServices().find(q=>String(q.id)===String(id));if(!x||x.delivered)return;
+ const card=document.querySelector('[data-car-order="'+String(id)+'"]');
+ let phone=x.clientNumber||'',charge=x.charge??null;
+ if(card){
+  phone=String(card.querySelector('[data-car-phone]')?.value||'').trim();
+  const chargeText=String(card.querySelector('[data-car-charge]')?.value||'').trim();
+  if(phone.length>60)return alert('El # de Cliente es demasiado largo.');
+  charge=chargeText===''?null:Number(chargeText);
+  if(charge!==null&&(!Number.isFinite(charge)||charge<0))return alert('El monto a cobrar no es válido.');
+ }
+ svChamplitteCloseTip();
+ svChamplitteTipPending={id,phone,charge};
+ const modal=document.createElement('div');modal.id='svChamplitteTipOverlay';modal.className='sv-cositas-tip-overlay sv-partner-tip-theme sv-champlitte-theme';
+ modal.setAttribute('role','presentation');
+ modal.innerHTML=`<div class="sv-cositas-tip-dialog" role="dialog" aria-modal="true" aria-labelledby="svChamplitteTipTitle">
+ <div class="sv-cositas-tip-icon">💗</div><h2 id="svChamplitteTipTitle">Propina recibida ($)</h2>
+ <div class="sv-cositas-tip-amount"><span>$</span><input id="svChamplitteTipAmount" aria-label="Propina recibida en pesos" type="number" inputmode="decimal" min="0" step="0.01" value="0"></div>
+ <button type="button" class="sv-cositas-tip-final" onclick="svChamplitteFinishDelivery()">✓ Finalizar</button>
+ <button type="button" class="sv-cositas-tip-cancel" onclick="svChamplitteCloseTip()">Cancelar</button></div>`;
+ document.body.appendChild(modal);
+ const input=modal.querySelector('#svChamplitteTipAmount');
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();svChamplitteFinishDelivery()}});
+ input.focus({preventScroll:true});
+}
+function svChamplitteFinishDelivery(){
+ const pending=svChamplitteTipPending;if(!pending)return;
+ const input=document.getElementById('svChamplitteTipAmount');
+ const raw=String(input?.value??'').trim(),tip=Number(raw);
+ if(raw===''||!Number.isFinite(tip)||tip<0)return alert('Escribe una propina válida, o 0 si no dejó.');
+ const x=svChamplitteServices().find(q=>String(q.id)===String(pending.id));
+ if(!x||x.delivered){svChamplitteCloseTip();return;}
+ const route=data.partnerRoutes.find(r=>String(r.id)===String(x.partnerRouteId)&&!r.end);
+ const isLast=!!route&&svPartnerOrders(route).filter(q=>!q.delivered).length===1;
+ const previous={clientNumber:x.clientNumber,charge:x.charge,delivered:x.delivered,tip:x.tip,routeEnd:route?.end};
+ const stamp=now();x.clientNumber=pending.phone;x.charge=pending.charge;x.tip=tip;x.delivered=stamp;
+ if(isLast)route.end=stamp;
+ try{save();svChamplitteCloseTip();toast(isLast?'Pedido entregado · Ruta finalizada':'Pedido entregado · '+money(Number(x.gain||0)+tip))}
+ catch(e){x.clientNumber=previous.clientNumber;x.charge=previous.charge;x.delivered=previous.delivered;x.tip=previous.tip;if(route)route.end=previous.routeEnd;alert('No se pudo guardar la entrega. Inténtalo nuevamente.');}
+}
+function svChamplitteEntry(x,active){
+ const editable=active&&!x.delivered;
+ return `<article class="sv-caramelo-entry sv-cositas-order-card" data-car-order="${esc(String(x.id))}"><div class="sv-cositas-order-head"><div><span class="sv-cositas-order-kicker">${editable?'PEDIDO ACTIVO':'PEDIDO ENTREGADO'}</span><strong>${esc(x.address)}</strong></div><span class="pill">${editable?'Pendiente':'Entregado'}</span></div>
+ <div class="sv-cositas-order-meta">
+ ${x.streets?`<div class="sv-cositas-order-line"><b>Entre Calles:</b> ${esc(x.streets)}</div>`:''}
+ ${x.colony?`<div class="sv-cositas-order-line"><b>Colonia:</b> ${esc(x.colony)}</div>`:''}
+ ${x.reference?`<div class="sv-cositas-order-line"><b>Referencia:</b> ${esc(x.reference)}</div>`:''}
+ </div>
+ ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
+ <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
+ ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
+ <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svChamplitteUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svChamplitteComplete(${Number(x.id)})">✓ Entregado</button></div>`:
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ </article>`;
+}
+function svChamplitteRouteCard(r){
+ const orders=svPartnerOrders(r),pending=orders.filter(x=>!x.delivered),done=orders.filter(x=>x.delivered);
+ return `<section class="sv-caramelo-route sv-cositas-route-shell"><div class="sv-cositas-route-hero"><div><strong>Servicio en Curso</strong></div><span class="sv-cositas-route-chip">🧁 Champlitte</span></div>
+ ${pending.map(x=>svChamplitteEntry(x,true)).join('')||'<div class="sv-cositas-empty">Sin pedidos pendientes.</div>'}
+ ${done.length?`<details><summary>Entregados (${done.length})</summary>${done.map(x=>svChamplitteEntry(x,false)).join('')}</details>`:''}
+ </section>`;
+}
+function svChamplitteClientCards(){
+ const customers=[];const seen=new Map();
+ for(const x of svChamplitteServices()){
+  const key=svChamplitteClientKey(x);
+  if(!seen.has(key)){let customer={...x,key,count:0};customers.push(customer);seen.set(key,customer)}
+  const customer=seen.get(key);customer.count++;
+  if(new Date(x.started)>=new Date(customer.started)){Object.assign(customer,{address:x.address,streets:x.streets,colony:x.colony||'',reference:x.reference,clientNumber:x.clientNumber,gain:x.gain,maps:x.maps||customer.maps||'',started:x.started})}
+ }
+ return customers.slice().reverse().map(c=>{
+ const extra=svChamplitteExtras(c.key),photo=typeof extra.photo==='string'&&extra.photo.startsWith('data:image/jpeg;base64,')?extra.photo:'',map=c.maps||(typeof extra.map==='string'?extra.map:'');
+ return `<article class="sv-caramelo-entry sv-caramelo-client sv-cositas-client" data-car-key="${esc(c.key)}">
+  <div class="sv-cositas-client-head"><span class="sv-cositas-client-kicker">🧁 CHAMPLITTE · CLIENTE</span><strong>${esc(c.address)}</strong></div>
+  ${c.streets?`<p><b>Entre Calles:</b> ${esc(c.streets)}</p>`:''}
+  ${c.colony?`<p><b>Colonia:</b> ${esc(c.colony)}</p>`:''}
+  ${c.reference?`<p><b>Referencia:</b> ${esc(c.reference)}</p>`:''}
+  ${c.clientNumber?`<p><b># de Cliente:</b> ${esc(c.clientNumber)}</p>`:''}
+  <div class="sv-cositas-client-gain"><span>Costo del servicio</span><strong>${money(c.gain)}</strong></div>
+  ${c.count>1?`<small class="muted">${c.count} servicios registrados</small>`:''}
+  <div class="sv-caramelo-media">${map?`<a class="sv-cositas-map-btn" href="${esc(map)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
+  <label>Imagen de dirección<input type="file" accept="image/*" onchange="svChamplittePhoto(this.files[0],this.closest('[data-car-key]').dataset.carKey);this.value=''"></label>
+  ${photo?`<img class="sv-caramelo-photo" src="${photo}" alt="Imagen del domicilio del cliente">`:''}</div>
+ </article>`}).join('')||'<p class="muted">Los clientes aparecerán automáticamente al activar un servicio.</p>';
+}
+// Prueba 1.47: resumen económico de Champlitte sin tarjetas de pedidos completados.
+function svChamplitteEarningsSummary(completed){
+ const nowDate=new Date(),year=nowDate.getFullYear(),month=nowDate.getMonth();
+ let monthly=0,annual=0,monthlyOrders=0,annualOrders=0;
+ for(const order of completed){
+  const timestamp=order.delivered||order.started||order.date;
+  const d=new Date(timestamp);
+  if(!Number.isFinite(d.getTime()))continue;
+  const amount=(Number(order.gain)||0)+(Number(order.tip)||0);
+  if(d.getFullYear()===year){
+   annual+=amount;annualOrders++;
+   if(d.getMonth()===month){monthly+=amount;monthlyOrders++;}
+  }
+ }
+ const monthName=new Intl.DateTimeFormat('es-MX',{month:'long'}).format(nowDate);
+ return `<div class="sv-cositas-earnings">
+  <div class="sv-cositas-earnings-card"><span>Mes actual · ${esc(monthName)}</span><strong>${money(monthly)}</strong><em>Pedidos: ${monthlyOrders}</em></div>
+  <div class="sv-cositas-earnings-card annual"><span>Año · ${year}</span><strong>${money(annual)}</strong><em>Pedidos: ${annualOrders}</em></div>
+ </div>`;
+}
+function svChamplitteRender(){
+ const all=svChamplitteServices(),legacy=all.filter(q=>!q.partnerRouteId),activeLegacy=legacy.filter(q=>!q.delivered),done=all.filter(q=>q.delivered);
+ const routes=svPartnerRoutes(svChamplitteName).slice().reverse(),active=routes.filter(r=>!r.end),closed=routes.filter(r=>r.end);
+ return `<div class="sv-caramelo-home">
+  ${active.length?`<section class="panel sv-caramelo-panel">${active.map(svChamplitteRouteCard).join('')}</section>`:''}
+  ${activeLegacy.length?`<section class="panel sv-caramelo-panel"><h2>Servicios anteriores pendientes</h2>${activeLegacy.map(x=>svChamplitteEntry(x,true)).join('')}</section>`:''}
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svChamplitteOpenSections.completed?'open':''}><summary onclick="svChamplitteToggle('completed')">Servicios (Ganancias)</summary>
+   ${svChamplitteEarningsSummary(done)}
+  </details>
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svChamplitteOpenSections.clients?'open':''}><summary onclick="svChamplitteToggle('clients')">Clientes <span class="sv-caramelo-count">${new Set(all.map(svChamplitteClientKey)).size}</span></summary>
+   ${svChamplitteClientCards()}
+  </details>
+ </div>`;
+}
+
+
+let svNutribionicosTipPending=null;
+function svNutribionicosCloseTip(){
+ const modal=document.getElementById('svNutribionicosTipOverlay');if(modal)modal.remove();
+ svNutribionicosTipPending=null;
+}
+function svNutribionicosComplete(id){
+ const x=svNutribionicosServices().find(q=>String(q.id)===String(id));if(!x||x.delivered)return;
+ const card=document.querySelector('[data-car-order="'+String(id)+'"]');
+ let phone=x.clientNumber||'',charge=x.charge??null;
+ if(card){
+  phone=String(card.querySelector('[data-car-phone]')?.value||'').trim();
+  const chargeText=String(card.querySelector('[data-car-charge]')?.value||'').trim();
+  if(phone.length>60)return alert('El # de Cliente es demasiado largo.');
+  charge=chargeText===''?null:Number(chargeText);
+  if(charge!==null&&(!Number.isFinite(charge)||charge<0))return alert('El monto a cobrar no es válido.');
+ }
+ svNutribionicosCloseTip();
+ svNutribionicosTipPending={id,phone,charge};
+ const modal=document.createElement('div');modal.id='svNutribionicosTipOverlay';modal.className='sv-cositas-tip-overlay sv-partner-tip-theme sv-nutribionicos-theme';
+ modal.setAttribute('role','presentation');
+ modal.innerHTML=`<div class="sv-cositas-tip-dialog" role="dialog" aria-modal="true" aria-labelledby="svNutribionicosTipTitle">
+ <div class="sv-cositas-tip-icon">💗</div><h2 id="svNutribionicosTipTitle">Propina recibida ($)</h2>
+ <div class="sv-cositas-tip-amount"><span>$</span><input id="svNutribionicosTipAmount" aria-label="Propina recibida en pesos" type="number" inputmode="decimal" min="0" step="0.01" value="0"></div>
+ <button type="button" class="sv-cositas-tip-final" onclick="svNutribionicosFinishDelivery()">✓ Finalizar</button>
+ <button type="button" class="sv-cositas-tip-cancel" onclick="svNutribionicosCloseTip()">Cancelar</button></div>`;
+ document.body.appendChild(modal);
+ const input=modal.querySelector('#svNutribionicosTipAmount');
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();svNutribionicosFinishDelivery()}});
+ input.focus({preventScroll:true});
+}
+function svNutribionicosFinishDelivery(){
+ const pending=svNutribionicosTipPending;if(!pending)return;
+ const input=document.getElementById('svNutribionicosTipAmount');
+ const raw=String(input?.value??'').trim(),tip=Number(raw);
+ if(raw===''||!Number.isFinite(tip)||tip<0)return alert('Escribe una propina válida, o 0 si no dejó.');
+ const x=svNutribionicosServices().find(q=>String(q.id)===String(pending.id));
+ if(!x||x.delivered){svNutribionicosCloseTip();return;}
+ const route=data.partnerRoutes.find(r=>String(r.id)===String(x.partnerRouteId)&&!r.end);
+ const isLast=!!route&&svPartnerOrders(route).filter(q=>!q.delivered).length===1;
+ const previous={clientNumber:x.clientNumber,charge:x.charge,delivered:x.delivered,tip:x.tip,routeEnd:route?.end};
+ const stamp=now();x.clientNumber=pending.phone;x.charge=pending.charge;x.tip=tip;x.delivered=stamp;
+ if(isLast)route.end=stamp;
+ try{save();svNutribionicosCloseTip();toast(isLast?'Pedido entregado · Ruta finalizada':'Pedido entregado · '+money(Number(x.gain||0)+tip))}
+ catch(e){x.clientNumber=previous.clientNumber;x.charge=previous.charge;x.delivered=previous.delivered;x.tip=previous.tip;if(route)route.end=previous.routeEnd;alert('No se pudo guardar la entrega. Inténtalo nuevamente.');}
+}
+function svNutribionicosEntry(x,active){
+ const editable=active&&!x.delivered;
+ return `<article class="sv-caramelo-entry sv-cositas-order-card" data-car-order="${esc(String(x.id))}"><div class="sv-cositas-order-head"><div><span class="sv-cositas-order-kicker">${editable?'PEDIDO ACTIVO':'PEDIDO ENTREGADO'}</span><strong>${esc(x.address)}</strong></div><span class="pill">${editable?'Pendiente':'Entregado'}</span></div>
+ <div class="sv-cositas-order-meta">
+ ${x.streets?`<div class="sv-cositas-order-line"><b>Entre Calles:</b> ${esc(x.streets)}</div>`:''}
+ ${x.colony?`<div class="sv-cositas-order-line"><b>Colonia:</b> ${esc(x.colony)}</div>`:''}
+ ${x.reference?`<div class="sv-cositas-order-line"><b>Referencia:</b> ${esc(x.reference)}</div>`:''}
+ </div>
+ ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
+ <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
+ ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
+ <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svNutribionicosUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svNutribionicosComplete(${Number(x.id)})">✓ Entregado</button></div>`:
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ </article>`;
+}
+function svNutribionicosRouteCard(r){
+ const orders=svPartnerOrders(r),pending=orders.filter(x=>!x.delivered),done=orders.filter(x=>x.delivered);
+ return `<section class="sv-caramelo-route sv-cositas-route-shell"><div class="sv-cositas-route-hero"><div><strong>Servicio en Curso</strong></div><span class="sv-cositas-route-chip">🥗 Nutribiónicos</span></div>
+ ${pending.map(x=>svNutribionicosEntry(x,true)).join('')||'<div class="sv-cositas-empty">Sin pedidos pendientes.</div>'}
+ ${done.length?`<details><summary>Entregados (${done.length})</summary>${done.map(x=>svNutribionicosEntry(x,false)).join('')}</details>`:''}
+ </section>`;
+}
+function svNutribionicosClientCards(){
+ const customers=[];const seen=new Map();
+ for(const x of svNutribionicosServices()){
+  const key=svCarameloClientKey(x);
+  if(!seen.has(key)){let customer={...x,key,count:0};customers.push(customer);seen.set(key,customer)}
+  const customer=seen.get(key);customer.count++;
+  if(new Date(x.started)>=new Date(customer.started)){Object.assign(customer,{address:x.address,streets:x.streets,colony:x.colony||'',reference:x.reference,clientNumber:x.clientNumber,gain:x.gain,maps:x.maps||customer.maps||'',started:x.started})}
+ }
+ return customers.slice().reverse().map(c=>{
+ const extra=svNutribionicosExtras(c.key),photo=typeof extra.photo==='string'&&extra.photo.startsWith('data:image/jpeg;base64,')?extra.photo:'',map=c.maps||(typeof extra.map==='string'?extra.map:'');
+ return `<article class="sv-caramelo-entry sv-caramelo-client sv-cositas-client" data-car-key="${esc(c.key)}">
+  <div class="sv-cositas-client-head"><span class="sv-cositas-client-kicker">🥗 NUTRIBIÓNICOS · CLIENTE</span><strong>${esc(c.address)}</strong></div>
+  ${c.streets?`<p><b>Entre Calles:</b> ${esc(c.streets)}</p>`:''}
+  ${c.colony?`<p><b>Colonia:</b> ${esc(c.colony)}</p>`:''}
+  ${c.reference?`<p><b>Referencia:</b> ${esc(c.reference)}</p>`:''}
+  ${c.clientNumber?`<p><b># de Cliente:</b> ${esc(c.clientNumber)}</p>`:''}
+  <div class="sv-cositas-client-gain"><span>Costo del servicio</span><strong>${money(c.gain)}</strong></div>
+  ${c.count>1?`<small class="muted">${c.count} servicios registrados</small>`:''}
+  <div class="sv-caramelo-media">${map?`<a class="sv-cositas-map-btn" href="${esc(map)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
+  <label>Imagen de dirección<input type="file" accept="image/*" onchange="svNutribionicosPhoto(this.files[0],this.closest('[data-car-key]').dataset.carKey);this.value=''"></label>
+  ${photo?`<img class="sv-caramelo-photo" src="${photo}" alt="Imagen del domicilio del cliente">`:''}</div>
+ </article>`}).join('')||'<p class="muted">Los clientes aparecerán automáticamente al activar un servicio.</p>';
+}
+// Prueba 1.47: resumen económico de Nutribiónicos sin tarjetas de pedidos completados.
+function svNutribionicosEarningsSummary(completed){
+ const nowDate=new Date(),year=nowDate.getFullYear(),month=nowDate.getMonth();
+ let monthly=0,annual=0,monthlyOrders=0,annualOrders=0;
+ for(const order of completed){
+  const timestamp=order.delivered||order.started||order.date;
+  const d=new Date(timestamp);
+  if(!Number.isFinite(d.getTime()))continue;
+  const amount=(Number(order.gain)||0)+(Number(order.tip)||0);
+  if(d.getFullYear()===year){
+   annual+=amount;annualOrders++;
+   if(d.getMonth()===month){monthly+=amount;monthlyOrders++;}
+  }
+ }
+ const monthName=new Intl.DateTimeFormat('es-MX',{month:'long'}).format(nowDate);
+ return `<div class="sv-cositas-earnings">
+  <div class="sv-cositas-earnings-card"><span>Mes actual · ${esc(monthName)}</span><strong>${money(monthly)}</strong><em>Pedidos: ${monthlyOrders}</em></div>
+  <div class="sv-cositas-earnings-card annual"><span>Año · ${year}</span><strong>${money(annual)}</strong><em>Pedidos: ${annualOrders}</em></div>
+ </div>`;
+}
+function svNutribionicosRender(){
+ const all=svNutribionicosServices(),legacy=all.filter(q=>!q.partnerRouteId),activeLegacy=legacy.filter(q=>!q.delivered),done=all.filter(q=>q.delivered);
+ const routes=svNutribionicosRoutes().slice().reverse(),active=routes.filter(r=>!r.end),closed=routes.filter(r=>r.end);
+ return `<div class="sv-caramelo-home">
+  ${active.length?`<section class="panel sv-caramelo-panel">${active.map(svNutribionicosRouteCard).join('')}</section>`:''}
+  ${activeLegacy.length?`<section class="panel sv-caramelo-panel"><h2>Servicios anteriores pendientes</h2>${activeLegacy.map(x=>svNutribionicosEntry(x,true)).join('')}</section>`:''}
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svNutribionicosOpenSections.completed?'open':''}><summary onclick="svNutribionicosToggle('completed')">Servicios (Ganancias)</summary>
+   ${svNutribionicosEarningsSummary(done)}
+  </details>
+  <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svNutribionicosOpenSections.clients?'open':''}><summary onclick="svNutribionicosToggle('clients')">Clientes <span class="sv-caramelo-count">${new Set(all.map(svCarameloClientKey)).size}</span></summary>
+   ${svNutribionicosClientCards()}
+  </details>
+ </div>`;
+}
+
+
 
 // Prueba 1.06: pantalla de Asociados con el mismo patrón visual de Apps.
 // La preferencia de apertura se guarda en data.ui, sin alterar rutas ni pedidos.
@@ -3634,7 +4036,7 @@ function importData(){
 // Se escucha en el documento para capturar movimientos desde el encabezado y el contenido.
 function svIsPrimaryModule(){
  return $('overlay').classList.contains('show') &&
-   (view==='suvazu'||view==='asociados'||view==='cositas'||(view==='apps'&&appScreen==='home'));
+   (view==='suvazu'||view==='asociados'||view==='cositas'||view==='caramelo'||view==='champlitte'||view==='nutribionicos'||(view==='apps'&&appScreen==='home'));
 }
 const svPullNavigation={active:false,startX:0,startY:0,distance:0,header:false};
 function svPullReset(){
