@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.56</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.57</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -1073,13 +1073,13 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-commission-actions input{margin:0;min-width:0;flex:1;font-size:17px}
 .sv-commission-actions button{flex:0 0 auto;padding:12px;font-size:15px}
 
-/* Prueba 1.56 · Champlitte comparte el diseño funcional de Cositas Dulces. */
+/* Prueba 1.57 · Champlitte comparte el diseño funcional de Cositas Dulces. */
 #overlay.sv-champlitte-view .sv-caramelo-panel{border-top-color:#8a2435}
 #overlay.sv-champlitte-view .sv-caramelo-panel h2{color:#7b2634}
 #overlay.sv-champlitte-view .sv-caramelo-entry{background:#fff9f5;border-color:#eecfd0}
 .sv-associate-home[data-front-partner="champlitte"]{--sv-app-accent:#8a2435;--sv-app-accent-soft:#fff1ef}
 
-/* Prueba 1.56 · Historial de Asociados: una tarjeta de marca para cada socio. */
+/* Prueba 1.57 · Historial de Asociados: una tarjeta de marca para cada socio. */
 #overlay .sv-associate-history-card,
 #overlay .sv-associate-history-link{
  display:block; width:100%; box-sizing:border-box;
@@ -1172,6 +1172,18 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-partner-tip-theme .sv-cositas-tip-dialog h2,.sv-partner-tip-theme .sv-cositas-tip-amount span{color:var(--tip-accent)}
 .sv-partner-tip-theme .sv-cositas-tip-amount{border-color:var(--tip-edge)}
 .sv-partner-tip-theme .sv-cositas-tip-final{background:var(--tip-accent)}
+
+/* Prueba 1.57: cobro y entrega prioriza el pedido, cobro y contacto. */
+#overlay .sv-payment-details{background:transparent;padding:0;display:grid;gap:12px}
+#overlay .sv-payment-details .sv-info{border:0;padding:16px;border-radius:18px;background:#f0f5f1}
+#overlay .sv-payment-details .sv-order-description{background:#fff7e8;border:1px solid #efd8aa}
+#overlay .sv-payment-details .sv-order-description strong{font-size:clamp(21px,5.3vw,27px)}
+#overlay .sv-payment-details .sv-payment-amount{background:#173d31;color:#fff;text-align:center;padding:20px 16px}
+#overlay .sv-payment-details .sv-payment-amount span{color:#daeadf}
+#overlay .sv-payment-details .sv-payment-amount strong{color:#fff;font-size:clamp(30px,8vw,44px)}
+#overlay .sv-payment-details .sv-payment-amount.is-paid{background:#20734c}
+#overlay .sv-payment-details .sv-payment-client strong{font-size:23px}
+#overlay .sv-payment-details .sv-payment-pickup{background:#f6f8f5}
 </style></head><body class="sv-booting">
 <section id="svGate" aria-label="Puerta principal Repartidor SuVaZu" hidden>
   <div class="sv-gate-poster">
@@ -1187,7 +1199,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.56</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.57</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -1551,6 +1563,13 @@ function svClientWhatsApp(phone){
   window.open(webUrl,'_blank','noopener');
  }
 }
+function svClientCall(phone){
+ const digits=String(phone||'').replace(/\D/g,'');
+ const local=digits.length===10?digits:digits.length===12&&digits.startsWith('52')?digits.slice(2):digits.length===13&&digits.startsWith('521')?digits.slice(3):'';
+ if(!local){alert('Este pedido no tiene un número mexicano válido para llamar.');return;}
+ // Abre el marcador del dispositivo; el usuario confirma la llamada.
+ window.location.href='tel:'+local;
+}
 function svAddSalesCommission(id){
  const x=locate(id),field=document.getElementById('svCommission_'+id);
  if(!x||!field||x.o.cancelled)return;
@@ -1594,10 +1613,14 @@ let svQuickExtras=`<div class="sv-commission"><div class="sv-commission-head"><s
 let svMapBlock=`<div class="sv-info sv-map-info"><span>UBICACIÓN</span>${navLink(o.address||o.delivery||o.pickupMap||o.pickupAddress,'Abrir Maps')||'<strong>Sin ubicación registrada</strong>'}</div>`;
 let svPickupBundle=`<div class="sv-info"><span>SERVICIO · RECOLECTA</span><strong>${esc(o.service||'Sin servicio registrado')}</strong><small style="display:block;margin-top:8px;font-size:18px;color:#51655d;font-weight:700">${esc(o.pickupAddress||'Sin dirección de recolecta registrada')}</small></div>`;
 let deliveryPriority=`<div class="sv-info"><span>DIRECCIÓN DE ENTREGA</span><strong>${esc(o.delivery||'Sin dirección registrada')}</strong></div>${o.deliveryStreets?`<div class="sv-info"><span>ENTRE CALLES</span><strong>${esc(o.deliveryStreets)}</strong></div>`:''}${o.deliveryReference?`<div class="sv-info"><span>REFERENCIA</span><strong>${esc(o.deliveryReference)}</strong></div>`:''}`;
-let info=step===1?`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div>`:step===2?`${deliveryPriority}${svMapBlock}${svClientInfo(o)}${svPickupBundle}`:`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div><div class="sv-info"><span>COBRAR</span><strong class="sv-money">${esc(showCharge(o.charge))}</strong></div>`;
-info+=step===2?svQuickExtras:(svMapBlock+svQuickExtras);
+let paid=typeof o.charge==='string'&&/^(pagado|ya pagado|pagada|liquidado|liquidada|paid)$/i.test(o.charge.trim());
+let svAmountBlock=`<div class="sv-info sv-payment-amount ${paid?'is-paid':''}"><span>${paid?'ESTADO DEL PAGO':'TOTAL A COBRAR'}</span><strong>${paid?'✓ PAGADO':esc(showCharge(o.charge))}</strong></div>`;
+let svOrderBlock=`<div class="sv-info sv-order-description"><span>PEDIDO</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div>`;
+let svClientBlock=svClientInfo(o).replace('sv-client-info','sv-client-info sv-payment-client');
+let svPickupBrief=`<div class="sv-info sv-payment-pickup"><span>SERVICIO · RECOLECTA</span><strong>${esc(o.service||'Sin servicio registrado')}</strong>${o.pickupAddress?`<small style="display:block;margin-top:8px;font-size:17px;color:#51655d;font-weight:650">${esc(o.pickupAddress)}</small>`:''}</div>`;
+let info=step===1?`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div>${svMapBlock}${svQuickExtras}`:step===2?`${deliveryPriority}${svMapBlock}${svClientInfo(o)}${svPickupBundle}${svQuickExtras}`:`${svOrderBlock}${svAmountBlock}${svClientBlock}${svPickupBrief}`;
 let action=step===1?`<button class="full sv-primary" onclick="mark(${o.id},'collected')">📦 Recolectado</button>`:step===2?`<button class="full sv-primary" onclick="arriveAtDelivery(${o.id})">📍 Llegué a dirección de entrega</button>`:`<button class="full sv-primary" onclick="openDelivery(${o.id})">✓ Entregado</button>`;
-return `<article class="sv-order-card sv-slide" style="display:${i===slideIndex?'block':'none'}"><div class="sv-order-top"><div><div class="sv-eyebrow">PEDIDO ${i+1} DE ${os.length}</div><h2>${esc(o.client||'Pedido '+(i+1))}</h2></div><span class="pill">${headline}</span></div><div class="sv-step-track"><i class="on"></i><i class="${step>=2?'on':''}"></i><i class="${step>=3?'on':''}"></i></div><div class="sv-stage-title">${headline}</div><div class="sv-details">${info}</div>${action}<div class="sv-swipe-foot"><span>‹ &nbsp; Desliza para otro pedido &nbsp; ›</span><span>${os.map((_,j)=>`<i class="sv-dot ${j===slideIndex?'on':''}"></i>`).join('')}</span></div><button class="secondary full sv-edit" onclick="openView('detail',${o.id})">✎ Ver / Modificar pedido &nbsp; ›</button></article>`;
+return `<article class="sv-order-card sv-slide" style="display:${i===slideIndex?'block':'none'}"><div class="sv-order-top"><div><div class="sv-eyebrow">PEDIDO ${i+1} DE ${os.length}</div><h2>${esc(o.client||'Pedido '+(i+1))}</h2></div><span class="pill">${headline}</span></div><div class="sv-step-track"><i class="on"></i><i class="${step>=2?'on':''}"></i><i class="${step>=3?'on':''}"></i></div><div class="sv-stage-title">${headline}</div><div class="sv-details ${step===3?'sv-payment-details':''}">${info}</div>${action}<div class="sv-swipe-foot"><span>‹ &nbsp; Desliza para otro pedido &nbsp; ›</span><span>${os.map((_,j)=>`<i class="sv-dot ${j===slideIndex?'on':''}"></i>`).join('')}</span></div><button class="secondary full sv-edit" onclick="openView('detail',${o.id})">✎ Ver / Modificar pedido &nbsp; ›</button></article>`;
 }).join('')}</div>`:'<div class="sv-order-card"><p class="muted">No hay pedidos pendientes en esta ruta.</p></div>';
 if(r&&r.status!=='finalizada'&&String(r.id)===String(data.selected)){
  h+=`<div class="sv-route-actions"><button class="full" onclick="svChooseDirectJson(${r.id})">📄 Seleccionar JSON</button>${os.length?`<button class="danger full" onclick="cancelOrder(${os[slideIndex].id})">✕ Cancelar pedido seleccionado</button>`:''}</div>`;
@@ -2107,7 +2130,7 @@ function svCositasJSON(text){
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svCositasValidMap(vals.maps);return vals;
 }
-// Prueba 1.56: un enlace directo por pedido y socio (sin descargar JSON).
+// Prueba 1.57: un enlace directo por pedido y socio (sin descargar JSON).
 // El JSON codificado usa: {format, version, socio, id, pedido}.
 const svAssociateDirectNames={cositas:'Cositas Dulces',caramelo:'Mundo de Caramelo',champlitte:'Champlitte',nutribionicos:'Nutribiónicos'};
 function svAssociateDirectRead(){
@@ -2684,7 +2707,7 @@ function svNutribionicosRender(){
 }
 
 
-/* Prueba 1.56: presentación unificada de los asociados estándar. El Parrillón mantiene su flujo aislado. */
+/* Prueba 1.57: presentación unificada de los asociados estándar. El Parrillón mantiene su flujo aislado. */
 let svCarameloTipPending=null;
 function svCarameloCloseTip(){
  const modal=document.getElementById('svCarameloTipOverlay');if(modal)modal.remove();
