@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.50</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.51</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -1021,6 +1021,24 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 #overlay .sv-cositas-view .sv-caramelo-panel{border-top-color:#b87b4f}
 #overlay .sv-cositas-view .sv-caramelo-panel h2{color:#683c29}
 #overlay .sv-cositas-view .sv-caramelo-entry{background:#fffaf4;border-color:#ead3b6}
+#overlay .sv-cositas-route-shell{border:none;padding:0;margin:0;background:transparent}
+#overlay .sv-cositas-route-hero{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;margin:0 0 12px;border-radius:18px;background:linear-gradient(135deg,#fff5ea 0%,#ffe8f3 100%);border:1px solid #f1d7bf;box-shadow:0 10px 24px rgba(145,86,45,.10)}
+#overlay .sv-cositas-route-hero strong{display:block;color:#6b3a28;font-size:20px;line-height:1.2}
+#overlay .sv-cositas-route-hero small{display:block;color:#8f6a57;font-size:13px;margin-top:4px}
+#overlay .sv-cositas-route-chip{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;background:#fff;color:#8b2c5d;font-weight:800;font-size:12px;box-shadow:0 6px 14px rgba(139,44,93,.12)}
+#overlay .sv-cositas-order-card{border-radius:18px;padding:16px;border:1px solid #efdbc1;background:linear-gradient(180deg,#fffdf8 0%,#fff8fb 100%);box-shadow:0 10px 22px rgba(125,83,52,.08);border-left:5px solid #e27eb1}
+#overlay .sv-cositas-order-head{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+#overlay .sv-cositas-order-kicker{display:block;font-size:11px;font-weight:800;letter-spacing:.08em;color:#a85f42;margin-bottom:6px}
+#overlay .sv-cositas-order-head strong{font-size:20px;line-height:1.18;color:#193e33}
+#overlay .sv-cositas-order-meta{display:grid;gap:8px;margin:12px 0 10px}
+#overlay .sv-cositas-order-line{padding:10px 12px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1px #f2dfc7}
+#overlay .sv-cositas-order-line b{color:#6f4734}
+#overlay .sv-cositas-gain-box{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 14px;border-radius:15px;background:#fff3e3;border:1px solid #f1d8ac;margin:14px 0 12px}
+#overlay .sv-cositas-gain-box span{font-size:13px;font-weight:700;color:#8a643c}
+#overlay .sv-cositas-gain-box strong{font-size:28px;color:#6a4520}
+#overlay .sv-cositas-actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+#overlay .sv-cositas-actions button{margin-top:0;border-radius:16px;padding:16px 12px;font-size:17px;font-weight:800}
+#overlay .sv-cositas-empty{padding:18px 16px;border-radius:16px;background:#fffaf4;border:1px dashed #e5c9aa;color:#7b6250;text-align:center}
 
 /* Prueba 1.47 · Cositas Dulces: ficha de cliente y Maps */
 #overlay .sv-cositas-client{background:linear-gradient(145deg,#fff,#fff8fb);border:2px solid #f1b8d0;border-left:6px solid #d46b9b;border-radius:22px;padding:20px;box-shadow:0 8px 22px rgba(106,38,72,.08)}
@@ -1053,13 +1071,13 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-commission-actions input{margin:0;min-width:0;flex:1;font-size:17px}
 .sv-commission-actions button{flex:0 0 auto;padding:12px;font-size:15px}
 
-/* Prueba 1.50 · Champlitte comparte el diseño funcional de Cositas Dulces. */
+/* Prueba 1.51 · Champlitte comparte el diseño funcional de Cositas Dulces. */
 #overlay.sv-champlitte-view .sv-caramelo-panel{border-top-color:#8a2435}
 #overlay.sv-champlitte-view .sv-caramelo-panel h2{color:#7b2634}
 #overlay.sv-champlitte-view .sv-caramelo-entry{background:#fff9f5;border-color:#eecfd0}
 .sv-associate-home[data-front-partner="champlitte"]{--sv-app-accent:#8a2435;--sv-app-accent-soft:#fff1ef}
 
-/* Prueba 1.50 · Historial de Asociados: una tarjeta de marca para cada socio. */
+/* Prueba 1.51 · Historial de Asociados: una tarjeta de marca para cada socio. */
 #overlay .sv-associate-history-card,
 #overlay .sv-associate-history-link{
  display:block; width:100%; box-sizing:border-box;
@@ -1137,7 +1155,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.50</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.51</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -2053,7 +2071,7 @@ function svCositasJSON(text){
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svCositasValidMap(vals.maps);return vals;
 }
-// Prueba 1.50: un enlace directo por pedido y socio (sin descargar JSON).
+// Prueba 1.51: un enlace directo por pedido y socio (sin descargar JSON).
 // El JSON codificado usa: {format, version, socio, id, pedido}.
 const svAssociateDirectNames={cositas:'Cositas Dulces',caramelo:'Mundo de Caramelo',champlitte:'Champlitte',nutribionicos:'Nutribiónicos'};
 function svAssociateDirectRead(){
@@ -2161,25 +2179,25 @@ function svCositasComplete(id){
 }
 function svCositasEntry(x,active){
  const editable=active&&!x.delivered;
- return `<article class="sv-caramelo-entry" data-car-order="${esc(String(x.id))}"><div class="row"><strong>${esc(x.address)}</strong><span class="pill">${editable?'Pendiente':'Entregado'}</span></div>
- ${x.streets?`<p><b>Entre Calles:</b> ${esc(x.streets)}</p>`:''}
- ${x.colony?`<p><b>Colonia:</b> ${esc(x.colony)}</p>`:''}
- ${x.reference?`<p><b>Referencia:</b> ${esc(x.reference)}</p>`:''}
+ return `<article class="sv-caramelo-entry sv-cositas-order-card" data-car-order="${esc(String(x.id))}"><div class="sv-cositas-order-head"><div><span class="sv-cositas-order-kicker">${editable?'PEDIDO ACTIVO':'PEDIDO ENTREGADO'}</span><strong>${esc(x.address)}</strong></div><span class="pill">${editable?'Pendiente':'Entregado'}</span></div>
+ <div class="sv-cositas-order-meta">
+ ${x.streets?`<div class="sv-cositas-order-line"><b>Entre Calles:</b> ${esc(x.streets)}</div>`:''}
+ ${x.colony?`<div class="sv-cositas-order-line"><b>Colonia:</b> ${esc(x.colony)}</div>`:''}
+ ${x.reference?`<div class="sv-cositas-order-line"><b>Referencia:</b> ${esc(x.reference)}</div>`:''}
+ </div>
  ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
- <p><b>Ganancia:</b> ${money(x.gain)}</p>
+ <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
  ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
- <div class="wrap"><button type="button" class="secondary" onclick="svCositasUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svCositasComplete(${Number(x.id)})">✓ Entregado</button></div>`:
- `${x.clientNumber?`<p><b># de Cliente:</b> ${esc(x.clientNumber)}</p>`:''}<p><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</p><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svCositasUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svCositasComplete(${Number(x.id)})">✓ Entregado</button></div>`:
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
  </article>`;
 }
 function svCositasRouteCard(r){
  const orders=svPartnerOrders(r),pending=orders.filter(x=>!x.delivered),done=orders.filter(x=>x.delivered);
- return `<section class="sv-caramelo-route"><div class="row"><strong>Ruta · ${esc(r.partner)}</strong><span class="pill">${r.end?'Finalizada':'En curso'}</span></div>
- <p class="muted">${pending.length} pendientes · ${done.length} entregados · Ganancia: ${money(done.reduce((n,x)=>n+Number(x.gain||0),0))}</p>
- ${pending.map(x=>svCositasEntry(x,true)).join('')||'<p class="muted">Sin pedidos pendientes.</p>'}
+ return `<section class="sv-caramelo-route sv-cositas-route-shell"><div class="sv-cositas-route-hero"><div><strong>Entrega en curso</strong><small>Información clara y lista para repartir.</small></div><span class="sv-cositas-route-chip">🍰 Cositas Dulces</span></div>
+ ${pending.map(x=>svCositasEntry(x,true)).join('')||'<div class="sv-cositas-empty">Sin pedidos pendientes.</div>'}
  ${done.length?`<details><summary>Entregados (${done.length})</summary>${done.map(x=>svCositasEntry(x,false)).join('')}</details>`:''}
-
  </section>`;
 }
 function svCositasClientKey(x){
@@ -2265,7 +2283,6 @@ function svCositasRender(){
  const all=svCositasServices(),legacy=all.filter(q=>!q.partnerRouteId),activeLegacy=legacy.filter(q=>!q.delivered),done=all.filter(q=>q.delivered);
  const routes=svPartnerRoutes(svCositasName).slice().reverse(),active=routes.filter(r=>!r.end),closed=routes.filter(r=>r.end);
  return `<div class="sv-caramelo-home">
-  <section class="panel sv-caramelo-panel"><h2>Nuevo Servicio</h2><p class="muted">Los pedidos se reciben desde su enlace directo de Cositas Dulces.</p></section>
   ${active.length?`<section class="panel sv-caramelo-panel"><h2>Ruta activa</h2>${active.map(svCositasRouteCard).join('')}</section>`:''}
   ${activeLegacy.length?`<section class="panel sv-caramelo-panel"><h2>Servicios anteriores pendientes</h2>${activeLegacy.map(x=>svCositasEntry(x,true)).join('')}</section>`:''}
   <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svCositasOpenSections.completed?'open':''}><summary onclick="svCositasToggle('completed')">Ganancias de Cositas Dulces</summary>
