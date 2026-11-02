@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.55</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.56</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -138,6 +138,8 @@
 .sv-client-line{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}
 .sv-client-line strong{min-width:0;overflow-wrap:anywhere}
 button.sv-wa-button{background:#e3f5e9;color:#11633d;border:1px solid #b9e5ca;border-radius:13px;font-size:15px;padding:9px 12px;min-height:42px;white-space:nowrap;flex-shrink:0}
+.sv-client-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+button.sv-call-button{background:#eef3ff;color:#274a93;border:1px solid #c8d7ff;border-radius:13px;font-size:15px;padding:9px 12px;min-height:42px;white-space:nowrap;flex-shrink:0}
 .sv-quick-extra{border:1px solid #dce6df;border-radius:15px;margin:13px 0;padding:10px 13px}
 .sv-quick-extra>summary{font-weight:750;color:#17382e;cursor:pointer;padding:7px 2px}
 .sv-quick-extra .sv-quick-section{margin-top:10px}
@@ -1071,13 +1073,13 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-commission-actions input{margin:0;min-width:0;flex:1;font-size:17px}
 .sv-commission-actions button{flex:0 0 auto;padding:12px;font-size:15px}
 
-/* Prueba 1.55 · Champlitte comparte el diseño funcional de Cositas Dulces. */
+/* Prueba 1.56 · Champlitte comparte el diseño funcional de Cositas Dulces. */
 #overlay.sv-champlitte-view .sv-caramelo-panel{border-top-color:#8a2435}
 #overlay.sv-champlitte-view .sv-caramelo-panel h2{color:#7b2634}
 #overlay.sv-champlitte-view .sv-caramelo-entry{background:#fff9f5;border-color:#eecfd0}
 .sv-associate-home[data-front-partner="champlitte"]{--sv-app-accent:#8a2435;--sv-app-accent-soft:#fff1ef}
 
-/* Prueba 1.55 · Historial de Asociados: una tarjeta de marca para cada socio. */
+/* Prueba 1.56 · Historial de Asociados: una tarjeta de marca para cada socio. */
 #overlay .sv-associate-history-card,
 #overlay .sv-associate-history-link{
  display:block; width:100%; box-sizing:border-box;
@@ -1185,7 +1187,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.55</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.56</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -1561,10 +1563,11 @@ function svAddSalesCommission(id){
 function renderView(){
  svRestore();
  const primaryModule = view==='suvazu'||view==='asociados'||(view==='apps'&&appScreen==='home');
- const hideBackButton = primaryModule || ['cositas','caramelo','champlitte','nutribionicos'].includes(view);
+ const gestureViews = ['cositas','caramelo','champlitte','nutribionicos','orders'];
+ const hideBackButton = primaryModule || gestureViews.includes(view);
  $('svOverlayBack').hidden=hideBackButton;
- $('overlay').classList.toggle('sv-primary',primaryModule||['cositas','caramelo','champlitte','nutribionicos'].includes(view));
- $('svPullHint').hidden=!(primaryModule||['cositas','caramelo','champlitte','nutribionicos'].includes(view));
+ $('overlay').classList.toggle('sv-primary',primaryModule||gestureViews.includes(view));
+ $('svPullHint').hidden=!(primaryModule||gestureViews.includes(view));
  $('overlay').classList.toggle('parrillon-view',view==='parrillon');$('overlay').classList.toggle('nutribionicos-view',view==='nutribionicos');$('overlay').classList.toggle('sv-cositas-view',view==='cositas');$('overlay').classList.toggle('sv-caramelo-view',view==='caramelo');$('overlay').classList.toggle('sv-champlitte-view',view==='champlitte');let title={routes:'Gestión de rutas',orders:'Servicios de la ruta',delivery:'Finalizar Servicio',detail:'Detalle del pedido',history:'Historial · Mes → Día',monthly:'Resumen mensual',hours:'Horas y demanda',asociados:'SuVaZu Asociados',apps:'Apps',parrillon:'🍗 El Parrillón',caramelo:'🍬 Mundo de Caramelo',nutribionicos:'🥗 Nutribiónicos',cositas:'🍰 Cositas Dulces',champlitte:'🧁 Champlitte',suvazu:'🛵 SuVaZu Repartidor',clients:'👥 Clientes',clientOrder:'Nuevo pedido · Cliente',importQuick:'📥 Importar pedido',captureRoute:'Importar servicio JSON',journeyHistory:'Rendimiento'};$('overlayTitle').textContent=title[view]||'SuVaZu';let h='';if(view==='suvazu'){svOpenModule();return}if(view==='captureRoute'){svRenderCaptureRoute();return}if(view==='journeyHistory'){$('overlayBody').innerHTML=svRenderJourneyHistory();return}if(view==='clients'){svRenderClients();return}if(view==='clientOrder'){svRenderClientOrder();return}if(view==='asociados'){
  $('overlayBody').innerHTML=svRenderAssociateHome();svAssociateRestoreCarousel();return
 }if(view==='apps'){ $('overlayBody').innerHTML=renderApps();return }if(view==='parrillon'){$('overlayBody').innerHTML=renderParrillon();return}if(view==='caramelo'){$('overlayBody').innerHTML=svCarameloRender();return}if(view==='nutribionicos'){$('overlayBody').innerHTML=svNutribionicosRender();return}if(view==='cositas'){$('overlayBody').innerHTML=svCositasRender();return}if(view==='champlitte'){$('overlayBody').innerHTML=svChamplitteRender();return}if(view==='routes'){
@@ -1584,13 +1587,15 @@ let headline=step===1?'📦 Recolecta':step===2?'🏍️ En camino a la entrega'
 function svClientInfo(o){
  const phone=String(o.client||'').replace(/\D/g,'');
  const valid=phone.length===10||(phone.length===12&&phone.startsWith('52'))||(phone.length===13&&phone.startsWith('521'));
- return `<div class="sv-info sv-client-info"><span>CLIENTE</span><div class="sv-client-line"><strong>${esc(o.client||'—')}</strong>${valid?`<button type="button" class="sv-wa-button" onclick='svClientWhatsApp(${JSON.stringify(String(o.client||''))})' aria-label="Abrir WhatsApp Business del cliente">◉ WhatsApp</button>`:''}</div></div>`;
+ const actions=valid?`<div class="sv-client-actions"><button type="button" class="sv-wa-button" onclick='svClientWhatsApp(${JSON.stringify(String(o.client||''))})' aria-label="Abrir WhatsApp Business del cliente">◉ WhatsApp</button><button type="button" class="sv-call-button" onclick='svClientCall(${JSON.stringify(String(o.client||''))})' aria-label="Llamar al cliente">📞 Llamar</button></div>`:'';
+ return `<div class="sv-info sv-client-info"><span>CLIENTE</span><div class="sv-client-line"><strong>${esc(o.client||'—')}</strong>${actions}</div></div>`;
 }
 let svQuickExtras=`<div class="sv-commission"><div class="sv-commission-head"><span>COMISIÓN DE VENTA</span><strong>${money(extraSum(o,'Comisión de Venta'))}</strong></div><div class="sv-commission-actions"><input type="number" id="svCommission_${o.id}" min="0.01" step="0.01" inputmode="decimal" placeholder="Monto $"><button type="button" onclick="svAddSalesCommission(${o.id})">+ Agregar</button></div></div>`;
 let svMapBlock=`<div class="sv-info sv-map-info"><span>UBICACIÓN</span>${navLink(o.address||o.delivery||o.pickupMap||o.pickupAddress,'Abrir Maps')||'<strong>Sin ubicación registrada</strong>'}</div>`;
 let svPickupBundle=`<div class="sv-info"><span>SERVICIO · RECOLECTA</span><strong>${esc(o.service||'Sin servicio registrado')}</strong><small style="display:block;margin-top:8px;font-size:18px;color:#51655d;font-weight:700">${esc(o.pickupAddress||'Sin dirección de recolecta registrada')}</small></div>`;
-let info=step===1?`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div>`:step===2?`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DIRECCIÓN DE ENTREGA</span><strong>${esc(o.delivery||'Sin dirección registrada')}</strong></div>${o.deliveryStreets?`<div class="sv-info"><span>ENTRE CALLES</span><strong>${esc(o.deliveryStreets)}</strong></div>`:''}${o.deliveryReference?`<div class="sv-info"><span>REFERENCIA</span><strong>${esc(o.deliveryReference)}</strong></div>`:''}`:`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div><div class="sv-info"><span>COBRAR</span><strong class="sv-money">${esc(showCharge(o.charge))}</strong></div>`;
-info+=svMapBlock+svQuickExtras;
+let deliveryPriority=`<div class="sv-info"><span>DIRECCIÓN DE ENTREGA</span><strong>${esc(o.delivery||'Sin dirección registrada')}</strong></div>${o.deliveryStreets?`<div class="sv-info"><span>ENTRE CALLES</span><strong>${esc(o.deliveryStreets)}</strong></div>`:''}${o.deliveryReference?`<div class="sv-info"><span>REFERENCIA</span><strong>${esc(o.deliveryReference)}</strong></div>`:''}`;
+let info=step===1?`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div>`:step===2?`${deliveryPriority}${svMapBlock}${svClientInfo(o)}${svPickupBundle}`:`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div><div class="sv-info"><span>COBRAR</span><strong class="sv-money">${esc(showCharge(o.charge))}</strong></div>`;
+info+=step===2?svQuickExtras:(svMapBlock+svQuickExtras);
 let action=step===1?`<button class="full sv-primary" onclick="mark(${o.id},'collected')">📦 Recolectado</button>`:step===2?`<button class="full sv-primary" onclick="arriveAtDelivery(${o.id})">📍 Llegué a dirección de entrega</button>`:`<button class="full sv-primary" onclick="openDelivery(${o.id})">✓ Entregado</button>`;
 return `<article class="sv-order-card sv-slide" style="display:${i===slideIndex?'block':'none'}"><div class="sv-order-top"><div><div class="sv-eyebrow">PEDIDO ${i+1} DE ${os.length}</div><h2>${esc(o.client||'Pedido '+(i+1))}</h2></div><span class="pill">${headline}</span></div><div class="sv-step-track"><i class="on"></i><i class="${step>=2?'on':''}"></i><i class="${step>=3?'on':''}"></i></div><div class="sv-stage-title">${headline}</div><div class="sv-details">${info}</div>${action}<div class="sv-swipe-foot"><span>‹ &nbsp; Desliza para otro pedido &nbsp; ›</span><span>${os.map((_,j)=>`<i class="sv-dot ${j===slideIndex?'on':''}"></i>`).join('')}</span></div><button class="secondary full sv-edit" onclick="openView('detail',${o.id})">✎ Ver / Modificar pedido &nbsp; ›</button></article>`;
 }).join('')}</div>`:'<div class="sv-order-card"><p class="muted">No hay pedidos pendientes en esta ruta.</p></div>';
@@ -2102,7 +2107,7 @@ function svCositasJSON(text){
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svCositasValidMap(vals.maps);return vals;
 }
-// Prueba 1.55: un enlace directo por pedido y socio (sin descargar JSON).
+// Prueba 1.56: un enlace directo por pedido y socio (sin descargar JSON).
 // El JSON codificado usa: {format, version, socio, id, pedido}.
 const svAssociateDirectNames={cositas:'Cositas Dulces',caramelo:'Mundo de Caramelo',champlitte:'Champlitte',nutribionicos:'Nutribiónicos'};
 function svAssociateDirectRead(){
@@ -2679,7 +2684,7 @@ function svNutribionicosRender(){
 }
 
 
-/* Prueba 1.55: presentación unificada de los asociados estándar. El Parrillón mantiene su flujo aislado. */
+/* Prueba 1.56: presentación unificada de los asociados estándar. El Parrillón mantiene su flujo aislado. */
 let svCarameloTipPending=null;
 function svCarameloCloseTip(){
  const modal=document.getElementById('svCarameloTipOverlay');if(modal)modal.remove();
@@ -4036,7 +4041,7 @@ function importData(){
 // Se escucha en el documento para capturar movimientos desde el encabezado y el contenido.
 function svIsPrimaryModule(){
  return $('overlay').classList.contains('show') &&
-   (view==='suvazu'||view==='asociados'||view==='cositas'||view==='caramelo'||view==='champlitte'||view==='nutribionicos'||(view==='apps'&&appScreen==='home'));
+   (view==='suvazu'||view==='asociados'||view==='cositas'||view==='caramelo'||view==='champlitte'||view==='nutribionicos'||view==='orders'||(view==='apps'&&appScreen==='home'));
 }
 const svPullNavigation={active:false,startX:0,startY:0,distance:0,header:false};
 function svPullReset(){
