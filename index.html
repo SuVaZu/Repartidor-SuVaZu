@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.53</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.54</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -1071,13 +1071,13 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-commission-actions input{margin:0;min-width:0;flex:1;font-size:17px}
 .sv-commission-actions button{flex:0 0 auto;padding:12px;font-size:15px}
 
-/* Prueba 1.53 · Champlitte comparte el diseño funcional de Cositas Dulces. */
+/* Prueba 1.54 · Champlitte comparte el diseño funcional de Cositas Dulces. */
 #overlay.sv-champlitte-view .sv-caramelo-panel{border-top-color:#8a2435}
 #overlay.sv-champlitte-view .sv-caramelo-panel h2{color:#7b2634}
 #overlay.sv-champlitte-view .sv-caramelo-entry{background:#fff9f5;border-color:#eecfd0}
 .sv-associate-home[data-front-partner="champlitte"]{--sv-app-accent:#8a2435;--sv-app-accent-soft:#fff1ef}
 
-/* Prueba 1.53 · Historial de Asociados: una tarjeta de marca para cada socio. */
+/* Prueba 1.54 · Historial de Asociados: una tarjeta de marca para cada socio. */
 #overlay .sv-associate-history-card,
 #overlay .sv-associate-history-link{
  display:block; width:100%; box-sizing:border-box;
@@ -1140,6 +1140,18 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
  #overlay .sv-associate-history-summary .pill,
  #overlay .sv-associate-history-link .pill{font-size:11px;padding:6px 8px}
 }
+
+/* 1.54 - Entrega Cositas Dulces: modal propio sin avisos del navegador. */
+.sv-cositas-tip-overlay{position:fixed;inset:0;z-index:30000;background:rgba(8,30,24,.72);display:flex;align-items:flex-end;justify-content:center;padding:16px 14px calc(18px + env(safe-area-inset-bottom))}
+.sv-cositas-tip-dialog{width:min(100%,480px);padding:26px 22px 22px;background:linear-gradient(160deg,#fffafc,#fff1f6);border:2px solid #e7a3bf;border-radius:30px;box-shadow:0 20px 70px rgba(8,30,24,.27);text-align:center;color:#183b31}
+.sv-cositas-tip-icon{width:68px;height:68px;margin:0 auto 10px;display:grid;place-items:center;border-radius:22px;background:#ffe0ed;font-size:38px}
+.sv-cositas-tip-dialog h2{font-size:27px;color:#82395b;line-height:1.15;margin:8px 0 19px}
+.sv-cositas-tip-amount{display:flex;align-items:center;justify-content:center;gap:8px;border:2px solid #df8ab0;border-radius:20px;background:white;padding:9px 12px;margin:12px 0 22px}
+.sv-cositas-tip-amount span{font-size:31px;font-weight:900;color:#82395b}
+.sv-cositas-tip-amount input{border:0;box-shadow:none;outline:none;margin:0;min-width:0;flex:1;font-size:34px;font-weight:850;text-align:center;background:transparent;color:#153c2e;padding:7px}
+.sv-cositas-tip-final{width:100%;min-height:66px;border-radius:18px;background:#d95c96;color:#fff;font-size:23px;font-weight:850;box-shadow:0 7px 16px rgba(190,63,119,.25)}
+.sv-cositas-tip-cancel{display:block;margin:9px auto 0;background:transparent;color:#78626d;padding:10px 18px;font-size:15px}
+@media(min-height:700px){.sv-cositas-tip-overlay{align-items:center}}
 </style></head><body class="sv-booting">
 <section id="svGate" aria-label="Puerta principal Repartidor SuVaZu" hidden>
   <div class="sv-gate-poster">
@@ -1155,7 +1167,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.53</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.54</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -2072,7 +2084,7 @@ function svCositasJSON(text){
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svCositasValidMap(vals.maps);return vals;
 }
-// Prueba 1.53: un enlace directo por pedido y socio (sin descargar JSON).
+// Prueba 1.54: un enlace directo por pedido y socio (sin descargar JSON).
 // El JSON codificado usa: {format, version, socio, id, pedido}.
 const svAssociateDirectNames={cositas:'Cositas Dulces',caramelo:'Mundo de Caramelo',champlitte:'Champlitte',nutribionicos:'Nutribiónicos'};
 function svAssociateDirectRead(){
@@ -2157,6 +2169,11 @@ function svCositasUpdate(id){
  if(charge!==null&&(!Number.isFinite(charge)||charge<0))return alert('El monto a cobrar no es válido.');
  x.clientNumber=phone;x.charge=charge;save();toast('Datos del pedido guardados en Clientes');
 }
+let svCositasTipPending=null;
+function svCositasCloseTip(){
+ const modal=document.getElementById('svCositasTipOverlay');if(modal)modal.remove();
+ svCositasTipPending=null;
+}
 function svCositasComplete(id){
  const x=svCositasServices().find(q=>String(q.id)===String(id));if(!x||x.delivered)return;
  const card=document.querySelector('[data-car-order="'+String(id)+'"]');
@@ -2168,18 +2185,33 @@ function svCositasComplete(id){
   charge=chargeText===''?null:Number(chargeText);
   if(charge!==null&&(!Number.isFinite(charge)||charge<0))return alert('El monto a cobrar no es válido.');
  }
- const rawTip=prompt('Propina recibida ($). Escribe 0 si no dejó.','0');
- if(rawTip===null)return;
- const tip=Number(String(rawTip).trim()===''?'NaN':rawTip);
- if(!Number.isFinite(tip)||tip<0)return alert('Introduce una propina válida, o 0 si no dejó.');
+ svCositasCloseTip();
+ svCositasTipPending={id,phone,charge};
+ const modal=document.createElement('div');modal.id='svCositasTipOverlay';modal.className='sv-cositas-tip-overlay';
+ modal.setAttribute('role','presentation');
+ modal.innerHTML=`<div class="sv-cositas-tip-dialog" role="dialog" aria-modal="true" aria-labelledby="svCositasTipTitle">
+ <div class="sv-cositas-tip-icon">💗</div><h2 id="svCositasTipTitle">Propina recibida ($)</h2>
+ <div class="sv-cositas-tip-amount"><span>$</span><input id="svCositasTipAmount" aria-label="Propina recibida en pesos" type="number" inputmode="decimal" min="0" step="0.01" value="0"></div>
+ <button type="button" class="sv-cositas-tip-final" onclick="svCositasFinishDelivery()">✓ Finalizar</button>
+ <button type="button" class="sv-cositas-tip-cancel" onclick="svCositasCloseTip()">Cancelar</button></div>`;
+ document.body.appendChild(modal);
+ const input=modal.querySelector('#svCositasTipAmount');
+ input.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();svCositasFinishDelivery()}});
+ input.focus({preventScroll:true});
+}
+function svCositasFinishDelivery(){
+ const pending=svCositasTipPending;if(!pending)return;
+ const input=document.getElementById('svCositasTipAmount');
+ const raw=String(input?.value??'').trim(),tip=Number(raw);
+ if(raw===''||!Number.isFinite(tip)||tip<0)return alert('Escribe una propina válida, o 0 si no dejó.');
+ const x=svCositasServices().find(q=>String(q.id)===String(pending.id));
+ if(!x||x.delivered){svCositasCloseTip();return;}
  const route=data.partnerRoutes.find(r=>String(r.id)===String(x.partnerRouteId)&&!r.end);
  const isLast=!!route&&svPartnerOrders(route).filter(q=>!q.delivered).length===1;
- const total=Number(x.gain||0)+tip;
- if(!confirm('¿Confirmar entrega?\n\nPropina: '+money(tip)+(isLast?'\nLa ruta de '+route.partner+' finalizará automáticamente.':'')+'\nTotal del servicio: '+money(total)))return;
  const previous={clientNumber:x.clientNumber,charge:x.charge,delivered:x.delivered,tip:x.tip,routeEnd:route?.end};
- const stamp=now();x.clientNumber=phone;x.charge=charge;x.tip=tip;x.delivered=stamp;
+ const stamp=now();x.clientNumber=pending.phone;x.charge=pending.charge;x.tip=tip;x.delivered=stamp;
  if(isLast)route.end=stamp;
- try{save();toast(isLast?'Pedido entregado · Ruta finalizada':'Pedido entregado · '+money(total))}
+ try{save();svCositasCloseTip();toast(isLast?'Pedido entregado · Ruta finalizada':'Pedido entregado · '+money(Number(x.gain||0)+tip))}
  catch(e){x.clientNumber=previous.clientNumber;x.charge=previous.charge;x.delivered=previous.delivered;x.tip=previous.tip;if(route)route.end=previous.routeEnd;alert('No se pudo guardar la entrega. Inténtalo nuevamente.');}
 }
 function svCositasEntry(x,active){
