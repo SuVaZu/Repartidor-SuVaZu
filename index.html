@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.49</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.50</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -1053,13 +1053,13 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-commission-actions input{margin:0;min-width:0;flex:1;font-size:17px}
 .sv-commission-actions button{flex:0 0 auto;padding:12px;font-size:15px}
 
-/* Prueba 1.49 · Champlitte comparte el diseño funcional de Cositas Dulces. */
+/* Prueba 1.50 · Champlitte comparte el diseño funcional de Cositas Dulces. */
 #overlay.sv-champlitte-view .sv-caramelo-panel{border-top-color:#8a2435}
 #overlay.sv-champlitte-view .sv-caramelo-panel h2{color:#7b2634}
 #overlay.sv-champlitte-view .sv-caramelo-entry{background:#fff9f5;border-color:#eecfd0}
 .sv-associate-home[data-front-partner="champlitte"]{--sv-app-accent:#8a2435;--sv-app-accent-soft:#fff1ef}
 
-/* Prueba 1.49 · Historial de Asociados: una tarjeta de marca para cada socio. */
+/* Prueba 1.50 · Historial de Asociados: una tarjeta de marca para cada socio. */
 #overlay .sv-associate-history-card,
 #overlay .sv-associate-history-link{
  display:block; width:100%; box-sizing:border-box;
@@ -1137,7 +1137,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.49</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.50</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -1234,7 +1234,7 @@ function autoAdvanceRoutes(r){
  return true;
 }
 function finishRoute(){alert('La ruta se finalizará automáticamente al completar o cancelar el último pedido.')}
-function startJourney(){if(running())return;let d=dayKey(now());if(data.journeys.some(j=>j.date===d))return alert('Ya existe una jornada de esta fecha. Las jornadas finalizadas no se pueden reabrir.');data.journeys.push({id:uid(),date:d,start:now(),end:null,pauses:[]});save()}
+function startJourney(){if(running())return;let d=dayKey(now());if(data.journeys.some(j=>j.date===d))return alert('Ya existe una jornada de esta fecha. Las jornadas finalizadas no se pueden reabrir.');data.journeys.push({id:uid(),date:d,start:now(),end:null,pauses:[]});save();svAssociateDirectRead()}
 function pauseJourney(){let j=running();if(!j)return;let p=j.pauses.at(-1);if(p&&!p.end)return;j.pauses.push({start:now(),end:null});save()}
 function resumeJourney(){let j=running(),p=j?.pauses.at(-1);if(!p||p.end)return;p.end=now();save()}
 function finishJourney(){let j=running();if(!j)return;let remaining=activeRoutes().flatMap(r=>r.orders.filter(activeOrder));let msg='ADVERTENCIA: esta acción es DEFINITIVA. No podrás reabrir la jornada ni agregar nuevos repartos a ella.\n\n';if(remaining.length||activeRoutes().some(r=>r.status==='activa')||data.partnerRoutes.some(r=>!r.end))msg+='Tienes '+remaining.length+' pedidos pendientes y/o rutas sin finalizar. Debes cerrarlos primero.\n\n';msg+='Revisa pedidos, propinas, Mini Recolectas y comisiones. ¿Deseas finalizar definitivamente?';if(!confirm(msg))return;if(remaining.length||activeRoutes().some(r=>r.status==='activa')||data.partnerRoutes.some(r=>!r.end))return alert('No se puede cerrar mientras haya pedidos pendientes o rutas activas.');if(!confirm('Última confirmación: ¿cerrar para siempre la jornada del '+j.date+'?'))return;j.pauses.forEach(p=>{if(!p.end)p.end=now()});j.end=now();save();toast('Jornada finalizada')}
@@ -2053,6 +2053,60 @@ function svCositasJSON(text){
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svCositasValidMap(vals.maps);return vals;
 }
+// Prueba 1.50: un enlace directo por pedido y socio (sin descargar JSON).
+// El JSON codificado usa: {format, version, socio, id, pedido}.
+const svAssociateDirectNames={cositas:'Cositas Dulces',caramelo:'Mundo de Caramelo',champlitte:'Champlitte',nutribionicos:'Nutribiónicos'};
+function svAssociateDirectRead(){
+ const hash=location.hash||'';
+ if(!hash.startsWith('#asociado='))return;
+ // El enlace permanece disponible mientras no haya jornada abierta.
+ if(!running()){
+  alert('Inicia la jornada general para recibir el pedido. Al iniciarla, el enlace se procesará automáticamente.');
+  return;
+ }
+ try{
+  const encoded=hash.slice('#asociado='.length);
+  if(!encoded||encoded.length>12000||!/^[A-Za-z0-9_-]+$/.test(encoded))throw Error('El enlace tiene un formato inválido.');
+  const binary=atob(encoded.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-encoded.length%4)%4));
+  const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+  const payload=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(bytes));
+  if(!payload||typeof payload!=='object'||Array.isArray(payload)||payload.format!=='suvazu-asociado-pedido'||payload.version!==1)throw Error('El formato del enlace no corresponde a SuVaZu Asociados.');
+  const key=String(payload.socio||'').trim().toLowerCase();
+  const partner=svAssociateDirectNames[key];
+  if(!partner)throw Error('El socio indicado no existe o no está habilitado.');
+  const linkId=payload.id;
+  if(typeof linkId!=='string'||!/^[-A-Za-z0-9_:.]{4,100}$/.test(linkId))throw Error('Falta un identificador de pedido válido.');
+  if(!payload.pedido||typeof payload.pedido!=='object'||Array.isArray(payload.pedido))throw Error('Faltan los datos del pedido.');
+  // Validar siempre los mismos campos, incluidas las URLs de Google Maps.
+  const orderData=svCositasJSON(JSON.stringify(payload.pedido));
+  const extras=payload.pedido;
+  const clientNumber=extras.telefono??extras.numeroCliente??extras.clientNumber??'';
+  const chargeRaw=extras.cobrar??extras.montoCobrar??extras.charge??'';
+  if(typeof clientNumber==='object'||String(clientNumber).length>60)throw Error('El teléfono del cliente no es válido.');
+  if(typeof chargeRaw==='object'||(chargeRaw!==''&&(!Number.isFinite(Number(chargeRaw))||Number(chargeRaw)<0)))throw Error('El monto a cobrar no es válido.');
+  const store=svPartnerServicesByName(partner);
+  // Idempotencia persistente: nunca se agrega dos veces el mismo ticket.
+  if(store.some(o=>o.directLinkId===linkId)){
+   history.replaceState(null,'',location.pathname+location.search);
+   openView(key);toast('Este pedido ya estaba registrado en '+partner);return;
+  }
+  const activeRoute=svPartnerActiveRoute(partner),stamp=now(),journey=running();
+  const route=activeRoute||{id:uid(),partner,start:stamp,date:journey.date,end:null};
+  const order={id:uid(),...orderData,clientNumber:String(clientNumber).trim(),charge:chargeRaw===''?null:Number(chargeRaw),started:stamp,date:route.date,delivered:null,partnerRouteId:route.id,directLinkId:linkId};
+  if(!activeRoute)data.partnerRoutes.push(route);
+  store.push(order);
+  try{save()}catch(error){
+   store.splice(store.indexOf(order),1);
+   if(!activeRoute)data.partnerRoutes.splice(data.partnerRoutes.indexOf(route),1);
+   throw Error('No se pudo guardar el pedido. Revisa el espacio del teléfono.');
+  }
+  history.replaceState(null,'',location.pathname+location.search);
+  openView(key);toast('Pedido recibido en '+partner);
+ }catch(error){
+  history.replaceState(null,'',location.pathname+location.search);
+  alert('Enlace de Asociados: '+error.message);
+ }
+}
 function svCositasImportFile(file){
  if(!file)return;
  if(file.size>40000)return alert('El archivo JSON es demasiado grande.');
@@ -2211,9 +2265,7 @@ function svCositasRender(){
  const all=svCositasServices(),legacy=all.filter(q=>!q.partnerRouteId),activeLegacy=legacy.filter(q=>!q.delivered),done=all.filter(q=>q.delivered);
  const routes=svPartnerRoutes(svCositasName).slice().reverse(),active=routes.filter(r=>!r.end),closed=routes.filter(r=>r.end);
  return `<div class="sv-caramelo-home">
-  <section class="panel sv-caramelo-panel"><h2>Nuevo Servicio</h2>
-   <label class="sv-caramelo-file-only">Seleccionar archivo<input type="file" accept=".json,application/json" onchange="svCositasImportFile(this.files[0]);this.value=''"></label>
-  </section>
+  <section class="panel sv-caramelo-panel"><h2>Nuevo Servicio</h2><p class="muted">Los pedidos se reciben desde su enlace directo de Cositas Dulces.</p></section>
   ${active.length?`<section class="panel sv-caramelo-panel"><h2>Ruta activa</h2>${active.map(svCositasRouteCard).join('')}</section>`:''}
   ${activeLegacy.length?`<section class="panel sv-caramelo-panel"><h2>Servicios anteriores pendientes</h2>${activeLegacy.map(x=>svCositasEntry(x,true)).join('')}</section>`:''}
   <details class="panel sv-caramelo-panel sv-caramelo-fold" ${svCositasOpenSections.completed?'open':''}><summary onclick="svCositasToggle('completed')">Ganancias de Cositas Dulces</summary>
@@ -3608,7 +3660,8 @@ render();backupStatus();setInterval(svTick,1000);document.addEventListener('visi
 
 svDecodeLink();
 parReadDirectLink();
-window.addEventListener('hashchange',parReadDirectLink);
+svAssociateDirectRead();
+window.addEventListener('hashchange',()=>{parReadDirectLink();svDecodeLink();svAssociateDirectRead()});
 if($('overlay').classList.contains('show'))svArmAndroidBack();
 
 // Actualizaciones PWA: buscar una versión nueva al abrir o regresar a la aplicación.
