@@ -1207,6 +1207,18 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .par-delivery-modal .par-delivery-earnings{display:grid;gap:9px;margin:12px 0}
 .par-delivery-modal .par-delivery-earnings label{font-size:19px;font-weight:850;color:#163c30}
 .par-delivery-modal .par-delivery-earnings input{border:2px solid #e5c69e;border-radius:14px;font-weight:800;font-size:29px;text-align:center}
+
+/* Prueba 1.64 · selector integrado de cobro al recolectar */
+.sv-charge-modal{position:fixed;inset:0;z-index:30000;background:#142b24a6;display:flex;align-items:center;justify-content:center;padding:18px}
+.sv-charge-dialog{background:#fff;border-radius:24px;padding:24px 20px;max-width:500px;width:100%;box-shadow:0 14px 45px #0003;color:#173d30}
+.sv-charge-dialog h2{font-size:26px;margin:0 0 10px}
+.sv-charge-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+.sv-charge-options button{background:#e8efea;border:2px solid transparent;border-radius:15px;font-size:19px;min-height:70px}
+.sv-charge-options button[aria-pressed="true"]{background:#e0f1e7;border-color:#277d59;color:#144b32}
+.sv-charge-dialog label{font-size:18px}
+.sv-charge-dialog input{font-size:22px;min-height:62px;border-radius:13px;margin:8px 0 18px}
+.sv-charge-accept{width:100%;min-height:65px;font-size:22px;border-radius:15px}
+.sv-charge-error{color:#9b2923;font-size:15px;min-height:0;margin:3px 0 12px}
 </style></head><body class="sv-booting">
 <section id="svGate" aria-label="Puerta principal Repartidor SuVaZu" hidden>
   <div class="sv-gate-poster">
@@ -1222,7 +1234,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.62</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.64</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -1237,14 +1249,14 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 <section class="panel" id="particularCapture"><h2>Nuevo servicio · JSON</h2><p class="muted">Selecciona el archivo del servicio que agregarás a esta ruta.</p>
 
 <div id="svJsonCapture"><p class="muted">Carga uno o varios pedidos en JSON y revisa los datos antes de importarlos.</p><label>Archivo JSON<input type="file" id="svOrdersFile" accept=".json,application/json" onchange="svPreviewOrders()"></label><div id="svOrdersPreview" class="muted">Selecciona un archivo de pedidos.</div><button class="full" type="button" id="svImportConfirm" onclick="svConfirmOrders()" hidden>Confirmar importación</button><p class="hint">No utilices aquí respaldos completos de la aplicación.</p></div>
-<div id="svManualCapture" hidden><label>Cliente<input id="client" placeholder="Nombre o referencia (opcional)"></label><label>Servicio<input id="service" placeholder="Mary Pollo, Mundo Verde, Didi, Uber..."></label><label>Dirección de Recolección<input id="pickupAddress" placeholder="Dirección escrita"></label><label>Detalles<textarea id="details" rows="3" placeholder="Productos, indicaciones..."></textarea></label><label>Entrega<input id="delivery" placeholder="Dirección escrita de entrega"></label><label>Cobrar ($) <input id="charge" inputmode="decimal" placeholder="$ Importe o Pagado (opcional)"></label><label>Reparto ($) — Mi ganancia<input id="amount" type="number" min="0" step="0.01" placeholder="$ Pendiente (opcional)"></label><button class="full" onclick="addOrder()">Capturar pedido</button><button id="backToApps" class="secondary full" style="display:none;margin-top:8px" onclick="openApps()">← Volver a Apps</button><p class="muted">El tiempo de servicio se contabiliza desde que creas la ruta. «Cobrar» no se suma a tus ganancias.</p></div></section>
+<div id="svManualCapture" hidden><label>Cliente<input id="client" placeholder="Nombre o referencia (opcional)"></label><label>Tipo de servicio<select id="serviceType"><option value="">Selecciona el tipo</option><option value="Compra">Compra</option><option value="Recolecta/Entrega">Recolecta/Entrega</option></select></label><label>Servicio<input id="service" placeholder="Mary Pollo, Mundo Verde, Didi, Uber..."></label><label>Dirección de Recolección<input id="pickupAddress" placeholder="Dirección escrita"></label><label>Detalles<textarea id="details" rows="3" placeholder="Productos, indicaciones..."></textarea></label><label>Entrega<input id="delivery" placeholder="Dirección escrita de entrega"></label><label>Cobrar ($) <input id="charge" inputmode="decimal" placeholder="$ Importe o Pagado (opcional)"></label><label>Reparto ($) — Mi ganancia<input id="amount" type="number" min="0" step="0.01" placeholder="$ Pendiente (opcional)"></label><button class="full" onclick="addOrder()">Capturar pedido</button><button id="backToApps" class="secondary full" style="display:none;margin-top:8px" onclick="openApps()">← Volver a Apps</button><p class="muted">El tiempo de servicio se contabiliza desde que creas la ruta. «Cobrar» no se suma a tus ganancias.</p></div></section>
 </div>
 </main><div id="overlay"><div class="overlay-head"><strong id="overlayTitle">Pedidos activos</strong><button id="svOverlayBack" class="secondary" onclick="goBack()">← Atrás</button><span id="svPullHint" class="sv-pull-hint" hidden>Desliza hacia abajo</span></div><div class="overlay-body" id="overlayBody"></div></div>
 <script>
 'use strict';
 const KEY='suvazu-v01';const $=id=>document.getElementById(id);const now=()=>new Date().toISOString();const money=n=>'$'+Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2});const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const dt=s=>s?new Date(s).toLocaleString('es-MX',{dateStyle:'short',timeStyle:'short'}):'—';const tm=s=>s?new Date(s).toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'}):'—';const dayKey=s=>{let d=new Date(s);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};const duration=ms=>{ms=Math.max(0,ms);let min=Math.floor(ms/60000);return Math.floor(min/60)+' h '+(min%60)+' min'};const uid=()=>Date.now()*1000+Math.floor(Math.random()*999);const showCharge=v=>{let t=String(v??'').trim();if(!t)return 'Pendiente';let n=t.replace(/[$,\s]/g,'');return /^\d+(?:\.\d+)?$/.test(n)?money(Number(n)):t};
 let data;try{data=JSON.parse(localStorage.getItem(KEY))||{routes:[],selected:null}}catch{data={routes:[],selected:null}};
-function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];if(!Array.isArray(data.carameloServices))data.carameloServices=[];if(!Array.isArray(data.nutribionicosServices))data.nutribionicosServices=[];if(!Array.isArray(data.cositasServices))data.cositasServices=[];if(!Array.isArray(data.champlitteServices))data.champlitteServices=[];if(!Array.isArray(data.partnerRoutes))data.partnerRoutes=[];if(!data.carameloClientExtras||typeof data.carameloClientExtras!=='object'||Array.isArray(data.carameloClientExtras))data.carameloClientExtras={};if(!data.nutribionicosClientExtras||typeof data.nutribionicosClientExtras!=='object'||Array.isArray(data.nutribionicosClientExtras))data.nutribionicosClientExtras={};if(!data.cositasClientExtras||typeof data.cositasClientExtras!=='object'||Array.isArray(data.cositasClientExtras))data.cositasClientExtras={};if(!data.champlitteClientExtras||typeof data.champlitteClientExtras!=='object'||Array.isArray(data.champlitteClientExtras))data.champlitteClientExtras={};if(!Array.isArray(data.clients))data.clients=[];if(!data.ui||typeof data.ui!=='object')data.ui={};if(!data.ui.homeSummary||typeof data.ui.homeSummary!=='object')data.ui.homeSummary={};if(!data.ui.appSections||typeof data.ui.appSections!=='object')data.ui.appSections={};if(typeof data.ui.backupExpanded!=='boolean')data.ui.backupExpanded=false;for(let k of ['summary','history'])if(typeof data.ui.appSections[k]!=='boolean')data.ui.appSections[k]=false;for(let k of ['direct','associate','app'])if(typeof data.ui.homeSummary[k]!=='boolean')data.ui.homeSummary[k]=false;data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
+function normalize(){if(!Array.isArray(data.routes))data.routes=[];if(!Array.isArray(data.journeys))data.journeys=[];if(!Array.isArray(data.appServices))data.appServices=[];if(!Array.isArray(data.parrillon))data.parrillon=[];if(!Array.isArray(data.carameloServices))data.carameloServices=[];if(!Array.isArray(data.nutribionicosServices))data.nutribionicosServices=[];if(!Array.isArray(data.cositasServices))data.cositasServices=[];if(!Array.isArray(data.champlitteServices))data.champlitteServices=[];if(!Array.isArray(data.partnerRoutes))data.partnerRoutes=[];if(!data.carameloClientExtras||typeof data.carameloClientExtras!=='object'||Array.isArray(data.carameloClientExtras))data.carameloClientExtras={};if(!data.nutribionicosClientExtras||typeof data.nutribionicosClientExtras!=='object'||Array.isArray(data.nutribionicosClientExtras))data.nutribionicosClientExtras={};if(!data.cositasClientExtras||typeof data.cositasClientExtras!=='object'||Array.isArray(data.cositasClientExtras))data.cositasClientExtras={};if(!data.champlitteClientExtras||typeof data.champlitteClientExtras!=='object'||Array.isArray(data.champlitteClientExtras))data.champlitteClientExtras={};if(!Array.isArray(data.clients))data.clients=[];if(!data.ui||typeof data.ui!=='object')data.ui={};if(!data.ui.homeSummary||typeof data.ui.homeSummary!=='object')data.ui.homeSummary={};if(!data.ui.appSections||typeof data.ui.appSections!=='object')data.ui.appSections={};if(typeof data.ui.backupExpanded!=='boolean')data.ui.backupExpanded=false;for(let k of ['summary','history'])if(typeof data.ui.appSections[k]!=='boolean')data.ui.appSections[k]=false;for(let k of ['direct','associate','app'])if(typeof data.ui.homeSummary[k]!=='boolean')data.ui.homeSummary[k]=false;data.routes.forEach(r=>{r.orders??=[];r.status??='pendiente';r.orders.forEach(o=>{o.extras??=[];o.service??=o.shop||o.recolecta||'Sin servicio';o.serviceType=svNormalizeServiceType(o.serviceType)||svExplicitServiceType(o.service);o.pickupAddress??=o.direccionR||'';o.pickupMap??=o.ubicacionR||'';o.delivery??=o.entrega||'';o.address??=o.ubicacionE||'';o.details??=o.detalles||'';o.charge??=o.cobrar||'';o.amount=(o.amount===null||o.amount===undefined||o.amount==='')?(o.reparto===null||o.reparto===undefined||o.reparto===''?null:Number(o.reparto)):Number(o.amount);o.cancelled??=null;o.deliveryArrived??=null})});if(!data.routes.some(r=>String(r.id)===String(data.selected)))data.selected=data.routes[0]?.id??null}
 normalize();
 // Reparación no destructiva: una ruta con todos sus pedidos terminados
 // no debe permanecer como pendiente o activa por un estado antiguo.
@@ -1330,13 +1342,39 @@ function svCaptureMode(mode){
  $('svManualCapture').hidden=true;$('svJsonCapture').hidden=false;
 }
 function svVal(v){return v==null?'':String(v).trim()}
+// El tipo de servicio se indica por el usuario: nunca se deduce del nombre del negocio.
+function svNormalizeServiceType(value){
+ const v=svVal(value).toLocaleLowerCase('es').replace(/\s+/g,' ');
+ if(v==='compra')return 'Compra';
+ if(v==='recolecta/entrega'||v==='recolecta / entrega'||v==='recolección/entrega'||v==='recoleccion/entrega')return 'Recolecta/Entrega';
+ return '';
+}
+function svExplicitServiceType(service){
+ const m=svVal(service).match(/^(Compra|Recolecta\s*\/\s*Entrega|Recolecci[oó]n\s*\/\s*Entrega)\s*(?:[—–:-]\s*|$)/i);
+ return m?svNormalizeServiceType(m[1]):'';
+}
+function svServiceDisplay(o){
+ const type=svNormalizeServiceType(o.serviceType)||svExplicitServiceType(o.service);
+ const raw=svVal(o.service);
+ const name=type?raw.replace(/^(?:Compra|Recolecta\s*\/\s*Entrega|Recolecci[oó]n\s*\/\s*Entrega)\s*[—–:-]\s*/i,'').trim():raw;
+ return {type,name:titleSafe(name),label:type?(name?type+' — '+name:type):(name||'Sin servicio registrado')};
+}
+function titleSafe(value){return svVal(value)}
+function svServiceTypeOptions(selected=''){
+ const val=svNormalizeServiceType(selected);
+ return '<option value=""'+(!val?' selected':'')+'>Sin especificar</option>'+['Compra','Recolecta/Entrega'].map(x=>'<option value="'+x+'"'+(x===val?' selected':'')+'>'+x+'</option>').join('');
+}
 function svConvert(x){
  if(!x||typeof x!=='object'||Array.isArray(x))throw Error('Formato de pedido inválido.');
  const pick=(...keys)=>{for(const k of keys)if(x[k]!==undefined&&x[k]!==null)return x[k];return ''};
  const amountRaw=pick('amount','ganancia','reparto');
  const amount=amountRaw===''?null:Number(svVal(amountRaw).replace(/[$,\s]/g,''));
  if(amount!==null&&(!Number.isFinite(amount)||amount<0))throw Error('Ganancia inválida.');
- const o={client:svVal(pick('client','cliente')),service:svVal(pick('service','servicio','local')),pickupAddress:svVal(pick('pickupAddress','direccionRecolecta','direccionRecoleccion')),details:svVal(pick('details','detallesRecolecta','detallesDeLaRecolecta','detalles')),delivery:svVal(pick('delivery','direccionEntrega','direccionDeEntrega','entrega')),deliveryStreets:svVal(pick('deliveryStreets','entreCalles','calles','entre_calles')),deliveryReference:svVal(pick('deliveryReference','referencia','referenciaEntrega')),charge:svVal(pick('charge','cobrar','totalCobrar')),amount,externalId:svVal(pick('externalId','folio','numeroPedido'))};
+ const originalService=svVal(pick('service','servicio','local'));
+ const originalType=svVal(pick('serviceType','tipoServicio','tipoDeServicio','tipo'));
+ const serviceType=svNormalizeServiceType(originalType)||(!originalType?svExplicitServiceType(originalService):'');
+ if(originalType&&!svNormalizeServiceType(originalType))throw Error('Tipo de servicio inválido: utiliza Compra o Recolecta/Entrega.');
+ const o={client:svVal(pick('client','cliente')),service:originalService,serviceType,pickupAddress:svVal(pick('pickupAddress','direccionRecolecta','direccionRecoleccion')),details:svVal(pick('details','detallesRecolecta','detallesDeLaRecolecta','detalles')),delivery:svVal(pick('delivery','direccionEntrega','direccionDeEntrega','entrega')),deliveryStreets:svVal(pick('deliveryStreets','entreCalles','calles','entre_calles')),deliveryReference:svVal(pick('deliveryReference','referencia','referenciaEntrega')),charge:svVal(pick('charge','cobrar','totalCobrar')),amount,externalId:svVal(pick('externalId','folio','numeroPedido'))};
  if(!o.service)throw Error('Falta servicio.');
  if(!o.client&&!o.delivery&&!o.details)throw Error('Faltan cliente, entrega o detalles.');
  return o;
@@ -1360,6 +1398,7 @@ async function svPreviewOrders(){
   if(!svDraft.length)throw Error(errors.join(' / ')||'No hay pedidos válidos.');
   out.innerHTML='<p><b>'+svDraft.length+' pedido(s) encontrados.</b> Revisa los campos y desmarca los que no quieras agregar.</p>'+
   svDraft.map((o,i)=>`<div class="sv-preview-card"><label><input type="checkbox" id="svPick${i}" ${svIsDuplicate(o)?'':'checked'}> <b>Pedido ${o.originalIndex+1}</b> ${svIsDuplicate(o)?'<span class="sv-import-warning">Posible duplicado</span>':''}</label>`+
+`<label>Tipo de servicio<select id="svEdit${i}_serviceType">${svServiceTypeOptions(o.serviceType)}</select></label>`+
   [['client','Cliente'],['service','Servicio'],['pickupAddress','Dirección de Recolección'],['details','Detalles de la Recolecta'],['delivery','Dirección de Entrega'],['deliveryStreets','Entre Calles'],['deliveryReference','Referencia'],['charge','Cobrar'],['amount','Mi ganancia']].map(([k,label])=>`<label>${label}<input id="svEdit${i}_${k}" value="${esc(o[k]??'')}"></label>`).join('')+'</div>').join('')+
   (errors.length?'<p class="sv-import-warning">'+esc(errors.join(' · '))+'</p>':'');
   $('svImportConfirm').hidden=false;
@@ -1373,7 +1412,7 @@ function svConfirmOrders(){
  svDraft.forEach((draft,i)=>{
   if(!$('svPick'+i)?.checked)return;
   let raw={externalId:draft.externalId};
-  for(const k of ['client','service','pickupAddress','details','delivery','deliveryStreets','deliveryReference','charge','amount'])raw[k]=$('svEdit'+i+'_'+k).value;
+  for(const k of ['client','service','serviceType','pickupAddress','details','delivery','deliveryStreets','deliveryReference','charge','amount'])raw[k]=$('svEdit'+i+'_'+k).value;
   try{
    const o=svConvert(raw);
    if(svIsDuplicate(o)||svIsDuplicate(o,ready))errors.push('Pedido '+(draft.originalIndex+1)+' duplicado.');
@@ -1387,7 +1426,7 @@ function svConfirmOrders(){
  svDraft=[];$('svOrdersFile').value='';$('svOrdersPreview').textContent='Importación completada: '+ready.length+' pedido(s).';$('svImportConfirm').hidden=true;
  save();toast('Pedidos importados en '+r.name);
 }
-function addOrder(){let r=current();if(r?.origin==='asociados'&&svVal($('service').value).toLowerCase()!==svVal(r.business).toLowerCase())return alert('Esta ruta es exclusiva de '+r.business+'.');if(!r||r.status==='finalizada')return alert('Selecciona una ruta pendiente o activa');if(!running())return alert('Primero inicia tu jornada');let service=$('service').value.trim(),amount=$('amount').value;if(!service)return alert('Indica el Servicio.');if(amount!==''&&(!Number.isFinite(Number(amount))||Number(amount)<0))return alert('La ganancia no es válida.');let o={id:uid(),client:$('client').value.trim(),service,shop:service,pickupAddress:$('pickupAddress').value.trim(),pickupMap:''.trim(),details:$('details').value.trim(),delivery:$('delivery').value.trim(),address:''.trim(),charge:$('charge').value.trim(),amount:amount===''?null:Number(amount),serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]};r.orders.push(o);['client','service','pickupAddress','details','delivery','charge','amount'].forEach(id=>$(id).value='');save();toast('Pedido capturado en '+r.name);if(returnApps)openApps()}
+function addOrder(){let r=current();if(r?.origin==='asociados'&&svVal($('service').value).toLowerCase()!==svVal(r.business).toLowerCase())return alert('Esta ruta es exclusiva de '+r.business+'.');if(!r||r.status==='finalizada')return alert('Selecciona una ruta pendiente o activa');if(!running())return alert('Primero inicia tu jornada');let service=$('service').value.trim(),amount=$('amount').value;if(!service)return alert('Indica el Servicio.');if(amount!==''&&(!Number.isFinite(Number(amount))||Number(amount)<0))return alert('La ganancia no es válida.');let o={id:uid(),client:$('client').value.trim(),service,serviceType:svNormalizeServiceType($('serviceType').value)||svExplicitServiceType(service),shop:service,pickupAddress:$('pickupAddress').value.trim(),pickupMap:''.trim(),details:$('details').value.trim(),delivery:$('delivery').value.trim(),address:''.trim(),charge:$('charge').value.trim(),amount:amount===''?null:Number(amount),serviceStart:null,arrived:null,collected:null,deliveryArrived:null,delivered:null,cancelled:null,extras:[]};r.orders.push(o);['client','service','serviceType','pickupAddress','details','delivery','charge','amount'].forEach(id=>$(id).value='');save();toast('Pedido capturado en '+r.name);if(returnApps)openApps()}
 function startDirectService(id){
  let x=locate(id);if(!x||!activeOrder(x.o))return;
  let j=running();if(!j)return alert('Primero inicia tu jornada.');
@@ -1397,14 +1436,48 @@ function startDirectService(id){
  x.o.serviceStart=now();save();if(document.getElementById('overlay')?.classList.contains('show'))renderView();toast('Tiempo de servicio iniciado');
 }
 function locate(id){for(let r of data.routes){let o=r.orders.find(x=>String(x.id)===String(id));if(o)return {r,o}}return null}
-function mark(id,action){
+// Cobro al recolectar: tarjeta integrada (sin prompt del navegador).
+function svOpenChargeChoice(id){
+ document.getElementById('svChargeModal')?.remove();
+ const shade=document.createElement('div');shade.id='svChargeModal';shade.className='sv-charge-modal';
+ shade.innerHTML=`<section class="sv-charge-dialog" role="dialog" aria-modal="true" aria-labelledby="svChargeTitle">
+  <h2 id="svChargeTitle">💵 Cobro del pedido</h2>
+  <div class="sv-charge-options" role="group" aria-label="Estado del pago">
+   <button type="button" data-charge="pagado" aria-pressed="false">✓ Pagado</button>
+   <button type="button" data-charge="cobrar" aria-pressed="false">💵 Cobrar</button>
+  </div>
+  <div id="svChargeAmountWrap" hidden><label for="svChargeAmount">Monto a cobrar ($)</label><input id="svChargeAmount" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0.00"></div>
+  <p class="sv-charge-error" id="svChargeError" role="alert"></p>
+  <button type="button" class="sv-charge-accept">✓ Aceptar</button>
+ </section>`;
+ document.body.appendChild(shade);
+ let selected='';const options=[...shade.querySelectorAll('[data-charge]')];
+ const amountWrap=shade.querySelector('#svChargeAmountWrap');const error=shade.querySelector('#svChargeError');
+ options.forEach(btn=>btn.addEventListener('click',()=>{
+  selected=btn.dataset.charge;options.forEach(el=>el.setAttribute('aria-pressed',String(el===btn)));
+  amountWrap.hidden=selected!=='cobrar';error.textContent='';
+  if(selected==='cobrar')shade.querySelector('#svChargeAmount').focus();
+ }));
+ shade.querySelector('.sv-charge-accept').addEventListener('click',()=>{
+  if(!selected){error.textContent='Selecciona Pagado o Cobrar.';return}
+  let charge='Pagado';
+  if(selected==='cobrar'){
+   const value=shade.querySelector('#svChargeAmount').value.trim();const n=Number(value);
+   if(!value||!Number.isFinite(n)||n<0){error.textContent='Ingresa un monto válido.';return}
+   charge=n.toFixed(2);
+  }
+  // Si todavía falta otro dato, mark conserva la recolección como pendiente.
+  shade.remove();mark(id,'collected',charge);
+ });
+}
+function mark(id,action,chargeOverride){
  let x=locate(id);if(!x||x.o.delivered||x.o.cancelled)return;let o=x.o;
  if(action==='arrived'){o.serviceStart??=now();o.arrived??=now();}
  if(action==='collected'){
   // No se registra la recolección hasta completar los datos esenciales.
   let delivery=String(o.delivery||'').trim(),charge=String(o.charge||'').trim(),amount=o.amount;
   if(!delivery){let v=prompt('Dirección de entrega (obligatoria):',delivery);if(v===null)return;delivery=v.trim();if(!delivery)return alert('Falta la dirección de entrega. El pedido sigue En el local.')}
-  if(!charge){let v=prompt('💵 Cobrar ($): escribe el importe, o «Pagado» si ya está pagado.',charge);if(v===null)return;charge=v.trim();if(!charge)return alert('Falta indicar cuánto cobrar o si está pagado. El pedido sigue En el local.');}
+  if(!charge){if(chargeOverride===undefined){svOpenChargeChoice(id);return;}charge=String(chargeOverride).trim();if(!charge)return;}
   if(amount==null){let v=prompt('💰 Reparto — Mi ganancia ($), obligatorio:','');if(v===null)return;v=v.trim().replace(/^\$/,'').trim();if(v===''||!Number.isFinite(Number(v))||Number(v)<0)return alert('Falta una ganancia válida. El pedido sigue En el local.');amount=Number(v)}
   o.delivery=delivery;o.charge=charge;o.amount=amount;
   o.serviceStart??=now();o.arrived??=now();o.collected??=now();
@@ -1420,7 +1493,8 @@ function cancelOrder(id){let x=locate(id);if(!x||x.o.delivered||x.o.cancelled)re
 function move(id,delta){let x=locate(id);if(!x)return;let a=x.r.orders.filter(activeOrder),i=a.findIndex(o=>o.id===x.o.id),other=a[i+delta];if(!other)return;let j=x.r.orders.indexOf(x.o),k=x.r.orders.indexOf(other);[x.r.orders[j],x.r.orders[k]]=[x.r.orders[k],x.r.orders[j]];save()}
 function addExtra(id){let x=locate(id);if(!x||x.o.cancelled)return;let type=$('extraType').value,amount=Number($('extraAmount').value);if(!['Propina','Mini Recolecta','Comisión de Venta'].includes(type)||!Number.isFinite(amount)||amount<=0)return alert('Selecciona un tipo y una cantidad mayor a cero.');x.o.extras.push({id:uid(),type,amount,date:now()});$('extraAmount').value='';save();toast('Ingreso agregado')}
 function removeExtra(id,extraId){let x=locate(id);if(!x)return;if(!confirm('¿Eliminar este ingreso adicional?'))return;x.o.extras=x.o.extras.filter(e=>String(e.id)!==String(extraId));save()}
-function editOrder(id){let x=locate(id);if(!x||x.o.cancelled)return;let o=x.o;let fields=[['client','Cliente'],['service','Servicio'],['pickupAddress','Dirección de Recolección'],['details','Detalles'],['delivery','Entrega'],['charge','Cobrar ($)'],['amount','Reparto — Mi ganancia ($)']];for(let [key,label] of fields){let val=prompt(label,o[key]??'');if(val===null)return;if(key==='amount'){if(val.trim()!==''&&(!Number.isFinite(Number(val))||Number(val)<0))return alert('Reparto inválido');o[key]=val.trim()===''?null:Number(val)}else o[key]=val.trim()}o.shop=o.service;save();toast('Pedido actualizado')}
+function editOrder(id){let x=locate(id);if(!x||x.o.cancelled)return;let o=x.o;let typeChoice=prompt('Tipo de servicio: Compra o Recolecta/Entrega (vacío para ninguno)',svNormalizeServiceType(o.serviceType)||svExplicitServiceType(o.service));if(typeChoice===null)return;let normalizedType=svNormalizeServiceType(typeChoice);if(typeChoice.trim()&&!normalizedType)return alert('Utiliza Compra o Recolecta/Entrega.');
+let fields=[['client','Cliente'],['service','Servicio'],['pickupAddress','Dirección de Recolección'],['details','Detalles'],['delivery','Entrega'],['charge','Cobrar ($)'],['amount','Reparto — Mi ganancia ($)']];for(let [key,label] of fields){let val=prompt(label,o[key]??'');if(val===null)return;if(key==='amount'){if(val.trim()!==''&&(!Number.isFinite(Number(val))||Number(val)<0))return alert('Reparto inválido');o[key]=val.trim()===''?null:Number(val)}else o[key]=val.trim()}o.serviceType=normalizedType||svExplicitServiceType(o.service);o.shop=o.service;save();toast('Pedido actualizado')}
 function googleUrl(v){v=String(v||'').trim();if(!v)return null;try{let u=new URL(v);if(u.protocol==='https:'&&(/(^|\.)google\.[a-z.]+$/.test(u.hostname)||['maps.app.goo.gl','goo.gl'].includes(u.hostname)))return v}catch{}return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v)}
 function navLink(value,label){let url=googleUrl(value);return url?`<a class="link" target="_blank" rel="noopener noreferrer" href="${esc(url)}">📍 ${esc(label)}</a>`:''}
 function status(o){return o.cancelled?'Cancelado':o.delivered?'Entregado':o.collected?'Recolectado':o.arrived?'En el local':'Pendiente'}
@@ -1667,13 +1741,13 @@ function svClientInfo(o){
 }
 let svQuickExtras=`<div class="sv-commission"><div class="sv-commission-head"><span>COMISIÓN DE VENTA</span><strong>${money(extraSum(o,'Comisión de Venta'))}</strong></div><div class="sv-commission-actions"><input type="number" id="svCommission_${o.id}" min="0.01" step="0.01" inputmode="decimal" placeholder="Monto $"><button type="button" onclick="svAddSalesCommission(${o.id})">+ Agregar</button></div></div>`;
 let svMapBlock=`<div class="sv-info sv-map-info"><span>UBICACIÓN</span>${navLink(o.address||o.delivery||o.pickupMap||o.pickupAddress,'Abrir Maps')||'<strong>Sin ubicación registrada</strong>'}</div>`;
-let svPickupBundle=`<div class="sv-info"><span>SERVICIO · RECOLECTA</span><strong>${esc(o.service||'Sin servicio registrado')}</strong><small style="display:block;margin-top:8px;font-size:18px;color:#51655d;font-weight:700">${esc(o.pickupAddress||'Sin dirección de recolecta registrada')}</small></div>`;
+let svPickupBundle=`<div class="sv-info"><span>TIPO DE SERVICIO · RECOLECTA</span><strong>${esc(svServiceDisplay(o).label)}</strong><small style="display:block;margin-top:8px;font-size:18px;color:#51655d;font-weight:700">${esc(o.pickupAddress||'Sin dirección de recolecta registrada')}</small></div>`;
 let deliveryPriority=`<div class="sv-info"><span>DIRECCIÓN DE ENTREGA</span><strong>${esc(o.delivery||'Sin dirección registrada')}</strong></div>${o.deliveryStreets?`<div class="sv-info"><span>ENTRE CALLES</span><strong>${esc(o.deliveryStreets)}</strong></div>`:''}${o.deliveryReference?`<div class="sv-info"><span>REFERENCIA</span><strong>${esc(o.deliveryReference)}</strong></div>`:''}`;
 let paid=typeof o.charge==='string'&&/^(pagado|ya pagado|pagada|liquidado|liquidada|paid)$/i.test(o.charge.trim());
 let svAmountBlock=`<div class="sv-info sv-payment-amount ${paid?'is-paid':''}"><span>${paid?'ESTADO DEL PAGO':'TOTAL A COBRAR'}</span><strong>${paid?'✓ PAGADO':esc(showCharge(o.charge))}</strong></div>`;
 let svOrderBlock=`<div class="sv-info sv-order-description"><span>PEDIDO</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div>`;
 let svClientBlock=svClientInfo(o).replace('sv-client-info','sv-client-info sv-payment-client');
-let svPickupBrief=`<div class="sv-info sv-payment-pickup"><span>SERVICIO · RECOLECTA</span><strong>${esc(o.service||'Sin servicio registrado')}</strong>${o.pickupAddress?`<small style="display:block;margin-top:8px;font-size:17px;color:#51655d;font-weight:650">${esc(o.pickupAddress)}</small>`:''}</div>`;
+let svPickupBrief=`<div class="sv-info sv-payment-pickup"><span>TIPO DE SERVICIO · RECOLECTA</span><strong>${esc(svServiceDisplay(o).label)}</strong>${o.pickupAddress?`<small style="display:block;margin-top:8px;font-size:17px;color:#51655d;font-weight:650">${esc(o.pickupAddress)}</small>`:''}</div>`;
 let info=step===1?`${svPickupBundle}${svClientInfo(o)}<div class="sv-info"><span>DETALLES DE LA RECOLECTA</span><strong>${esc(o.details||'Sin detalles registrados')}</strong></div>${svMapBlock}${svQuickExtras}`:step===2?`${deliveryPriority}${svMapBlock}${svClientInfo(o)}${svPickupBundle}`:`${svOrderBlock}${svAmountBlock}${svClientBlock}${svPickupBrief}`;
 let action=step===1?`<button class="full sv-primary" onclick="mark(${o.id},'collected')">📦 Recolectado</button>`:step===2?`<button class="full sv-primary" onclick="arriveAtDelivery(${o.id})">📍 Llegué a dirección de entrega</button>`:`<button class="full sv-primary" onclick="openDelivery(${o.id})">✓ Entregado</button>`;
 return `<article class="sv-order-card sv-slide" style="display:${i===slideIndex?'block':'none'}"><div class="sv-order-top"><div><div class="sv-eyebrow">PEDIDO ${i+1} DE ${os.length}</div><h2>${esc(o.client||'Pedido '+(i+1))}</h2></div><span class="pill">${headline}</span></div><div class="sv-step-track"><i class="on"></i><i class="${step>=2?'on':''}"></i><i class="${step>=3?'on':''}"></i></div><div class="sv-stage-title">${headline}</div><div class="sv-details ${step===3?'sv-payment-details':''}">${info}</div>${action}<div class="sv-swipe-foot"><span>‹ &nbsp; Desliza para otro pedido &nbsp; ›</span><span>${os.map((_,j)=>`<i class="sv-dot ${j===slideIndex?'on':''}"></i>`).join('')}</span></div><button class="secondary full sv-edit" onclick="openView('detail',${o.id})">✎ Ver / Modificar pedido &nbsp; ›</button></article>`;
@@ -3407,7 +3481,7 @@ function svQuickRenderCard(){
  target.innerHTML=`<div class="sv-quick-pager"><button class="secondary" onclick="svQuickMove(-1)" ${svQuickIndex===0?'disabled':''} aria-label="Pedido anterior">‹</button><div><strong>Pedido ${svQuickIndex+1} de ${total}</strong><div class="sv-quick-dots">${svQuickDraft.map((_,i)=>`<i class="${i===svQuickIndex?'on':''}"></i>`).join('')}</div></div><button class="secondary" onclick="svQuickMove(1)" ${svQuickIndex===total-1?'disabled':''} aria-label="Pedido siguiente">›</button></div>
  <article class="sv-quick-card" ontouchstart="svQuickTouchStart(event)" ontouchend="svQuickTouchEnd(event)">
  <div class="sv-quick-client"><span class="sv-eyebrow">📞 CLIENTE</span><strong>${esc(o.client||'Sin teléfono')}</strong></div>
- <div class="sv-quick-section"><span class="sv-eyebrow">🏪 RECOLECTA</span><h3>${esc(o.pickupAddress||o.service)}</h3><div class="muted">${esc(o.service)}</div><div class="sv-quick-details"><span class="sv-eyebrow">DETALLES DE LA RECOLECTA</span><p>${esc(o.details||'Sin detalles')}</p></div></div>
+ <div class="sv-quick-section"><span class="sv-eyebrow">🏪 RECOLECTA</span><h3>${esc(o.pickupAddress||o.service)}</h3><div class="muted">${esc(svServiceDisplay(o).label)}</div><div class="sv-quick-details"><span class="sv-eyebrow">DETALLES DE LA RECOLECTA</span><p>${esc(o.details||'Sin detalles')}</p></div></div>
  <details class="sv-quick-extra"><summary>Ver pedido completo</summary><div class="sv-quick-section"><span class="sv-eyebrow">📍 ENTREGA</span><h3>${esc(o.delivery||'Sin dirección')}</h3>${o.deliveryStreets?`<p><b>Entre Calles:</b> ${esc(o.deliveryStreets)}</p>`:''}${o.deliveryReference?`<p><b>Referencia:</b> ${esc(o.deliveryReference)}</p>`:''}</div><div class="sv-quick-money"><div><span>COBRAR AL CLIENTE</span><strong>${esc(showCharge(o.charge))}</strong></div><div><span>MI GANANCIA</span><strong>${o.amount===null?'Pendiente':money(o.amount)}</strong></div></div></details>
  </article><p class="sv-quick-help">${total>1?'‹ Desliza o utiliza las flechas para revisar los pedidos ›':'Revisa los datos antes de confirmar'}</p>`;
 }
@@ -3511,8 +3585,9 @@ function svRenderClientOrder(){
  <label>Ruta de destino<select id="svClientRoute">${routes.map(r=>`<option value="${r.id}" ${String(data.selected)===String(r.id)?'selected':''}>${esc(r.name)} · ${esc(r.status)}</option>`).join('')}</select></label>
  <label>Dirección de entrega<select id="svClientAddress">${c.addresses.map((a,i)=>`<option value="${i}">${esc(a)}</option>`).join('')}<option value="new">＋ Otra dirección</option></select></label>
  <div class="sv-import-switch"><button type="button" class="${svClientMode==='json'?'sv-selected':'secondary'}" onclick="svClientModeSwitch('json')">📄 1. JSON</button><button type="button" class="${svClientMode==='manual'?'sv-selected':'secondary'}" onclick="svClientModeSwitch('manual')">✍️ 2. Manual</button></div>
- ${svClientMode==='json'?`<p class="muted">Archivo JSON con cinco campos: servicio, direccionRecolecta, detalles, cobrar y ganancia.</p><label>Archivo JSON<input type="file" id="svClientFile" accept=".json,application/json" onchange="svReadClientJson()"></label><div id="svClientJsonStatus" class="muted">${svClientJson?'JSON listo para importar.':'Selecciona el archivo JSON del cliente.'}</div>`:''}
+ ${svClientMode==='json'?`<p class="muted">Archivo JSON con servicio, tipoServicio (Compra o Recolecta/Entrega), direccionRecolecta, detalles, cobrar y ganancia.</p><label>Archivo JSON<input type="file" id="svClientFile" accept=".json,application/json" onchange="svReadClientJson()"></label><div id="svClientJsonStatus" class="muted">${svClientJson?'JSON listo para importar.':'Selecciona el archivo JSON del cliente.'}</div>`:''}
  <div id="svClientFields" ${svClientMode==='json'&&!svClientJson?'hidden':''}>
+ <label>Tipo de servicio<select id="svCServiceType">${svServiceTypeOptions(svClientJson?.serviceType)}</select></label>
  <label>Servicio<input id="svCService" value="${esc(svClientJson?.service||'')}"></label>
  <label>Dirección de recolecta<input id="svCPickup" value="${esc(svClientJson?.pickupAddress||'')}"></label>
  <label>Detalles<textarea id="svCDetails" rows="3">${esc(svClientJson?.details||'')}</textarea></label>
@@ -3546,7 +3621,7 @@ function svSaveClientOrder(){
  if(!address)return alert('Indica una dirección de entrega.');
  let o;
  try{
-  o=svConvert({cliente:c.phone,servicio:$('svCService').value,direccionRecolecta:$('svCPickup').value,detalles:$('svCDetails').value,entrega:address,cobrar:$('svCCharge').value,ganancia:$('svCGain').value});
+  o=svConvert({cliente:c.phone,servicio:$('svCService').value,tipoServicio:$('svCServiceType').value,direccionRecolecta:$('svCPickup').value,detalles:$('svCDetails').value,entrega:address,cobrar:$('svCCharge').value,ganancia:$('svCGain').value});
  }catch(e){return alert(e.message)}
  if(svIsDuplicate(o))return alert('Este pedido parece estar duplicado. Revisa los datos.');
  if(!confirm('¿Agregar este pedido a '+r.name+'?'))return;
