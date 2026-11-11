@@ -1210,7 +1210,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .par-delivery-modal .par-delivery-earnings label{font-size:19px;font-weight:850;color:#163c30}
 .par-delivery-modal .par-delivery-earnings input{border:2px solid #e5c69e;border-radius:14px;font-weight:800;font-size:29px;text-align:center}
 
-/* Prueba 1.65 · selector integrado de cobro al recolectar */
+/* Prueba 1.66 · selector integrado de cobro al recolectar */
 .sv-charge-modal{position:fixed;inset:0;z-index:30000;background:#142b24a6;display:flex;align-items:center;justify-content:center;padding:18px}
 .sv-charge-dialog{background:#fff;border-radius:24px;padding:24px 20px;max-width:500px;width:100%;box-shadow:0 14px 45px #0003;color:#173d30}
 .sv-charge-dialog h2{font-size:26px;margin:0 0 10px}
@@ -1240,7 +1240,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.65</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.66</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -2085,12 +2085,13 @@ function svCarameloJSON(text){
  if(obj&&Array.isArray(obj.servicios)){if(obj.servicios.length!==1)throw Error('Importa un pedido por archivo.');obj=obj.servicios[0]}
  if(!obj||typeof obj!=='object'||Array.isArray(obj))throw Error('El JSON debe contener un pedido.');
  const pick=(...names)=>{for(const name of names)if(Object.prototype.hasOwnProperty.call(obj,name)&&obj[name]!=null)return obj[name];return ''};
- const vals={address:pick('direccion','dirección','address'),streets:pick('entreCalles','entre_calles','entre calles','calles'),colony:pick('colonia','colony'),reference:pick('referencia','reference'),gain:pick('ganancia','gain')};
- for(const key of ['address','streets','colony','reference','gain'])if(typeof vals[key]==='object')throw Error('Dato inválido: '+key);
+ const vals={address:pick('direccion','dirección','address'),streets:pick('entreCalles','entre_calles','entre calles','calles'),colony:pick('colonia','colony'),reference:pick('referencia','reference'),gain:pick('ganancia','gain'),clientName:pick('nombreCliente','clienteNombre','nombre_cliente','nombre','cliente','clientName')};
+ for(const key of ['address','streets','colony','reference','gain','clientName'])if(typeof vals[key]==='object')throw Error('Dato inválido: '+key);
  vals.address=String(vals.address).trim().slice(0,300);
  vals.streets=String(vals.streets).trim().slice(0,250);
  vals.colony=String(vals.colony).trim().slice(0,150);
  vals.reference=String(vals.reference).trim().slice(0,500);
+ vals.clientName=String(vals.clientName||'').trim().slice(0,160);
  if(!vals.address)throw Error('Falta Dirección en el JSON.');
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);return vals;
@@ -2155,9 +2156,10 @@ function svCarameloEntry(x,active){
  ${x.reference?`<p><b>Referencia:</b> ${esc(x.reference)}</p>`:''}
  <p><b>Ganancia:</b> ${money(x.gain)}</p>
  ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ ${x.clientName?`<div class="sv-cositas-order-line sv-partner-client-name"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
  <div class="wrap"><button type="button" class="secondary" onclick="svCarameloUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svCarameloComplete(${Number(x.id)})">✓ Entregado</button></div>`:
- `${x.clientNumber?`<p><b># de Cliente:</b> ${esc(x.clientNumber)}</p>`:''}<p><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</p><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ `${x.clientNumber?`<p><b># de Cliente:</b> ${esc(x.clientNumber)}</p>`:''}${x.clientName?`<p><b>Nombre del Cliente:</b> ${esc(x.clientName)}</p>`:''}<p><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</p><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
  </article>`;
 }
 function svCarameloRouteCard(r){
@@ -2275,12 +2277,13 @@ function svCositasJSON(text){
  if(obj&&Array.isArray(obj.servicios)){if(obj.servicios.length!==1)throw Error('Importa un pedido por archivo.');obj=obj.servicios[0]}
  if(!obj||typeof obj!=='object'||Array.isArray(obj))throw Error('El JSON debe contener un pedido.');
  const pick=(...names)=>{for(const name of names)if(Object.prototype.hasOwnProperty.call(obj,name)&&obj[name]!=null)return obj[name];return ''};
- const vals={address:pick('direccion','dirección','address'),streets:pick('entreCalles','entre_calles','entre calles','calles'),colony:pick('colonia','colony'),reference:pick('referencia','reference'),gain:pick('ganancia','gain'),maps:pick('maps','ubicacion','ubicacionMaps','enlaceMaps','googleMaps')};
- for(const key of ['address','streets','colony','reference','gain','maps'])if(typeof vals[key]==='object')throw Error('Dato inválido: '+key);
+ const vals={address:pick('direccion','dirección','address'),streets:pick('entreCalles','entre_calles','entre calles','calles'),colony:pick('colonia','colony'),reference:pick('referencia','reference'),gain:pick('ganancia','gain'),clientName:pick('nombreCliente','clienteNombre','nombre_cliente','nombre','cliente','clientName'),maps:pick('maps','ubicacion','ubicacionMaps','enlaceMaps','googleMaps')};
+ for(const key of ['address','streets','colony','reference','gain','maps','clientName'])if(typeof vals[key]==='object')throw Error('Dato inválido: '+key);
  vals.address=String(vals.address).trim().slice(0,300);
  vals.streets=String(vals.streets).trim().slice(0,250);
  vals.colony=String(vals.colony).trim().slice(0,150);
  vals.reference=String(vals.reference).trim().slice(0,500);
+ vals.clientName=String(vals.clientName||'').trim().slice(0,160);
  if(!vals.address)throw Error('Falta Dirección en el JSON.');
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svCositasValidMap(vals.maps);return vals;
@@ -2312,6 +2315,9 @@ function svAssociateDirectRead(){
   // Validar siempre los mismos campos, incluidas las URLs de Google Maps.
   const orderData=svCositasJSON(JSON.stringify(payload.pedido));
   const extras=payload.pedido;
+  const sourceName=extras.nombreCliente??extras.clienteNombre??extras.nombre??extras.cliente??orderData.clientName??payload.nombreCliente??'';
+  if(typeof sourceName!=='string')throw Error('El nombre del cliente no es válido.');
+  orderData.clientName=sourceName.trim().slice(0,160);
   const clientNumber=extras.telefono??extras.numeroCliente??extras.clientNumber??'';
   const chargeRaw=extras.cobrar??extras.montoCobrar??extras.charge??'';
   if(typeof clientNumber==='object'||String(clientNumber).length>60)throw Error('El teléfono del cliente no es válido.');
@@ -2426,9 +2432,10 @@ function svCositasEntry(x,active){
  ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
  <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
  ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ ${x.clientName?`<div class="sv-cositas-order-line sv-partner-client-name"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
  <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svCositasUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svCositasComplete(${Number(x.id)})">✓ Entregado</button></div>`:
- `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}${x.clientName?`<div class="sv-cositas-order-line"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
  </article>`;
 }
 function svCositasRouteCard(r){
@@ -2543,12 +2550,13 @@ function svChamplitteJSON(text){
  if(obj&&Array.isArray(obj.servicios)){if(obj.servicios.length!==1)throw Error('Importa un pedido por archivo.');obj=obj.servicios[0]}
  if(!obj||typeof obj!=='object'||Array.isArray(obj))throw Error('El JSON debe contener un pedido.');
  const pick=(...names)=>{for(const name of names)if(Object.prototype.hasOwnProperty.call(obj,name)&&obj[name]!=null)return obj[name];return ''};
- const vals={address:pick('direccion','dirección','address'),streets:pick('entreCalles','entre_calles','entre calles','calles'),colony:pick('colonia','colony'),reference:pick('referencia','reference'),gain:pick('ganancia','gain'),maps:pick('maps','ubicacion','ubicacionMaps','enlaceMaps','googleMaps')};
- for(const key of ['address','streets','colony','reference','gain','maps'])if(typeof vals[key]==='object')throw Error('Dato inválido: '+key);
+ const vals={address:pick('direccion','dirección','address'),streets:pick('entreCalles','entre_calles','entre calles','calles'),colony:pick('colonia','colony'),reference:pick('referencia','reference'),gain:pick('ganancia','gain'),clientName:pick('nombreCliente','clienteNombre','nombre_cliente','nombre','cliente','clientName'),maps:pick('maps','ubicacion','ubicacionMaps','enlaceMaps','googleMaps')};
+ for(const key of ['address','streets','colony','reference','gain','maps','clientName'])if(typeof vals[key]==='object')throw Error('Dato inválido: '+key);
  vals.address=String(vals.address).trim().slice(0,300);
  vals.streets=String(vals.streets).trim().slice(0,250);
  vals.colony=String(vals.colony).trim().slice(0,150);
  vals.reference=String(vals.reference).trim().slice(0,500);
+ vals.clientName=String(vals.clientName||'').trim().slice(0,160);
  if(!vals.address)throw Error('Falta Dirección en el JSON.');
  if(vals.gain===''||!Number.isFinite(Number(vals.gain))||Number(vals.gain)<0)throw Error('Falta una Ganancia válida en el JSON.');
  vals.gain=Number(vals.gain);vals.maps=svChamplitteValidMap(vals.maps);return vals;
@@ -2614,9 +2622,10 @@ function svChamplitteEntry(x,active){
  ${x.maps?`<a class="sv-champlitte-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
  <p><b>Ganancia:</b> ${money(x.gain)}</p>
  ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ ${x.clientName?`<div class="sv-cositas-order-line sv-partner-client-name"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
  <div class="wrap"><button type="button" class="secondary" onclick="svChamplitteUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svChamplitteComplete(${Number(x.id)})">✓ Entregado</button></div>`:
- `${x.clientNumber?`<p><b># de Cliente:</b> ${esc(x.clientNumber)}</p>`:''}<p><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</p><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ `${x.clientNumber?`<p><b># de Cliente:</b> ${esc(x.clientNumber)}</p>`:''}${x.clientName?`<p><b>Nombre del Cliente:</b> ${esc(x.clientName)}</p>`:''}<p><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</p><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
  </article>`;
 }
 function svChamplitteRouteCard(r){
@@ -2741,7 +2750,7 @@ function svNutribionicosImportFile(file){
   const item=svNutribionicosJSON(reader.result);
   const jornada=running();if(!jornada)return alert('Primero inicia la jornada general de SuVaZu.');
   const stamp=now(),route=svNutribionicosActiveRoute(),target=route||{id:uid(),partner:svNutribionicosName,date:jornada.date,start:stamp,end:null};
-  const order={id:uid(),partnerRouteId:target.id,date:target.date,started:stamp,address:item.address,streets:item.streets,colony:item.colony||'',reference:item.reference,gain:item.gain,clientNumber:'',charge:null,delivered:null};
+  const order={id:uid(),partnerRouteId:target.id,date:target.date,started:stamp,address:item.address,streets:item.streets,colony:item.colony||'',reference:item.reference,gain:item.gain,clientName:item.clientName||'',clientNumber:'',charge:null,delivered:null};
   if(!route)data.partnerRoutes.push(target);
   data.nutribionicosServices.push(order);
   try{save();toast('Servicio agregado a Nutribiónicos')}catch(e){
@@ -2790,6 +2799,7 @@ function svNutribionicosRouteCard(r){
  ${x.reference?`<p><b>Referencia:</b> ${esc(x.reference)}</p>`:''}
  <p><b>Ganancia:</b> ${money(x.gain)}</p>
  <label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ ${x.clientName?`<div class="sv-cositas-order-line sv-partner-client-name"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
  <div class="wrap"><button type="button" class="secondary" onclick="svNutribionicosUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svNutribionicosComplete(${Number(x.id)})">✓ Entregado</button></div></article>`).join('')||'<p class="muted">Sin pedidos pendientes.</p>'}
  ${done.length?`<details><summary>Entregados (${done.length})</summary>${done.map(x=>svCarameloEntry(x,false)).join('')}</details>`:''}
@@ -2919,9 +2929,10 @@ function svCarameloEntry(x,active){
  ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
  <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
  ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ ${x.clientName?`<div class="sv-cositas-order-line sv-partner-client-name"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
  <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svCarameloUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svCarameloComplete(${Number(x.id)})">✓ Entregado</button></div>`:
- `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}${x.clientName?`<div class="sv-cositas-order-line"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
  </article>`;
 }
 function svCarameloRouteCard(r){
@@ -3046,9 +3057,10 @@ function svChamplitteEntry(x,active){
  ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
  <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
  ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ ${x.clientName?`<div class="sv-cositas-order-line sv-partner-client-name"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
  <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svChamplitteUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svChamplitteComplete(${Number(x.id)})">✓ Entregado</button></div>`:
- `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}${x.clientName?`<div class="sv-cositas-order-line"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
  </article>`;
 }
 function svChamplitteRouteCard(r){
@@ -3173,9 +3185,10 @@ function svNutribionicosEntry(x,active){
  ${x.maps?`<a class="sv-cositas-map-btn" href="${esc(x.maps)}" target="_blank" rel="noopener noreferrer">📍 Abrir Maps</a>`:''}
  <div class="sv-cositas-gain-box"><span>Ganancia del servicio</span><strong>${money(x.gain)}</strong></div>
  ${editable?`<label># de Cliente<input data-car-phone inputmode="tel" maxlength="60" placeholder="Agregar cuando te lo compartan" value="${esc(x.clientNumber||'')}"></label>
+ ${x.clientName?`<div class="sv-cositas-order-line sv-partner-client-name"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}
  <label>Monto a Cobrar (opcional)<input data-car-charge type="number" inputmode="decimal" min="0" step="0.01" placeholder="$ 0.00" value="${x.charge==null?'':esc(String(x.charge))}"></label>
  <div class="sv-cositas-actions"><button type="button" class="secondary" onclick="svNutribionicosUpdate(${Number(x.id)})">Guardar datos</button><button type="button" onclick="svNutribionicosComplete(${Number(x.id)})">✓ Entregado</button></div>`:
- `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
+ `${x.clientNumber?`<div class="sv-cositas-order-line"><b># de Cliente:</b> ${esc(x.clientNumber)}</div>`:''}${x.clientName?`<div class="sv-cositas-order-line"><b>Nombre del Cliente:</b> ${esc(x.clientName)}</div>`:''}<div class="sv-cositas-order-line"><b>Monto a Cobrar:</b> ${x.charge==null?'No indicado':money(x.charge)}</div><small class="muted">Completado: ${esc(dt(x.delivered))}</small>`}
  </article>`;
 }
 function svNutribionicosRouteCard(r){
@@ -3825,7 +3838,7 @@ let idleMs=Math.max(0,workTotal-serviceMs);
 let appOrders=finishedApps.reduce((n,a)=>n+(a.closeComplete?Number(a.reportedOrders??a.items.length):a.items.length),0);
 let allAppStats=svModuleStats('app');
 let servicesTotal=['direct','associate','app'].reduce((sum,kind)=>sum+svModuleStats(kind).orders,0);
-// Prueba 1.65: espera y servicio independientes, jornada = suma de ambos, sin reinicios al cambiar de ruta.
+// Prueba 1.66: espera y servicio independientes, jornada = suma de ambos, sin reinicios al cambiar de ruta.
 const balanceMetric=(kind,label,value,icon)=>`<div class="sv-balance-metric sv-balance-${kind}"><div class="sv-balance-icon" aria-hidden="true">${icon}</div><div class="sv-balance-label">${label}</div><strong class="sv-balance-number">${value}</strong></div>`;
 $('dashboard').innerHTML=`<div class="sv-balance-grid" aria-label="Balance general del día">
 ${balanceMetric('money','Ganancias',money(day),'$')}
