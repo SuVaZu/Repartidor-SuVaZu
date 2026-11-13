@@ -1,4 +1,4 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.60</title>
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#14382e"><title>Repartidor SuVaZu · Prueba 1.68</title>
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png"><style>
@@ -1210,7 +1210,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .par-delivery-modal .par-delivery-earnings label{font-size:19px;font-weight:850;color:#163c30}
 .par-delivery-modal .par-delivery-earnings input{border:2px solid #e5c69e;border-radius:14px;font-weight:800;font-size:29px;text-align:center}
 
-/* Prueba 1.67 · selector integrado de cobro al recolectar */
+/* Prueba 1.68 · selector integrado de cobro al recolectar */
 .sv-charge-modal{position:fixed;inset:0;z-index:30000;background:#142b24a6;display:flex;align-items:center;justify-content:center;padding:18px}
 .sv-charge-dialog{background:#fff;border-radius:24px;padding:24px 20px;max-width:500px;width:100%;box-shadow:0 14px 45px #0003;color:#173d30}
 .sv-charge-dialog h2{font-size:26px;margin:0 0 10px}
@@ -1226,11 +1226,34 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
 .sv-pickup-map{margin-top:12px}.sv-pickup-map .link{display:block;text-align:center;padding:12px 10px;background:#dff2e8;border-radius:14px;font-size:18px;font-weight:800}
 .sv-charge-scope{display:block;font-size:15px;font-weight:750;margin-top:6px}
 
-/* Prueba 1.67: total de costo de servicio calculado desde cada entrega */
+/* Prueba 1.68: total de costo de servicio calculado desde cada entrega */
 #overlay.parrillon-view .par-cost-summary{display:flex;flex-direction:column;gap:8px;background:#eaf4ee;border:1px solid #c9e1d3;border-radius:18px;padding:20px;margin:16px 0 20px;color:#183c30}
 #overlay.parrillon-view .par-cost-summary span{font-size:17px;font-weight:800}
 #overlay.parrillon-view .par-cost-summary strong{font-size:clamp(31px,7vw,42px);font-variant-numeric:tabular-nums}
 #overlay.parrillon-view .par-cost-summary small{font-size:13px;color:#5d7568;line-height:1.4}
+
+/* Prueba 1.68: cierre visual del servicio El Parrillón. */
+.par-close-backdrop{position:fixed;inset:0;z-index:30000;background:rgba(9,29,23,.69);display:flex;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
+.par-close-card{width:min(100%,510px);max-height:calc(100dvh - 36px);overflow-y:auto;background:#fffdfa;border-radius:28px;padding:25px 21px 22px;box-shadow:0 25px 70px #061a1470;border:1px solid #f0e0c6;color:#173d31}
+.par-close-heading{display:flex;align-items:center;gap:12px;margin-bottom:21px}
+.par-close-heading h2{font-size:clamp(22px,5.5vw,28px);font-weight:850;margin:0;line-height:1.22}
+.par-close-symbol{display:flex;justify-content:center;align-items:center;width:51px;height:51px;flex:none;background:#fff0d3;border-radius:16px;font-size:26px}
+.par-close-deliveries{background:#f0f5f1;border-radius:17px;padding:15px 17px;margin-bottom:11px}
+.par-close-deliveries span,.par-close-total span{display:block;font-size:13px;font-weight:850;letter-spacing:.035em}
+.par-close-deliveries span{color:#667b6d}.par-close-deliveries strong{display:block;margin-top:6px;font-size:25px}
+.par-close-split{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px}
+.par-close-split>div{min-width:0;border-radius:17px;background:#fff7e9;border:1px solid #eadac0;padding:15px 11px}
+.par-close-split>div:nth-child(2){background:#f9f1f9;border-color:#ead9eb}
+.par-close-split span{display:block;font-weight:700;color:#596a60;font-size:13px;margin-bottom:7px}
+.par-close-split strong{display:block;font-size:clamp(20px,5vw,26px);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.par-close-total{background:#173d31;color:white;border-radius:20px;padding:21px 19px;text-align:center}
+.par-close-total span{color:#deebe5;font-size:13px}
+.par-close-total strong{display:block;font-size:clamp(34px,9vw,46px);margin-top:6px;line-height:1.15;font-variant-numeric:tabular-nums}
+.par-close-question{text-align:center;color:#617369;font-size:15px;margin:18px 0}
+.par-close-actions{display:grid;grid-template-columns:1fr 1.2fr;gap:9px}
+.par-close-actions button{font-size:17px;font-weight:850;padding:16px 7px;min-height:59px;border-radius:15px}
+.par-close-actions button:not(.secondary){background:#e9b74f;color:#17382e}
+@media(max-height:580px){.par-close-card{padding:15px}.par-close-heading{margin-bottom:10px}.par-close-deliveries{padding:10px}.par-close-split>div{padding:10px}.par-close-total{padding:13px}}
 </style></head><body class="sv-booting">
 <section id="svGate" aria-label="Puerta principal Repartidor SuVaZu" hidden>
   <div class="sv-gate-poster">
@@ -1246,7 +1269,7 @@ body.sv-gate-mode>header,body.sv-gate-mode>main{display:none!important}
     <div class="sv-gate-backup-body"><section class="panel sv-backup-panel"><button type="button" id="svBackupToggle" class="sv-backup-toggle" onclick="svToggleBackup()" aria-controls="svBackupContent" aria-expanded="false"><span>🔒 Respaldo &amp; Restauración</span><span class="sv-backup-state">Mostrar <span class="sv-backup-arrow">⌄</span></span></button><div id="svBackupContent" hidden><p class="muted">Tus datos se guardan en este navegador, no en una cuenta en la nube. Descarga un respaldo después de cada jornada y antes de actualizar el archivo HTML.</p><div id="backupStatus" class="hint">Verificando registros…</div><div class="wrap" style="margin-top:10px"><button onclick="exportData()">⬇ Descargar respaldo JSON</button></div><label style="display:block;margin-top:12px">Recuperar registros desde un archivo JSON<input type="file" id="importFile" accept=".json,application/json" onchange="previewBackup()"></label><div id="backupPreview" class="muted">Selecciona un archivo para revisar su contenido antes de restaurarlo.</div><button class="secondary full" style="margin-top:10px" onclick="importData()">↥ Restaurar respaldo</button><p class="hint">⚠️ Restaurar reemplaza los registros de este navegador. Antes de hacerlo, descarga un respaldo de los datos actuales. Guarda los archivos JSON en una carpeta segura; pueden contener datos de tus clientes.</p></div></section></div>
   </section>
 </div>
-<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.67</span></header><div id="toast"></div><main>
+<header><strong>🦁 Repartidor SuVaZu</strong><span style="font-size:12px">Prueba 1.68</span></header><div id="toast"></div><main>
 <section class="panel sv-home-routes" id="serviceCurrent"><div class="row sv-home-routes-header"><h2>Rutas Activas</h2><span class="pill" id="serviceStatus"><span class="sv-route-dot" aria-hidden="true"></span><span id="svRouteCount">0 rutas</span></span></div><div id="currentServiceBody"></div></section>
 <section class="module-panel sv-banner-card sv-banner-direct"><button type="button" class="module-link sv-illustrated-link" onclick="openView('suvazu')" aria-label="Abrir SuVaZu Repartidor"><img class="sv-illustrated-banner" src="./home_repartidor.webp" alt="SuVaZu Repartidor"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Repartidor"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_direct" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_direct" class="sv-banner-stat-value">0</strong></div></div></div></section>
 <section class="module-panel sv-banner-card sv-banner-associate"><button type="button" class="module-link sv-illustrated-link" onclick="openView('asociados')" aria-label="Abrir SuVaZu Asociados"><img class="sv-illustrated-banner" src="./home_asociados.webp" alt="SuVaZu Asociados"></button><div class="sv-banner-stats" aria-label="Resultados del día de SuVaZu Asociados"><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-money" aria-hidden="true">$</span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Ganancias del día</span><strong id="svBannerEarn_associate" class="sv-banner-stat-value">$0.00</strong></div></div><span class="sv-banner-divider" aria-hidden="true"></span><div class="sv-banner-stat"><span class="sv-banner-icon sv-banner-icon-orders" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="17" rx="2"/><rect x="9" y="2.5" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h6"/></svg></span><div class="sv-banner-stat-copy"><span class="sv-banner-stat-label">Pedidos del día</span><strong id="svBannerOrders_associate" class="sv-banner-stat-value">0</strong></div></div></div></section>
@@ -3844,7 +3867,7 @@ let idleMs=Math.max(0,workTotal-serviceMs);
 let appOrders=finishedApps.reduce((n,a)=>n+(a.closeComplete?Number(a.reportedOrders??a.items.length):a.items.length),0);
 let allAppStats=svModuleStats('app');
 let servicesTotal=['direct','associate','app'].reduce((sum,kind)=>sum+svModuleStats(kind).orders,0);
-// Prueba 1.67: espera y servicio independientes, jornada = suma de ambos, sin reinicios al cambiar de ruta.
+// Prueba 1.68: espera y servicio independientes, jornada = suma de ambos, sin reinicios al cambiar de ruta.
 const balanceMetric=(kind,label,value,icon)=>`<div class="sv-balance-metric sv-balance-${kind}"><div class="sv-balance-icon" aria-hidden="true">${icon}</div><div class="sv-balance-label">${label}</div><strong class="sv-balance-number">${value}</strong></div>`;
 $('dashboard').innerHTML=`<div class="sv-balance-grid" aria-label="Balance general del día">
 ${balanceMetric('money','Ganancias',money(day),'$')}
@@ -4188,8 +4211,36 @@ function parClose(){
  if(!x.closingPhoto)return alert('Primero adjunta la fotografía del comprobante de cierre que dejas en El Parrillón.');
  // El coste del servicio proviene de la ganancia de cada ticket entregado, sin propinas.
  let serviceCost=parEarnings(x);
- if(!confirm('Cerrar El Parrillón con '+x.tickets.length+' entregas, '+money(serviceCost)+' de costo de servicio y '+money(parTips(x))+' de propinas?'))return;
- x.gain=serviceCost;x.end=now();save();openView('parrillon');toast('El Parrillón integrado al resumen diario')
+ parOpenCloseModal(x);
+}
+function parDismissCloseModal(){document.getElementById('parCloseModal')?.remove()}
+function parOpenCloseModal(x){
+ parDismissCloseModal();
+ const delivered=x.tickets.filter(t=>t.delivered).length;
+ const serviceCost=parEarnings(x),tips=parTips(x),total=serviceCost+tips;
+ const wrap=document.createElement('div');wrap.id='parCloseModal';wrap.className='par-close-backdrop';
+ wrap.setAttribute('role','presentation');
+ wrap.innerHTML=`<section class="par-close-card" role="dialog" aria-modal="true" aria-labelledby="parCloseTitle">
+  <div class="par-close-heading"><span class="par-close-symbol">🍗</span><h2 id="parCloseTitle">Cerrar El Parrillón</h2></div>
+  <div class="par-close-deliveries"><span>ENTREGAS REALIZADAS</span><strong>${delivered} pedidos</strong></div>
+  <div class="par-close-split"><div><span>Costo de servicio</span><strong>${money(serviceCost)}</strong></div><div><span>Propinas</span><strong>${money(tips)}</strong></div></div>
+  <div class="par-close-total"><span>TOTAL DE MIS GANANCIAS</span><strong>${money(total)}</strong></div>
+  <p class="par-close-question">¿Finalizar el servicio con estos resultados?</p>
+  <div class="par-close-actions"><button type="button" class="secondary" onclick="parDismissCloseModal()">← Volver</button><button type="button" onclick="parConfirmClose()">✓ Finalizar</button></div>
+ </section>`;
+ document.body.appendChild(wrap);
+ wrap.querySelector('.par-close-actions button')?.focus();
+}
+function parConfirmClose(){
+ let x=parActive();if(!x)return parDismissCloseModal();
+ // Validar nuevamente antes de confirmar, porque los datos pudieron cambiar.
+ if(!parRounds(x).some(r=>r.end)||x.tickets.some(t=>!t.delivered)||parCurrentRound(x)||!x.closingPhoto){
+  parDismissCloseModal();return alert('Revisa las vueltas, los pedidos y la evidencia antes de cerrar El Parrillón.');
+ }
+ const priorGain=x.gain,priorEnd=x.end;
+ x.gain=parEarnings(x);x.end=now();
+ try{save()}catch(e){x.gain=priorGain;x.end=priorEnd;return alert('No se pudo guardar el cierre: '+e.message)}
+ parDismissCloseModal();openView('parrillon');toast('El Parrillón integrado al resumen diario');
 }
 function renderParrillon(){
  let x=parActive(),h='';
